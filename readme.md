@@ -1,6 +1,6 @@
 # GACA Front-End
 
-If you just want the HTML then download the release directory, but only changes in Git will be permanent.
+If you just want the HTML then download the `release` directory, but only changes in Git will be permanent.
 
 ### Prerequisites
 
