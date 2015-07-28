@@ -1,0 +1,174 @@
+<div data-template="dashboard">
+    <div class="dashboard">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <h1>My Dashboard</h1>
+                        <hr/>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <i class="fa fa-user"></i>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">My Details</div>
+                            <div class="box-content">
+                                <h2>John Smith</h2>
+                                <p>
+                                    <img src="https://randomuser.me/api/portraits/med/men/99.jpg" style="border-radius:1000px;height:100px;"/>
+                                </p>
+
+                                <div class="psuedo-table clearfix">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-5 hl">Username (email)</div>
+                                            <div class="col-sm-7">
+                                                <div class="in block">
+                                                    jsmith
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-5 hl">Country</div>
+                                            <div class="col-sm-7">
+                                                United Kingdom
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-5 hl">Audience Type</div>
+                                            <div class="col-sm-7">
+                                                Pilot
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-5 hl">Company Name</div>
+                                            <div class="col-sm-7">
+                                                Chartered Flights
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-5 hl">Address</div>
+                                            <div class="col-sm-7">
+                                                <div class="in block">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-5 hl">Phone Number</div>
+                                            <div class="col-sm-7">
+                                                +44 207 356 4733
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-5 hl">Gender</div>
+                                            <div class="col-sm-7">
+                                                Male
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-8">
+                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <i class="fa fa-copy"></i>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">My Applications</div>
+                            <div class="box-content">
+
+                                <div class="psuedo-table clearfix">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <a href="#">Form 6020 Major Alteration Status Inspection Program</a>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="gaca-btn pull-right">View &nbsp;
+                                                    <i class="fa fa-angle-right"></i></div>
+                                                <strong class="hl">Approved </strong>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <a href="#">Form 1055 from Operation of Charter Flights</a>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="gaca-btn pull-right">View &nbsp;
+                                                    <i class="fa fa-angle-right"></i></div>
+                                                <strong class="hl">Approved </strong>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <a href="#">Form 5851 SUPS Notification from Incident Help</a>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <strong class="hl">Pending </strong>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <a href="#">Form 7655 Export from Rolling ELT Update</a>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <strong class="hl">Pending </strong>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <a href="#">Form 1055 from Operation of Charter Flights</a>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <strong class="hl">Rejected </strong>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <a href="#">Form 6020 Major Alteration Status Inspection Program</a>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="gaca-btn pull-right">View &nbsp;
+                                                    <i class="fa fa-angle-right"></i></div>
+                                                <strong class="hl">Approved </strong>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <a href="#">Form 7655 Export from Rolling ELT Update</a>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <strong class="hl">Pending </strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

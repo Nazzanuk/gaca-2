@@ -232,6 +232,32 @@ ul {
       background: #456bb1;
       color: white; }
 
+.gaca-popup {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  display: none;
+  overflow: auto;
+  z-index: 200; }
+  .gaca-popup .popup-overlay {
+    background: rgba(0, 0, 0, 0.2);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 200; }
+  .gaca-popup .popup-block {
+    position: relative;
+    margin-top: 20%;
+    background: white;
+    border-radius: 4px;
+    padding: 30px;
+    margin-bottom: 50px;
+    z-index: 201; }
+
 [data-template="header"] .header {
   position: fixed;
   top: 0;
@@ -816,6 +842,42 @@ ul {
               transition: .2s;
       -webkit-filter: grayscale(0%);
               filter: grayscale(0%); }
+
+[data-template="login"] .login {
+  background: #c5ced3;
+  padding: 65px 30px 1px;
+  min-height: 70vh; }
+  [data-template="login"] .login .box-highlight.hl {
+    border-left: 3px solid #508bea;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    -webkit-transition: .2s;
+            transition: .2s;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-transform: none; }
+    [data-template="login"] .login .box-highlight.hl:hover {
+      border-left-width: 6px;
+      color: #508bea;
+      padding-left: 12px; }
+      [data-template="login"] .login .box-highlight.hl:hover .gallery-image {
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
+    [data-template="login"] .login .box-highlight.hl.hl-yellow {
+      border-color: gold; }
+    [data-template="login"] .login .box-highlight.hl.hl-red {
+      border-color: #ce1029; }
+    [data-template="login"] .login .box-highlight.hl.hl-none {
+      padding-left: 15px;
+      border-left: none;
+      border-color: transparent;
+      margin-bottom: 30px; }
+
+[data-template="dashboard"] .dashboard {
+  background: #c5ced3;
+  padding: 65px 30px 1px;
+  min-height: 70vh; }
 
 [data-template="home-boxes"] .home-boxes {
   background: #c5ced3;

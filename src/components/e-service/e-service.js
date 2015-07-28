@@ -1,10 +1,10 @@
 (function () {
     app.controller('EServiceCtrl', ['$scope', function ($scope) {
         var showPopup = function () {
-            $('.e-popup').velocity('stop').velocity('transition.slideUpIn', 200);
+            $('.e-popup').velocity('stop').velocity('transition.fadeIn', 200);
         };
         var hidePopup = function () {
-            $('.e-popup').velocity('stop').velocity('transition.slideUpOut', 200);
+            $('.e-popup').velocity('stop').velocity('transition.fadeOut', 200);
         };
 
         var events = function () {

@@ -81,7 +81,9 @@ gulp.task("gen-html", function(){
         "search": ['head', 'menu', 'header', 'search', 'footer'],
         "gallery": ['head', 'menu', 'header', 'gallery', 'footer'],
         "department": ['head', 'menu', 'header', 'department', 'footer'],
-        "content": ['head', 'menu', 'header', 'content', 'footer']
+        "content": ['head', 'menu', 'header', 'content', 'footer'],
+        "login": ['head', 'menu', 'header', 'login', 'footer'],
+        "dashboard": ['head', 'menu', 'header', 'dashboard', 'footer']
     };
 
     for (var i in pages){
@@ -100,10 +102,8 @@ gulp.task('watch', ['webserver', 'default'], function () {
     gulp.watch([
         'src/components/**/*',
         'src/public/**/*',
-        'src/app/js',
-        'src/app/scss',
-        'src/app/app.scss',
-        'src/app/app.js'
+        'src/app.scss',
+        'src/app.js'
     ], ['default']);
 });
 
