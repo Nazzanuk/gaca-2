@@ -1,6 +1,7 @@
 var app = angular.module('app', []);
 
 
+
 (function () {
     app.controller('ESearchCtrl', ['$scope', function ($scope) {
 
@@ -163,7 +164,6 @@ var app = angular.module('app', []);
 
     }]);
 }());
-
 
 (function () {
     app.controller('EServiceCtrl', ['$scope', function ($scope) {
