@@ -1,5 +1,7 @@
 # GACA Front-End
 
+If you just want the HTML then download the release directory, but only changes in Git will be permanent.
+
 ### Prerequisites
 
 * [Node / npm] - You need node installed locally to run this project!
@@ -16,7 +18,7 @@ $ bower install #install all front-end dependencies
 $ gulp watch #compile and build the release directory
 ```
 
-### Release
+### Important
 
 - The HTML is all stored in the `release` directory
 - Do NOT change the `release` directory files directly as they will be **temporary** changes.
