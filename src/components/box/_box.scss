@@ -1,0 +1,206 @@
+.box {
+  padding: 15px;
+  background: $prim-dark;
+  color: white;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+
+  .box-side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 50%;
+    bottom: 0;
+    background: white;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .box-header {
+    color: white;
+
+    .box-icon {
+      height: 25px;
+      line-height: 25px;
+      width: 25px;
+      float: left;
+      font-size: 25px;
+      margin-right: 10px;
+      font-weight: 800;
+      text-align: center;
+
+      img, svg {
+        height: 25px;
+        width: auto;
+      }
+
+    }
+
+    .box-status {
+      background: rgb(230, 238, 238);
+      border-radius: 4px;
+      height: 25px;
+      line-height: 25px;
+      width: 25px;
+      text-align: left;
+      float: right;
+      color: $prim-light;
+      font-size: 18px;
+      margin-left: 15px;
+      cursor: pointer;
+
+      .fa-plus, .fa-minus {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        text-align: center;
+        width: 25px;
+        height: 25px;
+        line-height: 16px !important;
+        padding: 6px;
+        transition: .3s;
+      }
+
+      .fa-minus {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    .box-title {
+      font-size: 16px;
+      text-align: right;
+    }
+
+    .box-content {
+      margin: 15px 0 0;
+      display: block;
+    }
+
+    .box-highlight {
+      padding: 15px 15px;
+      border-radius: 4px;
+      color: white;
+      background: $prim-light;
+      margin-bottom: 15px;
+      display: block;
+      text-decoration: none;
+
+      &.grey {
+        background: $light-grey;
+        color: #555;
+      }
+
+      &.blue {
+        background: #F5FAFE;
+        color: #555;
+      }
+
+      &.yellow {
+        background: #FEF3B3;
+        color: #555;
+      }
+    }
+
+    .box-image {
+      margin: 0 -15px -15px;
+      height: 175px;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  &.inactive {
+    .box-header {
+      .box-status {
+        .fa-plus {
+          visibility: visible;
+          opacity: 1;
+        }
+        .fa-minus {
+          visibility: hidden;
+          opacity: 0;
+        }
+      }
+    }
+
+    .box-content {
+      display: none;
+    }
+  }
+
+  &.box-red {
+    background: rgb(206, 16, 41);
+  }
+
+  &.box-white {
+    background: white;
+    color: #555;
+
+    .box-header {
+      color: $prim-dark;
+
+      .box-icon {
+        color: $prim-dark;
+      }
+    }
+
+    .box-content {
+      color: #555;
+    }
+  }
+}
+
+.box-table {
+  border: none;
+  select, input, textarea {
+    border: 1px solid #eee;
+    color: #555;
+    font-weight: 600;
+  }
+
+  .in-btn {
+    height: 27px;
+    line-height: 25px;
+  }
+
+  input[type=file] {
+    border: none;
+  }
+
+  tr:nth-child(2n -1) {
+    background: white !important;
+
+  }
+  tr:nth-child(2n) {
+    background: $light-grey;
+
+
+    .in {
+      background: white;
+
+      select, input, textarea {
+        background: white;
+      }
+    }
+  }
+
+  tr {
+    border-top: 1px solid #eee !important;
+    border-bottom: none;
+  }
+
+  tr:last-of-type {
+    border-bottom: 1px solid #eee !important;
+  }
+
+  td, th {
+    border: none !important;
+  }
+
+  th {
+    color: $prim-dark;
+  }
+}

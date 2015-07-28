@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>GACA</title>
+
+    <meta name="description" content=""/>
+
+    <link rel="stylesheet" href="public/lib.css"/>
+    <link rel="stylesheet" href="public/app.css"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light|Droid+Serif:400,700|Indie+Flower|Covered+By+Your+Grace|Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700,200italic,300italic,400italic,600italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Architects+Daughter|Kalam:400,700,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Patrick+Hand|Indie+Flower|Architects+Daughter&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,200,300,600,700,200" rel="stylesheet" type="text/css">
+
+</head>
+<body data-ng-app="app">
+<div data-template="menu" ng-controller="MenuCtrl">
+    <div class="menu">
+        <div class="header-close"><i class="fa fa-times"></i></div>
+        
+        <div class="menu-items">
+            <a href="#" class="menu-item">ABOUT GACA</a>
+            <a href="#" class="menu-item">DEPARTMENTS</a>
+            <a href="#" class="menu-item">E-SERVICES</a>
+            <a href="#" class="menu-item">OCURRANCY REPORTING</a>
+            <a href="#" class="menu-item">GUIDANCE</a>
+            <a href="#" class="menu-item">LAWS</a>
+            <a href="#" class="menu-item">REGULATION</a>
+        </div>
+    </div>
+
+    <div class="menu-overlay"></div>
+</div>
+
+<div class="content-area" style="min-width: 100vw; position:relative;">
+<div data-template="header" data-main data-ng-controller="HeaderCtrl">
+    <div class="header">
+        <div class="header-line">
+            <div class="header-menu visible-xs visible-sm">
+                <i class="fa fa-bars"></i>
+            </div>
+
+            <div class="container">
+                <div class="in sm hidden-xs">
+                    <input type="text"/>
+
+                    <div class="in-btn">
+                        <i class="fa fa-search"></i>
+                    </div>
+                </div>
+                <div style="width: 5px;display: inline-block" class="hidden-xs"></div>
+                <div class="in sm hidden-xs">
+                    <select>
+                        <option value="">I'm an Airman</option>
+                        <option value="">I'm a Pilot</option>
+                    </select>
+
+                    <div class="in-btn select-btn">
+                        <i class="fa fa-caret-down"></i>
+                    </div>
+                </div>
+                <div style="width: 5px;display: inline-block" class="hidden-xs"></div>
+                <div class="in sm hidden-xs">
+                    <select>
+                        <option value="">English</option>
+                        <option value="">Arabic</option>
+                    </select>
+
+                    <div class="in-btn select-btn">
+                        <i class="fa fa-caret-down"></i>
+                    </div>
+                </div>
+                <div style="width: 5px;display: inline-block" class="hidden-xs"></div>
+                <i class="fa fa-user  hidden-xs"></i>
+
+                <a class="pull-right" href="/">
+                    <span class="hidden-sm hidden-xs">General Authority of Civil Aviation</span>
+                    <img src="public/img/gaca-logo.png" style=""/>
+                    <span class="hidden-sm hidden-xs">
+                    الهيئة العامة للطيران المدني
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="header-sub hidden-sm hidden-xs">
+            <div class="container" style="position: static">
+                <div class="sub-item">
+                    ABOUT GACA
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">ABOUT GACA</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="/">Homepage</a>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="gallery.html">Media Gallery</a>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Differe Solmen In</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-item">
+                    DEPARTMENTS
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">DEPARTMENTS</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="department.html">Air Navigation Services</a>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                            <a class="hl" href="department.html">Information Technology</a>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="department.html">Safety & Organization</a>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                            <a class="hl" href="department.html">Corporate Core</a>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="department.html">Human Resources</a>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="department.html">audi Academy of Civil Aviation</a>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-item">
+                    E-SERVICES
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">E-SERVICES</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="e-catalogue.html">E-Services Catalogue</a>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="e-services-search.html">E-Services Search</a>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                        </div>
+                                        <div class="col-sm-3">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-item">
+                    OCCURACNY REPORTING
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">OCCURANCY REPORTING</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                            <p class="hl">Nov Lingua Franca</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Differe Solmen In</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                            <p class="hl">Sit Voluptatem Accusantium</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Omnicos Directe</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                            <p class="hl">Nov Lingua Franca</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Sit Voluptatem Accusantium</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-item">
+                    GUIDANCE
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">GUIDANCE</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="hl">Nov Lingua Franca</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                            <p class="hl">Sit Voluptatem Accusantium</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Nov Lingua Franca</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                            <p class="hl">Omnicos Directe</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Sit Voluptatem Accusantium</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                            <p class="hl">Differe Solmen In</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-item">
+                    LAWS
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">LAWS</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="hl">Nov Lingua Franca</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                            <p class="hl">Sit Voluptatem Accusantium</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Nov Lingua Franca</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                            <p class="hl">Omnicos Directe</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Sit Voluptatem Accusantium</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                            <p class="hl">Differe Solmen In</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-item">
+                    REGULATION
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">REGULATION</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="hl">Aviation Regulation</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                            <p class="hl">Economic Regulation</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Circulars</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                            <p class="hl">Notices</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Important Information Circular</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                            <p class="hl">Conflict Zone Information</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Rule Making & Consultation</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div data-template="e-service" ng-controller="EServiceCtrl">
+        <div class="e-service">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <img src="public/img/svg/call.svg" alt=""/>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">Get In Touch</div>
+                            <div class="box-content">
+                                <p class="thin">Our Offices</p>
+
+                                <div class="in">
+                                    <select class="gaca-select">
+                                        <option value="ABU DHABI OFFICE">ABU DHABI OFFICE</option>
+                                        <option value="DUBAI OFFICE">DUBAI OFFICE</option>
+                                        <option value="MONTREAL OFFICE">MONTREAL OFFICE</option>
+                                    </select>
+
+                                    <div class="in-btn select-btn">
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                </div>
+
+                                <hr/>
+
+                                <!--<p></p>-->
+                                <div style="clear:both">
+                                    <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4447666,<br>
+                                    <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 4054535,<br>
+                                    <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 6558 <br>
+                                    <strong style="width:100px;display:inline-block;">Email:</strong>
+                                    <a href="#">info@gaca.gov.ae</a>
+                                </div>
+
+                                <hr/>
+
+                                <!--<p></p>-->
+                                7:30am to 2:30pm for GACA staff <br/>
+                                8:00am to 1:00pm for Customers <br/>
+                                Sun, Mon, Tues, Wed, Thurs
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <i class="fa fa-copy"></i>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">Related Media</div>
+                            <div class="box-content">
+                                <!--<div class="box-image" style="background-image: url('http://www.albawaba.com/sites/default/files/im/misc/saudi_airlines.jpg')"></div>-->
+                                <div class="box-image" style="background-image: url('http://img.planespotters.net/photo/201000/original/HZ-AIR-Saudi-Arabian-Airlines-Boeing-747-300_PlanespottersNet_201326.jpg')"></div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <img src="public/img/svg/pilot.svg" alt=""/>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">Frequent Questions</div>
+                            <div class="box-content">
+                                <div class="box-questions">
+                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                        <div class="question-title" ng-click="changeActive()">
+                                            <div class="question-status">
+                                                <i class="fa fa-angle-down"></i>
+                                                <i class="fa fa-angle-right"></i>
+                                            </div>
+                                            What are the manditory requirements for pilot flights to Saudi Arabia?
+                                        </div>
+
+                                        <div class="question-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                        </div>
+                                    </div>
+                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                        <div class="question-title" ng-click="changeActive()">
+                                            <div class="question-status">
+                                                <i class="fa fa-angle-down"></i>
+                                                <i class="fa fa-angle-right"></i>
+                                            </div>
+                                            I’m a pilot, how do I apply for duis dolore te feugaitliber KSA esit soluta nobis eleifend?
+                                        </div>
+
+                                        <div class="question-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                        </div>
+                                    </div>
+                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                        <div class="question-title" ng-click="changeActive()">
+                                            <div class="question-status">
+                                                <i class="fa fa-angle-down"></i>
+                                                <i class="fa fa-angle-right"></i>
+                                            </div>
+                                            What kind of pilot licence duis dolore te feugait liber tempor cum soluta nobis?
+                                        </div>
+
+                                        <div class="question-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                        </div>
+                                    </div>
+                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                        <div class="question-title" ng-click="changeActive()">
+                                            <div class="question-status">
+                                                <i class="fa fa-angle-down"></i>
+                                                <i class="fa fa-angle-right"></i>
+                                            </div>
+                                            I’d like to make an application to duis dolore te feugait liber tempor cum soluta nobis?
+                                        </div>
+
+                                        <div class="question-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                        </div>
+                                    </div>
+                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                        <div class="question-title" ng-click="changeActive()">
+                                            <div class="question-status">
+                                                <i class="fa fa-angle-down"></i>
+                                                <i class="fa fa-angle-right"></i>
+                                            </div>
+                                            Who do I contact when I want to tempor soluta nobis eleifend delenit augue duis dolore?
+                                        </div>
+
+                                        <div class="question-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <i class="fa fa-external-link"></i>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">Important Links</div>
+                            <div class="box-content">
+                                <ul>
+                                    <li>Lorem ipsum dolor sit amet</li>
+                                    <li>Consectetuer adipiscing elit</li>
+                                    <li>Aenean commodo ligula eget dolor</li>
+                                    <li>Cum sociis natoque penatibus et magnis</li>
+                                    <li>Nascetur ridiculus mus</li>
+                                </ul>
+
+                                <div class="box-highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-8">
+                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">830.5: Issuing No Objection Certificate for Valid Flight</div>
+                            <div class="box-content">
+
+                                <!--<h1>830.5: Issuing No Objection Certificate for Valid Flight</h1>-->
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <p class="in block">
+                                            <select>
+                                                <option value="">PDF</option>
+                                            </select>
+
+                                            <span class="in-btn select-btn">
+                                                <i class="fa fa-caret-down"></i>
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <div class="box-highlight yellow">
+                                    <h2>Description</h2>
+
+                                    <p style="text-transform: uppercase">
+                                        This service enables the customers to obtain Initial online approval for the carriage of Firearms in accordance with Civil Aviation Regulations of the UAE. This service is subject to final approval from Airport Police. This service is mandatory and all requests should be submitted by Airlines only.
+                                    </p>
+                                </div>
+
+                                <div class="box-highlight blue">
+
+                                    <div class="psuedo-table clearfix">
+                                        <div class="col-sm-12">
+
+                                            <div class="row">
+                                                <div class="col-sm-3">Location</div>
+                                                <div class="col-sm-8">Online</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">Applicable For</div>
+                                                <div class="col-sm-8">Airlines</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">Required Documents</div>
+                                                <div class="col-sm-8">
+                                                    <p>
+                                                        1. Valid Passport copy. <br/>
+                                                        2. Valid Flight License ( if required by the country ). <br/>
+                                                        3. Flight details (type, location, id number). <br/>
+                                                        4. Official letter stating the reason for use of flight: <br/>
+                                                        - Hunting: from Travel agencies. <br/>
+                                                        - Sport competition: from organizer. <br/>
+                                                        - VIP protection: from Government entities. <br/>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">Terms and Conditions</div>
+                                                <div class="col-sm-8">Nil</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="box-highlight grey">
+                                    <h2>Files</h2>
+
+                                    <a class="hl" href="#">
+                                        <i class="fa fa-fw fa-download"></i> &nbsp; Download S&ER 830.5.pdf
+                                    </a>
+                                    <br/>
+                                    <a class="hl" href="#">
+                                        <i class="fa fa-fw fa-envelope-o"></i> &nbsp; Send me the form by email
+                                    </a>
+                                </div>
+
+                                <br/>
+
+                                <p class="gaca-btn show-e-popup">
+                                    Apply for new license &nbsp; <i class="fa fa-external-link"></i>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="e-popup">
+            <div class="popup-overlay hide-e-popup"></div>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-2 col-sm-1"></div>
+                    <div class="col-md-8 col-sm-9">
+                        <div class="popup-block">
+                            <h1>Issuing No Objection Certificate for Valid Flight</h1>
+                            <hr/>
+
+                            <p>This service enables the customers to obtain Initial online approval for the carriage of Firearms in accordance with Civil Aviation Regulations of the UAE. This service is subject to final approval from Airport Police. This service is mandatory and all requests should be submitted by Airlines only.</p>
+
+                            <p>
+                                <strong>The customer is requires to obtain the below approval to be able to receive the service: Approval from Airline Group Security.</strong>
+                            </p>
+                            <br/>
+
+                            <h2>Form</h2>
+
+
+                            <div class="psuedo-table clearfix">
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-3">Name</div>
+                                        <div class="col-sm-8">
+                                            <div class="in block">
+                                                <input type="text" placeholder="Your Name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3">ID</div>
+                                        <div class="col-sm-8">
+                                            <div class="in block">
+                                                <input type="text" placeholder="AB1620394-67">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3">Applicable For</div>
+                                        <div class="col-sm-8">
+                                            <div class="in block">
+                                                <select class="gaca-select">
+                                                    <option>select</option>
+                                                    <option>Pilot</option>
+                                                    <option>Airman</option>
+                                                </select>
+
+                                                <div class="in-btn select-btn">
+                                                    <i class="fa fa-caret-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3">Valid Passport</div>
+                                        <div class="col-sm-8">
+                                            <input type="file">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3">Valid Flight License (if required)</div>
+                                        <div class="col-sm-8">
+                                            <input type="file">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3">Flight details</div>
+                                        <div class="col-sm-8">
+                                            <div class="in block">
+                                                <textarea type="file" style="width: 100%;max-width: 100%;"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="gaca-btn hide-e-popup">
+                                    Apply &nbsp; <i class="fa fa-check"></i>
+                                </p>
+
+                                <p class="gaca-btn hide-e-popup pull-right">
+                                    Close &nbsp; <i class="fa fa-times"></i>
+                                </p>
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--footer.ejs-->
+
+<div data-template="footer">
+    <footer id="footer" data-main>
+        <div class="footer-top">
+            <div class="container">
+                <img src="public/img/appstore.png" alt=""/>
+                <img src="public/img/play.png" alt=""/>
+                <img src="public/img/amazon.png" alt=""/>
+            </div>
+        </div>
+        <div class="footer-bottom">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div>لان نهاية ألمانيا بـ. ٣٠ ابتدعها</div>
+                        <div>جعل ثم شموليةً البشريةً</div>
+                        <div>الإنزال الثانية الساحليةً</div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div> بين مع. كما هو</div>
+                        <div>الساحة الإطلاق</div>
+                        <div>هو حتى</div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div>يعبأ وبحلول</div>
+                        <div>ما بعد هامش</div>
+                        <div>الخاصّة</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</div>
+</div>
+
+<script src="public/lib.js"></script>
+<script src="public/app.js"></script>
+</body>
+</html>

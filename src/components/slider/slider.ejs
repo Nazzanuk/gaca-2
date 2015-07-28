@@ -1,0 +1,110 @@
+<div data-template="slider" ng-controller="SliderCtrl">
+    <div class="slider" data-main>
+        <div class="container">
+            <div class="slider-box">
+                <div class="slider-header">
+                    <div class="header-left hidden-xs">15:23 &nbsp; Sunday, 12 July 2015</div>
+                    <h2 class="header-right">Latest News</h2>
+
+                    <div class="slider-dots">
+                        <div class="slider-dot" ng-click="setPosition($index)" ng-class="{active:dotIndex == $index}" ng-repeat="i in getDots() track by $index"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="slider-items">
+                        <div class="slider-holder" style="will-change:transform;">
+                            <div class="slider-item" ng-style="">
+                                <div class="item-image" style="background-image: url('http://www.msc-sa.com/electro/media/k2/galleries/3/p18skbaeh81fvrht811tf3410ds5.jpg')"></div>
+                                <div class="item-text">
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
+                                </div>
+                            </div>
+                            <div class="slider-item">
+                                <div class="item-image" style="background-image: url('http://www.tradeandexportme.com/wp-content/uploads/2013/08/travel.jpg')"></div>
+                                <div class="item-text">
+                                    <p>Aenean commodo ligula eget dolor. Aenean massa.</p>
+                                </div>
+                            </div>
+                            <div class="slider-item">
+                                <div class="item-image" style="background-image: url('http://www.msc-sa.com/electro/media/k2/galleries/3/p18skbaeh81qmheg12601m3q1nfi6.jpg')"></div>
+                                <div class="item-text">
+                                    <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                                </div>
+                            </div>
+                            <div class="slider-item">
+                                <div class="item-image" style="background-image: url('https://unsplash.it/700/350/?random&3')"></div>
+                                <div class="item-text">
+                                    <p>Nulla consequat massa quis enim.</p>
+                                </div>
+                            </div>
+                            <div class="slider-item">
+                                <div class="item-image" style="background-image: url('https://unsplash.it/700/350/?random&4')"></div>
+                                <div class="item-text">
+                                    <p>Aenean commodo ligula eget dolor. Aenean massa.</p>
+                                </div>
+                            </div>
+                            <div class="slider-item">
+                                <div class="item-image" style="background-image: url('https://unsplash.it/700/350/?random&5')"></div>
+                                <div class="item-text">
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2 style="text-align: center; margin:0;">General Authority of Civil Aviation</h2>
+            </div>
+
+            <div class="slider-bottom"></div>
+
+            <div class="slider-blue-box">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="col-sm-12">
+                            <div class="blue-select" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                <div class="clearfix" ng-click="changeActive()">
+                                    <div class="blue-icon">
+                                        <i class="fa fa-exclamation"></i>
+                                    </div>
+                                    <div class="select-text">
+                                        Information
+                                        <i class="fa fa-angle-down select-arrow"></i>
+                                    </div>
+                                </div>
+
+                                <div class="select-content">
+                                    <p>Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues.</p>
+
+                                    <p>Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="col-sm-12">
+                            <div class="blue-select" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                <div class="clearfix" ng-click="changeActive()">
+                                    <div class="blue-icon">
+                                        <i class="fa fa-bullhorn"></i>
+                                    </div>
+                                    <div class="select-text">
+                                        Announcements
+                                        <i class="fa fa-angle-down select-arrow"></i>
+                                    </div>
+                                </div>
+
+                                <div class="select-content">
+                                    <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.</p>
+
+                                    <p>Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

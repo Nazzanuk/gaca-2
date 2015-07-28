@@ -1,0 +1,22 @@
+[data-template="footer"] {
+  #footer {
+    color:#f7f7f7;
+    text-align: center;
+    .footer-top {
+      background:$prim-light;
+      padding: 15px 15px 10px;
+      img {
+        margin: 0 10px 5px;
+        height: 40px;
+      }
+    }
+
+    .footer-bottom {
+      line-height:30px;
+      background:$prim-dark;
+      padding: 30px;
+    }
+
+  }
+
+}

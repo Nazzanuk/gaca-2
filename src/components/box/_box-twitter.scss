@@ -1,0 +1,55 @@
+.box-twitter {
+
+  .tweets {
+    max-height: 170px;
+    overflow-y: scroll;
+    margin-bottom: 15px;
+
+    .twitter-post {
+      min-height: 50px;
+      margin-bottom: 15px;
+      position: relative;
+
+      .post-image {
+        position: absolute;
+        right: 0px;
+        width: 50px;
+        height: 50px;
+        border-radius: 4px;
+        background: $light-grey;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .post-content {
+        margin-right: 60px;
+        text-align: right;
+        color: #555;
+
+        .post-user {
+          color: $prim-dark;
+          font-weight: 600;
+          display: block;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+      }
+    }
+  }
+
+  .social-icons {
+    text-align: center;
+    font-size: 25px;
+
+    i.fa {
+      margin: 0 10px;
+      transition: .2s;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

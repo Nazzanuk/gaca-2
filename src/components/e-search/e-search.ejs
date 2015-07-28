@@ -1,0 +1,102 @@
+<div class="container">
+    <div data-template="search" ng-controller="ESearchCtrl">
+        <div class="search">
+            <div class="box box-white">
+
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1>GACA E-Services Search</h1>
+                        <hr/>
+
+                    </div>
+                    <div class="col-sm-4 col-md-3">
+                        <input class="gaca-search" type="search" ng-model="filters.search" placeholder="Search by name"/>
+                        <hr/>
+                        <div>
+                            <h3>Date Range</h3>
+
+                            <div> From</div>
+                            <input class="search-select simple" type="date" value="1950-01-01"/>
+
+                            <div> To</div>
+                            <input class="search-select simple" type="date" value="2016-01-01"/>
+                            <hr/>
+                        </div>
+
+                        <div class="search-box">
+                            <!--<div>-->
+                                <!--<h3>Content</h3>-->
+
+                                <!--<div class="search-list">-->
+                                    <!--<div ng-repeat="type in types track by $index">-->
+                                        <!--<span class="search-check" ng-class="{'checked':(filters.type == $index)}" ng-click="set('type',$index)"></span> {{type}}-->
+                                    <!--</div>-->
+                                <!--</div>-->
+
+                                <!--<hr/>-->
+                            <!--</div>-->
+
+                            <div>
+                                <h3>Audience</h3>
+
+                                <div class="search-list">
+                                    <div ng-repeat="audience in audiences track by $index">{{audience}}
+                                        <span class="search-check" ng-class="{'checked':(filters.audience == $index)}" ng-click="set('audience',$index)"></span>
+                                    </div>
+                                </div>
+
+                                <hr/>
+                            </div>
+
+                            <div>
+                                <h3>Sectors</h3>
+
+                                <div class="search-list">
+                                    <div ng-repeat="sector in sectors track by $index">
+                                        <span class="search-check" ng-class="{'checked':(filters.sector == $index)}" ng-click="set('sector',$index)"></span> {{sector}}
+                                    </div>
+                                </div>
+
+                                <hr/>
+                            </div>
+
+
+                        </div>
+                        <hr/>
+                    </div>
+                    <div class="col-sm-8 col-md-9">
+                        <h2>{{currentResults.length}} Result{{(currentResults.length == 1) ? '' : 's'}}</h2>
+
+                        <div class="search-results">
+                            <div class="row">
+                                <div ng-repeat="result in currentResults track by $index">
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="result">
+                                            <div class="result-header">
+                                                <div class="header-e-service" ng-show="result.type == 'E-Services'" ng-class="{'unavailable':!result.available}">
+                                                    <span ng-show="!result.available">un</span>Available
+                                                    <div class="e-service-dot"></div>
+                                                </div>
+                                                {{result.type}}
+                                            </div>
+                                            <div class="result-icon"><i class="fa fa-{{result.icon}}"></i></div>
+                                            <div class="result-date">{{result.date}}</div>
+                                            <div class="result-link" ng-show="result.type == 'E-Services'"><i class="fa fa-desktop"></i></div>
+                                            <div class="result-title">{{result.title}}</div>
+                                            <div class="result-field"><strong>Audience:</strong> {{result.audience}}</div>
+                                            <div class="result-field"><strong>Sector:</strong> {{result.sector}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

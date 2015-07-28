@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>GACA</title>
+
+    <meta name="description" content=""/>
+
+    <link rel="stylesheet" href="public/lib.css"/>
+    <link rel="stylesheet" href="public/app.css"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light|Droid+Serif:400,700|Indie+Flower|Covered+By+Your+Grace|Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700,200italic,300italic,400italic,600italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Architects+Daughter|Kalam:400,700,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Patrick+Hand|Indie+Flower|Architects+Daughter&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,200,300,600,700,200" rel="stylesheet" type="text/css">
+
+</head>
+<body data-ng-app="app">
+<div data-template="menu" ng-controller="MenuCtrl">
+    <div class="menu">
+        <div class="header-close"><i class="fa fa-times"></i></div>
+        
+        <div class="menu-items">
+            <a href="#" class="menu-item">ABOUT GACA</a>
+            <a href="#" class="menu-item">DEPARTMENTS</a>
+            <a href="#" class="menu-item">E-SERVICES</a>
+            <a href="#" class="menu-item">OCURRANCY REPORTING</a>
+            <a href="#" class="menu-item">GUIDANCE</a>
+            <a href="#" class="menu-item">LAWS</a>
+            <a href="#" class="menu-item">REGULATION</a>
+        </div>
+    </div>
+
+    <div class="menu-overlay"></div>
+</div>
+
+<div class="content-area" style="min-width: 100vw; position:relative;">
+<div data-template="header" data-main data-ng-controller="HeaderCtrl">
+    <div class="header">
+        <div class="header-line">
+            <div class="header-menu visible-xs visible-sm">
+                <i class="fa fa-bars"></i>
+            </div>
+
+            <div class="container">
+                <div class="in sm hidden-xs">
+                    <input type="text"/>
+
+                    <div class="in-btn">
+                        <i class="fa fa-search"></i>
+                    </div>
+                </div>
+                <div style="width: 5px;display: inline-block" class="hidden-xs"></div>
+                <div class="in sm hidden-xs">
+                    <select>
+                        <option value="">I'm an Airman</option>
+                        <option value="">I'm a Pilot</option>
+                    </select>
+
+                    <div class="in-btn select-btn">
+                        <i class="fa fa-caret-down"></i>
+                    </div>
+                </div>
+                <div style="width: 5px;display: inline-block" class="hidden-xs"></div>
+                <div class="in sm hidden-xs">
+                    <select>
+                        <option value="">English</option>
+                        <option value="">Arabic</option>
+                    </select>
+
+                    <div class="in-btn select-btn">
+                        <i class="fa fa-caret-down"></i>
+                    </div>
+                </div>
+                <div style="width: 5px;display: inline-block" class="hidden-xs"></div>
+                <i class="fa fa-user  hidden-xs"></i>
+
+                <a class="pull-right" href="/">
+                    <span class="hidden-sm hidden-xs">General Authority of Civil Aviation</span>
+                    <img src="public/img/gaca-logo.png" style=""/>
+                    <span class="hidden-sm hidden-xs">
+                    الهيئة العامة للطيران المدني
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="header-sub hidden-sm hidden-xs">
+            <div class="container" style="position: static">
+                <div class="sub-item">
+                    ABOUT GACA
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">ABOUT GACA</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="/">Homepage</a>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="gallery.html">Media Gallery</a>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Differe Solmen In</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-item">
+                    DEPARTMENTS
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">DEPARTMENTS</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="department.html">Air Navigation Services</a>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                            <a class="hl" href="department.html">Information Technology</a>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="department.html">Safety & Organization</a>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                            <a class="hl" href="department.html">Corporate Core</a>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="department.html">Human Resources</a>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="department.html">audi Academy of Civil Aviation</a>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-item">
+                    E-SERVICES
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">E-SERVICES</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="e-catalogue.html">E-Services Catalogue</a>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="e-services-search.html">E-Services Search</a>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                        </div>
+                                        <div class="col-sm-3">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-item">
+                    OCCURACNY REPORTING
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">OCCURANCY REPORTING</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                            <p class="hl">Nov Lingua Franca</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Differe Solmen In</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                            <p class="hl">Sit Voluptatem Accusantium</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Omnicos Directe</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                            <p class="hl">Nov Lingua Franca</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Sit Voluptatem Accusantium</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-item">
+                    GUIDANCE
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">GUIDANCE</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="hl">Nov Lingua Franca</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                            <p class="hl">Sit Voluptatem Accusantium</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Nov Lingua Franca</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                            <p class="hl">Omnicos Directe</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Sit Voluptatem Accusantium</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                            <p class="hl">Differe Solmen In</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-item">
+                    LAWS
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">LAWS</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="hl">Nov Lingua Franca</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                            <p class="hl">Sit Voluptatem Accusantium</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Nov Lingua Franca</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                            <p class="hl">Omnicos Directe</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Sit Voluptatem Accusantium</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                            <p class="hl">Differe Solmen In</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-item">
+                    REGULATION
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">REGULATION</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="hl">Aviation Regulation</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                            <p class="hl">Economic Regulation</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Circulars</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                            <p class="hl">Notices</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Important Information Circular</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                            <p class="hl">Conflict Zone Information</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Rule Making & Consultation</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-template="content">
+    <div class="content-banner" style="background-image: url('https://www.middleeastmonitor.com/images/article_images/logos/libyan-airlines.jpg')">
+
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <!--<div class="col-sm-12">-->
+                    <!--<div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">-->
+                        <!--<h1 style="margin-bottom: 0;">Content Header / Title</h1>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <div class="col-sm-8">
+                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <small class="hl pull-right">31st March 2015</small>
+
+                        <h1>Content Header / Title</h1>
+                        <hr/>
+
+                        <h2>Subtitle</h2>
+
+                        <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.</p>
+
+                        <p>Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues.</p>
+
+                        <p>
+                            <br/>
+                            <img src="http://www.arabnews.com/sites/default/files/imagecache/galleryformatter_slide/GACA_0.jpg" alt=""/>
+                            <br/>&nbsp;
+                        </p>
+
+                        <p>Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es. Li Europan lingues es membres del sam familie.</p>
+
+                        <p>Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p>
+
+                        <h2>Subtitle</h2>
+
+                        <p>At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental.</p>
+
+                        <p>A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es. Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.</p>
+
+                        <hr/>
+                        <div class="gaca-btn">Call to action &nbsp; <i class="fa fa-angle-right"></i></div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+
+                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <i class="fa fa-image"></i>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">Related Images</div>
+                            <div class="box-content">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <a class="box-highlight grey hl hl-none" href="#">
+                                            <p>
+                                                <span class="gallery-image" style="background-image: url('http://www.arabnews.com/sites/default/files/imagecache/galleryformatter_slide/2014/10/24/Jeddah%20airport%20-%20Saudi%20Airlines.jpg')"></span>
+                                            </p>
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <a class="box-highlight grey hl hl-none" href="#">
+                                            <p>
+                                                <span class="gallery-image" style="background-image: url('http://www.arabnews.com/sites/default/files/imagecache/galleryformatter_slide/2015/06/15/file-15-1434397434643590600.jpg')"></span>
+                                            </p>
+                                            Aenean massa.
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <i class="fa fa-newspaper-o"></i>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">Related Articles</div>
+                            <div class="box-content">
+                                <a class="box-highlight grey hl" href="#">
+                                    <p>
+                                        <span class="gallery-image" style="height:150px;background-image: url('https://www.venturesonsite.com/news/wp-content/uploads/2015/01/Abha-Airport-Roundabout.jpg')"></span>
+                                    </p>
+                                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+                                </a>
+
+                                <a class="box-highlight grey hl" href="#">
+                                    KFIA is on track to welcome more than 9 million passengers this year
+                                </a>
+                                <a class="box-highlight grey hl" href="#">
+                                    Al-Hamdan Leads a High-Level Delegation to the 3rd Meeting of the Directors General of Civil Aviation in the Middle East
+                                </a>
+                                <a class="box-highlight grey hl" href="#">
+                                    Signing two contracts for the first phase of development of King Abdulaziz International Airport (KAIA)
+                                </a>
+                                <a class="box-highlight grey hl" href="#">
+                                    In creating a new work environment and to cope with the transformation program, the General Authority of Civil Aviation
+                                </a>
+                                <a class="box-highlight grey hl" href="#">
+                                    King Khalid International Airport, survey the travelling public about services rendered in order to improve them.
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--footer.ejs-->
+
+<div data-template="footer">
+    <footer id="footer" data-main>
+        <div class="footer-top">
+            <div class="container">
+                <img src="public/img/appstore.png" alt=""/>
+                <img src="public/img/play.png" alt=""/>
+                <img src="public/img/amazon.png" alt=""/>
+            </div>
+        </div>
+        <div class="footer-bottom">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div>لان نهاية ألمانيا بـ. ٣٠ ابتدعها</div>
+                        <div>جعل ثم شموليةً البشريةً</div>
+                        <div>الإنزال الثانية الساحليةً</div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div> بين مع. كما هو</div>
+                        <div>الساحة الإطلاق</div>
+                        <div>هو حتى</div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div>يعبأ وبحلول</div>
+                        <div>ما بعد هامش</div>
+                        <div>الخاصّة</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</div>
+</div>
+
+<script src="public/lib.js"></script>
+<script src="public/app.js"></script>
+</body>
+</html>

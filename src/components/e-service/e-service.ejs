@@ -1,0 +1,391 @@
+<div class="container">
+    <div data-template="e-service" ng-controller="EServiceCtrl">
+        <div class="e-service">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <img src="public/img/svg/call.svg" alt=""/>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">Get In Touch</div>
+                            <div class="box-content">
+                                <p class="thin">Our Offices</p>
+
+                                <div class="in">
+                                    <select class="gaca-select">
+                                        <option value="ABU DHABI OFFICE">ABU DHABI OFFICE</option>
+                                        <option value="DUBAI OFFICE">DUBAI OFFICE</option>
+                                        <option value="MONTREAL OFFICE">MONTREAL OFFICE</option>
+                                    </select>
+
+                                    <div class="in-btn select-btn">
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                </div>
+
+                                <hr/>
+
+                                <!--<p></p>-->
+                                <div style="clear:both">
+                                    <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4447666,<br>
+                                    <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 4054535,<br>
+                                    <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 6558 <br>
+                                    <strong style="width:100px;display:inline-block;">Email:</strong>
+                                    <a href="#">info@gaca.gov.ae</a>
+                                </div>
+
+                                <hr/>
+
+                                <!--<p></p>-->
+                                7:30am to 2:30pm for GACA staff <br/>
+                                8:00am to 1:00pm for Customers <br/>
+                                Sun, Mon, Tues, Wed, Thurs
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <i class="fa fa-copy"></i>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">Related Media</div>
+                            <div class="box-content">
+                                <!--<div class="box-image" style="background-image: url('http://www.albawaba.com/sites/default/files/im/misc/saudi_airlines.jpg')"></div>-->
+                                <div class="box-image" style="background-image: url('http://img.planespotters.net/photo/201000/original/HZ-AIR-Saudi-Arabian-Airlines-Boeing-747-300_PlanespottersNet_201326.jpg')"></div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <img src="public/img/svg/pilot.svg" alt=""/>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">Frequent Questions</div>
+                            <div class="box-content">
+                                <div class="box-questions">
+                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                        <div class="question-title" ng-click="changeActive()">
+                                            <div class="question-status">
+                                                <i class="fa fa-angle-down"></i>
+                                                <i class="fa fa-angle-right"></i>
+                                            </div>
+                                            What are the manditory requirements for pilot flights to Saudi Arabia?
+                                        </div>
+
+                                        <div class="question-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                        </div>
+                                    </div>
+                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                        <div class="question-title" ng-click="changeActive()">
+                                            <div class="question-status">
+                                                <i class="fa fa-angle-down"></i>
+                                                <i class="fa fa-angle-right"></i>
+                                            </div>
+                                            I’m a pilot, how do I apply for duis dolore te feugaitliber KSA esit soluta nobis eleifend?
+                                        </div>
+
+                                        <div class="question-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                        </div>
+                                    </div>
+                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                        <div class="question-title" ng-click="changeActive()">
+                                            <div class="question-status">
+                                                <i class="fa fa-angle-down"></i>
+                                                <i class="fa fa-angle-right"></i>
+                                            </div>
+                                            What kind of pilot licence duis dolore te feugait liber tempor cum soluta nobis?
+                                        </div>
+
+                                        <div class="question-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                        </div>
+                                    </div>
+                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                        <div class="question-title" ng-click="changeActive()">
+                                            <div class="question-status">
+                                                <i class="fa fa-angle-down"></i>
+                                                <i class="fa fa-angle-right"></i>
+                                            </div>
+                                            I’d like to make an application to duis dolore te feugait liber tempor cum soluta nobis?
+                                        </div>
+
+                                        <div class="question-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                        </div>
+                                    </div>
+                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                        <div class="question-title" ng-click="changeActive()">
+                                            <div class="question-status">
+                                                <i class="fa fa-angle-down"></i>
+                                                <i class="fa fa-angle-right"></i>
+                                            </div>
+                                            Who do I contact when I want to tempor soluta nobis eleifend delenit augue duis dolore?
+                                        </div>
+
+                                        <div class="question-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <i class="fa fa-external-link"></i>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">Important Links</div>
+                            <div class="box-content">
+                                <ul>
+                                    <li>Lorem ipsum dolor sit amet</li>
+                                    <li>Consectetuer adipiscing elit</li>
+                                    <li>Aenean commodo ligula eget dolor</li>
+                                    <li>Cum sociis natoque penatibus et magnis</li>
+                                    <li>Nascetur ridiculus mus</li>
+                                </ul>
+
+                                <div class="box-highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-8">
+                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">830.5: Issuing No Objection Certificate for Valid Flight</div>
+                            <div class="box-content">
+
+                                <!--<h1>830.5: Issuing No Objection Certificate for Valid Flight</h1>-->
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <p class="in block">
+                                            <select>
+                                                <option value="">PDF</option>
+                                            </select>
+
+                                            <span class="in-btn select-btn">
+                                                <i class="fa fa-caret-down"></i>
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <div class="box-highlight yellow">
+                                    <h2>Description</h2>
+
+                                    <p style="text-transform: uppercase">
+                                        This service enables the customers to obtain Initial online approval for the carriage of Firearms in accordance with Civil Aviation Regulations of the UAE. This service is subject to final approval from Airport Police. This service is mandatory and all requests should be submitted by Airlines only.
+                                    </p>
+                                </div>
+
+                                <div class="box-highlight blue">
+
+                                    <div class="psuedo-table clearfix">
+                                        <div class="col-sm-12">
+
+                                            <div class="row">
+                                                <div class="col-sm-3">Location</div>
+                                                <div class="col-sm-8">Online</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">Applicable For</div>
+                                                <div class="col-sm-8">Airlines</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">Required Documents</div>
+                                                <div class="col-sm-8">
+                                                    <p>
+                                                        1. Valid Passport copy. <br/>
+                                                        2. Valid Flight License ( if required by the country ). <br/>
+                                                        3. Flight details (type, location, id number). <br/>
+                                                        4. Official letter stating the reason for use of flight: <br/>
+                                                        - Hunting: from Travel agencies. <br/>
+                                                        - Sport competition: from organizer. <br/>
+                                                        - VIP protection: from Government entities. <br/>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">Terms and Conditions</div>
+                                                <div class="col-sm-8">Nil</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="box-highlight grey">
+                                    <h2>Files</h2>
+
+                                    <a class="hl" href="#">
+                                        <i class="fa fa-fw fa-download"></i> &nbsp; Download S&ER 830.5.pdf
+                                    </a>
+                                    <br/>
+                                    <a class="hl" href="#">
+                                        <i class="fa fa-fw fa-envelope-o"></i> &nbsp; Send me the form by email
+                                    </a>
+                                </div>
+
+                                <br/>
+
+                                <p class="gaca-btn show-e-popup">
+                                    Apply for new license &nbsp; <i class="fa fa-external-link"></i>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="e-popup">
+            <div class="popup-overlay hide-e-popup"></div>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-2 col-sm-1"></div>
+                    <div class="col-md-8 col-sm-9">
+                        <div class="popup-block">
+                            <h1>Issuing No Objection Certificate for Valid Flight</h1>
+                            <hr/>
+
+                            <p>This service enables the customers to obtain Initial online approval for the carriage of Firearms in accordance with Civil Aviation Regulations of the UAE. This service is subject to final approval from Airport Police. This service is mandatory and all requests should be submitted by Airlines only.</p>
+
+                            <p>
+                                <strong>The customer is requires to obtain the below approval to be able to receive the service: Approval from Airline Group Security.</strong>
+                            </p>
+                            <br/>
+
+                            <h2>Form</h2>
+
+
+                            <div class="psuedo-table clearfix">
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-3">Name</div>
+                                        <div class="col-sm-8">
+                                            <div class="in block">
+                                                <input type="text" placeholder="Your Name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3">ID</div>
+                                        <div class="col-sm-8">
+                                            <div class="in block">
+                                                <input type="text" placeholder="AB1620394-67">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3">Applicable For</div>
+                                        <div class="col-sm-8">
+                                            <div class="in block">
+                                                <select class="gaca-select">
+                                                    <option>select</option>
+                                                    <option>Pilot</option>
+                                                    <option>Airman</option>
+                                                </select>
+
+                                                <div class="in-btn select-btn">
+                                                    <i class="fa fa-caret-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3">Valid Passport</div>
+                                        <div class="col-sm-8">
+                                            <input type="file">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3">Valid Flight License (if required)</div>
+                                        <div class="col-sm-8">
+                                            <input type="file">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3">Flight details</div>
+                                        <div class="col-sm-8">
+                                            <div class="in block">
+                                                <textarea type="file" style="width: 100%;max-width: 100%;"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="gaca-btn hide-e-popup">
+                                    Apply &nbsp; <i class="fa fa-check"></i>
+                                </p>
+
+                                <p class="gaca-btn hide-e-popup pull-right">
+                                    Close &nbsp; <i class="fa fa-times"></i>
+                                </p>
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

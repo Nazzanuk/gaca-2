@@ -1,0 +1,116 @@
+[data-template="header"] {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    min-width: 100vw;
+
+    .container {
+      position: relative;
+    }
+
+    .header-line {
+      padding: 25px;
+      height: 75px;
+      line-height: 25px;
+      background: white;
+
+      @media(max-width: 767px) {
+        padding: 0 25px;
+        height: 40px;
+      }
+
+      .pull-right {
+        color: $prim-dark;
+        font-weight: 600;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        img {
+          margin-top: -25px;
+          height: 70px;
+          width: auto;
+          vertical-align: top;
+
+          @media(max-width: 767px) {
+            height: 30px;
+            margin-top: 5px;
+
+          }
+        }
+      }
+    }
+
+    .header-menu {
+      color: #555;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 18px;
+      cursor: pointer;
+      text-align: center;
+
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .header-sub {
+      background: rgba(0, 0, 0, 0.4);
+      height: 35px;
+      line-height: 35px;
+      color: white;
+
+      .sub-item {
+        float: left;
+        width: (100% / 7);
+        text-align: center;
+        font-weight: 600;
+        cursor: pointer;
+
+
+        &:hover {
+          background: $prim-light;
+          color: white;
+          .sub-menu {
+            display: block;
+          }
+
+        }
+
+        .sub-menu {
+          font-weight: normal;
+          line-height: 1.6;
+          padding: 30px 0;
+          display: none;
+          position: absolute;
+          left: 0;
+          right: 0;
+          background: white;
+//          height: 200px;
+          border-top:3px solid $prim-light;
+          color: #555;
+          text-align: right;
+
+          .vert {
+            position: absolute;
+            top: 0;
+            /* right: -15px; */
+            bottom: 0;
+            width: 1px;
+            background: none;
+            /* left: 0; */
+            width: 25%;
+            border-right: 1px solid $light-grey;
+            margin-left: -15px;
+          }
+
+        }
+      }
+    }
+  }
+}

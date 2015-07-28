@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>GACA</title>
+
+    <meta name="description" content=""/>
+
+    <link rel="stylesheet" href="public/lib.css"/>
+    <link rel="stylesheet" href="public/app.css"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light|Droid+Serif:400,700|Indie+Flower|Covered+By+Your+Grace|Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700,200italic,300italic,400italic,600italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Architects+Daughter|Kalam:400,700,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Patrick+Hand|Indie+Flower|Architects+Daughter&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,200,300,600,700,200" rel="stylesheet" type="text/css">
+
+</head>
+<body data-ng-app="app">
+<div data-template="menu" ng-controller="MenuCtrl">
+    <div class="menu">
+        <div class="header-close"><i class="fa fa-times"></i></div>
+        
+        <div class="menu-items">
+            <a href="#" class="menu-item">ABOUT GACA</a>
+            <a href="#" class="menu-item">DEPARTMENTS</a>
+            <a href="#" class="menu-item">E-SERVICES</a>
+            <a href="#" class="menu-item">OCURRANCY REPORTING</a>
+            <a href="#" class="menu-item">GUIDANCE</a>
+            <a href="#" class="menu-item">LAWS</a>
+            <a href="#" class="menu-item">REGULATION</a>
+        </div>
+    </div>
+
+    <div class="menu-overlay"></div>
+</div>
+
+<div class="content-area" style="min-width: 100vw; position:relative;">
+<div data-template="header" data-main data-ng-controller="HeaderCtrl">
+    <div class="header">
+        <div class="header-line">
+            <div class="header-menu visible-xs visible-sm">
+                <i class="fa fa-bars"></i>
+            </div>
+
+            <div class="container">
+                <div class="in sm hidden-xs">
+                    <input type="text"/>
+
+                    <div class="in-btn">
+                        <i class="fa fa-search"></i>
+                    </div>
+                </div>
+                <div style="width: 5px;display: inline-block" class="hidden-xs"></div>
+                <div class="in sm hidden-xs">
+                    <select>
+                        <option value="">I'm an Airman</option>
+                        <option value="">I'm a Pilot</option>
+                    </select>
+
+                    <div class="in-btn select-btn">
+                        <i class="fa fa-caret-down"></i>
+                    </div>
+                </div>
+                <div style="width: 5px;display: inline-block" class="hidden-xs"></div>
+                <div class="in sm hidden-xs">
+                    <select>
+                        <option value="">English</option>
+                        <option value="">Arabic</option>
+                    </select>
+
+                    <div class="in-btn select-btn">
+                        <i class="fa fa-caret-down"></i>
+                    </div>
+                </div>
+                <div style="width: 5px;display: inline-block" class="hidden-xs"></div>
+                <i class="fa fa-user  hidden-xs"></i>
+
+                <a class="pull-right" href="/">
+                    <span class="hidden-sm hidden-xs">General Authority of Civil Aviation</span>
+                    <img src="public/img/gaca-logo.png" style=""/>
+                    <span class="hidden-sm hidden-xs">
+                    الهيئة العامة للطيران المدني
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="header-sub hidden-sm hidden-xs">
+            <div class="container" style="position: static">
+                <div class="sub-item">
+                    ABOUT GACA
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">ABOUT GACA</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="/">Homepage</a>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="gallery.html">Media Gallery</a>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Differe Solmen In</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-item">
+                    DEPARTMENTS
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">DEPARTMENTS</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="department.html">Air Navigation Services</a>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                            <a class="hl" href="department.html">Information Technology</a>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="department.html">Safety & Organization</a>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                            <a class="hl" href="department.html">Corporate Core</a>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="department.html">Human Resources</a>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="department.html">audi Academy of Civil Aviation</a>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-item">
+                    E-SERVICES
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">E-SERVICES</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="e-catalogue.html">E-Services Catalogue</a>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a class="hl" href="e-services-search.html">E-Services Search</a>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                        </div>
+                                        <div class="col-sm-3">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-item">
+                    OCCURACNY REPORTING
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">OCCURANCY REPORTING</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                            <p class="hl">Nov Lingua Franca</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Differe Solmen In</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                            <p class="hl">Sit Voluptatem Accusantium</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Omnicos Directe</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                            <p class="hl">Nov Lingua Franca</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Sit Voluptatem Accusantium</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-item">
+                    GUIDANCE
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">GUIDANCE</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="hl">Nov Lingua Franca</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                            <p class="hl">Sit Voluptatem Accusantium</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Nov Lingua Franca</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                            <p class="hl">Omnicos Directe</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Sit Voluptatem Accusantium</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                            <p class="hl">Differe Solmen In</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-item">
+                    LAWS
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">LAWS</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="hl">Nov Lingua Franca</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">At Solmen Va</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                            <p class="hl">Sit Voluptatem Accusantium</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Nov Lingua Franca</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                            <p class="hl">Omnicos Directe</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Sit Voluptatem Accusantium</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                            <p class="hl">Differe Solmen In</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-item">
+                    REGULATION
+                    <div class="sub-menu">
+                        <div class="container">
+                            <div class="vert"></div>
+                            <div class="row">
+                                <div class="col-sm-3" style="text-align: center">
+                                    <p class="hl">REGULATION</p>
+                                    <br/>
+                                    <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="hl">Aviation Regulation</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                            <p class="hl">Economic Regulation</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Circulars</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+                                            <p class="hl">Notices</p>
+                                            <p>Li Europan lingues es familie. Lor separat myth.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Important Information Circular</p>
+                                            <p>Omnicos directe al desirabilite de un. On traductores.</p>
+                                            <p class="hl">Conflict Zone Information</p>
+                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="hl">Rule Making & Consultation</p>
+                                            <p>Por scientie, musica, sport etc, Europa usa vocabular.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-template="banner">
+    <div class="banner" data-main>
+        <div class="banner-holder">
+            <div class="banner-image" style="background-image: url('http://www.arabianbusiness.com/incoming/article540647.ece/BINARY/Saudi-Aviation.jpg')"></div>
+            <div class="banner-image" style="background-image: url('https://unsplash.it/1200/350/?random&000001')"></div>
+            <div class="banner-image" style="background-image: url('https://unsplash.it/1200/350/?random&000002')"></div>
+            <div class="banner-image" style="background-image: url('https://unsplash.it/1200/350/?random&000003')"></div>
+            <div class="banner-image" style="background-image: url('https://unsplash.it/1200/350/?random&000004')"></div>
+            <div class="banner-image" style="background-image: url('https://unsplash.it/1200/350/?random&000005')"></div>
+        </div>
+    </div>
+</div>
+<div data-template="slider" ng-controller="SliderCtrl">
+    <div class="slider" data-main>
+        <div class="container">
+            <div class="slider-box">
+                <div class="slider-header">
+                    <div class="header-left hidden-xs">15:23 &nbsp; Sunday, 12 July 2015</div>
+                    <h2 class="header-right">Latest News</h2>
+
+                    <div class="slider-dots">
+                        <div class="slider-dot" ng-click="setPosition($index)" ng-class="{active:dotIndex == $index}" ng-repeat="i in getDots() track by $index"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="slider-items">
+                        <div class="slider-holder" style="will-change:transform;">
+                            <div class="slider-item" ng-style="">
+                                <div class="item-image" style="background-image: url('http://www.msc-sa.com/electro/media/k2/galleries/3/p18skbaeh81fvrht811tf3410ds5.jpg')"></div>
+                                <div class="item-text">
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
+                                </div>
+                            </div>
+                            <div class="slider-item">
+                                <div class="item-image" style="background-image: url('http://www.tradeandexportme.com/wp-content/uploads/2013/08/travel.jpg')"></div>
+                                <div class="item-text">
+                                    <p>Aenean commodo ligula eget dolor. Aenean massa.</p>
+                                </div>
+                            </div>
+                            <div class="slider-item">
+                                <div class="item-image" style="background-image: url('http://www.msc-sa.com/electro/media/k2/galleries/3/p18skbaeh81qmheg12601m3q1nfi6.jpg')"></div>
+                                <div class="item-text">
+                                    <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                                </div>
+                            </div>
+                            <div class="slider-item">
+                                <div class="item-image" style="background-image: url('https://unsplash.it/700/350/?random&3')"></div>
+                                <div class="item-text">
+                                    <p>Nulla consequat massa quis enim.</p>
+                                </div>
+                            </div>
+                            <div class="slider-item">
+                                <div class="item-image" style="background-image: url('https://unsplash.it/700/350/?random&4')"></div>
+                                <div class="item-text">
+                                    <p>Aenean commodo ligula eget dolor. Aenean massa.</p>
+                                </div>
+                            </div>
+                            <div class="slider-item">
+                                <div class="item-image" style="background-image: url('https://unsplash.it/700/350/?random&5')"></div>
+                                <div class="item-text">
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2 style="text-align: center; margin:0;">General Authority of Civil Aviation</h2>
+            </div>
+
+            <div class="slider-bottom"></div>
+
+            <div class="slider-blue-box">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="col-sm-12">
+                            <div class="blue-select" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                <div class="clearfix" ng-click="changeActive()">
+                                    <div class="blue-icon">
+                                        <i class="fa fa-exclamation"></i>
+                                    </div>
+                                    <div class="select-text">
+                                        Information
+                                        <i class="fa fa-angle-down select-arrow"></i>
+                                    </div>
+                                </div>
+
+                                <div class="select-content">
+                                    <p>Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues.</p>
+
+                                    <p>Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="col-sm-12">
+                            <div class="blue-select" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                <div class="clearfix" ng-click="changeActive()">
+                                    <div class="blue-icon">
+                                        <i class="fa fa-bullhorn"></i>
+                                    </div>
+                                    <div class="select-text">
+                                        Announcements
+                                        <i class="fa fa-angle-down select-arrow"></i>
+                                    </div>
+                                </div>
+
+                                <div class="select-content">
+                                    <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.</p>
+
+                                    <p>Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div data-main>
+
+<div class="container">
+    <div data-template="home-boxes">
+        <div class="home-boxes">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <img src="public/img/svg/pilot.svg" alt=""/>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">Frequent Questions</div>
+                            <div class="box-content">
+                                <div class="box-questions">
+                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                        <div class="question-title" ng-click="changeActive()">
+                                            <div class="question-status">
+                                                <i class="fa fa-angle-down"></i>
+                                                <i class="fa fa-angle-right"></i>
+                                            </div>
+                                            What are the manditory requirements for pilot flights to Saudi Arabia?
+                                        </div>
+
+                                        <div class="question-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                        </div>
+                                    </div>
+                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                                        <div class="question-title" ng-click="changeActive()">
+                                            <div class="question-status">
+                                                <i class="fa fa-angle-down"></i>
+                                                <i class="fa fa-angle-right"></i>
+                                            </div>
+                                            I’m a pilot, how do I apply for duis dolore te feugaitliber KSA esit soluta nobis eleifend?
+                                        </div>
+
+                                        <div class="question-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                        </div>
+                                    </div>
+                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                        <div class="question-title" ng-click="changeActive()">
+                                            <div class="question-status">
+                                                <i class="fa fa-angle-down"></i>
+                                                <i class="fa fa-angle-right"></i>
+                                            </div>
+                                            What kind of pilot licence duis dolore te feugait liber tempor cum soluta nobis?
+                                        </div>
+
+                                        <div class="question-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                        </div>
+                                    </div>
+                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                        <div class="question-title" ng-click="changeActive()">
+                                            <div class="question-status">
+                                                <i class="fa fa-angle-down"></i>
+                                                <i class="fa fa-angle-right"></i>
+                                            </div>
+                                            I’d like to make an application to duis dolore te feugait liber tempor cum soluta nobis?
+                                        </div>
+
+                                        <div class="question-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                        </div>
+                                    </div>
+                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                        <div class="question-title" ng-click="changeActive()">
+                                            <div class="question-status">
+                                                <i class="fa fa-angle-down"></i>
+                                                <i class="fa fa-angle-right"></i>
+                                            </div>
+                                            Who do I contact when I want to tempor soluta nobis eleifend delenit augue duis dolore?
+                                        </div>
+
+                                        <div class="question-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <i class="fa fa-external-link"></i>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">Important Links</div>
+                            <div class="box-content">
+                                <ul>
+                                    <li>Lorem ipsum dolor sit amet</li>
+                                    <li>Consectetuer adipiscing elit</li>
+                                    <li>Aenean commodo ligula eget dolor</li>
+                                    <li>Cum sociis natoque penatibus et magnis</li>
+                                    <li>Nascetur ridiculus mus</li>
+                                </ul>
+
+                                <div class="box-highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <i class="fa fa-plane"></i>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">Check Destination</div>
+                            <div class="box-content">
+                                <div class="in block">
+                                    <select>
+                                        <option value="">Select Destination</option>
+                                        <option>Saudi Arabia</option>
+                                        <option>United Kingdom</option>
+                                    </select>
+
+                                    <div class="in-btn select-btn">
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                </div>
+                                <p></p>
+
+                                <div class="in">
+                                    <input type="search"/>
+                                </div>
+                                <p></p>
+
+                                <span class="gaca-btn">Submit</span>
+
+
+
+                                <hr/>
+
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        Today
+                                        <div class="thin">30° <i class="fa fa-tint" style="color: #add8e6"></i></div>
+
+                                    </div>
+                                    <div class="col-xs-6">
+                                        Tomorrow
+                                        <div class="thin">42° <i class="fa fa-sun-o" style="color: yellow"></i></div>
+
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <!--<i class="fa fa-plane"></i>-->
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">Map</div>
+                            <div class="box-content" style="height: 120px;">
+
+                            </div>
+
+                            <div class="box-side" style="background-image: url('public/img/gaca-location-2.png')">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <i class="fa fa-plane"></i>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">&nbsp;</div>
+                            <div class="box-content" style="height: 60px;">
+
+                            </div>
+
+                            <div class="box-side" style="background-image: url('public/img/plane.png')">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <i class="fa fa-copy"></i>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">New Cockpit Tech</div>
+                            <div class="box-content">
+                                <div class="box-image" style="background-image: url('https://picjumbo.imgix.net/HNCK5322.jpg?q=90&w=1000&sharp=30')"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="box box-red clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <i class="fa fa-fire"></i>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">Important</div>
+                            <div class="box-content">
+                                <p>
+                                    <i class="fa fa-exclamation-circle"></i> &nbsp; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                                </p>
+
+                                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <img src="public/img/svg/call.svg" alt=""/>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">Get In Touch</div>
+                            <div class="box-content">
+                                <p class="thin">Our Offices</p>
+
+                                <div class="in">
+                                    <select class="gaca-select">
+                                        <option value="ABU DHABI OFFICE">ABU DHABI OFFICE</option>
+                                        <option value="DUBAI OFFICE">DUBAI OFFICE</option>
+                                        <option value="MONTREAL OFFICE">MONTREAL OFFICE</option>
+                                    </select>
+
+                                    <div class="in-btn select-btn">
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                </div>
+
+                                <hr/>
+
+                                <!--<p></p>-->
+                                <div style="clear:both">
+                                    <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4447666,<br>
+                                    <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 4054535,<br>
+                                    <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 6558 <br>
+                                    <strong style="width:100px;display:inline-block;">Email:</strong> <a href="#">info@gaca.gov.ae</a>
+                                </div>
+
+                                <hr/>
+
+                                <!--<p></p>-->
+                                7:30am to 2:30pm for GACA staff <br/>
+                                8:00am to 1:00pm for Customers <br/>
+                                Sun, Mon, Tues, Wed, Thurs
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <i class="fa fa-twitter"></i>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">GACA on Twitter</div>
+                            <div class="box-content">
+                                <div class="box-twitter">
+                                    <div class="tweets">
+                                        <div class="twitter-post">
+                                            <div class="post-image" style="background-image: url('https://randomuser.me/api/portraits/men/35.jpg')"></div>
+                                            <div class="post-content">
+                                                <div class="post-user">@riki-highflier</div>
+                                                <p>The new GACA website looks awesome!</p>
+                                            </div>
+                                        </div>
+                                        <div class="twitter-post">
+                                            <div class="post-image" style="background-image: url('https://randomuser.me/api/portraits/men/36.jpg')"></div>
+                                            <div class="post-content">
+                                                <div class="post-user">@faisal_mohammed</div>
+                                                <p>Enjoyed the conference yesterday. Can't wait to sleep on the plane!</p>
+                                            </div>
+                                        </div>
+                                        <div class="twitter-post">
+                                            <div class="post-image" style="background-image: url('https://randomuser.me/api/portraits/men/36.jpg')"></div>
+                                            <div class="post-content">
+                                                <div class="post-user">@faisal_mohammed</div>
+                                                <p>Boeing offers AW101 navigation upgrade http://goo.gl/3PPJqh #Ascent #Aviation #News</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="social-icons">
+                                        <i class="fa fa-facebook" style="color: #3b5998"></i>
+                                        <i class="fa fa-twitter" style="color: #55acee"></i>
+                                        <i class="fa fa-youtube" style="color: #cd201f"></i>
+                                        <i class="fa fa-google-plus" style="color: #dd4b39"></i>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                                <i class="fa fa-pencil"></i>
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">Provide Feedback</div>
+                            <div class="box-content">
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                                <hr/>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                                <p>
+                                   <span class="in">
+                                    <input type="text">
+
+                                    <span class="in-btn">
+                                        <i class="fa fa-caret-down"></i>
+                                    </span>
+                                </span>
+                                </p>
+
+                                <!--<p>&nbsp;</p>-->
+                                <p><span class="gaca-btn">Submit</span></p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!--footer.ejs-->
+
+<div data-template="footer">
+    <footer id="footer" data-main>
+        <div class="footer-top">
+            <div class="container">
+                <img src="public/img/appstore.png" alt=""/>
+                <img src="public/img/play.png" alt=""/>
+                <img src="public/img/amazon.png" alt=""/>
+            </div>
+        </div>
+        <div class="footer-bottom">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div>لان نهاية ألمانيا بـ. ٣٠ ابتدعها</div>
+                        <div>جعل ثم شموليةً البشريةً</div>
+                        <div>الإنزال الثانية الساحليةً</div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div> بين مع. كما هو</div>
+                        <div>الساحة الإطلاق</div>
+                        <div>هو حتى</div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div>يعبأ وبحلول</div>
+                        <div>ما بعد هامش</div>
+                        <div>الخاصّة</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</div>
+</div>
+
+<script src="public/lib.js"></script>
+<script src="public/app.js"></script>
+</body>
+</html>
