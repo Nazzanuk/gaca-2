@@ -2,7 +2,107 @@
     <div data-template="e-service" ng-controller="EServiceCtrl">
         <div class="e-service">
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-8 col-sm-push-4">
+                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box-header">
+                            <div class="box-icon">
+                            </div>
+                            <div class="box-status" ng-click="changeActive()">
+                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-minus"></i>
+                            </div>
+                            <div class="box-title">830.5: Issuing No Objection Certificate for Valid Flight</div>
+                            <div class="box-content">
+
+                                <!--<h1>830.5: Issuing No Objection Certificate for Valid Flight</h1>-->
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <p class="in block">
+                                            <select>
+                                                <option value="">PDF</option>
+                                            </select>
+
+                                            <span class="in-btn select-btn">
+                                                <i class="fa fa-caret-down"></i>
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <div class="box-highlight yellow">
+                                    <h2>Description</h2>
+
+                                    <p style="text-transform: uppercase">
+                                        This service enables the customers to obtain Initial online approval for the carriage of Firearms in accordance with Civil Aviation Regulations of the UAE. This service is subject to final approval from Airport Police. This service is mandatory and all requests should be submitted by Airlines only.
+                                    </p>
+                                </div>
+
+                                <div class="box-highlight blue">
+
+                                    <div class="psuedo-table clearfix">
+                                        <div class="col-sm-12">
+
+                                            <div class="row">
+                                                <div class="col-sm-3">Location</div>
+                                                <div class="col-sm-8">Online</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">Applicable For</div>
+                                                <div class="col-sm-8">Airlines</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">Required Documents</div>
+                                                <div class="col-sm-8">
+                                                    <p>
+                                                        1. Valid Passport copy. <br/>
+                                                        2. Valid Flight License ( if required by the country ). <br/>
+                                                        3. Flight details (type, location, id number). <br/>
+                                                        4. Official letter stating the reason for use of flight: <br/>
+                                                        - Hunting: from Travel agencies. <br/>
+                                                        - Sport competition: from organizer. <br/>
+                                                        - VIP protection: from Government entities. <br/>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">Terms and Conditions</div>
+                                                <div class="col-sm-8">Nil</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="box-highlight grey">
+                                    <h2>Files</h2>
+
+                                    <a class="hl" href="#">
+                                        <i class="fa fa-fw fa-download"></i> &nbsp; Download S&ER 830.5.pdf
+                                    </a>
+                                    <br/>
+                                    <a class="hl" href="#">
+                                        <i class="fa fa-fw fa-envelope-o"></i> &nbsp; Send me the form by email
+                                    </a>
+                                </div>
+
+                                <br/>
+
+                                <p class="gaca-btn show-e-popup">
+                                    Apply for new license &nbsp; <i class="fa fa-external-link"></i>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="col-sm-4 col-sm-pull-8">
                     <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
                         <div class="box-header">
                             <div class="box-icon">
@@ -189,106 +289,6 @@
                     </div>
                 </div>
 
-                <div class="col-sm-8">
-                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
-                        <div class="box-header">
-                            <div class="box-icon">
-                            </div>
-                            <div class="box-status" ng-click="changeActive()">
-                                <i class="fa fa-plus"></i>
-                                <i class="fa fa-minus"></i>
-                            </div>
-                            <div class="box-title">830.5: Issuing No Objection Certificate for Valid Flight</div>
-                            <div class="box-content">
-
-                                <!--<h1>830.5: Issuing No Objection Certificate for Valid Flight</h1>-->
-
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <p class="in block">
-                                            <select>
-                                                <option value="">PDF</option>
-                                            </select>
-
-                                            <span class="in-btn select-btn">
-                                                <i class="fa fa-caret-down"></i>
-                                            </span>
-                                        </p>
-                                    </div>
-                                </div>
-
-
-                                <div class="box-highlight yellow">
-                                    <h2>Description</h2>
-
-                                    <p style="text-transform: uppercase">
-                                        This service enables the customers to obtain Initial online approval for the carriage of Firearms in accordance with Civil Aviation Regulations of the UAE. This service is subject to final approval from Airport Police. This service is mandatory and all requests should be submitted by Airlines only.
-                                    </p>
-                                </div>
-
-                                <div class="box-highlight blue">
-
-                                    <div class="psuedo-table clearfix">
-                                        <div class="col-sm-12">
-
-                                            <div class="row">
-                                                <div class="col-sm-3">Location</div>
-                                                <div class="col-sm-8">Online</div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-3">Applicable For</div>
-                                                <div class="col-sm-8">Airlines</div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-3">Required Documents</div>
-                                                <div class="col-sm-8">
-                                                    <p>
-                                                        1. Valid Passport copy. <br/>
-                                                        2. Valid Flight License ( if required by the country ). <br/>
-                                                        3. Flight details (type, location, id number). <br/>
-                                                        4. Official letter stating the reason for use of flight: <br/>
-                                                        - Hunting: from Travel agencies. <br/>
-                                                        - Sport competition: from organizer. <br/>
-                                                        - VIP protection: from Government entities. <br/>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-3">Terms and Conditions</div>
-                                                <div class="col-sm-8">Nil</div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-
-                                </div>
-
-                                <div class="box-highlight grey">
-                                    <h2>Files</h2>
-
-                                    <a class="hl" href="#">
-                                        <i class="fa fa-fw fa-download"></i> &nbsp; Download S&ER 830.5.pdf
-                                    </a>
-                                    <br/>
-                                    <a class="hl" href="#">
-                                        <i class="fa fa-fw fa-envelope-o"></i> &nbsp; Send me the form by email
-                                    </a>
-                                </div>
-
-                                <br/>
-
-                                <p class="gaca-btn show-e-popup">
-                                    Apply for new license &nbsp; <i class="fa fa-external-link"></i>
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-
-                </div>
             </div>
         </div>
 

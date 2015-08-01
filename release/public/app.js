@@ -194,12 +194,6 @@ var app = angular.module('app', []);
     }]);
 }());
 (function () {
-    app.controller('HeaderCtrl', ['$scope', function ($scope) {
-
-    }]);
-}());
-
-(function () {
     app.controller('BoxCtrl', ['$scope', function ($scope) {
         $scope.data = {};
         $scope.data.active = true;
@@ -209,6 +203,12 @@ var app = angular.module('app', []);
         };
 
         $scope.changeActive = changeActive;
+    }]);
+}());
+
+(function () {
+    app.controller('HeaderCtrl', ['$scope', function ($scope) {
+
     }]);
 }());
 

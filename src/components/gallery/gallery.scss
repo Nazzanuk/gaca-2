@@ -3,6 +3,10 @@
     background: rgb(197, 206, 211);
     padding: 65px 30px 1px;
 
+    @media (max-width: 767px) {
+      padding-top: 30px;
+    }
+
     .box-highlight {
       border-left: 3px solid $prim-light;
       padding: 10px 15px;
