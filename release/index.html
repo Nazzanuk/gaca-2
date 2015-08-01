@@ -836,11 +836,11 @@
                                 <p class="thin pull-left">Departments</p>
 
                                 <div class="in pull-right">
-                                    <select class="gaca-select">
-                                        <option >Air Navigation</option>
-                                        <option >Safety & Organisation</option>
-                                        <option >Information Technology</option>
-                                        <option >Human Resources</option>
+                                    <select class="gaca-select" ng-model="contactSelect" ng-init="contactSelect = 'air-nav'">
+                                        <option value="air-nav">Air Navigation</option>
+                                        <option value="safety-org">Safety & Organisation</option>
+                                        <option value="it">Information Technology</option>
+                                        <option value="hr">Human Resources</option>
                                     </select>
 
                                     <div class="in-btn select-btn">
@@ -852,12 +852,29 @@
 
                                 <hr style="clear: both"/>
 
-                                <!--<p></p>-->
-                                <div style="clear:both">
+                                <div ng-show="contactSelect == 'air-nav'" style="clear:both">
                                     <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4447666,<br>
                                     <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 4054535,<br>
                                     <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 6558 <br>
                                     <strong style="width:100px;display:inline-block;">Email:</strong> <a href="#">info@gaca.gov.ae</a>
+                                </div>
+                                <div ng-show="contactSelect == 'safety-org'" style="clear:both">
+                                    <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4532990,<br>
+                                    <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 1778344,<br>
+                                    <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 1662 <br>
+                                    <strong style="width:100px;display:inline-block;">Email:</strong> <a href="#">safety@gaca.gov.ae</a>
+                                </div>
+                                <div ng-show="contactSelect == 'it'" style="clear:both">
+                                    <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4663944,<br>
+                                    <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 9844763,<br>
+                                    <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 2330 <br>
+                                    <strong style="width:100px;display:inline-block;">Email:</strong> <a href="#">itsupport@gaca.gov.ae</a>
+                                </div>
+                                <div ng-show="contactSelect == 'hr'" style="clear:both">
+                                    <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 1002838,<br>
+                                    <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 1002839,<br>
+                                    <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 1007 <br>
+                                    <strong style="width:100px;display:inline-block;">Email:</strong> <a href="#">hr@gaca.gov.ae</a>
                                 </div>
 
                                 <hr/>

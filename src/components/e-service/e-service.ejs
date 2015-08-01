@@ -103,7 +103,8 @@
 
                 </div>
                 <div class="col-sm-4 col-sm-pull-8">
-                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+
+                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
                         <div class="box-header">
                             <div class="box-icon">
                                 <img src="public/img/svg/call.svg" alt=""/>
@@ -114,13 +115,14 @@
                             </div>
                             <div class="box-title">Get In Touch</div>
                             <div class="box-content">
-                                <p class="thin">Our Offices</p>
+                                <p class="thin pull-left">Departments</p>
 
-                                <div class="in">
-                                    <select class="gaca-select">
-                                        <option value="ABU DHABI OFFICE">ABU DHABI OFFICE</option>
-                                        <option value="DUBAI OFFICE">DUBAI OFFICE</option>
-                                        <option value="MONTREAL OFFICE">MONTREAL OFFICE</option>
+                                <div class="in pull-right">
+                                    <select class="gaca-select" ng-model="contactSelect" ng-init="contactSelect = 'air-nav'">
+                                        <option value="air-nav">Air Navigation</option>
+                                        <option value="safety-org">Safety & Organisation</option>
+                                        <option value="it">Information Technology</option>
+                                        <option value="hr">Human Resources</option>
                                     </select>
 
                                     <div class="in-btn select-btn">
@@ -128,15 +130,33 @@
                                     </div>
                                 </div>
 
-                                <hr/>
 
-                                <!--<p></p>-->
-                                <div style="clear:both">
+
+                                <hr style="clear: both"/>
+
+                                <div ng-show="contactSelect == 'air-nav'" style="clear:both">
                                     <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4447666,<br>
                                     <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 4054535,<br>
                                     <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 6558 <br>
-                                    <strong style="width:100px;display:inline-block;">Email:</strong>
-                                    <a href="#">info@gaca.gov.ae</a>
+                                    <strong style="width:100px;display:inline-block;">Email:</strong> <a href="#">info@gaca.gov.ae</a>
+                                </div>
+                                <div ng-show="contactSelect == 'safety-org'" style="clear:both">
+                                    <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4532990,<br>
+                                    <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 1778344,<br>
+                                    <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 1662 <br>
+                                    <strong style="width:100px;display:inline-block;">Email:</strong> <a href="#">safety@gaca.gov.ae</a>
+                                </div>
+                                <div ng-show="contactSelect == 'it'" style="clear:both">
+                                    <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4663944,<br>
+                                    <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 9844763,<br>
+                                    <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 2330 <br>
+                                    <strong style="width:100px;display:inline-block;">Email:</strong> <a href="#">itsupport@gaca.gov.ae</a>
+                                </div>
+                                <div ng-show="contactSelect == 'hr'" style="clear:both">
+                                    <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 1002838,<br>
+                                    <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 1002839,<br>
+                                    <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 1007 <br>
+                                    <strong style="width:100px;display:inline-block;">Email:</strong> <a href="#">hr@gaca.gov.ae</a>
                                 </div>
 
                                 <hr/>
@@ -194,6 +214,8 @@
                                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
 
                                             <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+                                            <a href="#"><strong><i class="fa fa-angle-right"></i> &nbsp; Download PDF</strong></a>
                                         </div>
                                     </div>
                                     <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
@@ -209,6 +231,8 @@
                                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
 
                                             <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+                                            <a href="#"><strong><i class="fa fa-angle-right"></i> &nbsp; Download PDF</strong></a>
                                         </div>
                                     </div>
                                     <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
@@ -224,36 +248,8 @@
                                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
 
                                             <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                                        </div>
-                                    </div>
-                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
-                                        <div class="question-title" ng-click="changeActive()">
-                                            <div class="question-status">
-                                                <i class="fa fa-angle-down"></i>
-                                                <i class="fa fa-angle-right"></i>
-                                            </div>
-                                            I’d like to make an application to duis dolore te feugait liber tempor cum soluta nobis?
-                                        </div>
 
-                                        <div class="question-content">
-                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-
-                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                                        </div>
-                                    </div>
-                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
-                                        <div class="question-title" ng-click="changeActive()">
-                                            <div class="question-status">
-                                                <i class="fa fa-angle-down"></i>
-                                                <i class="fa fa-angle-right"></i>
-                                            </div>
-                                            Who do I contact when I want to tempor soluta nobis eleifend delenit augue duis dolore?
-                                        </div>
-
-                                        <div class="question-content">
-                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-
-                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                            <a href="#"><strong><i class="fa fa-angle-right"></i> &nbsp; Download PDF</strong></a>
                                         </div>
                                     </div>
                                 </div>
