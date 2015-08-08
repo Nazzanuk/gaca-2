@@ -73,7 +73,11 @@
                     </div>
                 </div>
                 <div style="width: 5px;display: inline-block" class="hidden-xs"></div>
-                <i class="fa fa-user  hidden-xs"></i>
+                <span class="show-login-popup hidden-xs">
+                    <i class="fa fa-user"></i>
+                    <span class="">&nbsp; Login</span>
+                </span>
+
 
                 <a class="pull-right" href="/">
                     <span class="hidden-sm hidden-xs">General Authority of Civil Aviation</span>
@@ -387,7 +391,8 @@
 </div>
 
 <div data-template="login" data-ng-controller="LoginCtrl">
-    <div class="login">
+    <div class="login-popup gaca-popup">
+        <div class="popup-overlay hide-login-popup"></div>
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
@@ -415,7 +420,7 @@
 
                         <hr/>
                         <p>
-                            <span class="gaca-btn pull-right show-login-popup">Register &nbsp; <i class="fa fa-user"></i></span>
+                            <span class="gaca-btn pull-right hide-login-popup">Close &nbsp; <i class="fa fa-times"></i></span>
                             <span class="gaca-btn">Login &nbsp; <i class="fa fa-lock"></i></span>
                         </p>
 
@@ -429,8 +434,8 @@
     </div>
 
 
-    <div class="login-popup gaca-popup">
-        <div class="popup-overlay hide-login-popup"></div>
+    <div class="register-popup gaca-popup">
+        <div class="popup-overlay hide-register-popup"></div>
         <div class="container">
             <div class="row">
 

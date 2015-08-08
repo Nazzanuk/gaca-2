@@ -305,6 +305,7 @@ ul {
     background: rgba(0, 0, 0, 0.1); }
   [data-template="header"] .header .header-sub {
     background: rgba(0, 0, 0, 0.4);
+    background: #508bea;
     height: 35px;
     line-height: 35px;
     color: white; }
@@ -862,37 +863,6 @@ ul {
               transition: .2s;
       -webkit-filter: grayscale(0%);
               filter: grayscale(0%); }
-
-[data-template="login"] .login {
-  background: #c5ced3;
-  padding: 65px 30px 1px;
-  min-height: 70vh; }
-  [data-template="login"] .login .box-highlight.hl {
-    border-left: 3px solid #508bea;
-    padding: 10px 15px;
-    margin-bottom: 5px;
-    -webkit-transition: .2s;
-            transition: .2s;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    text-transform: none; }
-    [data-template="login"] .login .box-highlight.hl:hover {
-      border-left-width: 6px;
-      color: #508bea;
-      padding-left: 12px; }
-      [data-template="login"] .login .box-highlight.hl:hover .gallery-image {
-        -webkit-filter: grayscale(0%);
-                filter: grayscale(0%); }
-    [data-template="login"] .login .box-highlight.hl.hl-yellow {
-      border-color: gold; }
-    [data-template="login"] .login .box-highlight.hl.hl-red {
-      border-color: #ce1029; }
-    [data-template="login"] .login .box-highlight.hl.hl-none {
-      padding-left: 15px;
-      border-left: none;
-      border-color: transparent;
-      margin-bottom: 30px; }
 
 [data-template="dashboard"] .dashboard {
   background: #c5ced3;
