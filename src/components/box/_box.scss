@@ -7,6 +7,11 @@
   position: relative;
   overflow: hidden;
 
+  a {
+    color: inherit;
+    font-weight: bold;
+  }
+
   .box-side {
     position: absolute;
     top: 0;
@@ -138,6 +143,10 @@
   &.box-white {
     background: white;
     color: #555;
+
+//    a {
+//      color: $prim-light;
+//    }
 
     .box-header {
       color: $prim-dark;

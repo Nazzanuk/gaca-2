@@ -1,63 +1,22 @@
-<div data-template="login" data-ng-controller="LoginCtrl">
-    <div class="login-popup gaca-popup">
-        <div class="popup-overlay hide-login-popup"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
-                    <div class="popup-block clearfix">
-
-                        <p class="pull-right">
-                            <a href="/register.html" class="gaca-btn hide-login-popup" style="margin-top: 5px;">Register &nbsp; <i class="fa fa-user"></i></a>
-                        </p>
-                        <h1>Login to GACA</h1>
-                        <!--<br/>-->
-
-                        <!--<h2>Existing User</h2>-->
-                        <hr/>
-                        <p class=""><strong>Username</strong></p>
-
-                        <p class="in block">
-                            <input type="text" placeholder="Username">
-                        </p>
-
-                        <p class=""><strong>Password</strong></p>
-
-                        <p class="in block">
-                            <input type="password" placeholder="Password">
-                        </p>
-
-                        <p><a href="#">Forgot Password?</a></p>
-
-                        <hr/>
-                        <div class="clearfix">
-                            <p class="gaca-btn pull-right hide-login-popup">Close &nbsp; <i class="fa fa-times"></i></p>
-                            <p class="gaca-btn pull-left" style="margin-right: 15px;">Login &nbsp; <i class="fa fa-lock"></i></p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="register-popup gaca-popup">
-        <div class="popup-overlay hide-register-popup"></div>
-        <div class="container">
+<div class="container">
+    <div data-template="register">
+        <div class="register">
             <div class="row">
 
                 <div class="col-md-2 col-sm-1"></div>
                 <div class="col-md-8 col-sm-9">
-                    <div class="popup-block">
+                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
                         <h1>Registration</h1>
                         <hr/>
 
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
                         <p>
                             <strong>The customer is requires to obtain the below approval to be able to receive the service: Approval from Airline Group Security.</strong>
                         </p>
                         <br/>
 
-                        <h2>Form</h2>
+                        <h2>Enter Your Details</h2>
 
                         <div class="psuedo-table clearfix">
                             <div class="col-sm-12">
@@ -181,6 +140,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>

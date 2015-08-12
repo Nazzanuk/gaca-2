@@ -74,15 +74,16 @@ gulp.task("copy-public", function(){
 
 gulp.task("gen-html", function(){
     var pages = {
-        index: ['head', 'menu', 'login', 'header', 'banner', 'slider', 'home-boxes', 'footer'],
-        "e-services-search": ['head', 'menu', 'login', 'header', 'e-search', 'footer'],
-        "e-catalogue": ['head', 'menu', 'login', 'header', 'e-catalogue', 'footer'],
-        "e-service": ['head', 'menu', 'login', 'header', 'e-service', 'footer'],
-        "search": ['head', 'menu', 'login', 'header', 'search', 'footer'],
-        "gallery": ['head', 'menu', 'login', 'header', 'gallery', 'footer'],
-        "department": ['head', 'menu', 'login', 'header', 'department', 'footer'],
-        "content": ['head', 'menu', 'login', 'header', 'content', 'footer'],
-        "dashboard": ['head', 'menu', 'login', 'header', 'dashboard', 'footer']
+        index: ['head', 'menu', 'login', 'popup', 'header', 'banner', 'slider', 'home-boxes', 'footer'],
+        "e-services-search": ['head', 'menu', 'login', 'popup', 'header', 'e-search', 'footer'],
+        "e-catalogue": ['head', 'menu', 'login', 'popup', 'header', 'e-catalogue', 'footer'],
+        "e-service": ['head', 'menu', 'login', 'popup', 'header', 'e-service', 'footer'],
+        "search": ['head', 'menu', 'login', 'popup', 'header', 'search', 'footer'],
+        "gallery": ['head', 'menu', 'login', 'popup', 'header', 'gallery', 'footer'],
+        "department": ['head', 'menu', 'login', 'popup', 'header', 'department', 'footer'],
+        "content": ['head', 'menu', 'login', 'popup', 'header', 'content', 'footer'],
+        "dashboard": ['head', 'menu', 'login', 'popup', 'header', 'dashboard', 'footer'],
+        "register": ['head', 'menu', 'login', 'popup', 'header', 'register', 'footer']
     };
 
     for (var i in pages){

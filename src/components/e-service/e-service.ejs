@@ -202,15 +202,15 @@
                             <div class="box-content">
                                 <div class="box-questions">
                                     <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
-                                        <div class="question-title" ng-click="changeActive()">
+                                        <div class="question-title" ng-click="showPopup()">
                                             <div class="question-status">
                                                 <i class="fa fa-angle-down"></i>
                                                 <i class="fa fa-angle-right"></i>
                                             </div>
-                                            What are the manditory requirements for pilot flights to Saudi Arabia?
+                                            <span class="popup-title">What are the manditory requirements for pilot flights to Saudi Arabia?</span>
                                         </div>
 
-                                        <div class="question-content">
+                                        <div class="question-content popup-content">
                                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
 
                                             <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
@@ -219,15 +219,15 @@
                                         </div>
                                     </div>
                                     <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
-                                        <div class="question-title" ng-click="changeActive()">
+                                        <div class="question-title" ng-click="showPopup()">
                                             <div class="question-status">
                                                 <i class="fa fa-angle-down"></i>
                                                 <i class="fa fa-angle-right"></i>
                                             </div>
-                                            I’m a pilot, how do I apply for duis dolore te feugaitliber KSA esit soluta nobis eleifend?
+                                            <span class="popup-title">I’m a pilot, how do I apply for duis dolore te feugaitliber KSA esit soluta nobis eleifend?</span>
                                         </div>
 
-                                        <div class="question-content">
+                                        <div class="question-content popup-content">
                                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
 
                                             <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
@@ -236,15 +236,15 @@
                                         </div>
                                     </div>
                                     <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
-                                        <div class="question-title" ng-click="changeActive()">
+                                        <div class="question-title" ng-click="showPopup()">
                                             <div class="question-status">
                                                 <i class="fa fa-angle-down"></i>
                                                 <i class="fa fa-angle-right"></i>
                                             </div>
-                                            What kind of pilot licence duis dolore te feugait liber tempor cum soluta nobis?
+                                            <span class="popup-title">What kind of pilot licence duis dolore te feugait liber tempor cum soluta nobis?</span>
                                         </div>
 
-                                        <div class="question-content">
+                                        <div class="question-content popup-content">
                                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
 
                                             <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
@@ -270,7 +270,7 @@
                             <div class="box-title">Important Links</div>
                             <div class="box-content">
                                 <ul>
-                                    <li>Lorem ipsum dolor sit amet</li>
+                                    <li><a href="#">Lorem ipsum dolor sit amet</a></li>
                                     <li>Consectetuer adipiscing elit</li>
                                     <li>Aenean commodo ligula eget dolor</li>
                                     <li>Cum sociis natoque penatibus et magnis</li>
@@ -365,12 +365,8 @@
                                     </div>
                                 </div>
 
-                                <p class="gaca-btn hide-e-popup">
+                                <p class="gaca-btn">
                                     Apply &nbsp; <i class="fa fa-check"></i>
-                                </p>
-
-                                <p class="gaca-btn hide-e-popup pull-right">
-                                    Close &nbsp; <i class="fa fa-times"></i>
                                 </p>
 
 

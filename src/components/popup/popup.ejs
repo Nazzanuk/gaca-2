@@ -1,0 +1,22 @@
+<div class="generic-popup gaca-popup" ng-controller="PopupCtrl">
+    <div class="popup-overlay hide-generic-popup"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="popup-block">
+                    <h1>{{getPopupHeader()}}</h1>
+                    <hr/>
+                    <div ng-bind-html="getPopupContent()"></div>
+
+                    <hr/>
+                    <p class="clearfix">
+                        <span class="gaca-btn pull-right hide-generic-popup">Close &nbsp; <i class="fa fa-times"></i></span>
+                        <!--<span class="gaca-btn pull-left" style="margin-right: 15px;">Generic &nbsp; <i class="fa fa-lock"></i></span>-->
+                        <!--<span class="gaca-btn pull-left show-register-popup hide-generic-popup">Register &nbsp; <i class="fa fa-user"></i></span>-->
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

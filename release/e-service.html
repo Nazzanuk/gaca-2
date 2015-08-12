@@ -41,10 +41,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
-                    <div class="popup-block">
+                    <div class="popup-block clearfix">
+
+                        <p class="pull-right">
+                            <a href="/register.html" class="gaca-btn hide-login-popup" style="margin-top: 5px;">Register &nbsp; <i class="fa fa-user"></i></a>
+                        </p>
                         <h1>Login to GACA</h1>
-                        <hr/>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
                         <!--<br/>-->
 
                         <!--<h2>Existing User</h2>-->
@@ -64,11 +66,10 @@
                         <p><a href="#">Forgot Password?</a></p>
 
                         <hr/>
-                        <p class="clearfix">
-                            <span class="gaca-btn pull-right hide-login-popup">Close &nbsp; <i class="fa fa-times"></i></span>
-                            <span class="gaca-btn pull-left" style="margin-right: 15px;">Login &nbsp; <i class="fa fa-lock"></i></span>
-                            <span class="gaca-btn pull-left show-register-popup hide-login-popup">Register &nbsp; <i class="fa fa-user"></i></span>
-                        </p>
+                        <div class="clearfix">
+                            <p class="gaca-btn pull-right hide-login-popup">Close &nbsp; <i class="fa fa-times"></i></p>
+                            <p class="gaca-btn pull-left" style="margin-right: 15px;">Login &nbsp; <i class="fa fa-lock"></i></p>
+                        </div>
                     </div>
                 </div>
 
@@ -220,6 +221,28 @@
 
     </div>
 </div>
+<div class="generic-popup gaca-popup" ng-controller="PopupCtrl">
+    <div class="popup-overlay hide-generic-popup"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="popup-block">
+                    <h1>{{getPopupHeader()}}</h1>
+                    <hr/>
+                    <div ng-bind-html="getPopupContent()"></div>
+
+                    <hr/>
+                    <p class="clearfix">
+                        <span class="gaca-btn pull-right hide-generic-popup">Close &nbsp; <i class="fa fa-times"></i></span>
+                        <!--<span class="gaca-btn pull-left" style="margin-right: 15px;">Generic &nbsp; <i class="fa fa-lock"></i></span>-->
+                        <!--<span class="gaca-btn pull-left show-register-popup hide-generic-popup">Register &nbsp; <i class="fa fa-user"></i></span>-->
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 <div data-template="header" data-main data-ng-controller="HeaderCtrl">
     <div class="header">
         <div class="header-line">
@@ -258,7 +281,7 @@
                     </div>
                 </div>
                 <div style="width: 5px;display: inline-block" class="hidden-xs"></div>
-                <span class="show-login-popup hidden-xs" style="cursor: pointer">
+                <span class="show-login-popup" style="cursor: pointer">
                     <i class="fa fa-user"></i>
                     <span class="">&nbsp; Login</span>
                 </span>
@@ -779,15 +802,15 @@
                             <div class="box-content">
                                 <div class="box-questions">
                                     <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
-                                        <div class="question-title" ng-click="changeActive()">
+                                        <div class="question-title" ng-click="showPopup()">
                                             <div class="question-status">
                                                 <i class="fa fa-angle-down"></i>
                                                 <i class="fa fa-angle-right"></i>
                                             </div>
-                                            What are the manditory requirements for pilot flights to Saudi Arabia?
+                                            <span class="popup-title">What are the manditory requirements for pilot flights to Saudi Arabia?</span>
                                         </div>
 
-                                        <div class="question-content">
+                                        <div class="question-content popup-content">
                                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
 
                                             <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
@@ -796,15 +819,15 @@
                                         </div>
                                     </div>
                                     <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
-                                        <div class="question-title" ng-click="changeActive()">
+                                        <div class="question-title" ng-click="showPopup()">
                                             <div class="question-status">
                                                 <i class="fa fa-angle-down"></i>
                                                 <i class="fa fa-angle-right"></i>
                                             </div>
-                                            I’m a pilot, how do I apply for duis dolore te feugaitliber KSA esit soluta nobis eleifend?
+                                            <span class="popup-title">I’m a pilot, how do I apply for duis dolore te feugaitliber KSA esit soluta nobis eleifend?</span>
                                         </div>
 
-                                        <div class="question-content">
+                                        <div class="question-content popup-content">
                                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
 
                                             <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
@@ -813,15 +836,15 @@
                                         </div>
                                     </div>
                                     <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
-                                        <div class="question-title" ng-click="changeActive()">
+                                        <div class="question-title" ng-click="showPopup()">
                                             <div class="question-status">
                                                 <i class="fa fa-angle-down"></i>
                                                 <i class="fa fa-angle-right"></i>
                                             </div>
-                                            What kind of pilot licence duis dolore te feugait liber tempor cum soluta nobis?
+                                            <span class="popup-title">What kind of pilot licence duis dolore te feugait liber tempor cum soluta nobis?</span>
                                         </div>
 
-                                        <div class="question-content">
+                                        <div class="question-content popup-content">
                                             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
 
                                             <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
@@ -847,7 +870,7 @@
                             <div class="box-title">Important Links</div>
                             <div class="box-content">
                                 <ul>
-                                    <li>Lorem ipsum dolor sit amet</li>
+                                    <li><a href="#">Lorem ipsum dolor sit amet</a></li>
                                     <li>Consectetuer adipiscing elit</li>
                                     <li>Aenean commodo ligula eget dolor</li>
                                     <li>Cum sociis natoque penatibus et magnis</li>
@@ -942,12 +965,8 @@
                                     </div>
                                 </div>
 
-                                <p class="gaca-btn hide-e-popup">
+                                <p class="gaca-btn">
                                     Apply &nbsp; <i class="fa fa-check"></i>
-                                </p>
-
-                                <p class="gaca-btn hide-e-popup pull-right">
-                                    Close &nbsp; <i class="fa fa-times"></i>
                                 </p>
 
 

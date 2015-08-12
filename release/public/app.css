@@ -14,6 +14,9 @@ body {
     body {
       padding-top: 40px; } }
 
+.no-scroll {
+  overflow: hidden; }
+
 .fa {
   line-height: inherit !important; }
 
@@ -267,6 +270,11 @@ ul {
   min-width: 100vw; }
   [data-template="header"] .header .container {
     position: relative; }
+  @media (max-width: 767px) {
+    [data-template="header"] .header .show-login-popup {
+      padding: 0 15px;
+      height: 40px;
+      line-height: 40px; } }
   [data-template="header"] .header .header-line {
     padding: 25px;
     height: 75px;
@@ -316,8 +324,11 @@ ul {
       font-weight: 600;
       cursor: pointer; }
       [data-template="header"] .header .header-sub .sub-item:hover {
-        background: #508bea;
-        color: white; }
+        margin-top: 3px;
+        background: white;
+        color: #508bea;
+        line-height: 32px;
+        border-radius: 4px 4px 0 0; }
         [data-template="header"] .header .header-sub .sub-item:hover .sub-menu {
           display: block; }
       [data-template="header"] .header .header-sub .sub-item .sub-menu {
@@ -329,9 +340,11 @@ ul {
         left: 0;
         right: 0;
         background: white;
-        border-top: 3px solid #508bea;
         color: #555;
         text-align: right; }
+        [data-template="header"] .header .header-sub .sub-item .sub-menu .row > [class^="col-"] {
+          border-right: 1px solid #eee;
+          height: 100%; }
         [data-template="header"] .header .header-sub .sub-item .sub-menu .vert {
           position: absolute;
           top: 0;
@@ -341,7 +354,7 @@ ul {
           background: none;
           /* left: 0; */
           width: 25%;
-          border-right: 1px solid #f7f7f7;
+          border-right: 1px solid #eee;
           margin-left: -15px; }
 
 [data-template="menu"] .menu {
@@ -397,6 +410,9 @@ ul {
   margin-bottom: 30px;
   position: relative;
   overflow: hidden; }
+  .box a {
+    color: inherit;
+    font-weight: bold; }
   .box .box-side {
     position: absolute;
     top: 0;
@@ -1100,6 +1116,14 @@ ul {
     [data-template="search"] .search .search-after:hover {
       background: #456bb1;
       color: white; }
+
+[data-template="register"] .register {
+  background: #c5ced3;
+  padding: 65px 30px 30px;
+  color: white; }
+  @media (max-width: 767px) {
+    [data-template="register"] .register {
+      padding-top: 30px; } }
 
 [data-template="gallery"] .gallery {
   background: #c5ced3;

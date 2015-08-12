@@ -11,6 +11,14 @@
       position: relative;
     }
 
+    .show-login-popup {
+      @media(max-width: 767px) {
+        padding: 0 15px;
+        height: 40px;
+        line-height: 40px;
+      }
+    }
+
     .header-line {
       padding: 25px;
       height: 75px;
@@ -73,10 +81,12 @@
         font-weight: 600;
         cursor: pointer;
 
-
         &:hover {
-          background: $prim-light;
-          color: white;
+          margin-top: 3px;
+          background: white;
+          color: $prim-light;
+          line-height: 32px;
+          border-radius: 4px 4px 0 0;
           .sub-menu {
             display: block;
           }
@@ -92,10 +102,16 @@
           left: 0;
           right: 0;
           background: white;
-//          height: 200px;
-          border-top:3px solid $prim-light;
+          //          height: 200px;
+          //          border-top:3px solid $prim-light;
           color: #555;
           text-align: right;
+
+          .row > [class^="col-"] {
+
+            border-right: 1px solid #eee;
+            height: 100%;
+          }
 
           .vert {
             position: absolute;
@@ -106,7 +122,7 @@
             background: none;
             /* left: 0; */
             width: 25%;
-            border-right: 1px solid $light-grey;
+            border-right: 1px solid #eee;
             margin-left: -15px;
           }
 

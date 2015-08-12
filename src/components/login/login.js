@@ -1,17 +1,21 @@
 (function () {
-    app.controller('LoginCtrl', ['$scope', function ($scope) {
+    app.controller('LoginCtrl', ['$scope', 'PopupService', function ($scope, PopupService) {
         var showLoginPopup = function () {
             $('.login-popup').velocity('stop').velocity('transition.fadeIn', 200);
+            $('html').addClass('no-scroll');
         };
         var hideLoginPopup = function () {
             $('.login-popup').velocity('stop').velocity('transition.fadeOut', 200);
+            $('html').removeClass('no-scroll');
         };
 
         var showRegisterPopup = function () {
             $('.register-popup').velocity('stop').velocity('transition.fadeIn', 200);
+            $('html').addClass('no-scroll');
         };
         var hideRegisterPopup = function () {
             $('.register-popup').velocity('stop').velocity('transition.fadeOut', 200);
+            $('html').removeClass('no-scroll');
         };
 
         var events = function () {

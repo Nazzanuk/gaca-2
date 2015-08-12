@@ -18,6 +18,10 @@ body {
   }
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .fa {
   line-height: inherit !important;
 }
