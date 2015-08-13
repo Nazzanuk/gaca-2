@@ -1,7 +1,30 @@
 [data-template="dashboard"] {
   .dashboard {
     background: rgb(197, 206, 211);
-    padding: 65px 30px 1px;
-    min-height: 70vh;
+    padding: 45px 10px 1px;
+    min-height: 80vh;
+
+    @media (max-width: 991px) {
+      padding-top: 15px;
+    }
+  }
+
+  .psuedo-table {
+    .gaca-btn {
+      font-weight: bold;
+      position: relative;
+      margin-left: 15px;
+      margin-bottom: 5px;
+      color: white;
+      //      margin-top: 15px;
+      float: right;
+      clear: right;
+      text-decoration:none;
+
+      &:hover {
+        color: $prim-light;
+      }
+
+    }
   }
 }

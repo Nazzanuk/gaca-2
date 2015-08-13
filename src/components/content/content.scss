@@ -4,6 +4,7 @@
     position: relative;
     background-position: center;
     background-size: cover;
+    margin-bottom: -30px;
 
     @media (max-width: 767px) {
       height: 250px;
@@ -12,8 +13,14 @@
   }
 
   .content {
+
     background: rgb(197, 206, 211);
-    padding: 30px 30px 1px;
+    padding: 45px 10px 1px;
+    min-height: 80vh;
+
+    @media (max-width: 991px) {
+      padding-top:15px;
+    }
 
     img {
       width: 100%;

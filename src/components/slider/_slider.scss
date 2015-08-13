@@ -5,7 +5,7 @@
     .slider-box {
       border-radius: 4px 4px 0 0;
       background: white;
-      padding: 15px;
+      padding: 10px;
       position: relative;
       z-index: 1;
       overflow: hidden;
@@ -17,12 +17,12 @@
 
         .header-right {
           position: absolute;
-          right: 30px;
+          right: 20px;
         }
 
         .header-left {
           position: absolute;
-          left: 30px;
+          left: 20px;
         }
 
         .slider-dots {
@@ -59,7 +59,7 @@
         .slider-item {
           display: inline-block;
           width: (100%/3);
-          padding: 15px;
+          padding: 10px;
           vertical-align: top;
 
           @media(max-width: 767px) {
@@ -76,10 +76,14 @@
           .item-text {
             font-size: 12px;
             background: $light-grey;
-            padding: 15px;
+            padding: 10px;
             min-height: 75px;
             border-radius: 0 0 4px 4px;
             white-space: initial;
+
+            @media(max-width: 767px) {
+              font-size: 12px;
+            }
           }
         }
       }
@@ -87,33 +91,33 @@
 
     .slider-bottom {
       width: 0;
-      border: transparent 15px solid;
-      border-right: 15px solid white;
-      border-bottom: 15px solid white;
+      border: transparent 10px solid;
+      border-right: 10px solid white;
+      border-bottom: 10px solid white;
       margin: auto;
       transform: rotate(45deg);
       margin-top: -16px;
       position: absolute;
       left: 50%;
-      margin-left: -15px;
+      margin-left: -10px;
       z-index: 2;
     }
 
     .slider-blue-box {
       background: $prim-dark;
-      padding: 30px 15px 15px;
+      padding: 20px 10px 10px;
       position: relative;
       z-index: 1;
       overflow: hidden;
 
       .blue-select {
         background: $prim-light;
-        padding: 10px 15px;
+        padding: 10px;
         border-radius: 4px;
 //        height: 60px;
         line-height: 40px;
         color: white;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
 
         .clearfix {
           cursor: pointer;
@@ -143,7 +147,8 @@
           .select-arrow {
             font-size: 25px;
             float: right;
-            margin-left: 15px;
+            margin-left: 10px;
+            margin-right: 10px;
             transition: .2s;
             transform: rotate(-180deg);
           }

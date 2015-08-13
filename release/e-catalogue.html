@@ -225,9 +225,9 @@
     <div class="popup-overlay hide-generic-popup"></div>
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-sm-offset-3">
+            <div class="col-sm-8 col-sm-offset-2">
                 <div class="popup-block">
-                    <h1>{{getPopupHeader()}}</h1>
+                    <h2>{{getPopupHeader()}}</h2>
                     <hr/>
                     <div ng-bind-html="getPopupContent()"></div>
 
@@ -251,48 +251,42 @@
             </div>
 
             <div class="container">
-                <div class="in sm hidden-xs">
+                <div class="in sm hidden-xs search-box">
                     <input type="text"/>
 
                     <div class="in-btn">
                         <i class="fa fa-search"></i>
                     </div>
                 </div>
-                <div style="width: 5px;display: inline-block" class="hidden-xs"></div>
-                <div class="in sm hidden-xs">
-                    <select>
-                        <option value="">I'm an Airman</option>
-                        <option value="">I'm a Pilot</option>
-                    </select>
 
-                    <div class="in-btn select-btn">
-                        <i class="fa fa-caret-down"></i>
-                    </div>
-                </div>
-                <div style="width: 5px;display: inline-block" class="hidden-xs"></div>
-                <div class="in sm hidden-xs">
-                    <select>
-                        <option value="">English</option>
-                        <option value="">Arabic</option>
-                    </select>
+                <div class="vd hidden-xs"></div>
 
-                    <div class="in-btn select-btn">
-                        <i class="fa fa-caret-down"></i>
-                    </div>
-                </div>
-                <div style="width: 5px;display: inline-block" class="hidden-xs"></div>
-                <span class="show-login-popup" style="cursor: pointer">
-                    <i class="fa fa-user"></i>
-                    <span class="">&nbsp; Login</span>
+                <a href="#" class="hidden-xs"><strong>Arabic</strong></a>
+
+                <div class="vd hidden-xs"></div>
+
+                <span class="hidden-xs hidden-sm" style="cursor: pointer">
+                    <i class="fa fa-user"></i>  &nbsp;
+                    <span class="in sm">
+                        <input type="text" placeholder="Username">
+                    </span>  &nbsp;
+                    <span class="in sm">
+                        <input type="text" placeholder="Password">
+                    </span>  &nbsp;
+                    <span class="gaca-btn">Login &nbsp; <i class="fa fa-lock"></i></span>  &nbsp;
+                    <span class="gaca-btn">Register &nbsp; <i class="fa fa-user"></i></span>
                 </span>
 
+                <span class="show-login-popup hidden-md hidden-lg" style="cursor: pointer;">
+                    <i class="fa fa-user"></i> &nbsp; Login
+                </span>
 
                 <a class="pull-right" href="/">
-                    <span class="hidden-sm hidden-xs">General Authority of Civil Aviation</span>
+                    <span class="hidden-xs hidden-sm">General Authority of Civil Aviation</span>
                     <img src="public/img/gaca-logo.png" style=""/>
-                    <span class="hidden-sm hidden-xs">
-                    الهيئة العامة للطيران المدني
-                    </span>
+                    <!--<span class="hidden-sm hidden-xs">-->
+                    <!--الهيئة العامة للطيران المدني-->
+                    <!--</span>-->
                 </a>
             </div>
         </div>
@@ -300,33 +294,29 @@
         <div class="header-sub hidden-sm hidden-xs">
             <div class="container" style="position: static">
                 <div class="sub-item">
-                    ABOUT GACA
+                    About GACA &nbsp; <i class="fa fa-angle-down"></i>
                     <div class="sub-menu">
                         <div class="container">
                             <div class="vert"></div>
                             <div class="row">
                                 <div class="col-sm-3" style="text-align: center">
-                                    <p class="hl">ABOUT GACA</p>
+                                    <p class="hl">About GACA</p>
                                     <br/>
                                     <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
                                 </div>
                                 <div class="col-sm-9">
                                     <div class="row">
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             <a class="hl" href="/">Homepage</a>
                                             <p>Li Europan lingues es familie. Lor separat myth.</p>
                                         </div>
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             <a class="hl" href="gallery.html">Media Gallery</a>
                                             <p>Li lingues differe solmen, li pronunciation vocabules.</p>
                                         </div>
-                                        <div class="col-sm-3">
-                                            <p class="hl">Differe Solmen In</p>
+                                        <div class="col-sm-4">
+                                            <p class="hl" href="#">Differe Solmen In</p>
                                             <p>Li Europan lingues es familie. Lor separat myth.</p>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <p class="hl">At Solmen Va</p>
-                                            <p>Li lingues differe solmen, li pronunciation vocabules.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -335,13 +325,13 @@
                     </div>
                 </div>
                 <div class="sub-item">
-                    SECTORS
+                    Sectors &nbsp; <i class="fa fa-angle-down"></i>
                     <div class="sub-menu">
                         <div class="container">
                             <div class="vert"></div>
                             <div class="row">
                                 <div class="col-sm-3" style="text-align: center">
-                                    <p class="hl">SECTORS</p>
+                                    <p class="hl">Sectors</p>
                                     <br/>
                                     <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
                                 </div>
@@ -376,13 +366,13 @@
                     </div>
                 </div>
                 <div class="sub-item">
-                    E-SERVICES
+                    E-Services &nbsp; <i class="fa fa-angle-down"></i>
                     <div class="sub-menu">
                         <div class="container">
                             <div class="vert"></div>
                             <div class="row">
                                 <div class="col-sm-3" style="text-align: center">
-                                    <p class="hl">E-SERVICES</p>
+                                    <p class="hl">E-Services</p>
                                     <br/>
                                     <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
                                 </div>
@@ -407,13 +397,13 @@
                     </div>
                 </div>
                 <div class="sub-item">
-                    OCCURRENCY REPORTING
+                    Occurrency Reporting &nbsp; <i class="fa fa-angle-down"></i>
                     <div class="sub-menu">
                         <div class="container">
                             <div class="vert"></div>
                             <div class="row">
                                 <div class="col-sm-3" style="text-align: center">
-                                    <p class="hl">OCCURRENCY REPORTING</p>
+                                    <p class="hl">Occurrency Reporting</p>
                                     <br/>
                                     <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
                                 </div>
@@ -454,13 +444,13 @@
                     </div>
                 </div>
                 <div class="sub-item">
-                    GUIDANCE
+                    Guidance &nbsp; <i class="fa fa-angle-down"></i>
                     <div class="sub-menu">
                         <div class="container">
                             <div class="vert"></div>
                             <div class="row">
                                 <div class="col-sm-3" style="text-align: center">
-                                    <p class="hl">GUIDANCE</p>
+                                    <p class="hl">Guidance</p>
                                     <br/>
                                     <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
                                 </div>
@@ -501,13 +491,13 @@
                     </div>
                 </div>
                 <div class="sub-item">
-                    LAWS
+                    Laws &nbsp; <i class="fa fa-angle-down"></i>
                     <div class="sub-menu">
                         <div class="container">
                             <div class="vert"></div>
                             <div class="row">
                                 <div class="col-sm-3" style="text-align: center">
-                                    <p class="hl">LAWS</p>
+                                    <p class="hl">Laws</p>
                                     <br/>
                                     <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
                                 </div>
@@ -548,13 +538,13 @@
                     </div>
                 </div>
                 <div class="sub-item">
-                    REGULATION
+                    Regulation &nbsp; <i class="fa fa-angle-down"></i>
                     <div class="sub-menu">
                         <div class="container">
                             <div class="vert"></div>
                             <div class="row">
                                 <div class="col-sm-3" style="text-align: center">
-                                    <p class="hl">REGULATION</p>
+                                    <p class="hl">Regulation</p>
                                     <br/>
                                     <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
                                 </div>
@@ -593,6 +583,17 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+
+        <div class="header-alert hide-alert" style="cursor: pointer">
+            <div class="container">
+                <i class="fa fa-exclamation"></i> Important Alert:
+                <span>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                </span>
+
+                <i class="fa fa-times pull-right"></i>
             </div>
         </div>
     </div>

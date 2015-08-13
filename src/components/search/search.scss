@@ -1,27 +1,20 @@
 [data-template="search"] {
   .search {
     direction: ltr;
-//    font-size: 12px;
     line-height: 35px;
     background: rgb(197, 206, 211);
-//    background: white;
-    padding: 65px 30px 30px;
+    padding: 45px 10px 1px;
+    min-height: 80vh;
 
-//    .container {
-//      background: white;
-//    }
+    @media (max-width: 991px) {
+      padding-top:15px;
+    }
 
     .search-list {
-      line-height: 25px; 
-
-//      white-space: nowrap;
-//      text-overflow: ellipsis;
-//      overflow: hidden;
-//      padding-right: 30px;
+      line-height: 25px;
 
       .search-check {
         margin: 5px 0;
-//        margin-right: -30px;
         height: 15px;
         width: 15px;
         border-radius: 30px;
@@ -51,6 +44,10 @@
         display: none;
         cursor: pointer;
         //        transition: 0.3s;
+
+        @media (max-width: 767px) {
+          font-size: 12px;
+        }
 
         .result-icon {
           float: left;
@@ -114,7 +111,7 @@
           margin-bottom: 10px;
           font-weight: bold;
           color: $prim-light;
-          font-size: 14px;
+          font-size: 12px;
         }
 
         .result-date {
@@ -157,6 +154,10 @@
       border-radius: 4px;
       display: block;
       width: 100%;
+
+      @media (max-width: 767px) {
+        font-size: 12px;
+      }
     }
 
     .search-box {
@@ -188,6 +189,10 @@
       width: 100%;
       margin-bottom: 15px;
       transition: 0.3s;
+
+      @media (max-width: 767px) {
+        font-size: 12px;
+      }
 
       &.simple {
         padding: 0 15px;

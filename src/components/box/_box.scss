@@ -1,15 +1,20 @@
 .box {
-  padding: 15px;
+  padding: 10px;
   background: $prim-dark;
   color: white;
   border-radius: 4px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   position: relative;
   overflow: hidden;
+  font-size: 13px;
 
   a {
     color: inherit;
     font-weight: bold;
+  }
+
+  p {
+    font-size: 14px;
   }
 
   .box-side {
@@ -53,7 +58,7 @@
       float: right;
       color: $prim-light;
       font-size: 18px;
-      margin-left: 15px;
+      margin-left: 10px;
       cursor: pointer;
 
       .fa-plus, .fa-minus {
@@ -80,16 +85,16 @@
     }
 
     .box-content {
-      margin: 15px 0 0;
+      margin: 10px 0 0;
       display: block;
     }
 
     .box-highlight {
-      padding: 15px 15px;
+      padding: 10px 10px;
       border-radius: 4px;
       color: white;
       background: $prim-light;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       display: block;
       text-decoration: none;
 
@@ -110,7 +115,7 @@
     }
 
     .box-image {
-      margin: 0 -15px -15px;
+      margin: 0 -10px -10px;
       height: 175px;
       background-size: cover;
       background-position: center;

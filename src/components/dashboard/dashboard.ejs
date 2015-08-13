@@ -1,13 +1,12 @@
 <div data-template="dashboard">
+    <div class="container">
     <div class="dashboard">
-        <div class="container">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
                         <h1>My Dashboard</h1>
                         <hr/>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-
+                        <p>Welcome to your personalized Dashboard where you can see all your applications.</p>
                     </div>
                 </div>
 
@@ -23,10 +22,14 @@
                             </div>
                             <div class="box-title">My Details</div>
                             <div class="box-content">
-                                <h2>John Smith</h2>
-                                <p>
-                                    <img src="https://randomuser.me/api/portraits/med/men/99.jpg" style="border-radius:1000px;height:100px;"/>
-                                </p>
+                                <div class="clearfix">
+                                    <p class="pull-left" style="margin-right: 30px;">
+                                        <img src="https://randomuser.me/api/portraits/med/men/99.jpg" style="border-radius:1000px;height:100px;"/>
+                                    </p>
+
+                                    <h1 style="padding-top:30px;">John Smith</h1>
+                                </div>
+
 
                                 <div class="psuedo-table clearfix">
                                     <div class="col-sm-12">
@@ -96,72 +99,125 @@
                                 <i class="fa fa-minus"></i>
                             </div>
                             <div class="box-title">My Applications</div>
-                            <div class="box-content">
 
+                            <div class="box-content">
                                 <div class="psuedo-table clearfix">
                                     <div class="col-sm-12">
                                         <div class="row">
-                                            <div class="col-sm-7">
-                                                <a href="#">Form 6020 Major Alteration Status Inspection Program</a>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <div class="gaca-btn pull-right">View &nbsp;
-                                                    <i class="fa fa-angle-right"></i></div>
-                                                <strong class="hl">Approved </strong>
+                                            <div class="col-xs-12"  ng-controller="BoxCtrl">
+                                                <a class="gaca-btn" href="#">Go To E-Service &nbsp;<i class="fa fa-angle-right"></i></a>
+                                                <div class="gaca-btn" ng-click="showPopup()">View Documents &nbsp;<i class="fa fa-angle-right"></i></div>
+                                                <div class="popup-title"><strong>Form 6020 Major Alteration Status Inspection Program</strong></div>
+                                                12/02/15 &nbsp; <strong class="hl">Approved</strong>
+                                                <div class="popup-content" style="display: none">
+                                                    <h2>Application Request</h2>
+                                                    <div class="psuedo-table clearfix">
+                                                        <div class="col-sm-12">
+                                                            <div class="row">
+                                                                <div class="col-sm-3">Last update</div>
+                                                                <div class="col-sm-8">
+                                                                    2015/08/13 15:22
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-sm-3">Documents</div>
+                                                                <div class="col-sm-8">
+                                                                    <p>
+                                                                        <a href="#"><i class="fa fa-file-pdf-o"></i> &nbsp; Document #1</a><br>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <h2>GACA Response</h2>
+                                                    <div class="psuedo-table clearfix">
+                                                        <div class="col-sm-12">
+                                                            <div class="row">
+                                                                <div class="col-sm-3">Status</div>
+                                                                <div class="col-sm-8">
+                                                                    Approved
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-sm-3">Response letter</div>
+                                                                <div class="col-sm-8">
+                                                                    ...
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-sm-3">Documents</div>
+                                                                <div class="col-sm-8">
+                                                                    <p>
+                                                                        <a href="#"><i class="fa fa-file-o"></i> &nbsp; Document #1</a><br>
+                                                                        <a href="#"><i class="fa fa-file-word-o"></i> &nbsp; Document #2</a><br>
+                                                                        <a href="#"><i class="fa fa-file-pdf-o"></i> &nbsp; Document #3</a><br>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-sm-7">
-                                                <a href="#">Form 1055 from Operation of Charter Flights</a>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <div class="gaca-btn pull-right">View &nbsp;
-                                                    <i class="fa fa-angle-right"></i></div>
-                                                <strong class="hl">Approved </strong>
+                                            <div class="col-xs-12"  ng-controller="BoxCtrl">
+                                                <a class="gaca-btn" href="#">Go To E-Service &nbsp;<i class="fa fa-angle-right"></i></a>
+                                                <div class="gaca-btn" ng-click="showPopup()">View Documents &nbsp;<i class="fa fa-angle-right"></i></div>
+                                                <div class="popup-title"><strong>Form 1055 from Operation of Charter Flights</strong></div>
+                                                12/02/15 &nbsp; <strong class="hl">Approved</strong>
+                                                <div class="popup-content" style="display: none">
+                                                    <h2>Application Request</h2>
+                                                    <div class="psuedo-table clearfix">
+                                                        <div class="col-sm-12">
+                                                            <div class="row">
+                                                                <div class="col-sm-3">Last update</div>
+                                                                <div class="col-sm-8">
+                                                                    2015/08/13 15:22
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-sm-3">Documents</div>
+                                                                <div class="col-sm-8">
+                                                                    <p>
+                                                                        <a href="#"><i class="fa fa-file-word-o"></i> &nbsp; Document #1</a><br>
+                                                                        <a href="#"><i class="fa fa-file-word-o"></i> &nbsp; Document #2</a><br>
+                                                                        <a href="#"><i class="fa fa-file-excel-o"></i> &nbsp; Document #3</a><br>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <h2>GACA Response</h2>
+                                                    <div class="psuedo-table clearfix">
+                                                        <div class="col-sm-12">
+                                                            <div class="row">
+                                                                <div class="col-sm-3">Status</div>
+                                                                <div class="col-sm-8">
+                                                                    Approved
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-sm-3">Response letter</div>
+                                                                <div class="col-sm-8">
+                                                                    ...
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-sm-3">Documents</div>
+                                                                <div class="col-sm-8">
+                                                                    <p>
+                                                                        <a href="#"><i class="fa fa-file-o"></i> &nbsp; Document #1</a><br>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-sm-7">
-                                                <a href="#">Form 5851 SUPS Notification from Incident Help</a>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <strong class="hl">Pending </strong>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-7">
-                                                <a href="#">Form 7655 Export from Rolling ELT Update</a>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <strong class="hl">Pending </strong>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-7">
-                                                <a href="#">Form 1055 from Operation of Charter Flights</a>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <strong class="hl">Rejected </strong>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-7">
-                                                <a href="#">Form 6020 Major Alteration Status Inspection Program</a>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <div class="gaca-btn pull-right">View &nbsp;
-                                                    <i class="fa fa-angle-right"></i></div>
-                                                <strong class="hl">Approved </strong>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-7">
-                                                <a href="#">Form 7655 Export from Rolling ELT Update</a>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <strong class="hl">Pending </strong>
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
