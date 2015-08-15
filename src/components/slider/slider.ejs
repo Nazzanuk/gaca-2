@@ -2,6 +2,12 @@
     <div class="slider" data-main>
         <div class="container">
             <div class="slider-box">
+
+                <div class="box-status" ng-click="changeActive()">
+                    <i ng-show="!isActive()" class="fa fa-plus"></i>
+                    <i ng-show="isActive()" class="fa fa-minus"></i>
+                </div>
+
                 <div class="slider-header">
                     <div class="header-left hidden-xs">15:23 &nbsp; Sunday, 12 July 2015</div>
                     <h2 class="header-right">Latest News</h2>
@@ -11,7 +17,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div ng-show="isActive()">
                     <div class="slider-items">
                         <div class="slider-holder" style="will-change:transform;">
                             <div class="slider-item" ng-style="">

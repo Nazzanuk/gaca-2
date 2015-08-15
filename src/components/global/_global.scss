@@ -4,14 +4,14 @@ body {
   font-size: 12px;
   font-weight: 300;
   min-height: 100vh;
-//  user-select: none;
+  //  user-select: none;
   padding-top: 75px;
   background: #eff2f3;
   color: #555;
   min-width: 100vw;
   position: relative;
-//  transform: translateX(0px);
-  will-change:margin-left;
+  //  transform: translateX(0px);
+  will-change: margin-left;
 
   @media (max-width: 767px) {
     padding-top: 40px;
@@ -65,8 +65,8 @@ ul {
 }
 
 .in {
-//  background: $light-grey;
-//  height: 25px;
+  //  background: $light-grey;
+  //  height: 25px;
   line-height: 25px;
   display: inline-block;
   position: relative;
@@ -79,7 +79,7 @@ ul {
   }
 
   input, select, textarea {
-//    height: 25px;
+    //    height: 25px;
     line-height: 25px;
     padding: 0 10px;
     width: 100%;
@@ -92,8 +92,6 @@ ul {
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
-
-
 
     @media (max-width: 767px) {
       font-size: 12px;
@@ -139,7 +137,7 @@ ul {
 
   &:hover {
     .in-btn {
-//      background: white;
+      //      background: white;
       background: $prim-dark;
     }
   }
@@ -198,7 +196,7 @@ ul {
   }
 
   [class*="col-"] {
-//    padding: 5px 15px;
+    //    padding: 5px 15px;
   }
 
   .col-sm-3 {
@@ -207,7 +205,7 @@ ul {
   }
 
   .row {
-//    height: 27px;
+    //    height: 27px;
     line-height: 27px;
   }
 
@@ -218,9 +216,8 @@ ul {
   .row:nth-child(2n) {
     background: $light-grey;
 
-
     .in {
-//      background: white;
+      //      background: white;
 
       select, input, textarea {
         background: white;
@@ -229,7 +226,7 @@ ul {
   }
 
   .row {
-//    border-top: 1px solid #eee !important;
+    //    border-top: 1px solid #eee !important;
     border-bottom: none;
   }
 
@@ -241,7 +238,6 @@ ul {
     border-bottom: 1px solid #eee !important;
   }
 }
-
 
 .result {
   background: #f7f7f7;
@@ -310,7 +306,7 @@ ul {
     clear: both;
     line-height: 1.4;
     color: #999;
-    display:none;
+    display: none;
 
     strong {
       display: inline-block;
@@ -333,7 +329,7 @@ ul {
   }
 
   .result-link {
-    clear:right;
+    clear: right;
     float: right;
     font-weight: bold;
     margin-left: 10px;
@@ -341,7 +337,7 @@ ul {
     color: $prim-light;
     color: #6cc70c;
     color: #6cc70c;
-    font-size:26px;
+    font-size: 26px;
   }
 
   &:hover {
@@ -372,7 +368,7 @@ ul {
   z-index: 200;
 
   .popup-overlay {
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     top: 0;
     bottom: 0;
     left: 0;
@@ -383,14 +379,13 @@ ul {
 
   .popup-block {
     position: relative;
-    margin-top:20%;
+    margin-top: 20%;
     background: white;
     border-radius: 4px;
 
     padding: 30px;
     margin-bottom: 50px;
     z-index: 201;
-
 
     img {
       max-width: 100%;
@@ -421,10 +416,83 @@ ul {
   width: 1px;
   background: #eee;
   margin: 0 15px;
-  display:inline-block;
+  display: inline-block;
   vertical-align: middle;
 }
 
 img {
   max-width: 100%;
+}
+
+.gaca-form form {
+
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.standard-page {
+  background: rgb(197, 206, 211);
+  padding: 45px 10px 1px;
+  min-height: 80vh;
+
+  @media (max-width: 991px) {
+    padding-top: 15px;
+  }
+
+
+
+  .box-highlight {
+    border-left: 3px solid $prim-light;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    color: $prim-dark;
+    transition: .2s;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: white;
+
+    &.grey {
+      cursor: pointer;
+    }
+
+    &:hover {
+      border-left-width: 6px;
+      color: $prim-light;
+      padding-left: 12px;
+      .gallery-image {
+        //          transform: scale(1.1);
+        filter: grayscale(0%);
+      }
+
+    }
+
+    &.hl-yellow {
+      border-color: gold;
+    }
+
+    &.hl-red {
+      border-color: #ce1029;
+    }
+
+    &.hl-none {
+      padding-left: 15px;
+      border-left: none;
+      border-color: transparent;
+      margin-bottom: 30px;
+    }
+
+    .gallery-image {
+      margin: -15px -15px 0px;
+      height: 130px;
+      border-radius: 0;
+      background-size: cover;
+      background-position: center;
+      background-color: $light-grey;
+      display: block;
+      transition: .2s;
+      filter: grayscale(0%);
+    }
+  }
 }

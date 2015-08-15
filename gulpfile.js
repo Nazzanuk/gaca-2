@@ -83,7 +83,8 @@ gulp.task("gen-html", function(){
         "department": ['head', 'menu', 'login', 'popup', 'header', 'department', 'footer'],
         "content": ['head', 'menu', 'login', 'popup', 'header', 'content', 'footer'],
         "dashboard": ['head', 'menu', 'login', 'popup', 'header', 'dashboard', 'footer'],
-        "register": ['head', 'menu', 'login', 'popup', 'header', 'register', 'footer']
+        "register": ['head', 'menu', 'login', 'popup', 'header', 'register', 'footer'],
+        "2-col": ['head', 'menu', 'login', 'popup', 'header', 'template-2-col', 'footer']
     };
 
     for (var i in pages){

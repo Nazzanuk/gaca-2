@@ -11,6 +11,18 @@
       position: relative;
     }
 
+    .in {
+
+      &.block {
+      }
+
+      input, select {
+        border: 1px solid #eee;
+        height: 25px;
+        line-height: 23px;
+      }
+    }
+
     a {
       text-decoration: none;
     }
@@ -76,10 +88,12 @@
       background: #ce1029;
       font-weight:bold;
       font-size:14px;
-//      height: 36px;
+//      height: 35px;
       padding: 10px 0px;
       line-height: 1.2;
       color: white;
+      position:relative;
+      z-index:-2;
 
       span {
         font-weight: 300;
@@ -89,9 +103,10 @@
     .header-sub {
       background: rgba(0, 0, 0, 0.4);
       background: $prim-light;
-      height: 36px;
-      line-height: 36px;
+      height: 35px;
+      line-height: 35px;
       color: white;
+      font-size: 13px;
 
       .sub-item {
         float: left;
@@ -103,6 +118,22 @@
         background: $prim-light;
         transition: .3s;
         padding: 0 20px;
+        color: #ffffff;
+
+        .fa {
+          line-height: auto !important;
+          line-height: initial !important;
+        }
+
+        a {
+          color:$prim-light;
+          font-weight:bold;
+
+        }
+
+        &:first-child {
+          margin-left: -10px;
+        }
 
         &:hover {
 //          margin-top: 3px;
@@ -129,6 +160,7 @@
           text-align: left;
           z-index: -1;
           box-shadow: 0 0 15px 0 rgba(0,0,0,0.1);
+          border-radius:0 0 4px 4px;
 
           .fa {
             line-height: 35px;

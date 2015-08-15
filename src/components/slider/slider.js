@@ -3,6 +3,16 @@
 
         var items, $firstSliderItem, amountVisible, interval;
         $scope.dots, $scope.dotIndex;
+        $scope.data = {};
+        $scope.data.active = true;
+
+        var changeActive = function () {
+            $scope.data.active = !$scope.data.active;
+        };
+
+        var isActive = function () {
+            return $scope.data.active;
+        };
 
         var nextDot = function () {
             var next = $scope.dotIndex + 1;
@@ -52,6 +62,8 @@
 
         $scope.setPosition = setPosition;
         $scope.getDots = getDots;
+        $scope.changeActive = changeActive;
+        $scope.isActive = isActive;
 
     }]);
 }());
