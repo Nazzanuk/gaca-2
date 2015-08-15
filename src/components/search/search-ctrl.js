@@ -1,5 +1,7 @@
 (function () {
-    app.controller('SearchCtrl', ['$scope', function ($scope) {
+    app.controller('SearchCtrl', ['$scope', '$http', function ($scope, $http) {
+
+        //var ServiceUrl = "CHANGE_ME!";
 
         $scope.types = ["All Types", "E-Services", "Regulations", "Circulars", "Public Ads", "News", "Events", "General", "Forms", "Emergency Notices", "Reports"];
         $scope.audiences = ["All Audiences", "Pilot", "Airman", "Aircraft", "Airlines/operators", "Airports", "Training centres"];
@@ -27,117 +29,13 @@
             $(this).prev().click();
         });
 
-        var results = [
-            {
-                title: "Form 39 OBSTACLE EVALUATION REQUEST",
-                date: "Mar 2011",
-                icon: "file-pdf-o",
-                type: "Circulars",
-                audience: "Pilot",
-                sector: "Information Technology"
-            },
-            {
-                title: "Form 8320-1 Major Repair & Or Alteration",
-                date: "Jul 2009",
-                icon: "file-pdf-o",
-                type: "Circulars",
-                audience: "Pilot",
-                sector: "Information Technology"
-            },
-            {
-                title: "Form 8130-9 Statement Of Conformity",
-                date: "Jul 2009",
-                icon: "file-pdf-o",
-                type: "News",
-                audience: "Pilot",
-                sector: "Information Technology"
-            },
-            {
-                title: "Form 8130-9 Statement Of Conformity",
-                date: "Jul 2009",
-                icon: "file-pdf-o",
-                type: "News",
-                audience: "Pilot",
-                sector: "Information Technology"
-            }
-        ];
-
-        var genResults = function () {
-            //generates random results
-            var titles = [
-                [
-                    "Information Required",
-                    "Export",
-                    "Checklist",
-                    "Component",
-                    "Major Alteration Status",
-                    "SUPS Notification",
-                    "BACS Notification",
-                    "",
-                    "",
-                    ""
-                ],
-                [
-                    " of ",
-                    " from ",
-                    " with ",
-                    " regarding ",
-                    " ",
-                    " ",
-                    " "
-                ],
-                [
-                    "Pilot School Certification",
-                    "Statement Of Conformity",
-                    "OBSTACLE EVALUATION REQUEST",
-                    "Operation of Scheduled Flights",
-                    "Operation of Vharter Flights",
-                    "Incident Notification",
-                    "Incident Help",
-                    "Direct Help",
-                    "Battery Replacement of ELT",
-                    "Wheel Maintenance of TSR",
-                    "General Maintenance",
-                    "Rolling ELT Update",
-                    "Inspection Program"
-                ]
-            ];
-
-            var types = ["E-Services", "E-Services", "E-Services", "Regulations", "Circulars", "Public Ads", "News", "Events", "General", "Forms", "Emergency Notices", "Reports"];
-            var audiences = ["Pilot", "Airman", "Aircraft", "Airlines/operators", "Airports", "Training centres"];
-            var sectors = ["Air Navigation Services", "Information Technology", "Finance & Admin", "International Organization", "Safety & Organization", "Corporate Core", "Human Resources", "Saudi Academy of Civil Aviation"]
-            var months = ["Jan", "Feb", "Jul", "Mar", "Aug"];
-            var files = ["file-pdf-o", "file-text-o", "link"];
-
-            for (var i = 0; i < 141; i++) {
-                var result = {};
-
-                result.title = "Form "
-                + _.random(1000, 9000) + " "
-                + _.sample(titles[0])
-                + _.sample(titles[1])
-                + _.sample(titles[2]);
-
-                result.date = _.sample(months) + " " + _.random(1990, 2015);
-                result.icon = _.sample(files);
-                result.type = _.sample(types);
-                result.audience = _.sample(audiences);
-                result.sector = _.sample(sectors);
-                result.available = _.sample([true, true, true, true, true, true, true, false]);
-
-                if (result.type == "E-Services") {
-                    result.icon = "globe";
-                }
-
-                results.push(result);
-            }
-
-            results = _.shuffle(results);
-        };
-
-        genResults();
-
         $scope.currentResults = results;
+
+        var getResults = function () {
+            $http.get(ServiceUrl).then(function (response) {
+                $scope.currentResults = response.data;
+            });
+        };
 
         var filterResults = function () {
             var filters = $scope.filters;
@@ -156,7 +54,13 @@
             setTimeout(function () {
                 $('.result').velocity('stop').velocity('transition.flipYIn', {stagger: 50});
             }, 50)
-        }
+        };
+
+        var init = function () {
+            getResults();
+        };
+
+        init();
 
     }]);
 }());
