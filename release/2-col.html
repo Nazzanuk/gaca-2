@@ -510,250 +510,103 @@
 </div>
 
 <div class="container">
-    <div data-template="e-catalogue" ng-controller="ECatalogueCtrl">
-        <div class="e-catalogue standard-page">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
-                        <h1>E-Services Catalogue</h1>
-                        <hr/>
+    <div class="standard-page">
 
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                        <!--<p class="in">-->
-                            <!--<select>-->
-                                <!--<option value="">All Audiences</option>-->
-                                <!--<option value="">Pilot</option>-->
-                                <!--<option value="">Airman</option>-->
-                                <!--<option value="">Aircraft</option>-->
-                                <!--<option value="">Airlines/Operators</option>-->
-                                <!--<option value="">Airports</option>-->
-                                <!--<option value="">Training Centres</option>-->
-                            <!--</select>-->
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                    <h1>Laws and Regulations</h1>
+                    <hr/>
 
-                            <!--<i class="in-btn select-btn">-->
-                                <!--<i class="fa fa-caret-down"></i>-->
-                            <!--</i>-->
-                        <!--</p>-->
+                    <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.</p>
 
-                    </div>
+                    <p>Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p>
                 </div>
-                <div class="col-sm-4">
-                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
-                        <div class="box-header">
-                            <div class="box-icon">
-                                <i class="fa fa-globe"></i>
-                            </div>
-                            <div class="box-status" ng-click="changeActive()">
-                                <i class="fa fa-plus"></i>
-                                <i class="fa fa-minus"></i>
-                            </div>
-                            <div class="box-title">Pilot E-Services</div>
-                            <div class="box-content">
-                                <p class="in block">
-                                    <select ng-model="pilotSort" ng-init="pilotSort = 'title'">
-                                        <option value="popularity">Order By Most Popular</option>
-                                        <option value="title">Order By Title</option>
-                                        <option value="id">Order By Form ID</option>
-                                        <option value="sector">Order By Sector</option>
-                                        <option value="date">Order By Most Recent</option>
-                                    </select>
 
-                                    <span class="in-btn select-btn"><i class="fa fa-caret-down"></i></span>
-                                </p>
-
-                                <hr/>
-                                <a class="box-highlight grey hl" href="#" ng-repeat="eService in getEServices({audience:'Pilot'}, pilotSort) track by $index">
-                                    <small class="hl">{{eService[pilotSort]}}</small>
-                                    <br/>
-                                    <small style="font-weight: normal">Form {{eService.id}} {{eService.title}}</small>
-                                </a>
-                                <hr/>
-                                <div class="gaca-btn">More...</div>
-                            </div>
+                <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                    <div class="box-header">
+                        <div class="box-icon">
+                            <i class="fa fa-newspaper-o"></i>
                         </div>
-                    </div>
-
-                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
-                        <div class="box-header">
-                            <div class="box-icon">
-                                <i class="fa fa-globe"></i>
-                            </div>
-                            <div class="box-status" ng-click="changeActive()">
-                                <i class="fa fa-plus"></i>
-                                <i class="fa fa-minus"></i>
-                            </div>
-                            <div class="box-title">Aircraft E-Services</div>
-                            <div class="box-content">
-                                <p class="in block">
-                                    <select ng-model="aircraftSort" ng-init="aircraftSort = 'title'">
-                                        <option value="popularity">Order By Most Popular</option>
-                                        <option value="title">Order By Title</option>
-                                        <option value="id">Order By Form ID</option>
-                                        <option value="sector">Order By Sector</option>
-                                        <option value="date">Order By Most Recent</option>
-                                    </select>
-
-                                    <span class="in-btn select-btn"><i class="fa fa-caret-down"></i></span>
-                                </p>
-
-                                <hr/>
-                                <a class="box-highlight grey hl" href="#" ng-repeat="eService in getEServices({audience:'Aircraft'}, aircraftSort) track by $index">
-                                    <small class="hl">{{eService[aircraftSort]}}</small>
-                                    <br/>
-                                    <small style="font-weight: normal">Form {{eService.id}} {{eService.title}}</small>
-                                </a>
-                                <hr/>
-                                <div class="gaca-btn">More...</div>
-                            </div>
+                        <div class="box-status" ng-click="changeActive()">
+                            <i class="fa fa-plus"></i>
+                            <i class="fa fa-minus"></i>
                         </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
-                        <div class="box-header">
-                            <div class="box-icon">
-                                <i class="fa fa-globe"></i>
-                            </div>
-                            <div class="box-status" ng-click="changeActive()">
-                                <i class="fa fa-plus"></i>
-                                <i class="fa fa-minus"></i>
-                            </div>
-                            <div class="box-title">Airman E-Services</div>
-                            <div class="box-content">
-                                <p class="in block">
-                                    <select ng-model="airmanSort" ng-init="airmanSort = 'title'">
-                                        <option value="popularity">Order By Most Popular</option>
-                                        <option value="title">Order By Title</option>
-                                        <option value="id">Order By Form ID</option>
-                                        <option value="sector">Order By Sector</option>
-                                        <option value="date">Order By Most Recent</option>
-                                    </select>
+                        <div class="box-title">Top News</div>
+                        <div class="box-content">
+                            <a class="box-highlight grey hl" href="#">
+                                KFIA is on track to welcome more than 9 million passengers this year
+                            </a>
+                            <a class="box-highlight grey hl" href="#">
+                                Al-Hamdan Leads a High-Level Delegation to the 3rd Meeting of the Directors General of Civil Aviation in the Middle East
+                            </a>
+                            <a class="box-highlight grey hl" href="#">
+                                Signing two contracts for the first phase of development of King Abdulaziz International Airport (KAIA)
+                            </a>
+                            <a class="box-highlight grey hl" href="#">
+                                In creating a new work environment and to cope with the transformation program, the General Authority of Civil Aviation
+                            </a>
+                            <a class="box-highlight grey hl" href="#">
+                                King Khalid International Airport, survey the travelling public about services rendered in order to improve them.
+                            </a>
 
-                                    <span class="in-btn select-btn"><i class="fa fa-caret-down"></i></span>
-                                </p>
+                            <hr/>
+                            <div class="gaca-btn">More...</div>
 
-                                <hr/>
-                                <a class="box-highlight grey hl" href="#" ng-repeat="eService in getEServices({audience:'Airman'}, airmanSort) track by $index">
-                                    <small class="hl">{{eService[airmanSort]}}</small>
-                                    <br/>
-                                    <small style="font-weight: normal">Form {{eService.id}} {{eService.title}}</small>
-                                </a>
-                                <hr/>
-                                <div class="gaca-btn">More...</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
-                        <div class="box-header">
-                            <div class="box-icon">
-                                <i class="fa fa-globe"></i>
-                            </div>
-                            <div class="box-status" ng-click="changeActive()">
-                                <i class="fa fa-plus"></i>
-                                <i class="fa fa-minus"></i>
-                            </div>
-                            <div class="box-title">Airlines E-Services</div>
-                            <div class="box-content">
-                                <p class="in block">
-                                    <select ng-model="airlinesSort" ng-init="airlinesSort = 'title'">
-                                        <option value="popularity">Order By Most Popular</option>
-                                        <option value="title">Order By Title</option>
-                                        <option value="id">Order By Form ID</option>
-                                        <option value="sector">Order By Sector</option>
-                                        <option value="date">Order By Most Recent</option>
-                                    </select>
-
-                                    <span class="in-btn select-btn"><i class="fa fa-caret-down"></i></span>
-                                </p>
-
-                                <hr/>
-                                <a class="box-highlight grey hl" href="#" ng-repeat="eService in getEServices({audience:'Airlines'}, airlinesSort) track by $index">
-                                    <small class="hl">{{eService[airlinesSort]}}</small>
-                                    <br/>
-                                    <small style="font-weight: normal">Form {{eService.id}} {{eService.title}}</small>
-                                </a>
-                                <hr/>
-                                <div class="gaca-btn">More...</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
-                        <div class="box-header">
-                            <div class="box-icon">
-                                <i class="fa fa-globe"></i>
-                            </div>
-                            <div class="box-status" ng-click="changeActive()">
-                                <i class="fa fa-plus"></i>
-                                <i class="fa fa-minus"></i>
-                            </div>
-                            <div class="box-title">Airports E-Services</div>
-                            <div class="box-content">
-                                <p class="in block">
-                                    <select ng-model="airportsSort" ng-init="airportsSort = 'title'">
-                                        <option value="popularity">Order By Most Popular</option>
-                                        <option value="title">Order By Title</option>
-                                        <option value="id">Order By Form ID</option>
-                                        <option value="sector">Order By Sector</option>
-                                        <option value="date">Order By Most Recent</option>
-                                    </select>
-
-                                    <span class="in-btn select-btn"><i class="fa fa-caret-down"></i></span>
-                                </p>
-
-                                <hr/>
-                                <a class="box-highlight grey hl" href="#" ng-repeat="eService in getEServices({audience:'Airports'}, airportsSort) track by $index">
-                                    <small class="hl">{{eService[airportsSort]}}</small>
-                                    <br/>
-                                    <small style="font-weight: normal">Form {{eService.id}} {{eService.title}}</small>
-                                </a>
-                                <hr/>
-                                <div class="gaca-btn">More...</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
-                        <div class="box-header">
-                            <div class="box-icon">
-                                <i class="fa fa-globe"></i>
-                            </div>
-                            <div class="box-status" ng-click="changeActive()">
-                                <i class="fa fa-plus"></i>
-                                <i class="fa fa-minus"></i>
-                            </div>
-                            <div class="box-title">Training Centres E-Services</div>
-                            <div class="box-content">
-                                <p class="in block">
-                                    <select ng-model="trainingCentresSort" ng-init="trainingCentresSort = 'title'">
-                                        <option value="popularity">Order By Most Popular</option>
-                                        <option value="title">Order By Title</option>
-                                        <option value="id">Order By Form ID</option>
-                                        <option value="sector">Order By Sector</option>
-                                        <option value="date">Order By Most Recent</option>
-                                    </select>
-
-                                    <span class="in-btn select-btn"><i class="fa fa-caret-down"></i></span>
-                                </p>
-
-                                <hr/>
-                                <a class="box-highlight grey hl" href="#" ng-repeat="eService in getEServices({audience:'Training Centres'}, trainingCentresSort) track by $index">
-                                    <small class="hl">{{eService[trainingCentresSort]}}</small>
-                                    <br/>
-                                    <small style="font-weight: normal">Form {{eService.id}} {{eService.title}}</small>
-                                </a>
-                                <hr/>
-                                <div class="gaca-btn">More...</div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="col-sm-6">
+                <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                    <h1>Laws and Regulations</h1>
+                    <hr/>
+
+                    <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.</p>
+
+                    <p>Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.</p>
+                </div>
+
+                <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                    <div class="box-header">
+                        <div class="box-icon">
+                            <i class="fa fa-newspaper-o"></i>
+                        </div>
+                        <div class="box-status" ng-click="changeActive()">
+                            <i class="fa fa-plus"></i>
+                            <i class="fa fa-minus"></i>
+                        </div>
+                        <div class="box-title">Top News</div>
+                        <div class="box-content">
+                            <a class="box-highlight grey hl" href="#">
+                                KFIA is on track to welcome more than 9 million passengers this year
+                            </a>
+                            <a class="box-highlight grey hl" href="#">
+                                Al-Hamdan Leads a High-Level Delegation to the 3rd Meeting of the Directors General of Civil Aviation in the Middle East
+                            </a>
+                            <a class="box-highlight grey hl" href="#">
+                                Signing two contracts for the first phase of development of King Abdulaziz International Airport (KAIA)
+                            </a>
+                            <a class="box-highlight grey hl" href="#">
+                                In creating a new work environment and to cope with the transformation program, the General Authority of Civil Aviation
+                            </a>
+                            <a class="box-highlight grey hl" href="#">
+                                King Khalid International Airport, survey the travelling public about services rendered in order to improve them.
+                            </a>
+
+                            <hr/>
+                            <div class="gaca-btn">More...</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 </div>
+
 <!--footer.ejs-->
 
 <div data-template="footer">

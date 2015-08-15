@@ -176,7 +176,7 @@
 
           .row .row > [class^="col-"] {
             border-left: 3px solid #eee;
-            height: 200px;
+            min-height: 200px;
             margin-left: -3px;
             padding-left: 13px;
           }

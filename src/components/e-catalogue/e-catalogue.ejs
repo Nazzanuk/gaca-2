@@ -1,5 +1,5 @@
 <div class="container">
-    <div data-template="e-catalogue">
+    <div data-template="e-catalogue" ng-controller="ECatalogueCtrl">
         <div class="e-catalogue standard-page">
             <div class="row">
                 <div class="col-sm-12">
@@ -8,21 +8,21 @@
                         <hr/>
 
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                        <p class="in">
-                            <select>
-                                <option value="">All Audiences</option>
-                                <option value="">Pilot</option>
-                                <option value="">Airman</option>
-                                <option value="">Aircraft</option>
-                                <option value="">Airlines/Operators</option>
-                                <option value="">Airports</option>
-                                <option value="">Training Centres</option>
-                            </select>
+                        <!--<p class="in">-->
+                            <!--<select>-->
+                                <!--<option value="">All Audiences</option>-->
+                                <!--<option value="">Pilot</option>-->
+                                <!--<option value="">Airman</option>-->
+                                <!--<option value="">Aircraft</option>-->
+                                <!--<option value="">Airlines/Operators</option>-->
+                                <!--<option value="">Airports</option>-->
+                                <!--<option value="">Training Centres</option>-->
+                            <!--</select>-->
 
-                            <i class="in-btn select-btn">
-                                <i class="fa fa-caret-down"></i>
-                            </i>
-                        </p>
+                            <!--<i class="in-btn select-btn">-->
+                                <!--<i class="fa fa-caret-down"></i>-->
+                            <!--</i>-->
+                        <!--</p>-->
 
                     </div>
                 </div>
@@ -39,31 +39,22 @@
                             <div class="box-title">Pilot E-Services</div>
                             <div class="box-content">
                                 <p class="in block">
-                                    <select>
-                                        <option value="">Order By Most Popular</option>
-                                        <option value="">Order By Most Recent</option>
+                                    <select ng-model="pilotSort" ng-init="pilotSort = 'title'">
+                                        <option value="popularity">Order By Most Popular</option>
+                                        <option value="title">Order By Title</option>
+                                        <option value="id">Order By Form ID</option>
+                                        <option value="sector">Order By Sector</option>
+                                        <option value="date">Order By Most Recent</option>
                                     </select>
 
-                                    <i class="in-btn select-btn">
-                                        <i class="fa fa-caret-down"></i>
-                                    </i>
+                                    <span class="in-btn select-btn"><i class="fa fa-caret-down"></i></span>
                                 </p>
 
                                 <hr/>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 6193 Export of Wheel Maintenance of TSR
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 2782 Statement Of Conformity
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 8753 Information Required Wheel Maintenance of TSR
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 1206 Rolling ELT Update
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 2966 regarding Inspection Program
+                                <a class="box-highlight grey hl" href="#" ng-repeat="eService in getEServices({audience:'Pilot'}, pilotSort) track by $index">
+                                    <small class="hl">{{eService[pilotSort]}}</small>
+                                    <br/>
+                                    <small style="font-weight: normal">Form {{eService.id}} {{eService.title}}</small>
                                 </a>
                                 <hr/>
                                 <div class="gaca-btn">More...</div>
@@ -80,34 +71,25 @@
                                 <i class="fa fa-plus"></i>
                                 <i class="fa fa-minus"></i>
                             </div>
-                            <div class="box-title">Airman E-Services</div>
+                            <div class="box-title">Aircraft E-Services</div>
                             <div class="box-content">
                                 <p class="in block">
-                                    <select>
-                                        <option value="">Order By Most Popular</option>
-                                        <option value="">Order By Most Recent</option>
+                                    <select ng-model="aircraftSort" ng-init="aircraftSort = 'title'">
+                                        <option value="popularity">Order By Most Popular</option>
+                                        <option value="title">Order By Title</option>
+                                        <option value="id">Order By Form ID</option>
+                                        <option value="sector">Order By Sector</option>
+                                        <option value="date">Order By Most Recent</option>
                                     </select>
 
-                                    <i class="in-btn select-btn">
-                                        <i class="fa fa-caret-down"></i>
-                                    </i>
+                                    <span class="in-btn select-btn"><i class="fa fa-caret-down"></i></span>
                                 </p>
 
                                 <hr/>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 6193 Export of Wheel Maintenance of TSR
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 2782 Statement Of Conformity
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 8753 Information Required Wheel Maintenance of TSR
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 1206 Rolling ELT Update
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 2966 regarding Inspection Program
+                                <a class="box-highlight grey hl" href="#" ng-repeat="eService in getEServices({audience:'Aircraft'}, aircraftSort) track by $index">
+                                    <small class="hl">{{eService[aircraftSort]}}</small>
+                                    <br/>
+                                    <small style="font-weight: normal">Form {{eService.id}} {{eService.title}}</small>
                                 </a>
                                 <hr/>
                                 <div class="gaca-btn">More...</div>
@@ -125,40 +107,32 @@
                                 <i class="fa fa-plus"></i>
                                 <i class="fa fa-minus"></i>
                             </div>
-                            <div class="box-title">Aircraft E-Services</div>
+                            <div class="box-title">Airman E-Services</div>
                             <div class="box-content">
                                 <p class="in block">
-                                    <select>
-                                        <option value="">Order By Most Popular</option>
-                                        <option value="">Order By Most Recent</option>
+                                    <select ng-model="airmanSort" ng-init="airmanSort = 'title'">
+                                        <option value="popularity">Order By Most Popular</option>
+                                        <option value="title">Order By Title</option>
+                                        <option value="id">Order By Form ID</option>
+                                        <option value="sector">Order By Sector</option>
+                                        <option value="date">Order By Most Recent</option>
                                     </select>
 
-                                    <i class="in-btn select-btn">
-                                        <i class="fa fa-caret-down"></i>
-                                    </i>
+                                    <span class="in-btn select-btn"><i class="fa fa-caret-down"></i></span>
                                 </p>
 
                                 <hr/>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 6193 Export of Wheel Maintenance of TSR
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 2782 Statement Of Conformity
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 8753 Information Required Wheel Maintenance of TSR
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 1206 Rolling ELT Update
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 2966 regarding Inspection Program
+                                <a class="box-highlight grey hl" href="#" ng-repeat="eService in getEServices({audience:'Airman'}, airmanSort) track by $index">
+                                    <small class="hl">{{eService[airmanSort]}}</small>
+                                    <br/>
+                                    <small style="font-weight: normal">Form {{eService.id}} {{eService.title}}</small>
                                 </a>
                                 <hr/>
                                 <div class="gaca-btn">More...</div>
                             </div>
                         </div>
                     </div>
+
                     <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
                         <div class="box-header">
                             <div class="box-icon">
@@ -168,34 +142,25 @@
                                 <i class="fa fa-plus"></i>
                                 <i class="fa fa-minus"></i>
                             </div>
-                            <div class="box-title">Airlines/Operators E-Services</div>
+                            <div class="box-title">Airlines E-Services</div>
                             <div class="box-content">
                                 <p class="in block">
-                                    <select>
-                                        <option value="">Order By Most Popular</option>
-                                        <option value="">Order By Most Recent</option>
+                                    <select ng-model="airlinesSort" ng-init="airlinesSort = 'title'">
+                                        <option value="popularity">Order By Most Popular</option>
+                                        <option value="title">Order By Title</option>
+                                        <option value="id">Order By Form ID</option>
+                                        <option value="sector">Order By Sector</option>
+                                        <option value="date">Order By Most Recent</option>
                                     </select>
 
-                                    <i class="in-btn select-btn">
-                                        <i class="fa fa-caret-down"></i>
-                                    </i>
+                                    <span class="in-btn select-btn"><i class="fa fa-caret-down"></i></span>
                                 </p>
 
                                 <hr/>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 6193 Export of Wheel Maintenance of TSR
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 2782 Statement Of Conformity
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 8753 Information Required Wheel Maintenance of TSR
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 1206 Rolling ELT Update
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 2966 regarding Inspection Program
+                                <a class="box-highlight grey hl" href="#" ng-repeat="eService in getEServices({audience:'Airlines'}, airlinesSort) track by $index">
+                                    <small class="hl">{{eService[airlinesSort]}}</small>
+                                    <br/>
+                                    <small style="font-weight: normal">Form {{eService.id}} {{eService.title}}</small>
                                 </a>
                                 <hr/>
                                 <div class="gaca-btn">More...</div>
@@ -216,37 +181,29 @@
                             <div class="box-title">Airports E-Services</div>
                             <div class="box-content">
                                 <p class="in block">
-                                    <select>
-                                        <option value="">Order By Most Popular</option>
-                                        <option value="">Order By Most Recent</option>
+                                    <select ng-model="airportsSort" ng-init="airportsSort = 'title'">
+                                        <option value="popularity">Order By Most Popular</option>
+                                        <option value="title">Order By Title</option>
+                                        <option value="id">Order By Form ID</option>
+                                        <option value="sector">Order By Sector</option>
+                                        <option value="date">Order By Most Recent</option>
                                     </select>
 
-                                    <i class="in-btn select-btn">
-                                        <i class="fa fa-caret-down"></i>
-                                    </i>
+                                    <span class="in-btn select-btn"><i class="fa fa-caret-down"></i></span>
                                 </p>
 
                                 <hr/>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 6193 Export of Wheel Maintenance of TSR
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 2782 Statement Of Conformity
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 8753 Information Required Wheel Maintenance of TSR
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 1206 Rolling ELT Update
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 2966 regarding Inspection Program
+                                <a class="box-highlight grey hl" href="#" ng-repeat="eService in getEServices({audience:'Airports'}, airportsSort) track by $index">
+                                    <small class="hl">{{eService[airportsSort]}}</small>
+                                    <br/>
+                                    <small style="font-weight: normal">Form {{eService.id}} {{eService.title}}</small>
                                 </a>
                                 <hr/>
                                 <div class="gaca-btn">More...</div>
                             </div>
                         </div>
                     </div>
+
                     <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
                         <div class="box-header">
                             <div class="box-icon">
@@ -259,31 +216,22 @@
                             <div class="box-title">Training Centres E-Services</div>
                             <div class="box-content">
                                 <p class="in block">
-                                    <select>
-                                        <option value="">Order By Most Popular</option>
-                                        <option value="">Order By Most Recent</option>
+                                    <select ng-model="trainingCentresSort" ng-init="trainingCentresSort = 'title'">
+                                        <option value="popularity">Order By Most Popular</option>
+                                        <option value="title">Order By Title</option>
+                                        <option value="id">Order By Form ID</option>
+                                        <option value="sector">Order By Sector</option>
+                                        <option value="date">Order By Most Recent</option>
                                     </select>
 
-                                    <i class="in-btn select-btn">
-                                        <i class="fa fa-caret-down"></i>
-                                    </i>
+                                    <span class="in-btn select-btn"><i class="fa fa-caret-down"></i></span>
                                 </p>
 
                                 <hr/>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 6193 Export of Wheel Maintenance of TSR
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 2782 Statement Of Conformity
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 8753 Information Required Wheel Maintenance of TSR
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 1206 Rolling ELT Update
-                                </a>
-                                <a class="box-highlight grey hl" href="#">
-                                    Form 2966 regarding Inspection Program
+                                <a class="box-highlight grey hl" href="#" ng-repeat="eService in getEServices({audience:'Training Centres'}, trainingCentresSort) track by $index">
+                                    <small class="hl">{{eService[trainingCentresSort]}}</small>
+                                    <br/>
+                                    <small style="font-weight: normal">Form {{eService.id}} {{eService.title}}</small>
                                 </a>
                                 <hr/>
                                 <div class="gaca-btn">More...</div>
