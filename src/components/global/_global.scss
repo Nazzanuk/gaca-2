@@ -497,7 +497,7 @@ img {
   }
 }
 
-.alert {
+.gaca-alert {
   //      background: rgba(0, 0, 0, 0.4);
   background: #ce1029;
   font-weight:bold;
@@ -506,8 +506,13 @@ img {
   padding: 10px 0px;
   line-height: 1.2;
   color: white;
-  position:relative;
-  z-index:-2;
+//  position:relative;
+//  z-index:-2;
+  margin-top: 35px;
+
+  @media (max-width: 991px) {
+    margin-top: 0;
+  }
 
   span {
     font-weight: 300;

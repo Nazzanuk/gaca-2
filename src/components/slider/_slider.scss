@@ -138,6 +138,10 @@
       z-index: 1;
       overflow: hidden;
 
+      .gaca-btn a {
+        color: inherit;
+      }
+
       .blue-select {
         background: $prim-light;
         padding: 10px;
