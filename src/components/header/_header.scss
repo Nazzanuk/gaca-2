@@ -98,13 +98,17 @@
 //        width: (100% / 7);
 //        width: (100% / 7);
         text-align: center;
-        font-weight: 600;
+        font-weight: 400;
         cursor: pointer;
         background: $prim-light;
         transition: .3s;
 //        padding: 0 20px;
         width: 12.5%;
         color: #ffffff;
+        letter-spacing: -0.6px;
+        font-size: 13px;
+        white-space: nowrap;
+
 
         .fa {
           line-height: auto !important;
@@ -113,7 +117,7 @@
 
         a {
           color:$prim-light;
-          font-weight:bold;
+//          font-weight:bold;
 
         }
 
@@ -147,6 +151,8 @@
           z-index: -1;
           box-shadow: 0 0 15px 0 rgba(0,0,0,0.1);
           border-radius:0 0 4px 4px;
+
+          white-space: normal;
 
           .fa {
             line-height: 35px;
