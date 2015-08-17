@@ -34,7 +34,7 @@
           .overlay-title {
             background: white;
             color: $prim-light;
-            padding: 0 15px;
+            padding: 5px 15px 0;
             line-height: 35px;
             width: 100%;
             font-weight: 600;
@@ -44,9 +44,15 @@
 
           .overlay-subtitle {
             background: white;
-            padding: 0 15px 15px;
+            padding: 0px 15px 45px;
             width: 100%;
             border-radius: 0 0 4px 4px;
+            position: relative;
+
+            .gaca-btn {
+              position: absolute;
+              right: 15px;
+            }
 
           }
         }
