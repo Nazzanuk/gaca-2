@@ -1,7 +1,7 @@
 body {
   overflow-x: hidden;
   font-family: 'Titillium Web', sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 300;
   min-height: 100vh;
   //  user-select: none;
@@ -12,6 +12,7 @@ body {
   position: relative;
   //  transform: translateX(0px);
   will-change: margin-left;
+  line-height: 1.6;
 
   @media (max-width: 767px) {
     padding-top: 40px;
