@@ -2,11 +2,11 @@
     app.controller('HeaderCtrl', ['$scope', function ($scope) {
 
         var events = function () {
-            $(document).on('focus', '.search-box input', function () {
+            $(document).on('focus mouseover', '.search-box input', function () {
                 $('.search-box').css({'width': '150px'});
             });
 
-            $(document).on('blur', '.search-box input', function () {
+            $(document).on('blur mouseleave', '.search-box input', function () {
                 $('.search-box').css({'width': ''});
             });
 

@@ -19,12 +19,146 @@
       //      margin-top: 15px;
       float: right;
       clear: right;
-      text-decoration:none;
+      text-decoration: none;
 
       &:hover {
         color: $prim-light;
       }
 
     }
+
+    .status-stamp {
+      position: absolute;
+      left: 50%;
+      opacity: 0.8;
+      transform: rotate(10deg);
+      height: 60px;
+    }
+
+    .status {
+      float: left;
+      border-radius: 100px;
+      line-height: 44px;
+      height: 50px;
+      width: 50px;
+      margin-right: 15px;
+      text-align: center;
+      color: #74c622;
+      background: #eee;
+      border: 3px solid #74c622;
+      font-size: 26px;
+      margin-top: 2px;
+
+      &.in-progress {
+        color: #0e82c6;
+        border: 3px solid #0e82c6;
+      }
+
+      &.rejected {
+        color: #c62307;
+        border: 3px solid #c62307;
+      }
+    }
+
+    .status-hl {
+      color: #74c622;
+
+      &.in-progress {
+        color: #0e82c6;
+      }
+
+      &.rejected {
+        color: #c62307;
+      }
+    }
   }
+}
+
+.app-graph {
+
+  .graph-label {
+    line-height: 36px;
+    height: 40px;
+    float: left;
+    width: 40px;
+    font-size: 20px;
+    //    margin-top: -10px;
+    vertical-align: middle;
+    background: #eee;
+    border-radius: 100px;
+    border: 2px solid #74c622;
+    color: #74c622;
+    text-align: center;
+    margin-right: 15px;
+  }
+
+  .graph-submitted {
+    font-weight: 200;
+    line-height: 40px;
+    font-size: 20px;
+  }
+
+  .graph-bar {
+    position: relative;
+    border-radius: 4px;
+    background: #eee;
+    height: 20px;
+    margin: 10px 0 0 55px;
+
+    .graph-bar-fill {
+      background: #74c622;
+      border-radius: 4px;
+      height: 20px;
+      line-height: 20px;
+      color: #ffffff;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+  .single-graph {
+    padding: 5px 0;
+    margin-bottom: 15px;
+
+    &.submitted {
+      color: #333;
+
+      .graph-label {
+        border: 2px solid #333;
+        color: #333;
+      }
+    }
+
+    &.in-progress {
+      color: #0e82c6;
+
+      .graph-label {
+        border: 2px solid #0e82c6;
+        color: #0e82c6;
+      }
+
+      .graph-bar {
+        .graph-bar-fill {
+          background: #0e82c6;
+        }
+      }
+    }
+
+    &.rejected {
+      color: #c62307;
+
+      .graph-label {
+        border: 2px solid #c62307;
+        color: #c62307;
+      }
+
+      .graph-bar {
+        .graph-bar-fill {
+          background: #c62307;
+        }
+      }
+    }
+
+  }
+
 }
