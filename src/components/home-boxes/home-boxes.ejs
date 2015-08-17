@@ -31,7 +31,12 @@
 
                                             <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
 
-                                            <a href="#"><strong><i class="fa fa-angle-right"></i> &nbsp; Download PDF</strong></a>
+                                            <div>
+                                                <a href="#"><strong><i class="fa fa-download"></i> &nbsp; Download PDF</strong></a>
+                                            </div>
+                                            <div>
+                                                <a href="#"><strong><i class="fa fa-external-link"></i> &nbsp; Show more</strong></a>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
@@ -48,8 +53,12 @@
 
                                             <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
 
-                                            <a href="#"><strong><i class="fa fa-angle-right"></i> &nbsp; Download PDF</strong></a>
-                                        </div>
+                                            <div>
+                                                <a href="#"><strong><i class="fa fa-download"></i> &nbsp; Download PDF</strong></a>
+                                            </div>
+                                            <div>
+                                                <a href="#"><strong><i class="fa fa-external-link"></i> &nbsp; Show more</strong></a>
+                                            </div>                                        </div>
                                     </div>
                                     <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
                                         <div class="question-title" ng-click="changeActive()">
@@ -104,6 +113,11 @@
                                     </div>
                                 </div>
 
+                                <br/>
+                                <div style="text-align: right">
+                                    <span class="gaca-btn">Read More...</span>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -147,25 +161,25 @@
                             </div>
                             <div class="box-title">Check Destination</div>
                             <div class="box-content">
-                                <div class="in block">
+                                <div style="text-align: right">
+                                <p class="in block">
                                     <select>
                                         <option value="">Select Destination</option>
                                         <option>Saudi Arabia</option>
                                         <option>United Kingdom</option>
                                     </select>
 
-                                    <div class="in-btn select-btn">
+                                    <span class="in-btn select-btn">
                                         <i class="fa fa-caret-down"></i>
-                                    </div>
-                                </div>
-                                <p></p>
+                                    </span>
+                                </p>
 
-                                <div class="in">
+                                <p class="in">
                                     <input type="search"/>
-                                </div>
-                                <p></p>
+                                </p>
 
                                 <span class="gaca-btn">Submit</span>
+                                </div>
 
 
 
@@ -399,18 +413,20 @@
                                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
                                 <hr/>
                                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-                                <p>
-                                   <span class="in">
-                                    <input type="text">
+                                <div class="clearfix">
+                                    <p class="pull-right">
+                                        <span class="in">
+                                            <input type="text">
 
-                                    <span class="in-btn">
-                                        <i class="fa fa-caret-down"></i>
-                                    </span>
-                                </span>
-                                </p>
+                                            <span class="in-btn">
+                                                <i class="fa fa-caret-down"></i>
+                                            </span>
+                                        </span>
+                                    </p>
+                                </div>
 
                                 <!--<p>&nbsp;</p>-->
-                                <p><span class="gaca-btn">Submit</span></p>
+                                <p><span class="gaca-btn pull-right">Submit</span></p>
 
                             </div>
                         </div>
