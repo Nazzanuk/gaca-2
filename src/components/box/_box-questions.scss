@@ -8,6 +8,21 @@
     background: white;
     color: $prim-dark;
 
+    .gaca-btn {
+      color: white;
+      background: $prim-light;
+      border-color: #ffffff;
+      font-weight: normal;
+      text-decoration: none;
+
+      &:hover {
+        font-weight: normal;
+        color: $prim-light;
+        background: white;
+        border-color: $prim-light;
+      }
+    }
+
     .question-title {
       min-height: 20px;
       line-height: 20px;
