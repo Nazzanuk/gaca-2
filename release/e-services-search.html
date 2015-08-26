@@ -245,53 +245,59 @@
 </div>
 <div data-template="header" data-main data-ng-controller="HeaderCtrl">
     <div class="header">
+        <div class="container">
+            <a href="/" class="header-logo">
+                <img src="public/img/gaca-logo.png" style=""/>
+                <span class="hidden-xs hidden-sm">General Authority of Civil Aviation</span>
+                <!--<span class="hidden-sm hidden-xs">-->
+                <!--الهيئة العامة للطيران المدني-->
+                <!--</span>-->
+            </a>
+        </div>
         <div class="header-line">
             <div class="header-menu visible-xs visible-sm">
                 <i class="fa fa-bars"></i>
             </div>
 
             <div class="container">
-                <div class="in sm hidden-xs search-box">
-                    <input type="text"/>
+                <div class="col-sm-12">
 
-                    <div class="in-btn">
-                        <i class="fa fa-search"></i>
+                    <div class="pull-right">
+                        <div class="in sm hidden-xs search-box">
+                            <input type="text"/>
+
+                            <div class="in-btn">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+
+                        <a href="#" class="hidden-xs"><strong>Arabic</strong></a>
+
+                        <div class="vd hidden-xs"></div>
+
+                    <span class="gaca-form">
+                        <form>
+                            <span class="hidden-xs hidden-sm" style="cursor: pointer">
+                                <i class="fa fa-user"></i>  &nbsp;
+                                <span class="in sm">
+                                    <input type="text" placeholder="Username">
+                                </span>  &nbsp;
+                                <span class="in sm">
+                                    <input type="text" placeholder="Password">
+                                </span>  &nbsp;
+                                <span class="gaca-btn">Login &nbsp; <i class="fa fa-lock"></i></span>  &nbsp;
+                                <span class="gaca-btn">Register &nbsp; <i class="fa fa-user"></i></span>
+                            </span>
+
+                            <span class="show-login-popup hidden-md hidden-lg" style="cursor: pointer;">
+                                <i class="fa fa-user"></i> &nbsp; Login
+                            </span>
+                        </form>
+                    </span>
                     </div>
+
+
                 </div>
-
-                <div class="vd hidden-xs"></div>
-
-                <a href="#" class="hidden-xs"><strong>Arabic</strong></a>
-
-                <div class="vd hidden-xs"></div>
-
-                <span class="gaca-form">
-                    <form>
-                        <span class="hidden-xs hidden-sm" style="cursor: pointer">
-                            <i class="fa fa-user"></i>  &nbsp;
-                            <span class="in sm">
-                                <input type="text" placeholder="Username">
-                            </span>  &nbsp;
-                            <span class="in sm">
-                                <input type="text" placeholder="Password">
-                            </span>  &nbsp;
-                            <span class="gaca-btn">Login &nbsp; <i class="fa fa-lock"></i></span>  &nbsp;
-                            <span class="gaca-btn">Register &nbsp; <i class="fa fa-user"></i></span>
-                        </span>
-
-                        <span class="show-login-popup hidden-md hidden-lg" style="cursor: pointer;">
-                            <i class="fa fa-user"></i> &nbsp; Login
-                        </span>
-                    </form>
-                </span>
-
-                <a class="pull-right" href="/">
-                    <span class="hidden-xs hidden-sm">General Authority of Civil Aviation</span>
-                    <img src="public/img/gaca-logo.png" style=""/>
-                    <!--<span class="hidden-sm hidden-xs">-->
-                    <!--الهيئة العامة للطيران المدني-->
-                    <!--</span>-->
-                </a>
             </div>
         </div>
 
@@ -648,6 +654,7 @@
 </div>
 </div>
 
+<script async defer src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"></script>
 <script src="public/lib.js"></script>
 <script src="public/app.js"></script>
 </body>

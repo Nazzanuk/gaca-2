@@ -10,7 +10,8 @@ body {
   min-width: 100vw;
   position: relative;
   will-change: margin-left;
-  line-height: 1.6; }
+  line-height: 1.6;
+  letter-spacing: -0.3px; }
   @media (max-width: 767px) {
     body {
       padding-top: 40px;
@@ -379,6 +380,23 @@ img {
   right: 0;
   z-index: 100;
   min-width: 100vw; }
+  [data-template="header"] .header .header-logo {
+    position: absolute;
+    top: 3px;
+    font-weight: 600;
+    letter-spacing: -0.5px; }
+    @media (max-width: 991px) {
+      [data-template="header"] .header .header-logo {
+        left: 50px;
+        top: 0px; } }
+    [data-template="header"] .header .header-logo img {
+      height: 70px; }
+      @media (max-width: 991px) {
+        [data-template="header"] .header .header-logo img {
+          height: 35px; } }
+  [data-template="header"] .header .search-box {
+    float: right;
+    margin-left: 15px; }
   [data-template="header"] .header .container {
     position: relative; }
   [data-template="header"] .header .in input, [data-template="header"] .header .in select {
@@ -387,17 +405,17 @@ img {
     line-height: 23px; }
   [data-template="header"] .header a {
     text-decoration: none; }
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     [data-template="header"] .header .show-login-popup {
       padding: 0 15px;
       height: 40px;
       line-height: 40px; } }
   [data-template="header"] .header .header-line {
-    padding: 25px 50px;
+    padding: 25px 0px;
     height: 75px;
     line-height: 25px;
     background: white; }
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
       [data-template="header"] .header .header-line {
         padding: 0 25px;
         height: 40px; } }
@@ -412,7 +430,7 @@ img {
         height: 70px;
         width: auto;
         vertical-align: top; }
-        @media (max-width: 767px) {
+        @media (max-width: 991px) {
           [data-template="header"] .header .header-line .pull-right img {
             height: 30px;
             margin-top: 5px; } }
@@ -438,19 +456,21 @@ img {
     [data-template="header"] .header .header-sub .sub-item {
       float: left;
       text-align: center;
-      font-weight: 600;
+      font-weight: 400;
       cursor: pointer;
       background: #508bea;
       -webkit-transition: .3s;
               transition: .3s;
       width: 12.5%;
-      color: #ffffff; }
+      color: #ffffff;
+      letter-spacing: -0.6px;
+      font-size: 13px;
+      white-space: nowrap; }
       [data-template="header"] .header .header-sub .sub-item .fa {
         line-height: auto !important;
         line-height: initial !important; }
       [data-template="header"] .header .header-sub .sub-item a {
-        color: #508bea;
-        font-weight: bold; }
+        color: #508bea; }
       [data-template="header"] .header .header-sub .sub-item:first-child {
         margin-left: -10px; }
       [data-template="header"] .header .header-sub .sub-item:hover {
@@ -468,7 +488,8 @@ img {
         text-align: left;
         z-index: -1;
         box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
-        border-radius: 0 0 4px 4px; }
+        border-radius: 0 0 4px 4px;
+        white-space: normal; }
         [data-template="header"] .header .header-sub .sub-item .sub-menu .fa {
           line-height: 35px; }
         [data-template="header"] .header .header-sub .sub-item .sub-menu .hl {
@@ -553,7 +574,7 @@ img {
     color: inherit;
     font-weight: bold; }
   .box p {
-    font-size: 14px; }
+    font-size: 13px; }
   .box .box-side {
     position: absolute;
     top: 0;
@@ -688,6 +709,17 @@ img {
           transition: .2s;
   background: white;
   color: #456bb1; }
+  .box-questions .box-question .gaca-btn {
+    color: white;
+    background: #508bea;
+    border-color: #ffffff;
+    font-weight: normal;
+    text-decoration: none; }
+    .box-questions .box-question .gaca-btn:hover {
+      font-weight: normal;
+      color: #508bea;
+      background: white;
+      border-color: #508bea; }
   .box-questions .box-question .question-title {
     min-height: 20px;
     line-height: 20px;
@@ -789,7 +821,7 @@ img {
       [data-template="banner"] .banner .banner-holder .banner-image .banner-overlay .overlay-title {
         background: white;
         color: #508bea;
-        padding: 0 15px;
+        padding: 5px 15px 0;
         line-height: 35px;
         width: 100%;
         font-weight: 600;
@@ -797,9 +829,13 @@ img {
         border-radius: 4px 4px 0 0; }
       [data-template="banner"] .banner .banner-holder .banner-image .banner-overlay .overlay-subtitle {
         background: white;
-        padding: 0 15px 15px;
+        padding: 0px 15px 45px;
         width: 100%;
-        border-radius: 0 0 4px 4px; }
+        border-radius: 0 0 4px 4px;
+        position: relative; }
+        [data-template="banner"] .banner .banner-holder .banner-image .banner-overlay .overlay-subtitle .gaca-btn {
+          position: absolute;
+          right: 15px; }
 
 [data-template="slider"] .slider {
   margin-top: -30px; }
@@ -947,7 +983,7 @@ img {
         padding-left: 55px; }
         @media (max-width: 767px) {
           [data-template="slider"] .slider .slider-blue-box .blue-select .select-text {
-            font-size: 12px; } }
+            font-size: 13px; } }
         [data-template="slider"] .slider .slider-blue-box .blue-select .select-text .select-arrow {
           font-size: 25px;
           float: right;
@@ -1089,6 +1125,93 @@ img {
   text-decoration: none; }
   [data-template="dashboard"] .psuedo-table .gaca-btn:hover {
     color: #508bea; }
+[data-template="dashboard"] .psuedo-table .status-stamp {
+  position: absolute;
+  left: 50%;
+  opacity: 0.8;
+  -webkit-transform: rotate(10deg);
+      -ms-transform: rotate(10deg);
+          transform: rotate(10deg);
+  height: 60px; }
+[data-template="dashboard"] .psuedo-table .status {
+  float: left;
+  border-radius: 100px;
+  line-height: 44px;
+  height: 50px;
+  width: 50px;
+  margin-right: 15px;
+  text-align: center;
+  color: #74c622;
+  background: #eee;
+  border: 3px solid #74c622;
+  font-size: 26px;
+  margin-top: 2px; }
+  [data-template="dashboard"] .psuedo-table .status.in-progress {
+    color: #0e82c6;
+    border: 3px solid #0e82c6; }
+  [data-template="dashboard"] .psuedo-table .status.rejected {
+    color: #c62307;
+    border: 3px solid #c62307; }
+[data-template="dashboard"] .psuedo-table .status-hl {
+  color: #74c622; }
+  [data-template="dashboard"] .psuedo-table .status-hl.in-progress {
+    color: #0e82c6; }
+  [data-template="dashboard"] .psuedo-table .status-hl.rejected {
+    color: #c62307; }
+
+.app-graph .graph-label {
+  line-height: 36px;
+  height: 40px;
+  float: left;
+  width: 40px;
+  font-size: 20px;
+  vertical-align: middle;
+  background: #eee;
+  border-radius: 100px;
+  border: 2px solid #74c622;
+  color: #74c622;
+  text-align: center;
+  margin-right: 15px; }
+.app-graph .graph-submitted {
+  font-weight: 200;
+  line-height: 40px;
+  font-size: 20px; }
+.app-graph .graph-bar {
+  position: relative;
+  border-radius: 4px;
+  background: #eee;
+  height: 20px;
+  margin: 10px 0 0 55px; }
+  .app-graph .graph-bar .graph-bar-fill {
+    background: #74c622;
+    border-radius: 4px;
+    height: 20px;
+    line-height: 20px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold; }
+.app-graph .single-graph {
+  padding: 5px 0;
+  margin-bottom: 15px; }
+  .app-graph .single-graph.submitted {
+    color: #333; }
+    .app-graph .single-graph.submitted .graph-label {
+      border: 2px solid #333;
+      color: #333; }
+  .app-graph .single-graph.in-progress {
+    color: #0e82c6; }
+    .app-graph .single-graph.in-progress .graph-label {
+      border: 2px solid #0e82c6;
+      color: #0e82c6; }
+    .app-graph .single-graph.in-progress .graph-bar .graph-bar-fill {
+      background: #0e82c6; }
+  .app-graph .single-graph.rejected {
+    color: #c62307; }
+    .app-graph .single-graph.rejected .graph-label {
+      border: 2px solid #c62307;
+      color: #c62307; }
+    .app-graph .single-graph.rejected .graph-bar .graph-bar-fill {
+      background: #c62307; }
 
 [data-template="home-boxes"] .home-boxes {
   background: #c5ced3;

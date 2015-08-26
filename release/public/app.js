@@ -241,11 +241,11 @@ var app = angular.module('app', []);
     app.controller('HeaderCtrl', ['$scope', function ($scope) {
 
         var events = function () {
-            $(document).on('focus', '.search-box input', function () {
+            $(document).on('focus mouseover', '.search-box input', function () {
                 $('.search-box').css({'width': '150px'});
             });
 
-            $(document).on('blur', '.search-box input', function () {
+            $(document).on('blur mouseleave', '.search-box input', function () {
                 $('.search-box').css({'width': ''});
             });
 
@@ -303,6 +303,54 @@ var app = angular.module('app', []);
         $scope.changeActive = changeActive;
         $scope.showPopup = showPopup;
     }]);
+
+    app.controller('MapCtrl', ['PopupService', '$scope', '$element', '$timeout', function (PopupService, $scope, $element, $timeout) {
+
+        var markers = [];
+        var infoWindows = [];
+
+        window.initMap = function () {
+            var mapCenter = {lat: 24.410777, lng: 44.856970};
+
+            var map = new google.maps.Map($element[0], {
+                zoom: 4,
+                center: mapCenter
+            });
+
+            _.each(pins, function (pin) {
+                var infoWindow = new google.maps.InfoWindow({
+                    content: "<div style='color: #000000'>" + pin.name + "</div>"
+                });
+                infoWindows.push(infoWindow);
+
+                var marker = new google.maps.Marker({
+                    position: pin.position,
+                    map: map,
+                    title: pin.name
+                });
+
+                marker.addListener('click', function() {
+                    _.each(infoWindows, function (infoWindow) {
+                        infoWindow.close();
+                    });
+                    infoWindow.open(map, marker);
+                });
+
+                markers.push(marker);
+
+            });
+
+
+        };
+
+        var init = function () {
+            $timeout(function () {
+                initMap();
+            }, 500);
+        };
+
+        init();
+    }]);
 }());
 
 (function () {
@@ -339,6 +387,43 @@ var app = angular.module('app', []);
         init();
 
         //$scope.showPopup = showPopup;
+    }]);
+}());
+
+(function () {
+    app.controller('MenuCtrl', ['$scope', function ($scope) {
+
+        var showing = false;
+
+        var toggleidebar = function () {
+            if (showing) hideSidebar()
+            else showSidebar();
+        };
+
+        var showSidebar = function () {
+            $('.content-area, .menu').velocity('stop').velocity({'margin-left': '200px'}, 300);
+            $('.menu-overlay').show();
+            showing = true;
+        };
+
+        var hideSidebar = function () {
+            $('.content-area, .menu').velocity('stop').velocity({'margin-left': '0'}, 300);
+            //$('.header').velocity('stop').velocity({'left': '0'}, 300);
+            $('.menu-overlay').hide();
+            showing = false;
+        };
+
+        var events = function () {
+            $(document).on('click', '.header-menu', toggleidebar);
+            $(document).on('click', '.menu-overlay, .header-close', hideSidebar);
+        };
+
+        var init = function () {
+            events();
+        };
+
+        init();
+
     }]);
 }());
 
@@ -419,44 +504,6 @@ var app = angular.module('app', []);
 }());
 
 (function () {
-    app.controller('MenuCtrl', ['$scope', function ($scope) {
-
-        var showing = false;
-
-        var toggleidebar = function () {
-            if (showing) hideSidebar()
-            else showSidebar();
-        };
-
-        var showSidebar = function () {
-            $('.content-area, .menu').velocity('stop').velocity({'margin-left': '200px'}, 300);
-            $('.menu-overlay').show();
-            showing = true;
-        };
-
-        var hideSidebar = function () {
-            $('.content-area, .menu').velocity('stop').velocity({'margin-left': '0'}, 300);
-            //$('.header').velocity('stop').velocity({'left': '0'}, 300);
-            $('.menu-overlay').hide();
-            showing = false;
-        };
-
-        var events = function () {
-            $(document).on('click', '.header-menu', toggleidebar);
-            $(document).on('click', '.menu-overlay, .header-close', hideSidebar);
-        };
-
-        var init = function () {
-            events();
-        };
-
-        init();
-
-    }]);
-}());
-
-
-(function () {
     app.controller('SearchCtrl', ['$scope', '$http', function ($scope, $http) {
 
         //var ServiceUrl = "CHANGE_ME!";
@@ -522,6 +569,7 @@ var app = angular.module('app', []);
 
     }]);
 }());
+
 
 (function () {
     app.controller('SliderCtrl', ['$scope', '$element', '$interval', function ($scope, $element, $interval) {

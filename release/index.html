@@ -245,53 +245,59 @@
 </div>
 <div data-template="header" data-main data-ng-controller="HeaderCtrl">
     <div class="header">
+        <div class="container">
+            <a href="/" class="header-logo">
+                <img src="public/img/gaca-logo.png" style=""/>
+                <span class="hidden-xs hidden-sm">General Authority of Civil Aviation</span>
+                <!--<span class="hidden-sm hidden-xs">-->
+                <!--الهيئة العامة للطيران المدني-->
+                <!--</span>-->
+            </a>
+        </div>
         <div class="header-line">
             <div class="header-menu visible-xs visible-sm">
                 <i class="fa fa-bars"></i>
             </div>
 
             <div class="container">
-                <div class="in sm hidden-xs search-box">
-                    <input type="text"/>
+                <div class="col-sm-12">
 
-                    <div class="in-btn">
-                        <i class="fa fa-search"></i>
+                    <div class="pull-right">
+                        <div class="in sm hidden-xs search-box">
+                            <input type="text"/>
+
+                            <div class="in-btn">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+
+                        <a href="#" class="hidden-xs"><strong>Arabic</strong></a>
+
+                        <div class="vd hidden-xs"></div>
+
+                    <span class="gaca-form">
+                        <form>
+                            <span class="hidden-xs hidden-sm" style="cursor: pointer">
+                                <i class="fa fa-user"></i>  &nbsp;
+                                <span class="in sm">
+                                    <input type="text" placeholder="Username">
+                                </span>  &nbsp;
+                                <span class="in sm">
+                                    <input type="text" placeholder="Password">
+                                </span>  &nbsp;
+                                <span class="gaca-btn">Login &nbsp; <i class="fa fa-lock"></i></span>  &nbsp;
+                                <span class="gaca-btn">Register &nbsp; <i class="fa fa-user"></i></span>
+                            </span>
+
+                            <span class="show-login-popup hidden-md hidden-lg" style="cursor: pointer;">
+                                <i class="fa fa-user"></i> &nbsp; Login
+                            </span>
+                        </form>
+                    </span>
                     </div>
+
+
                 </div>
-
-                <div class="vd hidden-xs"></div>
-
-                <a href="#" class="hidden-xs"><strong>Arabic</strong></a>
-
-                <div class="vd hidden-xs"></div>
-
-                <span class="gaca-form">
-                    <form>
-                        <span class="hidden-xs hidden-sm" style="cursor: pointer">
-                            <i class="fa fa-user"></i>  &nbsp;
-                            <span class="in sm">
-                                <input type="text" placeholder="Username">
-                            </span>  &nbsp;
-                            <span class="in sm">
-                                <input type="text" placeholder="Password">
-                            </span>  &nbsp;
-                            <span class="gaca-btn">Login &nbsp; <i class="fa fa-lock"></i></span>  &nbsp;
-                            <span class="gaca-btn">Register &nbsp; <i class="fa fa-user"></i></span>
-                        </span>
-
-                        <span class="show-login-popup hidden-md hidden-lg" style="cursor: pointer;">
-                            <i class="fa fa-user"></i> &nbsp; Login
-                        </span>
-                    </form>
-                </span>
-
-                <a class="pull-right" href="/">
-                    <span class="hidden-xs hidden-sm">General Authority of Civil Aviation</span>
-                    <img src="public/img/gaca-logo.png" style=""/>
-                    <!--<span class="hidden-sm hidden-xs">-->
-                    <!--الهيئة العامة للطيران المدني-->
-                    <!--</span>-->
-                </a>
             </div>
         </div>
 
@@ -570,50 +576,50 @@
                         <div class="slider-holder" style="will-change:transform;">
                             <div class="slider-item" ng-style="">
                                 <div class="item-image" style="background-image: url('http://www.msc-sa.com/electro/media/k2/galleries/3/p18skbaeh81fvrht811tf3410ds5.jpg')"></div>
-                                <div class="item-text">
+                                <div class="item-text clearfix">
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
 
-                                    <a href="#"><strong>Read More...</strong></a>
+                                    <a href="#" class="pull-right"><strong>Read More &nbsp; <i class="fa fa-angle-right"></i></strong></a>
                                 </div>
                             </div>
                             <div class="slider-item">
                                 <div class="item-image" style="background-image: url('http://www.tradeandexportme.com/wp-content/uploads/2013/08/travel.jpg')"></div>
-                                <div class="item-text">
+                                <div class="item-text clearfix">
                                     <p>Aenean commodo ligula eget dolor. Aenean massa.</p>
 
-                                    <a href="#"><strong>Read More...</strong></a>
+                                    <a href="#" class="pull-right"><strong>Read More &nbsp; <i class="fa fa-angle-right"></i></strong></a>
                                 </div>
                             </div>
                             <div class="slider-item">
                                 <div class="item-image" style="background-image: url('http://www.msc-sa.com/electro/media/k2/galleries/3/p18skbaeh81qmheg12601m3q1nfi6.jpg')"></div>
-                                <div class="item-text">
+                                <div class="item-text clearfix">
                                     <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
 
-                                    <a href="#"><strong>Read More...</strong></a>
+                                    <a href="#" class="pull-right"><strong>Read More &nbsp; <i class="fa fa-angle-right"></i></strong></a>
                                 </div>
                             </div>
                             <div class="slider-item">
                                 <div class="item-image" style="background-image: url('http://vid.alarabiya.net/images/2013/07/19/5c61c865-9ccb-43c2-8ced-9ce3b5eeacd3/5c61c865-9ccb-43c2-8ced-9ce3b5eeacd3_16x9_600x338.jpg')"></div>
-                                <div class="item-text">
+                                <div class="item-text clearfix">
                                     <p>Nulla consequat massa quis enim.</p>
 
-                                    <a href="#"><strong>Read More...</strong></a>
+                                    <a href="#" class="pull-right"><strong>Read More &nbsp; <i class="fa fa-angle-right"></i></strong></a>
                                 </div>
                             </div>
                             <div class="slider-item">
                                 <div class="item-image" style="background-image: url('http://www.designboom.com/contemporary/contemporaryairportdesign/63.jpg')"></div>
-                                <div class="item-text">
+                                <div class="item-text clearfix">
                                     <p>Aenean commodo ligula eget dolor. Aenean massa.</p>
 
-                                    <a href="#"><strong>Read More...</strong></a>
+                                    <a href="#" class="pull-right"><strong>Read More &nbsp; <i class="fa fa-angle-right"></i></strong></a>
                                 </div>
                             </div>
                             <div class="slider-item">
                                 <div class="item-image" style="background-image: url('http://images.alarabiya.net/a3/3d/640x392_30597_190248.jpg')"></div>
-                                <div class="item-text">
+                                <div class="item-text clearfix">
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </p>
 
-                                    <a href="#"><strong>Read More...</strong></a>
+                                    <a href="#" class="pull-right"><strong>Read More &nbsp; <i class="fa fa-angle-right"></i></strong></a>
                                 </div>
                             </div>
                         </div>
@@ -639,12 +645,12 @@
                                     </div>
                                 </div>
 
-                                <div class="select-content">
+                                <div class="select-content clearfix">
                                     <p>Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues.</p>
 
                                     <p>Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental.</p>
 
-                                    <a class="gaca-btn" style="border-color:white;" href="#">Read More...</a>
+                                    <a class="gaca-btn pull-right" style="border-color:white;" href="#">Read More...</a>
                                 </div>
                             </div>
                         </div>
@@ -662,12 +668,12 @@
                                     </div>
                                 </div>
 
-                                <div class="select-content">
+                                <div class="select-content clearfix">
                                     <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.</p>
 
                                     <p>Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.</p>
 
-                                    <div class="gaca-btn" style="border-color:white;">Read More...</div>
+                                    <div class="gaca-btn pull-right" style="border-color:white;">Read More...</div>
 
                                 </div>
                             </div>
@@ -680,418 +686,478 @@
 </div>
 <div data-main>
 
-<div class="container">
-    <div data-template="home-boxes">
-        <div class="home-boxes">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
-                        <div class="box-header">
-                            <div class="box-icon">
-                                <img src="public/img/svg/pilot.svg" alt=""/>
-                            </div>
-                            <div class="box-status" ng-click="changeActive()">
-                                <i class="fa fa-plus"></i>
-                                <i class="fa fa-minus"></i>
-                            </div>
-                            <div class="box-title">Frequent Questions</div>
-                            <div class="box-content">
-                                <div class="box-questions">
-                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
-                                        <div class="question-title" ng-click="changeActive()">
-                                            <div class="question-status">
-                                                <i class="fa fa-angle-down"></i>
-                                                <i class="fa fa-angle-right"></i>
+    <div class="container">
+        <div data-template="home-boxes">
+            <div class="home-boxes">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                            <div class="box-header">
+                                <div class="box-icon">
+                                    <img src="public/img/svg/pilot.svg" alt=""/>
+                                </div>
+                                <div class="box-status" ng-click="changeActive()">
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-minus"></i>
+                                </div>
+                                <div class="box-title">Frequent Questions</div>
+                                <div class="box-content">
+                                    <div class="box-questions">
+                                        <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                            <div class="question-title" ng-click="changeActive()">
+                                                <div class="question-status">
+                                                    <i class="fa fa-angle-down"></i>
+                                                    <i class="fa fa-angle-right"></i>
+                                                </div>
+                                                What are the manditory requirements for pilot flights to Saudi Arabia?
                                             </div>
-                                            What are the manditory requirements for pilot flights to Saudi Arabia?
-                                        </div>
 
-                                        <div class="question-content">
-                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                                            <div class="question-content">
+                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
 
-                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
 
-                                            <a href="#"><strong><i class="fa fa-angle-right"></i> &nbsp; Download PDF</strong></a>
-                                        </div>
-                                    </div>
-                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
-                                        <div class="question-title" ng-click="changeActive()">
-                                            <div class="question-status">
-                                                <i class="fa fa-angle-down"></i>
-                                                <i class="fa fa-angle-right"></i>
-                                            </div>
-                                            I’m a pilot, how do I apply for duis dolore te feugaitliber KSA esit soluta nobis eleifend?
-                                        </div>
-
-                                        <div class="question-content">
-                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-
-                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-
-                                            <a href="#"><strong><i class="fa fa-angle-right"></i> &nbsp; Download PDF</strong></a>
-                                        </div>
-                                    </div>
-                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
-                                        <div class="question-title" ng-click="changeActive()">
-                                            <div class="question-status">
-                                                <i class="fa fa-angle-down"></i>
-                                                <i class="fa fa-angle-right"></i>
-                                            </div>
-                                            What kind of pilot licence duis dolore te feugait liber tempor cum soluta nobis?
-                                        </div>
-
-                                        <div class="question-content">
-                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-
-                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-
-                                            <a href="#"><strong><i class="fa fa-angle-right"></i> &nbsp; Download PDF</strong></a>
-                                        </div>
-                                    </div>
-                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
-                                        <div class="question-title" ng-click="changeActive()">
-                                            <div class="question-status">
-                                                <i class="fa fa-angle-down"></i>
-                                                <i class="fa fa-angle-right"></i>
-                                            </div>
-                                            I’d like to make an application to duis dolore te feugait liber tempor cum soluta nobis?
-                                        </div>
-
-                                        <div class="question-content">
-                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-
-                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-
-                                            <a href="#"><strong><i class="fa fa-angle-right"></i> &nbsp; Download PDF</strong></a>
-                                        </div>
-                                    </div>
-                                    <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
-                                        <div class="question-title" ng-click="changeActive()">
-                                            <div class="question-status">
-                                                <i class="fa fa-angle-down"></i>
-                                                <i class="fa fa-angle-right"></i>
-                                            </div>
-                                            Who do I contact when I want to tempor soluta nobis eleifend delenit augue duis dolore?
-                                        </div>
-
-                                        <div class="question-content">
-                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-
-                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-
-                                            <a href="#"><strong><i class="fa fa-angle-right"></i> &nbsp; Download PDF</strong></a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
-                        <div class="box-header">
-                            <div class="box-icon">
-                                <i class="fa fa-external-link"></i>
-                            </div>
-                            <div class="box-status" ng-click="changeActive()">
-                                <i class="fa fa-plus"></i>
-                                <i class="fa fa-minus"></i>
-                            </div>
-                            <div class="box-title">Important Links</div>
-                            <div class="box-content">
-                                <ul>
-                                    <li>Lorem ipsum dolor sit amet</li>
-                                    <li>Consectetuer adipiscing elit</li>
-                                    <li>Aenean commodo ligula eget dolor</li>
-                                    <li>Cum sociis natoque penatibus et magnis</li>
-                                    <li>Nascetur ridiculus mus</li>
-                                </ul>
-
-                                <div class="box-highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
-                        <div class="box-header">
-                            <div class="box-icon">
-                                <i class="fa fa-plane"></i>
-                            </div>
-                            <div class="box-status" ng-click="changeActive()">
-                                <i class="fa fa-plus"></i>
-                                <i class="fa fa-minus"></i>
-                            </div>
-                            <div class="box-title">Check Destination</div>
-                            <div class="box-content">
-                                <div class="in block">
-                                    <select>
-                                        <option value="">Select Destination</option>
-                                        <option>Saudi Arabia</option>
-                                        <option>United Kingdom</option>
-                                    </select>
-
-                                    <div class="in-btn select-btn">
-                                        <i class="fa fa-caret-down"></i>
-                                    </div>
-                                </div>
-                                <p></p>
-
-                                <div class="in">
-                                    <input type="search"/>
-                                </div>
-                                <p></p>
-
-                                <span class="gaca-btn">Submit</span>
-
-
-
-                                <hr/>
-
-                                <div class="row">
-                                    <div class="col-xs-6">
-                                        Today
-                                        <div class="thin">30° <i class="fa fa-tint" style="color: #add8e6"></i></div>
-
-                                    </div>
-                                    <div class="col-xs-6">
-                                        Tomorrow
-                                        <div class="thin">42° <i class="fa fa-sun-o" style="color: yellow"></i></div>
-
-                                    </div>
-                                </div>
-                                
-                                
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
-                        <div class="box-header">
-                            <div class="box-icon">
-                                <!--<i class="fa fa-plane"></i>-->
-                            </div>
-                            <div class="box-status" ng-click="changeActive()">
-                                <i class="fa fa-plus"></i>
-                                <i class="fa fa-minus"></i>
-                            </div>
-                            <div class="box-title">Map</div>
-                            <div class="box-content" style="height: 120px;">
-
-                            </div>
-
-                            <div class="box-side" style="background-image: url('public/img/gaca-location-2.png')">
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
-                        <div class="box-header">
-                            <div class="box-icon">
-                                <i class="fa fa-plane"></i>
-                            </div>
-                            <div class="box-status" ng-click="changeActive()">
-                                <i class="fa fa-plus"></i>
-                                <i class="fa fa-minus"></i>
-                            </div>
-                            <div class="box-title">&nbsp;</div>
-                            <div class="box-content" style="height: 60px;">
-
-                            </div>
-
-                            <div class="box-side" style="background-image: url('public/img/plane.png')">
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
-                        <div class="box-header">
-                            <div class="box-icon">
-                                <i class="fa fa-copy"></i>
-                            </div>
-                            <div class="box-status" ng-click="changeActive()">
-                                <i class="fa fa-plus"></i>
-                                <i class="fa fa-minus"></i>
-                            </div>
-                            <div class="box-title">New Cockpit Tech</div>
-                            <div class="box-content">
-                                <div class="box-image" style="background-image: url('https://picjumbo.imgix.net/HNCK5322.jpg?q=90&w=1000&sharp=30')"></div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <!--<div class="box box-red clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">-->
-                        <!--<div class="box-header">-->
-                            <!--<div class="box-icon">-->
-                                <!--<i class="fa fa-fire"></i>-->
-                            <!--</div>-->
-                            <!--<div class="box-status" ng-click="changeActive()">-->
-                                <!--<i class="fa fa-plus"></i>-->
-                                <!--<i class="fa fa-minus"></i>-->
-                            <!--</div>-->
-                            <!--<div class="box-title">Important</div>-->
-                            <!--<div class="box-content">-->
-                                <!--<p>-->
-                                    <!--<i class="fa fa-exclamation-circle"></i> &nbsp; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.-->
-                                <!--</p>-->
-
-                                <!--<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>-->
-
-                                <!--<div class="gaca-btn" style="border-color:darkred; background: darkred; color:white;">Read More...</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-
-                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
-                        <div class="box-header">
-                            <div class="box-icon">
-                                <img src="public/img/svg/call.svg" alt=""/>
-                            </div>
-                            <div class="box-status" ng-click="changeActive()">
-                                <i class="fa fa-plus"></i>
-                                <i class="fa fa-minus"></i>
-                            </div>
-                            <div class="box-title">Get In Touch</div>
-                            <div class="box-content">
-                                <p class="thin pull-left">Departments</p>
-
-                                <div class="in pull-right">
-                                    <select class="gaca-select" ng-model="contactSelect" ng-init="contactSelect = 'air-nav'">
-                                        <option value="air-nav">Air Navigation</option>
-                                        <option value="safety-org">Safety & Organisation</option>
-                                        <option value="it">Information Technology</option>
-                                        <option value="hr">Human Resources</option>
-                                    </select>
-
-                                    <div class="in-btn select-btn">
-                                        <i class="fa fa-caret-down"></i>
-                                    </div>
-                                </div>
-
-
-
-                                <hr style="clear: both"/>
-
-                                <div ng-show="contactSelect == 'air-nav'" style="clear:both">
-                                    <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4447666,<br>
-                                    <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 4054535,<br>
-                                    <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 6558 <br>
-                                    <strong style="width:100px;display:inline-block;">Email:</strong> <a href="#">info@gaca.gov.ae</a>
-                                </div>
-                                <div ng-show="contactSelect == 'safety-org'" style="clear:both">
-                                    <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4532990,<br>
-                                    <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 1778344,<br>
-                                    <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 1662 <br>
-                                    <strong style="width:100px;display:inline-block;">Email:</strong> <a href="#">safety@gaca.gov.ae</a>
-                                </div>
-                                <div ng-show="contactSelect == 'it'" style="clear:both">
-                                    <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4663944,<br>
-                                    <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 9844763,<br>
-                                    <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 2330 <br>
-                                    <strong style="width:100px;display:inline-block;">Email:</strong> <a href="#">itsupport@gaca.gov.ae</a>
-                                </div>
-                                <div ng-show="contactSelect == 'hr'" style="clear:both">
-                                    <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 1002838,<br>
-                                    <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 1002839,<br>
-                                    <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 1007 <br>
-                                    <strong style="width:100px;display:inline-block;">Email:</strong> <a href="#">hr@gaca.gov.ae</a>
-                                </div>
-
-                                <hr/>
-
-                                <!--<p></p>-->
-                                7:30am to 2:30pm for GACA staff <br/>
-                                8:00am to 1:00pm for Customers <br/>
-                                Sun, Mon, Tues, Wed, Thurs
-
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
-                        <div class="box-header">
-                            <div class="box-icon">
-                                <i class="fa fa-twitter"></i>
-                            </div>
-                            <div class="box-status" ng-click="changeActive()">
-                                <i class="fa fa-plus"></i>
-                                <i class="fa fa-minus"></i>
-                            </div>
-                            <div class="box-title">GACA on Twitter</div>
-                            <div class="box-content">
-                                <div class="box-twitter">
-                                    <div class="tweets">
-                                        <div class="twitter-post">
-                                            <div class="post-image" style="background-image: url('https://randomuser.me/api/portraits/men/35.jpg')"></div>
-                                            <div class="post-content">
-                                                <div class="post-user">@riki-highflier</div>
-                                                <p>The new GACA website looks awesome!</p>
+                                                <div>
+                                                    <a href="#"><strong><i class="fa fa-download"></i> &nbsp; Download PDF</strong></a>
+                                                </div>
+                                                <div>
+                                                    <a href="#"><strong><i class="fa fa-external-link"></i> &nbsp; Links</strong></a>
+                                                </div>
+                                                <div style="text-align: right">
+                                                    <span class="gaca-btn">Read More...</span>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="twitter-post">
-                                            <div class="post-image" style="background-image: url('https://randomuser.me/api/portraits/men/36.jpg')"></div>
-                                            <div class="post-content">
-                                                <div class="post-user">@faisal_mohammed</div>
-                                                <p>Enjoyed the conference yesterday. Can't wait to sleep on the plane!</p>
+                                        <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                                            <div class="question-title" ng-click="changeActive()">
+                                                <div class="question-status">
+                                                    <i class="fa fa-angle-down"></i>
+                                                    <i class="fa fa-angle-right"></i>
+                                                </div>
+                                                I’m a pilot, how do I apply for duis dolore te feugaitliber KSA esit soluta nobis eleifend?
+                                            </div>
+
+                                            <div class="question-content">
+                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+                                                <div>
+                                                    <a href="#"><strong><i class="fa fa-download"></i> &nbsp; Download PDF</strong></a>
+                                                </div>
+                                                <div>
+                                                    <a href="#"><strong><i class="fa fa-external-link"></i> &nbsp; Links</strong></a>
+                                                </div>
+
+                                                <div style="text-align: right">
+                                                    <a class="gaca-btn">Read More...</a>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="twitter-post">
-                                            <div class="post-image" style="background-image: url('https://randomuser.me/api/portraits/men/36.jpg')"></div>
-                                            <div class="post-content">
-                                                <div class="post-user">@faisal_mohammed</div>
-                                                <p>Boeing offers AW101 navigation upgrade http://goo.gl/3PPJqh #Ascent #Aviation #News</p>
+                                        <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                            <div class="question-title" ng-click="changeActive()">
+                                                <div class="question-status">
+                                                    <i class="fa fa-angle-down"></i>
+                                                    <i class="fa fa-angle-right"></i>
+                                                </div>
+                                                What kind of pilot licence duis dolore te feugait liber tempor cum soluta nobis?
+                                            </div>
+
+                                            <div class="question-content">
+                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+                                                <a href="#"><strong><i class="fa fa-angle-right"></i> &nbsp; Download PDF</strong></a>
+                                            </div>
+                                        </div>
+                                        <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                            <div class="question-title" ng-click="changeActive()">
+                                                <div class="question-status">
+                                                    <i class="fa fa-angle-down"></i>
+                                                    <i class="fa fa-angle-right"></i>
+                                                </div>
+                                                I’d like to make an application to duis dolore te feugait liber tempor cum soluta nobis?
+                                            </div>
+
+                                            <div class="question-content">
+                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+                                                <a href="#"><strong><i class="fa fa-angle-right"></i> &nbsp; Download PDF</strong></a>
+                                            </div>
+                                        </div>
+                                        <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                                            <div class="question-title" ng-click="changeActive()">
+                                                <div class="question-status">
+                                                    <i class="fa fa-angle-down"></i>
+                                                    <i class="fa fa-angle-right"></i>
+                                                </div>
+                                                Who do I contact when I want to tempor soluta nobis eleifend delenit augue duis dolore?
+                                            </div>
+
+                                            <div class="question-content">
+                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+                                                <a href="#"><strong><i class="fa fa-angle-right"></i> &nbsp; Download PDF</strong></a>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="social-icons">
-                                        <i class="fa fa-facebook" style="color: #3b5998"></i>
-                                        <i class="fa fa-twitter" style="color: #55acee"></i>
-                                        <i class="fa fa-youtube" style="color: #cd201f"></i>
-                                        <i class="fa fa-google-plus" style="color: #dd4b39"></i>
-                                    </div>
-                                </div>
 
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                            <div class="box-header">
+                                <div class="box-icon">
+                                    <i class="fa fa-external-link"></i>
+                                </div>
+                                <div class="box-status" ng-click="changeActive()">
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-minus"></i>
+                                </div>
+                                <div class="box-title">Important Links</div>
+                                <div class="box-content">
+                                    <ul>
+                                        <li>Lorem ipsum dolor sit amet</li>
+                                        <li>Consectetuer adipiscing elit</li>
+                                        <li>Aenean commodo ligula eget dolor</li>
+                                        <li>Cum sociis natoque penatibus et magnis</li>
+                                        <li>Nascetur ridiculus mus</li>
+                                    </ul>
+
+                                    <div class="box-highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
+
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
-                        <div class="box-header">
-                            <div class="box-icon">
-                                <i class="fa fa-pencil"></i>
-                            </div>
-                            <div class="box-status" ng-click="changeActive()">
-                                <i class="fa fa-plus"></i>
-                                <i class="fa fa-minus"></i>
-                            </div>
-                            <div class="box-title">Provide Feedback</div>
-                            <div class="box-content">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-                                <hr/>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-                                <p>
-                                   <span class="in">
-                                    <input type="text">
+                    <div class="col-sm-4">
+                        <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                            <div class="box-header">
+                                <div class="box-icon">
+                                    <i class="fa fa-plane"></i>
+                                </div>
+                                <div class="box-status" ng-click="changeActive()">
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-minus"></i>
+                                </div>
+                                <div class="box-title">Check Destination</div>
+                                <div class="box-content">
+                                    <div style="text-align: right">
+                                        <p class="in block">
+                                            <select>
+                                                <option value="">Select Destination</option>
+                                                <option>Saudi Arabia</option>
+                                                <option>United Kingdom</option>
+                                            </select>
 
-                                    <span class="in-btn">
+                                    <span class="in-btn select-btn">
                                         <i class="fa fa-caret-down"></i>
                                     </span>
-                                </span>
-                                </p>
+                                        </p>
 
-                                <!--<p>&nbsp;</p>-->
-                                <p><span class="gaca-btn">Submit</span></p>
+                                        <p class="in">
+                                            <input type="search"/>
+                                        </p>
 
+                                        <span class="gaca-btn">Submit</span>
+                                    </div>
+
+
+                                    <hr/>
+
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            Today
+                                            <div class="thin">30° <i class="fa fa-tint" style="color: #add8e6"></i>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-xs-6">
+                                            Tomorrow
+                                            <div class="thin">42° <i class="fa fa-sun-o" style="color: yellow"></i>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            var pins = [
+                                {
+                                    name: 'Prince Nayef Bin Abdulaziz Regional Airport',
+                                    position: {lat: 26.296997, lng: 43.802283}
+                                },
+                                {
+                                    name: 'Rafha Domestic Airport',
+                                    position: {lat: 29.672434, lng: 43.494666}
+                                },
+                                {
+                                    name: 'Prince Abdul Majeed bin Abdul Aziz Domestic Airport',
+                                    position: {lat: 26.493817, lng: 38.155311}
+                                },
+                                {
+                                    name: 'Taif Regional Airport',
+                                    position: {lat: 21.497682, lng: 40.572303}
+                                },
+                                {
+                                    name: 'Wadi Al Dawasir Airport',
+                                    position: {lat: 20.492516, lng: 45.208533}
+                                },
+                                {
+                                    name: 'EAM',
+                                    position: {lat: 17.637360, lng: 44.439490}
+                                },
+                                {
+                                    name: 'Sharurah Domestic Airport',
+                                    position: {lat: 17.458558, lng: 47.134232}
+                                },
+                                {
+                                    name: 'DMM',
+                                    position: {lat: 26.468658, lng: 49.800523}
+                                }
+                            ];
+                        </script>
+
+                        <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                            <div class="box-header">
+                                <div class="box-icon">
+                                    <i class="fa fa-map-marker"></i>
+                                </div>
+                                <div class="box-status" ng-click="changeActive()">
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-minus"></i>
+                                </div>
+                                <div class="box-title">Airports</div>
+                                <div class="box-content">
+                                    <div class="box-map" id="map" style="margin:0 -10px -10px;height: 300px;" ng-controller="MapCtrl"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                            <div class="box-header">
+                                <div class="box-icon">
+                                    <i class="fa fa-plane"></i>
+                                </div>
+                                <div class="box-status" ng-click="changeActive()">
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-minus"></i>
+                                </div>
+                                <div class="box-title">&nbsp;</div>
+                                <div class="box-content" style="height: 60px;">
+
+                                </div>
+
+                                <div class="box-side" style="background-image: url('public/img/plane.png')">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                            <div class="box-header">
+                                <div class="box-icon">
+                                    <i class="fa fa-copy"></i>
+                                </div>
+                                <div class="box-status" ng-click="changeActive()">
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-minus"></i>
+                                </div>
+                                <div class="box-title">New Cockpit Tech</div>
+                                <div class="box-content">
+                                    <div class="box-image" style="background-image: url('https://picjumbo.imgix.net/HNCK5322.jpg?q=90&w=1000&sharp=30')"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <!--<div class="box box-red clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">-->
+                        <!--<div class="box-header">-->
+                        <!--<div class="box-icon">-->
+                        <!--<i class="fa fa-fire"></i>-->
+                        <!--</div>-->
+                        <!--<div class="box-status" ng-click="changeActive()">-->
+                        <!--<i class="fa fa-plus"></i>-->
+                        <!--<i class="fa fa-minus"></i>-->
+                        <!--</div>-->
+                        <!--<div class="box-title">Important</div>-->
+                        <!--<div class="box-content">-->
+                        <!--<p>-->
+                        <!--<i class="fa fa-exclamation-circle"></i> &nbsp; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.-->
+                        <!--</p>-->
+
+                        <!--<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>-->
+
+                        <!--<div class="gaca-btn" style="border-color:darkred; background: darkred; color:white;">Read More...</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+
+                        <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                            <div class="box-header">
+                                <div class="box-icon">
+                                    <img src="public/img/svg/call.svg" alt=""/>
+                                </div>
+                                <div class="box-status" ng-click="changeActive()">
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-minus"></i>
+                                </div>
+                                <div class="box-title">Get In Touch</div>
+                                <div class="box-content">
+                                    <p class="thin pull-left">Departments</p>
+
+                                    <div class="in pull-right">
+                                        <select class="gaca-select" ng-model="contactSelect" ng-init="contactSelect = 'air-nav'">
+                                            <option value="air-nav">Air Navigation</option>
+                                            <option value="safety-org">Safety & Organisation</option>
+                                            <option value="it">Information Technology</option>
+                                            <option value="hr">Human Resources</option>
+                                        </select>
+
+                                        <div class="in-btn select-btn">
+                                            <i class="fa fa-caret-down"></i>
+                                        </div>
+                                    </div>
+
+
+                                    <hr style="clear: both"/>
+
+                                    <div ng-show="contactSelect == 'air-nav'" style="clear:both">
+                                        <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4447666,<br>
+                                        <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 4054535,<br>
+                                        <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 6558 <br>
+                                        <strong style="width:100px;display:inline-block;">Email:</strong>
+                                        <a href="#">info@gaca.gov.ae</a>
+                                    </div>
+                                    <div ng-show="contactSelect == 'safety-org'" style="clear:both">
+                                        <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4532990,<br>
+                                        <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 1778344,<br>
+                                        <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 1662 <br>
+                                        <strong style="width:100px;display:inline-block;">Email:</strong>
+                                        <a href="#">safety@gaca.gov.ae</a>
+                                    </div>
+                                    <div ng-show="contactSelect == 'it'" style="clear:both">
+                                        <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4663944,<br>
+                                        <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 9844763,<br>
+                                        <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 2330 <br>
+                                        <strong style="width:100px;display:inline-block;">Email:</strong>
+                                        <a href="#">itsupport@gaca.gov.ae</a>
+                                    </div>
+                                    <div ng-show="contactSelect == 'hr'" style="clear:both">
+                                        <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 1002838,<br>
+                                        <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 1002839,<br>
+                                        <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 1007 <br>
+                                        <strong style="width:100px;display:inline-block;">Email:</strong>
+                                        <a href="#">hr@gaca.gov.ae</a>
+                                    </div>
+
+                                    <hr/>
+
+                                    <!--<p></p>-->
+                                    7:30am to 2:30pm for GACA staff <br/>
+                                    8:00am to 1:00pm for Customers <br/>
+                                    Sun, Mon, Tues, Wed, Thurs
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                            <div class="box-header">
+                                <div class="box-icon">
+                                    <i class="fa fa-twitter"></i>
+                                </div>
+                                <div class="box-status" ng-click="changeActive()">
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-minus"></i>
+                                </div>
+                                <div class="box-title">GACA on Twitter</div>
+                                <div class="box-content">
+                                    <div class="box-twitter">
+                                        <div class="tweets">
+                                            <div class="twitter-post">
+                                                <div class="post-image" style="background-image: url('https://randomuser.me/api/portraits/men/35.jpg')"></div>
+                                                <div class="post-content">
+                                                    <div class="post-user">@riki-highflier</div>
+                                                    <p>The new GACA website looks awesome!</p>
+                                                </div>
+                                            </div>
+                                            <div class="twitter-post">
+                                                <div class="post-image" style="background-image: url('https://randomuser.me/api/portraits/men/36.jpg')"></div>
+                                                <div class="post-content">
+                                                    <div class="post-user">@faisal_mohammed</div>
+                                                    <p>Enjoyed the conference yesterday. Can't wait to sleep on the plane!</p>
+                                                </div>
+                                            </div>
+                                            <div class="twitter-post">
+                                                <div class="post-image" style="background-image: url('https://randomuser.me/api/portraits/men/36.jpg')"></div>
+                                                <div class="post-content">
+                                                    <div class="post-user">@faisal_mohammed</div>
+                                                    <p>Boeing offers AW101 navigation upgrade http://goo.gl/3PPJqh #Ascent #Aviation #News</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="social-icons">
+                                            <i class="fa fa-facebook" style="color: #3b5998"></i>
+                                            <i class="fa fa-twitter" style="color: #55acee"></i>
+                                            <i class="fa fa-youtube" style="color: #cd201f"></i>
+                                            <i class="fa fa-google-plus" style="color: #dd4b39"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                            <div class="box-header">
+                                <div class="box-icon">
+                                    <i class="fa fa-pencil"></i>
+                                </div>
+                                <div class="box-status" ng-click="changeActive()">
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-minus"></i>
+                                </div>
+                                <div class="box-title">Provide Feedback</div>
+                                <div class="box-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                                    <hr/>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+
+                                    <div class="clearfix">
+                                        <p class="pull-right">
+                                        <span class="in">
+                                            <input type="text">
+
+                                            <span class="in-btn">
+                                                <i class="fa fa-caret-down"></i>
+                                            </span>
+                                        </span>
+                                        </p>
+                                    </div>
+
+                                    <!--<p>&nbsp;</p>-->
+                                    <p><span class="gaca-btn pull-right">Submit</span></p>
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1099,7 +1165,6 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 
 <!--footer.ejs-->
@@ -1140,6 +1205,7 @@
 </div>
 </div>
 
+<script async defer src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"></script>
 <script src="public/lib.js"></script>
 <script src="public/app.js"></script>
 </body>
