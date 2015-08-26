@@ -78,11 +78,28 @@
         }
       }
 
+      .slider-arrow {
+        position: absolute;
+        margin-top: 80px;
+        font-size: 60px;
+        left: 0px;
+        z-index: 10;
+        color: $prim-dark;
+        cursor: pointer;
+
+        &.right {
+          left: initial;
+          left: auto;
+          right: 0px;
+        }
+      }
+
       .slider-items {
         position: relative;
         white-space: nowrap;
         font-size: 0;
         overflow: hidden;
+        margin: 0 50px;
 
         .slider-item {
           display: inline-block;

@@ -18,19 +18,32 @@
             var next = $scope.dotIndex + 1;
             if (next >= $scope.dots) next = 0;
             return next;
+        };
 
+        var prevDot = function () {
+            var prev = $scope.dotIndex - 1;
+            if (prev <= -1) prev = $scope.dots -1;
+            return prev;
         };
 
         var setPosition = function (index) {
-            $('.slider-holder').velocity({'translateX': (index * -100) + '%'}, 600);
+            $('.slider-holder').velocity('stop').velocity({'translateX': (index * -100) + '%'}, 600);
             $('.banner-image').eq($scope.dotIndex).velocity('stop').velocity('transition.fadeOut');
             $('.banner-image').eq(index).velocity('stop').velocity('transition.fadeIn');
             $scope.dotIndex = index;
 
             $interval.cancel(interval);
             interval = $interval(function () {
-                setPosition(nextDot());
+                //setPosition(nextDot());
             }, 7000);
+        };
+
+        var nextPosition = function() {
+            setPosition(nextDot())
+        };
+
+        var prevPosition = function() {
+            setPosition(prevDot())
         };
 
         var getDots = function () {
@@ -49,7 +62,7 @@
             initialise();
 
             $interval(function () {
-                setPosition(nextDot());
+                //setPosition(nextDot());
             }, 7000);
         };
 
@@ -64,6 +77,8 @@
         $scope.getDots = getDots;
         $scope.changeActive = changeActive;
         $scope.isActive = isActive;
+        $scope.nextPosition = nextPosition;
+        $scope.prevPosition = prevPosition;
 
     }]);
 }());

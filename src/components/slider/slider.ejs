@@ -12,12 +12,18 @@
                     <div class="header-left hidden-xs">15:23 &nbsp; Sunday, 12 July 2015</div>
                     <h2 class="header-right">Latest News</h2>
 
-                    <div class="slider-dots">
-                        <div class="slider-dot" ng-click="setPosition($index)" ng-class="{active:dotIndex == $index}" ng-repeat="i in getDots() track by $index"></div>
-                    </div>
+                    <!--<div class="slider-dots">-->
+                        <!--<div class="slider-dot" ng-click="setPosition($index)" ng-class="{active:dotIndex == $index}" ng-repeat="i in getDots() track by $index"></div>-->
+                    <!--</div>-->
                 </div>
 
                 <div ng-show="isActive()">
+                    <div class="slider-arrow" ng-click="prevPosition()">
+                        <i class="fa fa-angle-left fa-fw"></i>
+                    </div>
+                    <div class="slider-arrow right" ng-click="nextPosition()">
+                        <i class="fa fa-angle-right fa-fw"></i>
+                    </div>
                     <div class="slider-items">
                         <div class="slider-holder" style="will-change:transform;">
                             <div class="slider-item" ng-style="">
