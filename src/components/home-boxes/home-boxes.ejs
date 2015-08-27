@@ -166,23 +166,25 @@
                                 <div class="box-title">Check Destination</div>
                                 <div class="box-content">
                                     <div style="text-align: right">
-                                        <p class="in block">
-                                            <select>
-                                                <option value="">Select Destination</option>
-                                                <option>Saudi Arabia</option>
-                                                <option>United Kingdom</option>
-                                            </select>
+                                        <form action="{{destination}}" method="post" name="contactform" id="contactform">
+                                            <p class="in block">
+                                                <select ng-model="destination">
+                                                    <option value="">Select Destination</option>
+                                                    <option value="/my-handling-form-page?destination=Saudi Arabia">Saudi Arabia</option>
+                                                    <option value="/my-handling-form-page?destination=United Kingdom">United Kingdom</option>
+                                                </select>
 
-                                    <span class="in-btn select-btn">
-                                        <i class="fa fa-caret-down"></i>
-                                    </span>
-                                        </p>
+                                                <span class="in-btn select-btn">
+                                                    <i class="fa fa-caret-down"></i>
+                                                </span>
+                                            </p>
 
-                                        <p class="in">
-                                            <input type="search"/>
-                                        </p>
+                                            <!--<p class="in">-->
+                                                <!--<input type="search"/>-->
+                                            <!--</p>-->
 
-                                        <span class="gaca-btn">Submit</span>
+                                            <button type="submit" class="gaca-btn">Submit</button>
+                                        </form>
                                     </div>
 
 
@@ -333,11 +335,12 @@
                                     <i class="fa fa-minus"></i>
                                 </div>
                                 <div class="box-title">Get In Touch</div>
-                                <div class="box-content">
-                                    <p class="thin pull-left">Departments</p>
+                                <div class="box-content" ng-controller="GetInTouchCtrl">
+                                    <p class="thin pull-left">Sector</p>
 
                                     <div class="in pull-right">
-                                        <select class="gaca-select" ng-model="contactSelect" ng-init="contactSelect = 'air-nav'">
+                                        <select class="gaca-select" ng-model="contactSector" ng-init="">
+                                            <option value="">Select Sector</option>
                                             <option value="air-nav">Air Navigation</option>
                                             <option value="safety-org">Safety & Organisation</option>
                                             <option value="it">Information Technology</option>
@@ -349,31 +352,57 @@
                                         </div>
                                     </div>
 
+                                    <p class="thin pull-left" style="clear: both">Department</p>
+                                    <div class="in pull-right">
+                                        <select class="gaca-select" ng-model="contactDepartment">
+                                            <option value="">Select Department</option>
+                                            <option ng-repeat="(key, department) in getDepartments() track by $index" value="{{key}}">{{department}}</option>
+                                        </select>
+
+                                        <div class="in-btn select-btn">
+                                            <i class="fa fa-caret-down"></i>
+                                        </div>
+                                    </div>
+
 
                                     <hr style="clear: both"/>
 
-                                    <div ng-show="contactSelect == 'air-nav'" style="clear:both">
+                                    <div ng-show="contactDepartment == 'sector-1'" style="clear:both">
                                         <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4447666,<br>
                                         <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 4054535,<br>
                                         <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 6558 <br>
                                         <strong style="width:100px;display:inline-block;">Email:</strong>
                                         <a href="#">info@gaca.gov.ae</a>
                                     </div>
-                                    <div ng-show="contactSelect == 'safety-org'" style="clear:both">
+                                    <div ng-show="contactDepartment == 'sector-2'" style="clear:both">
                                         <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4532990,<br>
                                         <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 1778344,<br>
                                         <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 1662 <br>
                                         <strong style="width:100px;display:inline-block;">Email:</strong>
                                         <a href="#">safety@gaca.gov.ae</a>
                                     </div>
-                                    <div ng-show="contactSelect == 'it'" style="clear:both">
+                                    <div ng-show="contactDepartment == 'sector-3'" style="clear:both">
                                         <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4663944,<br>
                                         <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 9844763,<br>
                                         <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 2330 <br>
                                         <strong style="width:100px;display:inline-block;">Email:</strong>
                                         <a href="#">itsupport@gaca.gov.ae</a>
                                     </div>
-                                    <div ng-show="contactSelect == 'hr'" style="clear:both">
+                                    <div ng-show="contactDepartment == 'sector-4'" style="clear:both">
+                                        <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 1002838,<br>
+                                        <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 1002839,<br>
+                                        <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 1007 <br>
+                                        <strong style="width:100px;display:inline-block;">Email:</strong>
+                                        <a href="#">hr@gaca.gov.ae</a>
+                                    </div>
+                                    <div ng-show="contactDepartment == 'sector-5'" style="clear:both">
+                                        <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 3324432,<br>
+                                        <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 4667566,<br>
+                                        <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 2330 <br>
+                                        <strong style="width:100px;display:inline-block;">Email:</strong>
+                                        <a href="#">itsupport@gaca.gov.ae</a>
+                                    </div>
+                                    <div ng-show="contactDepartment == 'sector-6'" style="clear:both">
                                         <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 1002838,<br>
                                         <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 1002839,<br>
                                         <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 1007 <br>
