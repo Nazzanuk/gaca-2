@@ -521,3 +521,61 @@ img {
     font-weight: 300;
   }
 }
+
+.temp-align-right {
+  text-align: right;
+
+  .arabic & {
+    text-align: left;
+  }
+}
+
+.temp-align-left {
+  text-align: left;
+
+  .arabic & {
+    text-align: right;
+  }
+}
+
+.temp-right {
+  float: right;
+
+  .arabic & {
+    float: left;
+  }
+}
+
+.show-eng {
+  .arabic & {
+    display: none;
+  }
+}
+
+.show-arab {
+  display: none;
+  .arabic & {
+    display: initial;
+  }
+}
+
+.temp-left {
+  float: left;
+
+  .arabic & {
+    float: right;
+  }
+}
+
+.rtl {
+
+  .arabic & {
+    direction: rtl;
+  }
+}
+
+input {
+  .arabic & {
+    text-align: right;
+  }
+}

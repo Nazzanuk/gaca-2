@@ -18,7 +18,7 @@ var paths = {
     public: 'release/public/'
 };
 
-gulp.task("default", function(){
+gulp.task("default", function () {
     gulp.start([
         'copy-public',
         'gen-css-lib',
@@ -29,14 +29,14 @@ gulp.task("default", function(){
     ]);
 });
 
-gulp.task("gen-css", function(){
+gulp.task("gen-css", function () {
     return gulp.src(['src/app.scss'])
         .pipe(sass({errLogToConsole: true}))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(gulp.dest(paths.public));
 });
 
-gulp.task("gen-css-lib", function(){
+gulp.task("gen-css-lib", function () {
     return gulp.src([
         'src/bower-components/bootstrap/dist/css/bootstrap.min.css'
     ])
@@ -44,13 +44,13 @@ gulp.task("gen-css-lib", function(){
         .pipe(gulp.dest(paths.public));
 });
 
-gulp.task("gen-js", function(){
+gulp.task("gen-js", function () {
     return gulp.src(['src/app.js', 'src/components/**/*.js'])
         .pipe(concat('app.js'))
         .pipe(gulp.dest(paths.public));
 });
 
-gulp.task("gen-js-lib", function(){
+gulp.task("gen-js-lib", function () {
     return gulp.src([
         'src/bower-components/jquery/dist/jquery.min.js',
         'src/bower-components/jquery-ui/jquery-ui.min.js',
@@ -67,13 +67,14 @@ gulp.task("gen-js-lib", function(){
         .pipe(gulp.dest(paths.public));
 });
 
-gulp.task("copy-public", function(){
+gulp.task("copy-public", function () {
     return gulp.src(['src/public/**/*.*'])
         .pipe(gulp.dest(paths.public));
 });
 
-gulp.task("gen-html", function(){
+gulp.task("gen-html", function () {
     var pages = {
+        "arabic-index": ['arabic-head', 'arabic-menu', 'login', 'popup', 'arabic-header', 'arabic-banner', 'slider', 'arabic-home-boxes', 'footer'],
         index: ['head', 'menu', 'login', 'popup', 'header', 'banner', 'slider', 'home-boxes', 'footer'],
         "e-services-search": ['head', 'menu', 'login', 'popup', 'header', 'e-search', 'footer'],
         "e-catalogue": ['head', 'menu', 'login', 'popup', 'header', 'e-catalogue', 'footer'],
@@ -87,15 +88,15 @@ gulp.task("gen-html", function(){
         "2-col": ['head', 'menu', 'login', 'popup', 'header', 'template-2-col', 'footer']
     };
 
-    for (var i in pages){
+    for (var i in pages) {
         var sources = [];
-        for (var j in pages [i]){
+        for (var j in pages [i]) {
             var ejs = pages[i][j];
             sources.push("src/components/" + ejs + "/" + ejs + ".ejs");
         }
         gulp.src(sources)
             .pipe(concat(i + ".html"))
-            .pipe(gulp.dest (paths.release));
+            .pipe(gulp.dest(paths.release));
     }
 });
 
@@ -108,14 +109,14 @@ gulp.task('watch', ['webserver', 'default'], function () {
     ], ['default']);
 });
 
-gulp.task('webserver', function() {
+gulp.task('webserver', function () {
     gulp.src('release')
         .pipe(webserver({
             livereload: {
-                port:11001,
-                enable:true
+                port: 11001,
+                enable: true
             },
             open: true,
-            port:11000
+            port: 11000
         }));
 });

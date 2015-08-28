@@ -13,6 +13,10 @@
     will-change:margin-left;
 //    display: none;
 
+    .arabic & {
+      text-align: right;
+    }
+
     .header-close {
 //      position: absolute;
 //      top: 0;

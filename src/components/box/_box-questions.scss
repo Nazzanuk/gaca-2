@@ -44,6 +44,10 @@
       cursor: pointer;
 //      transition: .2s;
 
+      .arabic & {
+        float: left;
+      }
+
       &:hover {
 //        transform: scale(1.1);
       }
@@ -55,6 +59,10 @@
         line-height: 20px;
         text-align: center;
 //        transition: .2s;
+
+        .arabic & {
+          margin-left: -30px;
+        }
       }
 
       .fa-angle-down {

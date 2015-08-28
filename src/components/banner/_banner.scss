@@ -1,5 +1,8 @@
 [data-template="banner"] {
   .banner {
+    .arabic & {
+      text-align: right;
+    }
     .banner-holder {
       height: 350px;
       position: relative;
@@ -28,11 +31,10 @@
 
           @media (max-width: 767px) {
             margin-top: 30px;
-
           }
 
           .overlay-title {
-            background: white;
+            background: rgba(255,255,255,0.9);
             color: $prim-light;
             padding: 5px 15px 0;
             line-height: 35px;
@@ -43,7 +45,7 @@
           }
 
           .overlay-subtitle {
-            background: white;
+            background: rgba(255,255,255,0.9);
             padding: 0px 15px 45px;
             width: 100%;
             border-radius: 0 0 4px 4px;
@@ -52,6 +54,12 @@
             .gaca-btn {
               position: absolute;
               right: 15px;
+
+              .arabic & {
+                right: initial;
+                right: auto;
+                left: 15px;
+              }
             }
 
           }

@@ -351,6 +351,37 @@ var app = angular.module('app', []);
 
         init();
     }]);
+
+    app.controller('GetInTouchCtrl', ['PopupService', '$scope', '$element', '$timeout', function (PopupService, $scope, $element, $timeout) {
+
+        $scope.contactSector = '';
+        $scope.contactDepartment = '';
+
+        var sectors = {
+            'air-nav':{
+                'sector-1':"Sector 1",
+                'sector-2':"Sector 2",
+                'sector-3':"Sector 3",
+                'sector-4':"Sector 4"
+            },
+            'safety-org':{
+                'sector-5':"Sector 5",
+                'sector-6':"Sector 6",
+                'sector-7':"Sector 7"
+            }
+        };
+
+        var getDepartments = function () {
+            return sectors[$scope.contactSector];
+        };
+
+        var init = function () {
+        };
+
+        init();
+
+        $scope.getDepartments = getDepartments;
+    }]);
 }());
 
 (function () {
@@ -591,19 +622,32 @@ var app = angular.module('app', []);
             var next = $scope.dotIndex + 1;
             if (next >= $scope.dots) next = 0;
             return next;
+        };
 
+        var prevDot = function () {
+            var prev = $scope.dotIndex - 1;
+            if (prev <= -1) prev = $scope.dots -1;
+            return prev;
         };
 
         var setPosition = function (index) {
-            $('.slider-holder').velocity({'translateX': (index * -100) + '%'}, 600);
+            $('.slider-holder').velocity('stop').velocity({'translateX': (index * -100) + '%'}, 600);
             $('.banner-image').eq($scope.dotIndex).velocity('stop').velocity('transition.fadeOut');
             $('.banner-image').eq(index).velocity('stop').velocity('transition.fadeIn');
             $scope.dotIndex = index;
 
             $interval.cancel(interval);
             interval = $interval(function () {
-                setPosition(nextDot());
+                //setPosition(nextDot());
             }, 7000);
+        };
+
+        var nextPosition = function() {
+            setPosition(nextDot())
+        };
+
+        var prevPosition = function() {
+            setPosition(prevDot())
         };
 
         var getDots = function () {
@@ -622,7 +666,7 @@ var app = angular.module('app', []);
             initialise();
 
             $interval(function () {
-                setPosition(nextDot());
+                //setPosition(nextDot());
             }, 7000);
         };
 
@@ -637,6 +681,8 @@ var app = angular.module('app', []);
         $scope.getDots = getDots;
         $scope.changeActive = changeActive;
         $scope.isActive = isActive;
+        $scope.nextPosition = nextPosition;
+        $scope.prevPosition = prevPosition;
 
     }]);
 }());
