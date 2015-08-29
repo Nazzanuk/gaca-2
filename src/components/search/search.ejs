@@ -11,7 +11,11 @@
 
                     </div>
                     <div class="col-sm-4 col-md-3">
-                        <input class="gaca-search" type="search" ng-model="filters.search" placeholder="Search by name"/>
+                        <div class="clearfix">
+                            <p><input class="gaca-search" type="search" ng-model="search" placeholder="Search by name"/></p>
+                            <div class="gaca-btn temp-right" ng-click="getResults()">Search &nbsp; <i class="fa fa-search"></i></div>
+
+                        </div>
                         <hr/>
                         <div>
                             <h3>Date Range</h3>
@@ -66,13 +70,13 @@
                         <hr/>
                     </div>
                     <div class="col-sm-8 col-md-9">
-                        <h2>{{currentResults.length}} Result{{(currentResults.length == 1) ? '' : 's'}}</h2>
+                        <h2><i class="fa fa-refresh fa-spin" ng-show="isLoading()"></i> &nbsp; {{currentResults.length}} Result{{(currentResults.length == 1) ? '' : 's'}}</h2>
 
                         <div class="search-results">
                             <div class="row">
                                 <div ng-repeat="result in currentResults track by $index">
                                     <div class="col-lg-4 col-md-6">
-                                        <div class="result">
+                                        <a href="{{result.link}}" class="result">
                                             <div class="result-header">
                                                 <div class="header-e-service" ng-show="result.type == 'E-Services'" ng-class="{'unavailable':!result.available}">
                                                     <span ng-show="!result.available">un</span>Available
@@ -86,7 +90,7 @@
                                             <div class="result-title">{{result.title}}</div>
                                             <div class="result-field"><strong>Audience:</strong> {{result.audience}}</div>
                                             <div class="result-field"><strong>Sector:</strong> {{result.sector}}</div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
 
