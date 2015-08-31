@@ -66,6 +66,12 @@
     .search-box {
       float: right;
       margin-left: 15px;
+
+      .arabic & {
+        float: left;
+        margin-left: 0;
+        margin-right: 15px;
+      }
     }
 
     .container {

@@ -466,6 +466,10 @@ img {
   [data-template="header"] .header .search-box {
     float: right;
     margin-left: 15px; }
+    .arabic [data-template="header"] .header .search-box {
+      float: left;
+      margin-left: 0;
+      margin-right: 15px; }
   [data-template="header"] .header .container {
     position: relative; }
   [data-template="header"] .header .in input, [data-template="header"] .header .in select {

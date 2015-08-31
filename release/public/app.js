@@ -2,51 +2,6 @@ var app = angular.module('app', []);
 
 
 (function () {
-    app.controller('ECatalogueCtrl', ['$scope', '$element', '$interval', function ($scope, $element, $interval) {
-        var eServices = [];
-
-        var genEServices = function () {
-            for (var i = 1;i <=100; i++) {
-                eServices.push({
-                    id:  _.random(1000, 9999),
-                    title:_.sample(['Export of', 'Statement of', 'Regarding', 'Information Required']) + " of " + " "
-                        + _.sample([
-                            'Wheel Maintenance of TSR',
-                            'Inspection Program',
-                            'ELT Update',
-                            'Incident Help',
-                            'Charter Flights',
-                            'General Maintenance',
-                            'Scheduled Flights'
-                        ]),
-                    popularity: _.random(0, 10),
-                    date:_.random(2000, 2015) * 10000 + _.random(1, 1) * 100 +  _.random(1, 28),
-                    audience:_.sample(['Pilot', 'Airman', 'Aircraft', 'Airlines', 'Airports', 'Training Centres']),
-                    sector:_.sample(["Air Navigation Services", 'Information Technology', 'Finance & Admin', 'International Organisation'])
-                });
-            };
-
-        };
-
-        var getEServices = function (filter, sort) {
-            console.log(filter, sort);
-            var filteredList = _.where(eServices, filter, sort);
-            var sortedList = _.sortBy(filteredList, sort);
-            return _.first(sortedList, 5);
-        };
-
-        var init = function () {
-            genEServices();
-        };
-
-        init();
-
-        $scope.getEServices = getEServices;
-
-    }]);
-}());
-
-(function () {
     app.controller('ESearchCtrl', ['$scope', function ($scope) {
 
         $scope.types = ["E-Services"];
@@ -205,6 +160,51 @@ var app = angular.module('app', []);
                 $('.result').velocity('stop').velocity('transition.flipYIn', {stagger: 50});
             }, 50)
         }
+
+    }]);
+}());
+
+(function () {
+    app.controller('ECatalogueCtrl', ['$scope', '$element', '$interval', function ($scope, $element, $interval) {
+        var eServices = [];
+
+        var genEServices = function () {
+            for (var i = 1;i <=100; i++) {
+                eServices.push({
+                    id:  _.random(1000, 9999),
+                    title:_.sample(['Export of', 'Statement of', 'Regarding', 'Information Required']) + " of " + " "
+                        + _.sample([
+                            'Wheel Maintenance of TSR',
+                            'Inspection Program',
+                            'ELT Update',
+                            'Incident Help',
+                            'Charter Flights',
+                            'General Maintenance',
+                            'Scheduled Flights'
+                        ]),
+                    popularity: _.random(0, 10),
+                    date:_.random(2000, 2015) * 10000 + _.random(1, 1) * 100 +  _.random(1, 28),
+                    audience:_.sample(['Pilot', 'Airman', 'Aircraft', 'Airlines', 'Airports', 'Training Centres']),
+                    sector:_.sample(["Air Navigation Services", 'Information Technology', 'Finance & Admin', 'International Organisation'])
+                });
+            };
+
+        };
+
+        var getEServices = function (filter, sort) {
+            console.log(filter, sort);
+            var filteredList = _.where(eServices, filter, sort);
+            var sortedList = _.sortBy(filteredList, sort);
+            return _.first(sortedList, 5);
+        };
+
+        var init = function () {
+            genEServices();
+        };
+
+        init();
+
+        $scope.getEServices = getEServices;
 
     }]);
 }());
@@ -385,43 +385,6 @@ var app = angular.module('app', []);
 }());
 
 (function () {
-    app.controller('MenuCtrl', ['$scope', function ($scope) {
-
-        var showing = false;
-
-        var toggleidebar = function () {
-            if (showing) hideSidebar()
-            else showSidebar();
-        };
-
-        var showSidebar = function () {
-            $('.content-area, .menu').velocity('stop').velocity({'margin-left': '200px'}, 300);
-            $('.menu-overlay').show();
-            showing = true;
-        };
-
-        var hideSidebar = function () {
-            $('.content-area, .menu').velocity('stop').velocity({'margin-left': '0'}, 300);
-            //$('.header').velocity('stop').velocity({'left': '0'}, 300);
-            $('.menu-overlay').hide();
-            showing = false;
-        };
-
-        var events = function () {
-            $(document).on('click', '.header-menu', toggleidebar);
-            $(document).on('click', '.menu-overlay, .header-close', hideSidebar);
-        };
-
-        var init = function () {
-            events();
-        };
-
-        init();
-
-    }]);
-}());
-
-(function () {
     app.controller('LoginCtrl', ['$scope', 'PopupService', function ($scope, PopupService) {
         var showLoginPopup = function () {
             $('.login-popup').velocity('stop').velocity('transition.fadeIn', 200);
@@ -455,6 +418,43 @@ var app = angular.module('app', []);
         init();
 
         //$scope.showPopup = showPopup;
+    }]);
+}());
+
+(function () {
+    app.controller('MenuCtrl', ['$scope', function ($scope) {
+
+        var showing = false;
+
+        var toggleidebar = function () {
+            if (showing) hideSidebar()
+            else showSidebar();
+        };
+
+        var showSidebar = function () {
+            $('.content-area, .menu').velocity('stop').velocity({'margin-left': '200px'}, 300);
+            $('.menu-overlay').show();
+            showing = true;
+        };
+
+        var hideSidebar = function () {
+            $('.content-area, .menu').velocity('stop').velocity({'margin-left': '0'}, 300);
+            //$('.header').velocity('stop').velocity({'left': '0'}, 300);
+            $('.menu-overlay').hide();
+            showing = false;
+        };
+
+        var events = function () {
+            $(document).on('click', '.header-menu', toggleidebar);
+            $(document).on('click', '.menu-overlay, .header-close', hideSidebar);
+        };
+
+        var init = function () {
+            events();
+        };
+
+        init();
+
     }]);
 }());
 
