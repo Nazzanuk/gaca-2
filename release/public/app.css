@@ -1032,6 +1032,12 @@ img {
         width: 33.33333%;
         padding: 10px;
         vertical-align: top; }
+        .arabic [data-template="slider"] .slider .slider-box .slider-items .slider-item {
+          direction: rtl; }
+          .arabic [data-template="slider"] .slider .slider-box .slider-items .slider-item .fa {
+            -webkit-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                    transform: rotate(180deg); }
         @media (max-width: 767px) {
           [data-template="slider"] .slider .slider-box .slider-items .slider-item {
             width: 100%; } }
