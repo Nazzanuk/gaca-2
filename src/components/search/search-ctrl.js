@@ -5,9 +5,9 @@
 
         var results;
         var loading = false;
-        $scope.types = ["All Types", "E-Services", "Regulations", "Circulars", "Public Ads", "News", "Events", "General", "Forms", "Emergency Notices", "Reports"];
-        $scope.audiences = ["All Audiences", "Pilot", "Airman", "Aircraft", "Airlines/operators", "Airports", "Training centres"];
-        $scope.sectors = ["All Sectors", "Air Navigation Services", "Information Technology", "Finance & Admin", "International Organization", "Safety & Organization", "Corporate Core", "Human Resources", "Saudi Academy of Civil Aviation"]
+        $scope.types = types;
+        $scope.audiences = audiences;
+        $scope.sectors = sectors;
 
         $scope.set = function (key, value) {
             console.log(key, value);
@@ -32,19 +32,29 @@
             $(this).prev().click();
         });
 
+        $(document).on("click", "#searchBtn", function () {
+            getResults($('#searchInput').val());
+        });
+
         var isLoading = function () {
             return loading;
         };
 
-        var getResults = function () {
+        var getResults = function (searchTerm) {
             $scope.currentResults = [];
             loading = true;
+            if (searchTerm != undefined) {
+                searchTerm = '&search=' + searchTerm
+            } else {
+                searchTerm = '';
+            }
             //$timeout(function () {
-                $http.get(SEARCH_SERVICE_URL + '?' + $scope.search).then(function (response) {
-                    loading = false;
-                    results = response.data;
-                    filterResults();
-                });
+            $http.get(SEARCH_SERVICE_URL + searchTerm).then(function (response) {
+                loading = false;
+                results = response.data.results;
+                filterResults();
+                console.log(results)
+            });
             //}, 2000);
 
         };
@@ -72,7 +82,7 @@
             if (window.SEARCH_SERVICE_URL == undefined) {
                 window.SEARCH_SERVICE_URL = "http://localhost:3000/gaca";
             }
-            getResults();
+            getResults($('#searchInput').val());
         };
 
         init();

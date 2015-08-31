@@ -49,12 +49,17 @@ p {
 ul {
   padding-left: 20px; }
 
+.arabic [class^=col-] {
+  float: right; }
+
 .in {
   line-height: 25px;
   display: inline-block;
   position: relative;
   border-radius: 4px;
   width: 150px; }
+  .arabic .in {
+    direction: rtl; }
   .in.block {
     display: block;
     width: auto; }
@@ -98,6 +103,11 @@ ul {
     -webkit-transition: .2s;
             transition: .2s;
     border: 1px solid #508bea; }
+    .arabic .in .in-btn {
+      border-radius: 4px 0 0 4px;
+      right: initial;
+      right: auto;
+      left: 0; }
     .in .in-btn.select-btn {
       pointer-events: none; }
   .in:hover .in-btn {
@@ -416,6 +426,8 @@ img {
   min-width: 100vw; }
   .arabic [data-template="header"] .header {
     text-align: right; }
+  .arabic [data-template="header"] .header {
+    direction: rtl; }
   [data-template="header"] .header .header-logo {
     position: absolute;
     top: 3px;
@@ -563,10 +575,17 @@ img {
           margin-left: -3px;
           padding-left: 13px; }
           .arabic [data-template="header"] .header .header-sub .sub-item .sub-menu .row .row > [class^="col-"] {
+            border-left: none;
+            border-right: 3px solid #eee;
             text-align: right;
-            margin-left: -10px;
-            padding-left: 0;
-            padding-right: 20px; }
+            margin-left: 0px;
+            padding-left: 0px;
+            margin-right: -3px;
+            padding-right: 13px; }
+            .arabic [data-template="header"] .header .header-sub .sub-item .sub-menu .row .row > [class^="col-"] .fa {
+              -webkit-transform: rotate(180deg);
+                  -ms-transform: rotate(180deg);
+                      transform: rotate(180deg); }
         [data-template="header"] .header .header-sub .sub-item .sub-menu .vert {
           display: none;
           position: absolute;
@@ -579,6 +598,12 @@ img {
           width: 25%;
           border-right: 1px solid #eee;
           margin-left: -15px; }
+          .arabic [data-template="header"] .header .header-sub .sub-item .sub-menu .vert {
+            float: right;
+            border-right: none;
+            border-left: 1px solid #eee;
+            margin-right: -15px;
+            margin-left: 0; }
 
 [data-template="menu"] .menu {
   position: fixed;
@@ -1388,7 +1413,8 @@ img {
       line-height: 1;
       font-size: 12px;
       display: none;
-      cursor: pointer; }
+      cursor: pointer;
+      text-decoration: none; }
       @media (max-width: 767px) {
         [data-template="search"] .search .search-results .result {
           font-size: 12px; } }

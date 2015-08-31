@@ -385,43 +385,6 @@ var app = angular.module('app', []);
 }());
 
 (function () {
-    app.controller('MenuCtrl', ['$scope', function ($scope) {
-
-        var showing = false;
-
-        var toggleidebar = function () {
-            if (showing) hideSidebar()
-            else showSidebar();
-        };
-
-        var showSidebar = function () {
-            $('.content-area, .menu').velocity('stop').velocity({'margin-left': '200px'}, 300);
-            $('.menu-overlay').show();
-            showing = true;
-        };
-
-        var hideSidebar = function () {
-            $('.content-area, .menu').velocity('stop').velocity({'margin-left': '0'}, 300);
-            //$('.header').velocity('stop').velocity({'left': '0'}, 300);
-            $('.menu-overlay').hide();
-            showing = false;
-        };
-
-        var events = function () {
-            $(document).on('click', '.header-menu', toggleidebar);
-            $(document).on('click', '.menu-overlay, .header-close', hideSidebar);
-        };
-
-        var init = function () {
-            events();
-        };
-
-        init();
-
-    }]);
-}());
-
-(function () {
     app.controller('LoginCtrl', ['$scope', 'PopupService', function ($scope, PopupService) {
         var showLoginPopup = function () {
             $('.login-popup').velocity('stop').velocity('transition.fadeIn', 200);
@@ -455,6 +418,43 @@ var app = angular.module('app', []);
         init();
 
         //$scope.showPopup = showPopup;
+    }]);
+}());
+
+(function () {
+    app.controller('MenuCtrl', ['$scope', function ($scope) {
+
+        var showing = false;
+
+        var toggleidebar = function () {
+            if (showing) hideSidebar()
+            else showSidebar();
+        };
+
+        var showSidebar = function () {
+            $('.content-area, .menu').velocity('stop').velocity({'margin-left': '200px'}, 300);
+            $('.menu-overlay').show();
+            showing = true;
+        };
+
+        var hideSidebar = function () {
+            $('.content-area, .menu').velocity('stop').velocity({'margin-left': '0'}, 300);
+            //$('.header').velocity('stop').velocity({'left': '0'}, 300);
+            $('.menu-overlay').hide();
+            showing = false;
+        };
+
+        var events = function () {
+            $(document).on('click', '.header-menu', toggleidebar);
+            $(document).on('click', '.menu-overlay, .header-close', hideSidebar);
+        };
+
+        var init = function () {
+            events();
+        };
+
+        init();
+
     }]);
 }());
 
@@ -542,9 +542,10 @@ var app = angular.module('app', []);
 
         var results;
         var loading = false;
-        $scope.types = types;
-        $scope.audiences = audiences;
-        $scope.sectors = sectors;
+
+        $scope.types = types		
+        $scope.audiences =  audiences
+        $scope.sectors = sectors
 
         $scope.set = function (key, value) {
             console.log(key, value);
@@ -568,8 +569,8 @@ var app = angular.module('app', []);
             console.log($(this).prev());
             $(this).prev().click();
         });
-
-        $(document).on("click", "#searchBtn", function () {
+		
+		$(document).on("click", "#searchBtn", function () {
             getResults($('#searchInput').val());
         });
 
@@ -580,18 +581,18 @@ var app = angular.module('app', []);
         var getResults = function (searchTerm) {
             $scope.currentResults = [];
             loading = true;
-            if (searchTerm != undefined) {
-                searchTerm = '&search=' + searchTerm
-            } else {
-                searchTerm = '';
-            }
+			if(searchTerm != undefined){
+				searchTerm = '&search=' + searchTerm
+			}else{
+				searchTerm ='';
+			}
             //$timeout(function () {
-            $http.get(SEARCH_SERVICE_URL + searchTerm).then(function (response) {
-                loading = false;
-                results = response.data.results;
-                filterResults();
-                console.log(results)
-            });
+                $http.get(SEARCH_SERVICE_URL + searchTerm).then(function (response) {
+                    loading = false;
+                    results = response.data.results;
+                    filterResults();
+					console.log(results)
+                });
             //}, 2000);
 
         };

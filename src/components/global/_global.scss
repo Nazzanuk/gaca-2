@@ -67,6 +67,12 @@ ul {
   padding-left: 20px;
 }
 
+[class^=col-]  {
+  .arabic & {
+    float: right;
+  }
+}
+
 .in {
   //  background: $light-grey;
   //  height: 25px;
@@ -75,6 +81,10 @@ ul {
   position: relative;
   border-radius: 4px;
   width: 150px;
+
+  .arabic & {
+    direction: rtl;
+  }
 
   &.block {
     display: block;
@@ -128,6 +138,14 @@ ul {
     cursor: pointer;
     border-radius: 0 4px 4px 0;
     display: block;
+
+    .arabic & {
+      border-radius: 4px 0 0 4px;
+      right: initial;
+      right: auto;
+      left: 0;
+
+    }
 
     &.select-btn {
       pointer-events: none;
