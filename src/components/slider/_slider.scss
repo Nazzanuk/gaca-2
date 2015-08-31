@@ -10,6 +10,7 @@
       z-index: 1;
       overflow: hidden;
 
+
       .box-status {
         background: rgb(230, 238, 238);
         border-radius: 4px;
@@ -106,6 +107,13 @@
           width: (100%/3);
           padding: 10px;
           vertical-align: top;
+
+          .arabic & {
+            direction: rtl;
+            .fa {
+              transform: rotate(180deg);
+            }
+          }
 
           @media(max-width: 767px) {
             width: (100%);
