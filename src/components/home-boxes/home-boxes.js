@@ -31,8 +31,10 @@
             });
 
             _.each(pins, function (pin) {
+                if (pin.content == undefined) pin.content = "";
                 var infoWindow = new google.maps.InfoWindow({
                     content: "<div style='color: #000000'>" + pin.name + "</div>"
+                    + "<div>" + pin.content +"</div>"
                 });
                 infoWindows.push(infoWindow);
 
@@ -94,5 +96,9 @@
         init();
 
         $scope.getDepartments = getDepartments;
+    }]);
+
+    app.controller('DestinationCtrl', ['$scope', '$element', '$timeout', function ($scope, $element, $timeout) {
+
     }]);
 }());
