@@ -897,7 +897,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                                        <div class="box-question" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
                                             <div class="question-title" ng-click="changeActive()">
                                                 <div class="question-status">
                                                     <i class="fa fa-angle-down"></i>
@@ -1050,12 +1050,13 @@
                                                     <i class="fa fa-caret-down"></i>
                                                 </span>
                                             </p>
+                                            <div class="clearfix">
+                                                <p class="in temp-left">
+                                                    <input type="search" placeholder="Flight Number"/>
+                                                </p>
+                                            </div>
 
-                                            <!--<p class="in">-->
-                                                <!--<input type="search"/>-->
-                                            <!--</p>-->
-
-                                            <button type="submit" class="gaca-btn">Submit</button>
+                                            <button type="submit temp-right" class="gaca-btn">Submit</button>
                                         </form>
                                     </div>
 
@@ -1065,13 +1066,15 @@
                                     <div class="row">
                                         <div class="col-xs-6">
                                             Today
-                                            <div class="thin">30° <i class="fa fa-tint" style="color: #add8e6"></i>
+                                            <div class="thin">
+                                                30° <i class="fa fa-tint" style="color: #add8e6"></i>
                                             </div>
 
                                         </div>
                                         <div class="col-xs-6">
                                             Tomorrow
-                                            <div class="thin">42° <i class="fa fa-sun-o" style="color: yellow"></i>
+                                            <div class="thin">
+                                                42° <i class="fa fa-sun-o" style="color: yellow"></i>
                                             </div>
 
                                         </div>
@@ -1086,18 +1089,22 @@
                             var pins = [
                                 {
                                     name: 'Prince Nayef Bin Abdulaziz Regional Airport',
+                                    content:'Some content<br><a href="#">a link</a>',
                                     position: {lat: 26.296997, lng: 43.802283}
                                 },
                                 {
                                     name: 'Rafha Domestic Airport',
+                                    content:'Some content<br><a href="#">a link</a>',
                                     position: {lat: 29.672434, lng: 43.494666}
                                 },
                                 {
                                     name: 'Prince Abdul Majeed bin Abdul Aziz Domestic Airport',
+                                    content:'Some content<br><a href="#">a link</a>',
                                     position: {lat: 26.493817, lng: 38.155311}
                                 },
                                 {
                                     name: 'Taif Regional Airport',
+                                    content:'<p><div class="gaca-btn">Button<div/></p>',
                                     position: {lat: 21.497682, lng: 40.572303}
                                 },
                                 {

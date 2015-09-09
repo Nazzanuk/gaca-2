@@ -22,6 +22,7 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 });
 
 
+
 (function () {
     app.controller('ECatalogueCtrl', ['$scope', '$element', '$interval', function ($scope, $element, $interval) {
         var eServices = [];
@@ -66,7 +67,6 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 
     }]);
 }());
-
 
 (function () {
     app.controller('ESearchCtrl', ['$scope', function ($scope) {
@@ -260,54 +260,6 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
     }]);
 }());
 (function () {
-    app.controller('HeaderCtrl', ['$scope', function ($scope) {
-
-        var events = function () {
-            $(document).on('focus mouseover', '.search-box input', function () {
-                $('.search-box').css({'width': '230px'});
-            });
-
-            $(document).on('blur mouseleave', '.search-box input', function () {
-                $('.search-box').css({'width': ''});
-            });
-
-            $(document).on('mouseover', '.sub-item', function () {
-                if (!$(this).hasClass('active')) {
-                    $('.sub-item').removeClass('active');
-                    $('.sub-menu').velocity('stop');
-                    $('.sub-menu').hide();
-                    $(this).addClass('active');
-                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideDownIn', 300);
-                    $(this).find('[class^="col-"]').velocity('stop').velocity('transition.slideLeftIn', {
-                        stagger: 100,
-                        duration: 600
-                    });
-                }
-            });
-
-            $(document).on('mouseleave', '.sub-item', function () {
-                var that = this;
-                if ($(this).hasClass('active')) {
-                    $(that).removeClass('active');
-                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideUpOut', {delay:500,duration:300});
-                }
-            });
-
-            $(document).on('click', '.hide-alert', function () {
-                $('.hide-alert').velocity('stop').hide();
-            });
-        };
-
-        var init = function () {
-            events();
-        };
-
-        init();
-
-    }]);
-}());
-
-(function () {
     app.controller('BoxCtrl', ['$scope', '$element', 'PopupService', function ($scope, $element, PopupService) {
         $scope.data = {};
         $scope.data.active = true;
@@ -340,8 +292,10 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
             });
 
             _.each(pins, function (pin) {
+                if (pin.content == undefined) pin.content = "";
                 var infoWindow = new google.maps.InfoWindow({
                     content: "<div style='color: #000000'>" + pin.name + "</div>"
+                    + "<div>" + pin.content +"</div>"
                 });
                 infoWindows.push(infoWindow);
 
@@ -403,6 +357,58 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
         init();
 
         $scope.getDepartments = getDepartments;
+    }]);
+
+    app.controller('DestinationCtrl', ['$scope', '$element', '$timeout', function ($scope, $element, $timeout) {
+
+    }]);
+}());
+
+(function () {
+    app.controller('HeaderCtrl', ['$scope', function ($scope) {
+
+        var events = function () {
+            $(document).on('focus mouseover', '.search-box input', function () {
+                $('.search-box').css({'width': '230px'});
+            });
+
+            $(document).on('blur mouseleave', '.search-box input', function () {
+                $('.search-box').css({'width': ''});
+            });
+
+            $(document).on('mouseover', '.sub-item', function () {
+                if (!$(this).hasClass('active')) {
+                    $('.sub-item').removeClass('active');
+                    $('.sub-menu').velocity('stop');
+                    $('.sub-menu').hide();
+                    $(this).addClass('active');
+                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideDownIn', 300);
+                    $(this).find('[class^="col-"]').velocity('stop').velocity('transition.slideLeftIn', {
+                        stagger: 100,
+                        duration: 600
+                    });
+                }
+            });
+
+            $(document).on('mouseleave', '.sub-item', function () {
+                var that = this;
+                if ($(this).hasClass('active')) {
+                    $(that).removeClass('active');
+                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideUpOut', {delay:500,duration:300});
+                }
+            });
+
+            $(document).on('click', '.hide-alert', function () {
+                $('.hide-alert').velocity('stop').hide();
+            });
+        };
+
+        var init = function () {
+            events();
+        };
+
+        init();
+
     }]);
 }());
 
