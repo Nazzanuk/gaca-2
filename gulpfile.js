@@ -74,18 +74,18 @@ gulp.task("copy-public", function () {
 
 gulp.task("gen-html", function () {
     var pages = {
-        "arabic-index": ['arabic-head', 'arabic-menu', 'login', 'popup', 'arabic-header', 'arabic-banner', 'slider', 'arabic-home-boxes', 'footer'],
-        index: ['head', 'menu', 'login', 'popup', 'header', 'banner', 'slider', 'home-boxes', 'footer'],
-        "e-services-search": ['head', 'menu', 'login', 'popup', 'header', 'e-search', 'footer'],
-        "e-catalogue": ['head', 'menu', 'login', 'popup', 'header', 'e-catalogue', 'footer'],
-        "e-service": ['head', 'menu', 'login', 'popup', 'header', 'e-service', 'footer'],
-        "search": ['head', 'menu', 'login', 'popup', 'header', 'search', 'footer'],
-        "gallery": ['head', 'menu', 'login', 'popup', 'header', 'gallery', 'footer'],
-        "department": ['head', 'menu', 'login', 'popup', 'header', 'department', 'footer'],
-        "content": ['head', 'menu', 'login', 'popup', 'header', 'content', 'footer'],
-        "dashboard": ['head', 'menu', 'login', 'popup', 'header', 'dashboard', 'footer'],
-        "register": ['head', 'menu', 'login', 'popup', 'header', 'register', 'footer'],
-        "2-col": ['head', 'menu', 'login', 'popup', 'header', 'template-2-col', 'footer']
+        "arabic-index": ['arabic-head', 'small-login', 'contact', 'arabic-menu', 'login', 'popup', 'arabic-header', 'arabic-banner', 'slider', 'arabic-home-boxes', 'footer'],
+        index: ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'banner', 'slider', 'home-boxes', 'footer'],
+        "e-services-search": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'e-search', 'footer'],
+        "e-catalogue": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'e-catalogue', 'footer'],
+        "e-service": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'e-service', 'footer'],
+        "search": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'search', 'footer'],
+        "gallery": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'gallery', 'footer'],
+        "department": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'department', 'footer'],
+        "content": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'content', 'footer'],
+        "dashboard": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'dashboard', 'footer'],
+        "register": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'register', 'footer'],
+        "2-col": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'template-2-col', 'footer']
     };
 
     for (var i in pages) {

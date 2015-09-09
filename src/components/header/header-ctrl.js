@@ -3,7 +3,7 @@
 
         var events = function () {
             $(document).on('focus mouseover', '.search-box input', function () {
-                $('.search-box').css({'width': '150px'});
+                $('.search-box').css({'width': '230px'});
             });
 
             $(document).on('blur mouseleave', '.search-box input', function () {

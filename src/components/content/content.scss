@@ -14,13 +14,8 @@
 
   .content {
 
-    background: rgb(197, 206, 211);
-    padding: 45px 10px 1px;
-    min-height: 80vh;
 
-    @media (max-width: 991px) {
-      padding-top:15px;
-    }
+    @extend .standard-page;
 
     img {
       width: 100%;

@@ -4,7 +4,7 @@
       text-align: right;
     }
     .banner-holder {
-      height: 350px;
+      height: 450px;
       position: relative;
 
       @media (max-width: 767px) {
@@ -27,25 +27,25 @@
 
         .banner-overlay {
           float: right;
-          margin-top: 65px;
+          margin-top: 95px;
+          background: rgba(255,255,255,0.9);
+          border-radius: 4px;
+          box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
 
           @media (max-width: 767px) {
             margin-top: 30px;
           }
 
           .overlay-title {
-            background: rgba(255,255,255,0.9);
             color: $prim-light;
             padding: 5px 15px 0;
             line-height: 35px;
             width: 100%;
             font-weight: 600;
             font-size: 16px;
-            border-radius: 4px 4px 0 0;
           }
 
           .overlay-subtitle {
-            background: rgba(255,255,255,0.9);
             padding: 0px 15px 45px;
             width: 100%;
             border-radius: 0 0 4px 4px;

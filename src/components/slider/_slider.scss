@@ -2,17 +2,49 @@
   .slider {
     margin-top: -30px;
 
+    .slider-dots {
+      text-align: center;
+      margin: 0 10px;
+      margin-top: -40px;
+      position: absolute;
+      width: 100%;
+      left: 0;
+
+      @media(max-width: 767px) {
+        text-align: left;
+      }
+
+      .slider-dot {
+        height: 15px;
+        width: 15px;
+        display: inline-block;
+        background: $light-grey;
+        background: rgba(255,255,255,0.85);
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 100px;
+        margin: 10px 5px;
+        cursor: pointer;
+        transition: .3s;
+
+        &.active {
+          background: transparentize($prim-light, .15);
+        }
+      }
+    }
+
     .slider-box {
       border-radius: 4px 4px 0 0;
       background: white;
+//      background: rgba(255,255,255,0.9);
       padding: 10px;
       position: relative;
       z-index: 1;
       overflow: hidden;
+      box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
 
 
       .box-status {
-        background: rgb(230, 238, 238);
+        background: $light-grey;
         border-radius: 4px;
         height: 25px;
         line-height: 25px;
@@ -20,6 +52,7 @@
         text-align: left;
         float: right;
         color: $prim-light;
+        color: $grey;
         font-size: 18px;
         margin-right: 10px;
         cursor: pointer;
@@ -45,8 +78,11 @@
         position:relative;
 
         .header-right {
+          font-weight: 300;
+          color: $grey;
           position: absolute;
           right: 50px;
+          line-height: 1.6;
         }
 
         .header-left {
@@ -54,35 +90,13 @@
           left: 10px;
         }
 
-        .slider-dots {
-          text-align: center;
-          margin: 0 10px;
 
-          @media(max-width: 767px) {
-           text-align: left;
-          }
-
-          .slider-dot {
-            height: 12px;
-            width: 12px;
-            display: inline-block;
-            background: $light-grey;
-            border-radius: 100px;
-            margin: 9px 3px;
-            cursor: pointer;
-            transition: .3s;
-
-            &.active {
-              background: $prim-light;
-            }
-          }
-        }
       }
 
       .slider-arrow {
         position: absolute;
         margin-top: 80px;
-        font-size: 60px;
+        font-size: 40px;
         left: 0px;
         z-index: 10;
         color: $prim-dark;
@@ -100,7 +114,7 @@
         white-space: nowrap;
         font-size: 0;
         overflow: hidden;
-        margin: 0 50px;
+        margin: 0 30px;
 
         .slider-item {
           display: inline-block;

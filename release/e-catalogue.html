@@ -16,6 +16,156 @@
 
 </head>
 <body data-ng-app="app">
+<div class="small-login-back"></div>
+
+<div class="small-login" ng-controller="SmallLoginCtrl">
+
+    <div class="container">
+        <div class="small-login-box">
+            <div class="point"></div>
+            <div class="box box-white">
+                <div class="in block">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <p><label for="">Username</label></p>
+                        </div>
+                        <div class="col-xs-8">
+                            <input type="text" placeholder="Username">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="in block">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <p><label for="">Password</label></p>
+                        </div>
+                        <div class="col-xs-8">
+                            <input type="password" placeholder="Password">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix">
+                    <div class="gaca-btn temp-right">Login &nbsp; <i class="fa fa-lock"></i></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div data-template="contact" ng-controller="ContactCtrl">
+    <div class="contact-icon">
+        <img src="public/img/svg/call.svg" alt=""/>
+
+    </div>
+
+    <div class="contact-box">
+        <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+            <div class="box-header">
+                <div class="box-icon">
+                    <img src="public/img/svg/call.svg" alt=""/>
+                </div>
+                <div class="box-status" ng-click="changeActive()">
+                    <i class="fa fa-plus"></i>
+                    <i class="fa fa-minus"></i>
+                </div>
+                <div class="box-title">Get In Touch</div>
+                <div class="box-content" ng-controller="GetInTouchCtrl">
+                    <p class="thin pull-left">Sector</p>
+
+                    <div class="in pull-right">
+                        <select class="gaca-select" ng-model="contactSector" ng-init="" ng-change="contactDepartment = ''">
+                            <option value="">Select Sector</option>
+                            <option value="air-nav">Air Navigation</option>
+                            <option value="safety-org">Safety & Organisation</option>
+                            <option value="it">Information Technology</option>
+                            <option value="hr">Human Resources</option>
+                        </select>
+
+                        <div class="in-btn select-btn">
+                            <i class="fa fa-caret-down"></i>
+                        </div>
+                    </div>
+
+                    <p class="thin pull-left" style="clear: both">Department</p>
+                    <div class="in pull-right">
+                        <select class="gaca-select" ng-model="contactDepartment">
+                            <option value="">Select Department</option>
+                            <option ng-repeat="(key, department) in getDepartments() track by $index" value="{{key}}">{{department}}</option>
+                        </select>
+
+                        <div class="in-btn select-btn">
+                            <i class="fa fa-caret-down"></i>
+                        </div>
+                    </div>
+
+
+                    <hr style="clear: both"/>
+
+                    <div ng-show="contactDepartment == 'sector-1'" style="clear:both">
+                        <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4447666,<br>
+                        <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 4054535,<br>
+                        <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 6558 <br>
+                        <strong style="width:100px;display:inline-block;">Email:</strong>
+                        <a href="#">info@gaca.gov.ae</a>
+                    </div>
+                    <div ng-show="contactDepartment == 'sector-2'" style="clear:both">
+                        <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4532990,<br>
+                        <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 1778344,<br>
+                        <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 1662 <br>
+                        <strong style="width:100px;display:inline-block;">Email:</strong>
+                        <a href="#">safety@gaca.gov.ae</a>
+                    </div>
+                    <div ng-show="contactDepartment == 'sector-3'" style="clear:both">
+                        <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4663944,<br>
+                        <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 9844763,<br>
+                        <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 2330 <br>
+                        <strong style="width:100px;display:inline-block;">Email:</strong>
+                        <a href="#">itsupport@gaca.gov.ae</a>
+                    </div>
+                    <div ng-show="contactDepartment == 'sector-4'" style="clear:both">
+                        <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 1002838,<br>
+                        <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 1002839,<br>
+                        <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 1007 <br>
+                        <strong style="width:100px;display:inline-block;">Email:</strong>
+                        <a href="#">hr@gaca.gov.ae</a>
+                    </div>
+                    <div ng-show="contactDepartment == 'sector-5'" style="clear:both">
+                        <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 3324432,<br>
+                        <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 4667566,<br>
+                        <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 2330 <br>
+                        <strong style="width:100px;display:inline-block;">Email:</strong>
+                        <a href="#">itsupport@gaca.gov.ae</a>
+                    </div>
+                    <div ng-show="contactDepartment == 'sector-6'" style="clear:both">
+                        <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 1002838,<br>
+                        <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 1002839,<br>
+                        <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 1007 <br>
+                        <strong style="width:100px;display:inline-block;">Email:</strong>
+                        <a href="#">hr@gaca.gov.ae</a>
+                    </div>
+
+                    <hr/>
+
+                    <!--<p></p>-->
+                    7:30am to 2:30pm for GACA staff <br/>
+                    8:00am to 1:00pm for Customers <br/>
+                    Sun, Mon, Tues, Wed, Thurs
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+</div>
 <div data-template="menu" ng-controller="MenuCtrl">
     <div class="menu">
         <div class="header-close"><i class="fa fa-times"></i></div>
@@ -245,6 +395,15 @@
 </div>
 <div data-template="header" data-main data-ng-controller="HeaderCtrl">
     <div class="header">
+        <div class="header-bar">
+            <div class="container">
+                <div class="temp-right">
+                    <strong>Weather: &nbsp; </strong> 39°C Sunny
+                    <span style="width: 60px;display: inline-block"></span>
+                    <strong>Date: &nbsp; </strong> 30th September 2015
+                </div>
+            </div>
+        </div>
         <div class="container">
             <a href="/" class="header-logo">
                 <img src="public/img/gaca-logo.png" style=""/>
@@ -280,14 +439,14 @@
                                 <span class="hidden-xs hidden-sm" style="cursor: pointer">
 
                                     <span class="updates">3</span>
-                                    <i class="fa fa-user"></i>  &nbsp;
-                                    <span class="in sm">
-                                        <input type="text" placeholder="Username">
-                                    </span>  &nbsp;
-                                    <span class="in sm">
-                                        <input type="text" placeholder="Password">
-                                    </span>  &nbsp;
-                                    <span class="gaca-btn">Login &nbsp; <i class="fa fa-lock"></i></span>  &nbsp;
+                                    <i class="fa fa-user"></i>  &nbsp;  &nbsp;  &nbsp;
+                                    <!--<span class="in sm">-->
+                                        <!--<input type="text" placeholder="Username">-->
+                                    <!--</span>  &nbsp;-->
+                                    <!--<span class="in sm">-->
+                                        <!--<input type="text" placeholder="Password">-->
+                                    <!--</span>  &nbsp;-->
+                                    <span class="gaca-btn show-small-login">Login &nbsp; <i class="fa fa-lock"></i></span>  &nbsp;
                                     <span class="gaca-btn">Register &nbsp; <i class="fa fa-user"></i></span>
                                 </span>
 
@@ -313,12 +472,12 @@
                             <div class="container">
                                 <div class="vert"></div>
                                 <div class="row">
-                                    <div class="col-sm-4" style="text-align: center">
+                                    <div class="col-sm-3" style="text-align: center">
                                         <p class="hl">About GACA</p>
                                         <br/>
                                         <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
                                     </div>
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-9">
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <a class="hl" href="/">Homepage</a>
@@ -348,12 +507,12 @@
                             <div class="container">
                                 <div class="vert"></div>
                                 <div class="row">
-                                    <div class="col-sm-4" style="text-align: center">
+                                    <div class="col-sm-3" style="text-align: center">
                                         <p class="hl">Sectors</p>
                                         <br/>
                                         <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
                                     </div>
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-9">
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <a class="hl" href="department.html">Air Navigation Services</a>
@@ -375,12 +534,12 @@
                             <div class="container">
                                 <div class="vert"></div>
                                 <div class="row">
-                                    <div class="col-sm-4" style="text-align: center">
+                                    <div class="col-sm-3" style="text-align: center">
                                         <p class="hl">E-Services</p>
                                         <br/>
                                         <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
                                     </div>
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-9">
                                         <div class="row">
                                             <div class="col-sm-3">
                                                 <a class="hl" href="e-catalogue.html">E-Services Catalogue</a>
@@ -414,12 +573,12 @@
                             <div class="container">
                                 <div class="vert"></div>
                                 <div class="row">
-                                    <div class="col-sm-4" style="text-align: center">
+                                    <div class="col-sm-3" style="text-align: center">
                                         <p class="hl">Occurrency Reporting</p>
                                         <br/>
                                         <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
                                     </div>
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-9">
                                         <div class="row">
                                             <div class="col-sm-3">
                                                 <p class="hl">At Solmen Va</p>
@@ -461,12 +620,12 @@
                             <div class="container">
                                 <div class="vert"></div>
                                 <div class="row">
-                                    <div class="col-sm-4" style="text-align: center">
+                                    <div class="col-sm-3" style="text-align: center">
                                         <p class="hl">Guidance</p>
                                         <br/>
                                         <img src="public/img/gaca-logo.png" style="height:100px;" alt=""/>
                                     </div>
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-9">
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <p class="hl">Nov Lingua Franca</p>
@@ -504,18 +663,18 @@
         </div>
     </div>
 </div>
-<div class="gaca-alert hide-alert" style="cursor: pointer">
-    <div class="container">
-        <div class="col-xs-12">
-            <i class="fa fa-times pull-right"></i>
-            <i class="fa fa-exclamation"></i> Important Alert:
-                    <span>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                    </span>
+<!--<div class="gaca-alert hide-alert" style="cursor: pointer">-->
+    <!--<div class="container">-->
+        <!--<div class="col-xs-12">-->
+            <!--<i class="fa fa-times pull-right"></i>-->
+            <!--<i class="fa fa-exclamation"></i> Important Alert:-->
+                    <!--<span>-->
+                        <!--Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.-->
+                    <!--</span>-->
 
-        </div>
-    </div>
-</div>
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 
 <div class="container">
     <div data-template="e-catalogue" ng-controller="ECatalogueCtrl">

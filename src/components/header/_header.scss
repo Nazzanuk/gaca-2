@@ -1,7 +1,7 @@
 [data-template="header"] {
   .header {
     position: fixed;
-    top: 0;
+    top: 36px;
     left: 0;
     right: 0;
     z-index: 100;
@@ -15,9 +15,26 @@
       direction: rtl;
     }
 
+    .header-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 36px;
+      line-height: 33px;
+//      font-weight: 800;
+      background: white;
+      border-top: 3px solid $grey;
+//      border-bottom: 1px solid $light-grey;
+
+      .arabic & {
+        direction: rtl;
+      }
+    }
+
     .header-logo {
       position: absolute;
-      top: 3px;
+      top: -30px;
       font-weight: 600;
       letter-spacing: -0.5px;
 
@@ -32,7 +49,7 @@
       }
 
       img {
-        height: 70px;
+        height: 100px;
 
         @media(max-width: 991px) {
           height: 35px;
@@ -153,10 +170,16 @@
     .header-sub {
       background: rgba(0, 0, 0, 0.4);
       background: $prim-light;
+      background: $light-grey;
+      background: rgba(255,255,255,0.85);
       height: 35px;
       line-height: 35px;
-      color: white;
+      color: $dark-grey;
       font-size: 13px;
+      box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
+      background: $prim-light;
+      background: transparentize($prim-light, 0.15);
+      color: white;
 
       .sub-item {
         float: left;
@@ -165,11 +188,12 @@
         text-align: center;
         font-weight: 400;
         cursor: pointer;
-        background: $prim-light;
+//        background: $light-grey;
         transition: .3s;
         //        padding: 0 20px;
         width: 12.5%;
-        color: #ffffff;
+        color: $dark-grey;
+        color: white;
         letter-spacing: -0.6px;
         font-size: 13px;
         white-space: nowrap;
@@ -191,7 +215,8 @@
 
         &:hover {
           //          margin-top: 3px;
-          background: $prim-dark;
+          background: white;
+          color: $grey;;
           //          color: $prim-light;
           //          line-height: 32px;
           //          border-radius: 4px 4px 0 0;
@@ -212,8 +237,9 @@
           background: white;
           color: #555;
           text-align: left;
-          z-index: -1;
+          z-index: 1;
           box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
           border-radius: 0 0 4px 4px;
 
           white-space: normal;
@@ -227,22 +253,23 @@
           }
 
           .hl {
-            font-size: 20px;
-            font-weight: 200;
+//            font-size: 20px;
+            font-weight: 900;
             margin: 0 0 15px;
             display: inline-block;
             line-height: 1.1;
+            color: $dark-grey;
           }
 
           .row .row > [class^="col-"] {
-            border-left: 3px solid #eee;
+//            border-left: 3px solid #eee;
             min-height: 200px;
             margin-left: -3px;
             padding-left: 13px;
 
             .arabic & {
               border-left: none;
-              border-right: 3px solid #eee;
+//              border-right: 3px solid #eee;
               text-align: right;
               margin-left: 0px;
               padding-left: 0px;

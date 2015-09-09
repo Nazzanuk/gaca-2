@@ -5,8 +5,8 @@ body {
   font-weight: 300;
   min-height: 100vh;
   //  user-select: none;
-  padding-top: 75px;
-  background: #eff2f3;
+  padding-top: 111px;
+  background: #f7f7f7;
   color: #555;
   min-width: 100vw;
   position: relative;
@@ -99,6 +99,7 @@ ul {
     background: $light-grey;
     border: none;
     color: $prim-dark;
+    color: $dark-grey;
     border-radius: 4px;
     font-size: 12px;
     appearance: none;
@@ -453,7 +454,11 @@ img {
 }
 
 .standard-page {
-  background: rgb(197, 206, 211);
+  background: white !important;
+  background-image: url('img/back-6.jpg') !important;
+//  background-size: cover !important;
+  background-position: top !important;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
   padding: 45px 10px 1px;
   min-height: 80vh;
 

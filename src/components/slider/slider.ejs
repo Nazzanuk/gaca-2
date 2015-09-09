@@ -1,6 +1,10 @@
 <div data-template="slider" ng-controller="SliderCtrl">
     <div class="slider" data-main>
         <div class="container">
+            <div class="slider-dots">
+                <div class="slider-dot" ng-click="setTop($index)" ng-class="{active:isTop($index)}" ng-repeat="i in getTops() track by $index"></div>
+            </div>
+
             <div class="slider-box">
 
                 <div class="box-status" ng-click="changeActive()">
@@ -12,16 +16,14 @@
                     <div class="header-left hidden-xs">15:23 &nbsp; Sunday, 12 July 2015</div>
                     <h2 class="header-right">Latest News</h2>
 
-                    <!--<div class="slider-dots">-->
-                        <!--<div class="slider-dot" ng-click="setPosition($index)" ng-class="{active:dotIndex == $index}" ng-repeat="i in getDots() track by $index"></div>-->
-                    <!--</div>-->
+
                 </div>
 
                 <div ng-show="isActive()">
-                    <div class="slider-arrow" ng-click="prevPosition()">
+                    <div class="slider-arrow" ng-click="prevPosition()" ng-hide="isFirst()">
                         <i class="fa fa-angle-left fa-fw"></i>
                     </div>
-                    <div class="slider-arrow right" ng-click="nextPosition()">
+                    <div class="slider-arrow right" ng-click="nextPosition()" ng-hide="isLast()">
                         <i class="fa fa-angle-right fa-fw"></i>
                     </div>
                     <div class="slider-items">
@@ -45,7 +47,7 @@
                             <div class="slider-item">
                                 <div class="item-image" style="background-image: url('http://www.msc-sa.com/electro/media/k2/galleries/3/p18skbaeh81qmheg12601m3q1nfi6.jpg')"></div>
                                 <div class="item-text clearfix">
-                                    <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                                    <p>Donec quam felis, ultricies nec, pellentesque eu, pretium.</p>
 
                                     <a href="#" class="pull-right"><strong>Read More &nbsp; <i class="fa fa-angle-right"></i></strong></a>
                                 </div>
@@ -77,7 +79,6 @@
                         </div>
                     </div>
                 </div>
-                <h2 style="text-align: center; margin:0;">General Authority of Civil Aviation</h2>
             </div>
 
             <div class="slider-bottom"></div>

@@ -1,4 +1,25 @@
 var app = angular.module('app', []);
+app.controller('ContactCtrl', function ($scope, $timeout, $http) {
+
+    var events = function () {
+        $timeout(function () {
+            $('.contact-icon').addClass('active')
+        },100);
+
+        $(document).on('click', '.contact-icon', function () {
+            $('.contact-box').toggleClass('active')
+        });
+    };
+
+    var init = function () {
+        events();
+    };
+
+    init();
+
+    //$scope.getResults = getResults;
+
+});
 
 
 (function () {
@@ -45,6 +66,7 @@ var app = angular.module('app', []);
 
     }]);
 }());
+
 
 (function () {
     app.controller('ESearchCtrl', ['$scope', function ($scope) {
@@ -242,7 +264,7 @@ var app = angular.module('app', []);
 
         var events = function () {
             $(document).on('focus mouseover', '.search-box input', function () {
-                $('.search-box').css({'width': '150px'});
+                $('.search-box').css({'width': '230px'});
             });
 
             $(document).on('blur mouseleave', '.search-box input', function () {
@@ -385,43 +407,6 @@ var app = angular.module('app', []);
 }());
 
 (function () {
-    app.controller('LoginCtrl', ['$scope', 'PopupService', function ($scope, PopupService) {
-        var showLoginPopup = function () {
-            $('.login-popup').velocity('stop').velocity('transition.fadeIn', 200);
-            $('html').addClass('no-scroll');
-        };
-        var hideLoginPopup = function () {
-            $('.login-popup').velocity('stop').velocity('transition.fadeOut', 200);
-            $('html').removeClass('no-scroll');
-        };
-
-        var showRegisterPopup = function () {
-            $('.register-popup').velocity('stop').velocity('transition.fadeIn', 200);
-            $('html').addClass('no-scroll');
-        };
-        var hideRegisterPopup = function () {
-            $('.register-popup').velocity('stop').velocity('transition.fadeOut', 200);
-            $('html').removeClass('no-scroll');
-        };
-
-        var events = function () {
-            $(document).on('click', '.show-login-popup', showLoginPopup);
-            $(document).on('click', '.hide-login-popup', hideLoginPopup);
-            $(document).on('click', '.show-register-popup', showRegisterPopup);
-            $(document).on('click', '.hide-register-popup', hideRegisterPopup);
-        };
-
-        var init = function () {
-            events();
-        };
-
-        init();
-
-        //$scope.showPopup = showPopup;
-    }]);
-}());
-
-(function () {
     app.controller('MenuCtrl', ['$scope', function ($scope) {
 
         var showing = false;
@@ -455,6 +440,43 @@ var app = angular.module('app', []);
 
         init();
 
+    }]);
+}());
+
+(function () {
+    app.controller('LoginCtrl', ['$scope', 'PopupService', function ($scope, PopupService) {
+        var showLoginPopup = function () {
+            $('.login-popup').velocity('stop').velocity('transition.fadeIn', 200);
+            $('html').addClass('no-scroll');
+        };
+        var hideLoginPopup = function () {
+            $('.login-popup').velocity('stop').velocity('transition.fadeOut', 200);
+            $('html').removeClass('no-scroll');
+        };
+
+        var showRegisterPopup = function () {
+            $('.register-popup').velocity('stop').velocity('transition.fadeIn', 200);
+            $('html').addClass('no-scroll');
+        };
+        var hideRegisterPopup = function () {
+            $('.register-popup').velocity('stop').velocity('transition.fadeOut', 200);
+            $('html').removeClass('no-scroll');
+        };
+
+        var events = function () {
+            $(document).on('click', '.show-login-popup', showLoginPopup);
+            $(document).on('click', '.hide-login-popup', hideLoginPopup);
+            $(document).on('click', '.show-register-popup', showRegisterPopup);
+            $(document).on('click', '.hide-register-popup', hideRegisterPopup);
+        };
+
+        var init = function () {
+            events();
+        };
+
+        init();
+
+        //$scope.showPopup = showPopup;
     }]);
 }());
 
@@ -638,12 +660,42 @@ var app = angular.module('app', []);
         $scope.data = {};
         $scope.data.active = true;
 
+        var topIndex = 0;
+        var topLength = 3;
+
+        var setTop = function (index) {
+            if (topIndex == index) return;
+            $('.banner-image').eq(topIndex).velocity('stop').velocity('transition.fadeOut');
+            $('.banner-image').eq(index).velocity('stop').velocity('transition.fadeIn');
+            topIndex = index;
+        };
+
+        var getTop = function () {
+            return topIndex;
+        };
+
+        var getTops = function () {
+            return new Array(topLength);
+        };
+
+        var isTop = function (index) {
+            return topIndex == index;
+        };
+
         var changeActive = function () {
             $scope.data.active = !$scope.data.active;
         };
 
         var isActive = function () {
             return $scope.data.active;
+        };
+
+        var isFirst = function () {
+            return $scope.dotIndex == 0;
+        };
+
+        var isLast = function () {
+            return $scope.dotIndex >= ($scope.dots - 1);
         };
 
         var nextDot = function () {
@@ -660,8 +712,6 @@ var app = angular.module('app', []);
 
         var setPosition = function (index) {
             $('.slider-holder').velocity('stop').velocity({'translateX': (index * -100) + '%'}, 600);
-            $('.banner-image').eq($scope.dotIndex).velocity('stop').velocity('transition.fadeOut');
-            $('.banner-image').eq(index).velocity('stop').velocity('transition.fadeIn');
             $scope.dotIndex = index;
 
             $interval.cancel(interval);
@@ -711,6 +761,34 @@ var app = angular.module('app', []);
         $scope.isActive = isActive;
         $scope.nextPosition = nextPosition;
         $scope.prevPosition = prevPosition;
+        $scope.isFirst = isFirst;
+        $scope.isLast = isLast;
+        $scope.setTop = setTop;
+        $scope.getTop = getTop;
+        $scope.isTop = isTop;
+        $scope.getTops = getTops;
 
     }]);
 }());
+
+app.controller('SmallLoginCtrl', function ($scope, $timeout, $http) {
+
+    var events = function () {
+        $(document).on('click', '.show-small-login', function () {
+            $('.small-login-box, .small-login-back').addClass('active');
+        });
+
+        $(document).on('click', '.small-login-back', function () {
+            $('.small-login-box, .small-login-back').removeClass('active')
+        });
+    };
+
+    var init = function () {
+        events();
+    };
+
+    init();
+
+    //$scope.getResults = getResults;
+
+});

@@ -5,10 +5,10 @@
             <div class="home-boxes">
                 <div class="row">
                     <div class="col-sm-4">
-                        <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box box-old clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
                             <div class="box-header">
                                 <div class="box-icon">
-                                    <img src="public/img/svg/pilot.svg" alt=""/>
+                                    <i class="fa fa-question"></i>
                                 </div>
                                 <div class="box-status" ng-click="changeActive()">
                                     <i class="fa fa-plus"></i>
@@ -126,7 +126,7 @@
                             </div>
                         </div>
 
-                        <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box box-old clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
                             <div class="box-header">
                                 <div class="box-icon">
                                     <i class="fa fa-external-link"></i>
@@ -151,10 +151,27 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="box box-old clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                            <div class="box-header">
+                                <div class="box-icon">
+                                    <i class="fa fa-copy"></i>
+                                </div>
+                                <div class="box-status" ng-click="changeActive()">
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-minus"></i>
+                                </div>
+                                <div class="box-title">Saudi Holidays Up 23%</div>
+                                <div class="box-content">
+                                    <div class="box-image" style="background-image: url('http://vid.alarabiya.net/images/2013/07/19/5c61c865-9ccb-43c2-8ced-9ce3b5eeacd3/5c61c865-9ccb-43c2-8ced-9ce3b5eeacd3_16x9_600x338.jpg')"></div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="col-sm-4">
-                        <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box box-yellow clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
                             <div class="box-header">
                                 <div class="box-icon">
                                     <i class="fa fa-plane"></i>
@@ -247,7 +264,7 @@
                             ];
                         </script>
 
-                        <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box box-yellow clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
                             <div class="box-header">
                                 <div class="box-icon">
                                     <i class="fa fa-map-marker"></i>
@@ -264,7 +281,7 @@
                         </div>
 
 
-                        <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box box-red clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
                             <div class="box-header">
                                 <div class="box-icon">
                                     <i class="fa fa-plane"></i>
@@ -284,7 +301,7 @@
                             </div>
                         </div>
 
-                        <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box box-red clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
                             <div class="box-header">
                                 <div class="box-icon">
                                     <i class="fa fa-copy"></i>
@@ -325,102 +342,6 @@
                         <!--</div>-->
                         <!--</div>-->
 
-                        <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
-                            <div class="box-header">
-                                <div class="box-icon">
-                                    <img src="public/img/svg/call.svg" alt=""/>
-                                </div>
-                                <div class="box-status" ng-click="changeActive()">
-                                    <i class="fa fa-plus"></i>
-                                    <i class="fa fa-minus"></i>
-                                </div>
-                                <div class="box-title">Get In Touch</div>
-                                <div class="box-content" ng-controller="GetInTouchCtrl">
-                                    <p class="thin pull-left">Sector</p>
-
-                                    <div class="in pull-right">
-                                        <select class="gaca-select" ng-model="contactSector" ng-init="">
-                                            <option value="">Select Sector</option>
-                                            <option value="air-nav">Air Navigation</option>
-                                            <option value="safety-org">Safety & Organisation</option>
-                                            <option value="it">Information Technology</option>
-                                            <option value="hr">Human Resources</option>
-                                        </select>
-
-                                        <div class="in-btn select-btn">
-                                            <i class="fa fa-caret-down"></i>
-                                        </div>
-                                    </div>
-
-                                    <p class="thin pull-left" style="clear: both">Department</p>
-                                    <div class="in pull-right">
-                                        <select class="gaca-select" ng-model="contactDepartment">
-                                            <option value="">Select Department</option>
-                                            <option ng-repeat="(key, department) in getDepartments() track by $index" value="{{key}}">{{department}}</option>
-                                        </select>
-
-                                        <div class="in-btn select-btn">
-                                            <i class="fa fa-caret-down"></i>
-                                        </div>
-                                    </div>
-
-
-                                    <hr style="clear: both"/>
-
-                                    <div ng-show="contactDepartment == 'sector-1'" style="clear:both">
-                                        <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4447666,<br>
-                                        <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 4054535,<br>
-                                        <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 6558 <br>
-                                        <strong style="width:100px;display:inline-block;">Email:</strong>
-                                        <a href="#">info@gaca.gov.ae</a>
-                                    </div>
-                                    <div ng-show="contactDepartment == 'sector-2'" style="clear:both">
-                                        <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4532990,<br>
-                                        <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 1778344,<br>
-                                        <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 1662 <br>
-                                        <strong style="width:100px;display:inline-block;">Email:</strong>
-                                        <a href="#">safety@gaca.gov.ae</a>
-                                    </div>
-                                    <div ng-show="contactDepartment == 'sector-3'" style="clear:both">
-                                        <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 4663944,<br>
-                                        <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 9844763,<br>
-                                        <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 2330 <br>
-                                        <strong style="width:100px;display:inline-block;">Email:</strong>
-                                        <a href="#">itsupport@gaca.gov.ae</a>
-                                    </div>
-                                    <div ng-show="contactDepartment == 'sector-4'" style="clear:both">
-                                        <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 1002838,<br>
-                                        <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 1002839,<br>
-                                        <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 1007 <br>
-                                        <strong style="width:100px;display:inline-block;">Email:</strong>
-                                        <a href="#">hr@gaca.gov.ae</a>
-                                    </div>
-                                    <div ng-show="contactDepartment == 'sector-5'" style="clear:both">
-                                        <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 3324432,<br>
-                                        <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 4667566,<br>
-                                        <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 2330 <br>
-                                        <strong style="width:100px;display:inline-block;">Email:</strong>
-                                        <a href="#">itsupport@gaca.gov.ae</a>
-                                    </div>
-                                    <div ng-show="contactDepartment == 'sector-6'" style="clear:both">
-                                        <strong style="width:100px;display:inline-block;">Tel:</strong> +971 2 1002838,<br>
-                                        <strong style="width:100px;display:inline-block;">Fax:</strong> +971 2 1002839,<br>
-                                        <strong style="width:100px;display:inline-block;">P.O.Box:</strong> 1007 <br>
-                                        <strong style="width:100px;display:inline-block;">Email:</strong>
-                                        <a href="#">hr@gaca.gov.ae</a>
-                                    </div>
-
-                                    <hr/>
-
-                                    <!--<p></p>-->
-                                    7:30am to 2:30pm for GACA staff <br/>
-                                    8:00am to 1:00pm for Customers <br/>
-                                    Sun, Mon, Tues, Wed, Thurs
-
-
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
                             <div class="box-header">
@@ -499,6 +420,23 @@
 
                                     <!--<p>&nbsp;</p>-->
                                     <p><span class="gaca-btn pull-right">Submit</span></p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                            <div class="box-header">
+                                <div class="box-icon">
+                                    <i class="fa fa-copy"></i>
+                                </div>
+                                <div class="box-status" ng-click="changeActive()">
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-minus"></i>
+                                </div>
+                                <div class="box-title">Runway Complete</div>
+                                <div class="box-content">
+                                    <div class="box-image" style="background-image: url('http://www.designboom.com/contemporary/contemporaryairportdesign/63.jpg')"></div>
 
                                 </div>
                             </div>

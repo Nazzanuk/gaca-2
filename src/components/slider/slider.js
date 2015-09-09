@@ -6,12 +6,42 @@
         $scope.data = {};
         $scope.data.active = true;
 
+        var topIndex = 0;
+        var topLength = 3;
+
+        var setTop = function (index) {
+            if (topIndex == index) return;
+            $('.banner-image').eq(topIndex).velocity('stop').velocity('transition.fadeOut');
+            $('.banner-image').eq(index).velocity('stop').velocity('transition.fadeIn');
+            topIndex = index;
+        };
+
+        var getTop = function () {
+            return topIndex;
+        };
+
+        var getTops = function () {
+            return new Array(topLength);
+        };
+
+        var isTop = function (index) {
+            return topIndex == index;
+        };
+
         var changeActive = function () {
             $scope.data.active = !$scope.data.active;
         };
 
         var isActive = function () {
             return $scope.data.active;
+        };
+
+        var isFirst = function () {
+            return $scope.dotIndex == 0;
+        };
+
+        var isLast = function () {
+            return $scope.dotIndex >= ($scope.dots - 1);
         };
 
         var nextDot = function () {
@@ -28,8 +58,6 @@
 
         var setPosition = function (index) {
             $('.slider-holder').velocity('stop').velocity({'translateX': (index * -100) + '%'}, 600);
-            $('.banner-image').eq($scope.dotIndex).velocity('stop').velocity('transition.fadeOut');
-            $('.banner-image').eq(index).velocity('stop').velocity('transition.fadeIn');
             $scope.dotIndex = index;
 
             $interval.cancel(interval);
@@ -79,6 +107,12 @@
         $scope.isActive = isActive;
         $scope.nextPosition = nextPosition;
         $scope.prevPosition = prevPosition;
+        $scope.isFirst = isFirst;
+        $scope.isLast = isLast;
+        $scope.setTop = setTop;
+        $scope.getTop = getTop;
+        $scope.isTop = isTop;
+        $scope.getTops = getTops;
 
     }]);
 }());

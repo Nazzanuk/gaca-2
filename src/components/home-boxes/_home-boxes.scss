@@ -1,7 +1,9 @@
 [data-template="home-boxes"]  {
   .home-boxes {
-    background: rgb(197, 206, 211);
-    padding: 20px;
+
+    @extend .standard-page;
+
+    padding:20px;
 
 
   }

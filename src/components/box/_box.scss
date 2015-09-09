@@ -8,7 +8,6 @@
   overflow: hidden;
   font-size: 13px;
 
-
   .arabic & {
     text-align: right;
   }
@@ -55,13 +54,14 @@
 
     .box-status {
       background: rgb(230, 238, 238);
+      background: $light-grey;
       border-radius: 4px;
       height: 25px;
       line-height: 25px;
       width: 25px;
       text-align: left;
       float: right;
-      color: $prim-light;
+      color: $grey;;
       font-size: 18px;
       margin-left: 10px;
       cursor: pointer;
@@ -154,28 +154,62 @@
     }
   }
 
+
+
+  background: white;
+  background: rgba(255,255,255,0.8);
+  color: #555;
+  border-top:$prim-light 3px solid;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.1);
+
+  .box-header {
+    color: $grey;
+
+    .box-icon {
+      color: $grey;
+    }
+  }
+
+  .box-content {
+    color: #555;
+  }
+
+
+  &.box-yellow {
+//    background: white;
+    color: #555;
+    border-top:$secon-light 3px solid;
+
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.1);
+  }
+
   &.box-red {
-    background: rgb(206, 16, 41);
+    color: #555;
+    border-top:rgb(206, 16, 41) 3px solid;
   }
 
   &.box-white {
-    background: white;
+//    background: white;
+    border-top:#666 3px solid;
     color: #555;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.1);
+  }
 
-//    a {
-//      color: $prim-light;
-//    }
+  &.box-old {
+    background: $prim-dark;
+    color: #ffffff;
+    border-top:$prim-light 3px solid;
 
     .box-header {
-      color: $prim-dark;
+      color: #fff;
 
       .box-icon {
-        color: $prim-dark;
+        color: #fff;
       }
     }
 
     .box-content {
-      color: #555;
+      color: #fff;
     }
   }
 }
@@ -203,7 +237,6 @@
   }
   tr:nth-child(2n) {
     background: $light-grey;
-
 
     .in {
       background: white;
