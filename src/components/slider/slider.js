@@ -1,7 +1,7 @@
 (function () {
-    app.controller('SliderCtrl', ['$scope', '$element', '$interval', function ($scope, $element, $interval) {
+    app.controller('SliderCtrl', ['$scope', '$element', '$interval', function ($scope, $element, $timeout) {
 
-        var items, $firstSliderItem, amountVisible, interval;
+        var items, $firstSliderItem, amountVisible, timeout;
         $scope.dots, $scope.dotIndex;
         $scope.data = {};
         $scope.data.active = true;
@@ -14,6 +14,11 @@
             $('.banner-image').eq(topIndex).velocity('stop').velocity('transition.fadeOut');
             $('.banner-image').eq(index).velocity('stop').velocity('transition.fadeIn');
             topIndex = index;
+
+            $timeout.cancel(timeout);
+            timeout = $timeout(function () {
+                setTop(nextTop());
+            }, 7000);
         };
 
         var getTop = function () {
@@ -44,6 +49,12 @@
             return $scope.dotIndex >= ($scope.dots - 1);
         };
 
+        var nextTop = function () {
+            var next = topIndex + 1;
+            if (next >= topLength) next = 0;
+            return next;
+        };
+
         var nextDot = function () {
             var next = $scope.dotIndex + 1;
             if (next >= $scope.dots) next = 0;
@@ -60,10 +71,7 @@
             $('.slider-holder').velocity('stop').velocity({'translateX': (index * -100) + '%'}, 600);
             $scope.dotIndex = index;
 
-            $interval.cancel(interval);
-            interval = $interval(function () {
-                //setPosition(nextDot());
-            }, 7000);
+
         };
 
         var nextPosition = function() {
@@ -89,8 +97,8 @@
         var init = function () {
             initialise();
 
-            $interval(function () {
-                //setPosition(nextDot());
+            timeout = $timeout(function () {
+                setTop(nextTop());
             }, 7000);
         };
 

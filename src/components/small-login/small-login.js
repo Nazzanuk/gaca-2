@@ -5,7 +5,7 @@ app.controller('SmallLoginCtrl', function ($scope, $timeout, $http) {
             $('.small-login-box, .small-login-back').addClass('active');
         });
 
-        $(document).on('click', '.small-login-back', function () {
+        $(document).on('click', '.small-login-back, .close-login-box', function () {
             $('.small-login-box, .small-login-back').removeClass('active')
         });
     };

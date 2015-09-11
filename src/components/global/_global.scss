@@ -16,6 +16,11 @@ body {
 
   letter-spacing: -0.3px;
 
+
+  background-image: url('img/back-6.jpg') !important;
+  background-repeat: no-repeat;
+  background-position: top !important;
+
   @media (max-width: 767px) {
     padding-top: 40px;
     font-size: 12px;
@@ -455,9 +460,6 @@ img {
 
 .standard-page {
   background: white !important;
-  background-image: url('img/back-6.jpg') !important;
-//  background-size: cover !important;
-  background-position: top !important;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
   padding: 45px 10px 1px;
   min-height: 80vh;

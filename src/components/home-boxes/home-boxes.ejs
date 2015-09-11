@@ -181,48 +181,59 @@
                                     <i class="fa fa-minus"></i>
                                 </div>
                                 <div class="box-title">Check Destination</div>
-                                <div class="box-content">
+                                <div class="box-content" ng-controller="CheckDestinationCtrl">
                                     <div style="text-align: right">
-                                        <form action="{{destination}}" method="post" name="contactform" id="contactform">
-                                            <p class="in block">
-                                                <select ng-model="destination">
-                                                    <option value="">Select Destination</option>
-                                                    <option value="/my-handling-form-page?destination=Saudi Arabia">Saudi Arabia</option>
-                                                    <option value="/my-handling-form-page?destination=United Kingdom">United Kingdom</option>
-                                                </select>
+                                        <!--<form action="{{destination}}" method="post" name="contactform" id="contactform">-->
+                                        <p class="in block">
+                                            <select ng-model="destination" ng-change="setDestination(destination)" ng-init="destination = 'Buraydah'">
+                                                <!--<option value="">Select Destination</option>-->
+                                                <option value="Buraydah">Buraydah</option>
+                                                <option value="London">London Heathrow</option>
+                                                <option value="Madrid">Madrid</option>
+                                                <option value="New York">New York</option>
+                                                <option value="Melbourne">Melbourne</option>
+                                                <option value="Oslo">Oslo</option>
+                                            </select>
 
-                                                <span class="in-btn select-btn">
-                                                    <i class="fa fa-caret-down"></i>
-                                                </span>
+                                            <span class="in-btn select-btn">
+                                                <i class="fa fa-caret-down"></i>
+                                            </span>
+                                        </p>
+                                        <div class="clearfix">
+                                            <p class="in temp-left">
+                                                <input type="search" placeholder="Flight Number"/>
                                             </p>
-                                            <div class="clearfix">
-                                                <p class="in temp-left">
-                                                    <input type="search" placeholder="Flight Number"/>
-                                                </p>
-                                            </div>
+                                        </div>
 
-                                            <button type="submit temp-right" class="gaca-btn">Submit</button>
-                                        </form>
+                                        <div class="clearfix">
+                                            <button type="submit" class="gaca-btn temp-right">Submit</button>
+                                        </div>
+                                        <!--</form>-->
                                     </div>
 
-
-                                    <hr/>
-
-                                    <div class="row">
-                                        <div class="col-xs-6">
-                                            Today
-                                            <div class="thin">
-                                                30° <i class="fa fa-tint" style="color: #add8e6"></i>
-                                            </div>
-
+                                    <div class="row" ng-show="getWeatherText() != 'No weather data available'">
+                                        <hr/>
+                                        <div class="col-sm-12">
+                                            <span class="temp-right"><img ng-src="{{getWeatherIcon()}}" alt=""/></span>
+                                            <p class="hl">{{getWeatherTemp()}}ºC in {{destination}}</p>
+                                            <p>
+                                                <span class="temp-left" style="text-transform: capitalize"> {{getWeatherText()}}</span>
+                                            </p>
                                         </div>
-                                        <div class="col-xs-6">
-                                            Tomorrow
-                                            <div class="thin">
-                                                42° <i class="fa fa-sun-o" style="color: yellow"></i>
-                                            </div>
+                                        <!--<div class="col-xs-6">-->
+                                            <!--Today-->
+                                            <!--<div class="thin">-->
+                                                <!--30° <i class="fa fa-tint" style="color: #add8e6"></i>-->
+                                            <!--</div>-->
 
-                                        </div>
+                                        <!--</div>-->
+                                        <!--<div class="col-xs-6">-->
+                                            <!--Tomorrow-->
+                                            <!--<div class="thin">-->
+                                                <!--42° <i class="fa fa-sun-o" style="color: gold"></i>-->
+                                            <!--</div>-->
+
+                                        <!--</div>-->
                                     </div>
 
 
@@ -432,7 +443,24 @@
                             </div>
                         </div>
 
-                        <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <!--<div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">-->
+                            <!--<div class="box-header">-->
+                                <!--<div class="box-icon">-->
+                                    <!--<i class="fa fa-copy"></i>-->
+                                <!--</div>-->
+                                <!--<div class="box-status" ng-click="changeActive()">-->
+                                    <!--<i class="fa fa-plus"></i>-->
+                                    <!--<i class="fa fa-minus"></i>-->
+                                <!--</div>-->
+                                <!--<div class="box-title">Runway Complete</div>-->
+                                <!--<div class="box-content">-->
+                                    <!--<div class="box-image" style="background-image: url('http://www.designboom.com/contemporary/contemporaryairportdesign/63.jpg')"></div>-->
+
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                        <div class="box box-blue clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="$root.$new(true)">
                             <div class="box-header">
                                 <div class="box-icon">
                                     <i class="fa fa-copy"></i>
@@ -441,9 +469,40 @@
                                     <i class="fa fa-plus"></i>
                                     <i class="fa fa-minus"></i>
                                 </div>
-                                <div class="box-title">Runway Complete</div>
+                                <div class="box-tabs clearfix" ng-init="currentTab = 0">
+                                    <div class="box-tab" ng-class="{active:currentTab == 0}" ng-click="currentTab = 0">Tenders</div>
+                                    <div class="box-tab" ng-class="{active:currentTab == 1}" ng-click="currentTab = 1">Circulars</div>
+                                </div>
+
                                 <div class="box-content">
-                                    <div class="box-image" style="background-image: url('http://www.designboom.com/contemporary/contemporaryairportdesign/63.jpg')"></div>
+                                    <div class="content-tab"
+                                         ng-class="{active:currentTab == 0}"
+                                         ng-controller="ECatalogueCtrl"
+                                         ng-init="trainingCentresSort = 'sector'">
+
+                                        <a class="box-highlight grey hl" href="#" ng-repeat="eService in getEServices({audience:'Training Centres'}, trainingCentresSort) track by $index">
+                                            <small class="hl">{{eService[trainingCentresSort]}}</small>
+                                            <br/>
+                                            <small style="font-weight: normal">Form {{eService.id}} {{eService.title}}</small>
+                                        </a>
+                                        <hr/>
+                                        <div class="gaca-btn temp-right">More...</div>
+                                    </div>
+
+                                    <div class="content-tab"
+                                         ng-class="{active:currentTab == 1}"
+                                         ng-controller="ECatalogueCtrl"
+                                         ng-init="trainingCentresSort = 'id'">
+
+                                        <a class="box-highlight grey hl" href="#" ng-repeat="eService in getEServices({audience:'Training Centres'}, trainingCentresSort) track by $index">
+                                            <small class="hl">{{eService[trainingCentresSort]}}</small>
+                                            <br/>
+                                            <small style="font-weight: normal">Form {{eService.id}} {{eService.title}}</small>
+                                        </a>
+                                        <hr/>
+                                        <div class="gaca-btn temp-right">More...</div>
+                                    </div>
+
 
                                 </div>
                             </div>

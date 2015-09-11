@@ -24,7 +24,7 @@
       line-height: 33px;
 //      font-weight: 800;
       background: white;
-      background: rgba(255,255,255,0.95);
+//      background: rgba(255,255,255,0.95);
       border-top: 3px solid $grey;
 //      border-bottom: 1px solid $light-grey;
 
@@ -125,7 +125,7 @@
       height: 75px;
       line-height: 25px;
       background: white;
-      background: rgba(255,255,255,0.95);
+//      background: rgba(255,255,255,0.95);
 
       @media(max-width: 991px) {
         padding: 0 25px;
@@ -255,28 +255,33 @@
           }
 
           .hl {
-//            font-size: 20px;
+            font-size: 20px;
             font-weight: 900;
+            font-weight: 200;
             margin: 0 0 15px;
             display: inline-block;
             line-height: 1.1;
             color: $dark-grey;
+            color: $prim-light;
           }
 
           .row .row > [class^="col-"] {
-//            border-left: 3px solid #eee;
+            border-left: 3px solid #eee;
             min-height: 200px;
             margin-left: -3px;
             padding-left: 13px;
+            padding-right: 20px;
+            padding-left: 23px;
 
             .arabic & {
               border-left: none;
-//              border-right: 3px solid #eee;
+              border-right: 3px solid #eee;
               text-align: right;
               margin-left: 0px;
               padding-left: 0px;
               margin-right: -3px;
-              padding-right: 13px;
+              padding-right: 23px;
+              padding-left: 20px;
 
               .fa {
                 transform: rotate(180deg);
