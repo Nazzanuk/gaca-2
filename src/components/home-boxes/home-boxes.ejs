@@ -171,7 +171,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                        <div class="box box-yellow clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box box-blue clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
                             <div class="box-header">
                                 <div class="box-icon">
                                     <i class="fa fa-plane"></i>
@@ -185,7 +185,7 @@
                                     <div style="text-align: right">
                                         <!--<form action="{{destination}}" method="post" name="contactform" id="contactform">-->
                                         <p class="in block">
-                                            <select ng-model="destination" ng-change="setDestination(destination)" ng-init="destination = 'Buraydah'">
+                                            <select ng-model="destination" ng-change="setDestination(destination)" style="width: 232px" ng-init="destination = 'Buraydah'">
                                                 <!--<option value="">Select Destination</option>-->
                                                 <option value="Buraydah">Buraydah</option>
                                                 <option value="London">London Heathrow</option>
@@ -200,40 +200,40 @@
                                             </span>
                                         </p>
                                         <div class="clearfix">
-                                            <p class="in temp-left">
+                                            <button type="submit" class="gaca-btn temp-right">Submit</button>
+
+                                            <p class="in temp-right" style="margin: 0 10px">
                                                 <input type="search" placeholder="Flight Number"/>
                                             </p>
                                         </div>
 
                                         <div class="clearfix">
-                                            <button type="submit" class="gaca-btn temp-right">Submit</button>
                                         </div>
                                         <!--</form>-->
                                     </div>
 
                                     <div class="row" ng-show="getWeatherText() != 'No weather data available'">
                                         <hr/>
-                                        <div class="col-sm-12">
-                                            <span class="temp-right"><img ng-src="{{getWeatherIcon()}}" alt=""/></span>
-                                            <p class="hl">{{getWeatherTemp()}}ºC in {{destination}}</p>
+                                        <div class="col-xs-6">
+                                            <p class="hl">Weather in {{destination}}</p>
                                             <p>
                                                 <span class="temp-left" style="text-transform: capitalize"> {{getWeatherText()}}</span>
                                             </p>
                                         </div>
-                                        <!--<div class="col-xs-6">-->
+                                        <!--<div class="col-xs-4">-->
                                             <!--Today-->
                                             <!--<div class="thin">-->
                                                 <!--30° <i class="fa fa-tint" style="color: #add8e6"></i>-->
                                             <!--</div>-->
 
                                         <!--</div>-->
-                                        <!--<div class="col-xs-6">-->
-                                            <!--Tomorrow-->
-                                            <!--<div class="thin">-->
-                                                <!--42° <i class="fa fa-sun-o" style="color: gold"></i>-->
-                                            <!--</div>-->
+                                        <div class="col-xs-6">
+                                            Today
+                                            <div class="thin">
+                                                {{getWeatherTemp()}}ºC <img ng-src="{{getWeatherIcon()}}" alt=""/></i>
+                                            </div>
 
-                                        <!--</div>-->
+                                        </div>
                                     </div>
 
 

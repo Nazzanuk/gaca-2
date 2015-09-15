@@ -10,12 +10,16 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
         });
     };
 
+    var getContactBoxHeight = function () {
+        return $('.contact-box').height() + 80;
+    };
+
     var init = function () {
         events();
     };
 
     init();
 
-    //$scope.getResults = getResults;
+    $scope.getContactBoxHeight = getContactBoxHeight;
 
 });

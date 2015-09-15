@@ -26,6 +26,11 @@
             <div class="box box-white">
                 <div class="in block">
                     <div class="row">
+                        <div class="col-sm-12">
+                            <i class="fa fa-times temp-right close-login-box"></i>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-xs-4">
                             <p><label for="">Username</label></p>
                         </div>
@@ -57,9 +62,8 @@
 
 </div>
 <div data-template="contact" ng-controller="ContactCtrl">
-    <div class="contact-icon">
+    <div class="contact-icon" style="bottom:{{getContactBoxHeight()}}px">
         <img src="public/img/svg/call.svg" alt=""/>
-
     </div>
 
     <div class="contact-box">
@@ -68,16 +72,16 @@
                 <div class="box-icon">
                     <img src="public/img/svg/call.svg" alt=""/>
                 </div>
-                <div class="box-status" ng-click="changeActive()">
-                    <i class="fa fa-plus"></i>
-                    <i class="fa fa-minus"></i>
-                </div>
+                <!--<div class="box-status" ng-click="changeActive();$root.$apply()">-->
+                    <!--<i class="fa fa-plus"></i>-->
+                    <!--<i class="fa fa-minus"></i>-->
+                <!--</div>-->
                 <div class="box-title">Get In Touch</div>
                 <div class="box-content" ng-controller="GetInTouchCtrl">
                     <p class="thin pull-left">Sector</p>
 
                     <div class="in pull-right">
-                        <select class="gaca-select" ng-model="contactSector" ng-init="" ng-change="contactDepartment = ''">
+                        <select class="gaca-select" ng-model="contactSector" ng-init="" ng-change="contactDepartment = '';$root.$apply()">
                             <option value="">Select Sector</option>
                             <option value="air-nav">Air Navigation</option>
                             <option value="safety-org">Safety & Organisation</option>
@@ -92,7 +96,7 @@
 
                     <p class="thin pull-left" style="clear: both">Department</p>
                     <div class="in pull-right">
-                        <select class="gaca-select" ng-model="contactDepartment">
+                        <select class="gaca-select" ng-model="contactDepartment" ng-change="$root.$apply()">
                             <option value="">Select Department</option>
                             <option ng-repeat="(key, department) in getDepartments() track by $index" value="{{key}}">{{department}}</option>
                         </select>

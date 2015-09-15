@@ -4,19 +4,19 @@
     @extend .standard-page;
 
     .box-highlight.hl {
-      border-left: 3px solid $prim-light;
+      border-left: none;
       padding: 10px 15px;
       margin-bottom: 5px;
-//      color: $prim-dark;
+      //      color: $prim-dark;
       transition: .2s;
-      white-space: nowrap;
+      //      white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
-//      color: white;
+      //      color: white;
       text-transform: none;
 
       &:hover {
-        border-left-width: 6px;
+        border-left-width: 0px;
         color: $prim-light;
         padding-left: 12px;
 
