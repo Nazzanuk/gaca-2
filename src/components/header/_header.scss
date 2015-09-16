@@ -22,11 +22,11 @@
       right: 0;
       height: 36px;
       line-height: 33px;
-//      font-weight: 800;
+      //      font-weight: 800;
       background: white;
-//      background: rgba(255,255,255,0.95);
+      //      background: rgba(255,255,255,0.95);
       border-top: 3px solid $grey;
-//      border-bottom: 1px solid $light-grey;
+      //      border-bottom: 1px solid $light-grey;
 
       .arabic & {
         direction: rtl;
@@ -125,7 +125,7 @@
       height: 75px;
       line-height: 25px;
       background: white;
-//      background: rgba(255,255,255,0.95);
+      //      background: rgba(255,255,255,0.95);
 
       @media(max-width: 991px) {
         padding: 0 25px;
@@ -173,12 +173,12 @@
       background: rgba(0, 0, 0, 0.4);
       background: $prim-light;
       background: $light-grey;
-      background: rgba(255,255,255,0.85);
+      background: rgba(255, 255, 255, 0.85);
       height: 35px;
       line-height: 35px;
       color: $dark-grey;
       font-size: 13px;
-      box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
       background: $prim-light;
       background: transparentize($prim-light, 0.15);
       color: white;
@@ -190,7 +190,7 @@
         text-align: center;
         font-weight: 400;
         cursor: pointer;
-//        background: $light-grey;
+        //        background: $light-grey;
         transition: .3s;
         //        padding: 0 20px;
         width: 12.5%;
@@ -206,9 +206,7 @@
         }
 
         a {
-          color: $prim-light;
-          //          font-weight:bold;
-
+          color: inherit;
         }
 
         &:first-child {
@@ -241,10 +239,14 @@
           text-align: left;
           z-index: 1;
           box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
+          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
           border-radius: 0 0 4px 4px;
 
           white-space: normal;
+
+          a {
+            color: $prim-light;
+          }
 
           .arabic & {
             text-align: right;

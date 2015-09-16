@@ -78,13 +78,17 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
         });
     };
 
+    var getContactBoxHeight = function () {
+        return $('.contact-box').height() + 80;
+    };
+
     var init = function () {
         events();
     };
 
     init();
 
-    //$scope.getResults = getResults;
+    $scope.getContactBoxHeight = getContactBoxHeight;
 
 });
 
@@ -132,6 +136,30 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 
         $scope.getEServices = getEServices;
 
+    }]);
+}());
+
+(function () {
+    app.controller('EServiceCtrl', ['$scope', function ($scope) {
+        var showPopup = function () {
+            $('.e-popup').velocity('stop').velocity('transition.fadeIn', 200);
+        };
+        var hidePopup = function () {
+            $('.e-popup').velocity('stop').velocity('transition.fadeOut', 200);
+        };
+
+        var events = function () {
+            $(document).on('click', '.show-e-popup', showPopup);
+            $(document).on('click', '.hide-e-popup', hidePopup);
+        };
+
+        var init = function () {
+            events();
+        };
+
+        init();
+
+        //$scope.showPopup = showPopup;
     }]);
 }());
 
@@ -295,30 +323,6 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
             }, 50)
         }
 
-    }]);
-}());
-
-(function () {
-    app.controller('EServiceCtrl', ['$scope', function ($scope) {
-        var showPopup = function () {
-            $('.e-popup').velocity('stop').velocity('transition.fadeIn', 200);
-        };
-        var hidePopup = function () {
-            $('.e-popup').velocity('stop').velocity('transition.fadeOut', 200);
-        };
-
-        var events = function () {
-            $(document).on('click', '.show-e-popup', showPopup);
-            $(document).on('click', '.hide-e-popup', hidePopup);
-        };
-
-        var init = function () {
-            events();
-        };
-
-        init();
-
-        //$scope.showPopup = showPopup;
     }]);
 }());
 
