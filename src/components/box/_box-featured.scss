@@ -1,0 +1,13 @@
+.box-featured {
+  .box-feature {
+    margin-bottom: 15px;
+
+    .featured-image {
+      height: 100px;
+      border-radius: 4px;
+      background: $light-grey;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}

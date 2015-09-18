@@ -1011,6 +1011,64 @@
                             </div>
                         </div>
 
+                        <div class="box box-yellow clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                            <div class="box-header">
+                                <div class="box-icon">
+                                    <i class="fa fa-copy"></i>
+                                </div>
+                                <div class="box-status" ng-click="changeActive()">
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-minus"></i>
+                                </div>
+                                <div class="box-title">Featured Items</div>
+                                <div class="box-content">
+                                    <div class="box-featured">
+                                        <div class="box-feature">
+                                            <div class="row">
+                                                <div class="col-xs-6">
+                                                    <div class="featured-image" style="background-image: url('https://unsplash.it/500/300/?random&134')"></div>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                                    <div class="gaca-btn temp-left">View &nbsp; <i class="fa fa-angle-right"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="box-feature">
+                                            <div class="row">
+                                                <div class="col-xs-6">
+                                                    <div class="featured-image" style="background-image: url('https://unsplash.it/500/300/?random&135')"></div>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                                    <div class="gaca-btn temp-left">View &nbsp; <i class="fa fa-angle-right"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="box-feature">
+                                            <div class="row">
+                                                <div class="col-xs-6">
+                                                    <div class="featured-image" style="background-image: url('https://unsplash.it/500/300/?random&1353')"></div>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                                                    <div class="gaca-btn temp-left">View &nbsp; <i class="fa fa-angle-right"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <hr/>
+
+                                        <div class="gaca-btn temp-right">Read more...</div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="box box-old clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
                             <div class="box-header">
                                 <div class="box-icon">
@@ -1041,17 +1099,31 @@
                                 </div>
                                 <div class="box-title">Check Destination</div>
                                 <div class="box-content" ng-controller="CheckDestinationCtrl">
+                                    <script>
+                                        var initialDestinations = [
+                                            {
+                                                name: "Buraydah",
+                                                coords: [26.359987, 43.973551],
+                                                url: "/link/to/submit"
+                                            },
+                                            {
+                                                name: "London Heathrow",
+                                                coords: [51.470029, -0.454305],
+                                                url: "/link/to/heathrow/submit"
+                                            },
+                                            {
+                                                name: "New York",
+                                                coords: [40.709559, -74.005087],
+                                                url: "/link/to/heathrow/submit"
+                                            }
+                                        ];
+                                    </script>
                                     <div style="text-align: right">
-                                        <!--<form action="{{destination}}" method="post" name="contactform" id="contactform">-->
+                                        <form action="{{getCurrentDestination().url}}" method="post" name="contactform" id="contactform">
                                         <p class="in block">
-                                            <select ng-model="destination" ng-change="setDestination(destination)" style="width: 232px" ng-init="destination = 'Buraydah'">
+                                            <select ng-model="destination" ng-change="setDestination(destination)" style="width: 232px" ng-init="destination = 0">
                                                 <!--<option value="">Select Destination</option>-->
-                                                <option value="Buraydah">Buraydah</option>
-                                                <option value="London">London Heathrow</option>
-                                                <option value="Madrid">Madrid</option>
-                                                <option value="New York">New York</option>
-                                                <option value="Melbourne">Melbourne</option>
-                                                <option value="Oslo">Oslo</option>
+                                                <option ng-repeat="dest in getDestinations()" value="{{$index}}">{{dest.name}}</option>
                                             </select>
 
                                             <span class="in-btn select-btn">
@@ -1068,13 +1140,13 @@
 
                                         <div class="clearfix">
                                         </div>
-                                        <!--</form>-->
+                                        </form>
                                     </div>
 
                                     <div class="row" ng-show="getWeatherText() != 'No weather data available'">
                                         <hr/>
                                         <div class="col-xs-6">
-                                            <p class="hl">Weather in {{destination}}</p>
+                                            <p class="hl">Weather in {{getCurrentDestination().name}}</p>
                                             <p>
                                                 <span class="temp-left" style="text-transform: capitalize"> {{getWeatherText()}}</span>
                                             </p>
@@ -1319,7 +1391,7 @@
                             <!--</div>-->
                         <!--</div>-->
 
-                        <div class="box box-blue clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="$root.$new(true)">
+                        <div class="box box-blue clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
                             <div class="box-header">
                                 <div class="box-icon">
                                     <i class="fa fa-copy"></i>
