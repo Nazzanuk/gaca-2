@@ -1,4 +1,4 @@
-app.controller('CheckDestinationCtrl', function ($scope, $timeout, $http) {
+app.controller('CheckDestinationCtrl', function ($scope, $timeout, $http, $sce) {
 
     var currentDestination = 0;
     var weather = {};
@@ -43,6 +43,10 @@ app.controller('CheckDestinationCtrl', function ($scope, $timeout, $http) {
         loadWeather();
     };
 
+    var getUrl = function () {
+        return $sce.trustAsResourceUrl("http://www.flightstats.co.uk/FlightStatus/flightStatusByFlight.do?flightNumber=" + $scope.flightNumber + "&x=26&y=10");
+    };
+
     var loadWeather = function () {
         weather = {};
         //api.openweathermap.org/data/2.5/weather?lat=35&lon=139
@@ -75,5 +79,6 @@ app.controller('CheckDestinationCtrl', function ($scope, $timeout, $http) {
     $scope.getWeatherText = getWeatherText;
     $scope.getWeatherIcon = getWeatherIcon;
     $scope.getWeatherTemp = getWeatherTemp;
+    $scope.getUrl = getUrl;
 
 });

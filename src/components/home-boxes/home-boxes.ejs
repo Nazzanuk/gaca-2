@@ -255,12 +255,12 @@
                                             {
                                                 name: "New York",
                                                 coords: [40.709559, -74.005087],
-                                                url: "/link/to/heathrow/submit"
+                                                url: "/link/to/newyork/submit"
                                             }
                                         ];
                                     </script>
                                     <div style="text-align: right">
-                                        <form action="{{getCurrentDestination().url}}" method="post" name="contactform" id="contactform">
+                                        <form action="{{getUrl()}}" method="post" name="contactform" id="contactform" target="_blank">
                                         <p class="in block">
                                             <select ng-model="destination" ng-change="setDestination(destination)" style="width: 232px" ng-init="destination = 0">
                                                 <!--<option value="">Select Destination</option>-->
@@ -275,7 +275,7 @@
                                             <button type="submit" class="gaca-btn temp-right">Submit</button>
 
                                             <p class="in temp-right" style="margin: 0 10px">
-                                                <input type="search" placeholder="Flight Number"/>
+                                                <input type="search" placeholder="Flight Number" ng-model="flightNumber"/>
                                             </p>
                                         </div>
 

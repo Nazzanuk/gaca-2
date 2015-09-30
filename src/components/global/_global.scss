@@ -60,8 +60,14 @@ h1, .h1 {
 
 h2, .h2 {
   color: $prim-dark;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+h3, .h3 {
+  color: $prim-dark;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 200;
 }
 
 p {
@@ -537,6 +543,14 @@ img {
 //  position:relative;
 //  z-index:-2;
   margin-top: 35px;
+
+  &.green {
+    background: #83b41d;
+  }
+
+  &.blue {
+    background: $prim-dark;
+  }
 
   @media (max-width: 991px) {
     margin-top: 0;

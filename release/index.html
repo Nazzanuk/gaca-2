@@ -667,18 +667,15 @@
         </div>
     </div>
 </div>
-<!--<div class="gaca-alert hide-alert" style="cursor: pointer">-->
-    <!--<div class="container">-->
-        <!--<div class="col-xs-12">-->
-            <!--<i class="fa fa-times pull-right"></i>-->
-            <!--<i class="fa fa-exclamation"></i> Important Alert:-->
-                    <!--<span>-->
-                        <!--Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.-->
-                    <!--</span>-->
-
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
+<div class="gaca-alert hide-alert blue" style="cursor: pointer">
+    <div class="container">
+        <div class="col-xs-12">
+            <i class="fa fa-times pull-right"></i>
+            <i class="fa fa-exclamation"></i> Important Alert:
+            <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</span>
+        </div>
+    </div>
+</div>
 
 <div data-template="banner">
     <div class="banner" data-main>
@@ -1114,12 +1111,12 @@
                                             {
                                                 name: "New York",
                                                 coords: [40.709559, -74.005087],
-                                                url: "/link/to/heathrow/submit"
+                                                url: "/link/to/newyork/submit"
                                             }
                                         ];
                                     </script>
                                     <div style="text-align: right">
-                                        <form action="{{getCurrentDestination().url}}" method="post" name="contactform" id="contactform">
+                                        <form action="{{getUrl()}}" method="post" name="contactform" id="contactform" target="_blank">
                                         <p class="in block">
                                             <select ng-model="destination" ng-change="setDestination(destination)" style="width: 232px" ng-init="destination = 0">
                                                 <!--<option value="">Select Destination</option>-->
@@ -1134,7 +1131,7 @@
                                             <button type="submit" class="gaca-btn temp-right">Submit</button>
 
                                             <p class="in temp-right" style="margin: 0 10px">
-                                                <input type="search" placeholder="Flight Number"/>
+                                                <input type="search" placeholder="Flight Number" ng-model="flightNumber"/>
                                             </p>
                                         </div>
 

@@ -43,8 +43,13 @@ h1, .h1 {
 
 h2, .h2 {
   color: #456bb1;
+  font-size: 20px;
+  font-weight: 200; }
+
+h3, .h3 {
+  color: #456bb1;
   font-size: 16px;
-  font-weight: 600; }
+  font-weight: 200; }
 
 p {
   line-height: 1.7; }
@@ -379,6 +384,10 @@ img {
   line-height: 1.2;
   color: white;
   margin-top: 35px; }
+  .gaca-alert.green {
+    background: #83b41d; }
+  .gaca-alert.blue {
+    background: #456bb1; }
   @media (max-width: 991px) {
     .gaca-alert {
       margin-top: 0; } }
@@ -1384,7 +1393,6 @@ img {
     [data-template="content"] .content-banner {
       height: 250px; } }
 [data-template="content"] .content img {
-  width: 100%;
   border-radius: 4px; }
 [data-template="content"] .content .box-highlight.hl {
   border-left: 3px solid #508bea;
