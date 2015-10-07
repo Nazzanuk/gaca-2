@@ -2,6 +2,10 @@
   .search {
     direction: ltr;
 
+    .arabic & {
+      direction: rtl;
+    }
+
     @extend .standard-page;
 
     .search-list {
@@ -16,6 +20,10 @@
         float: right;
         cursor: pointer;
         transition: .2s;
+
+        .arabic & {
+          float: left;
+        }
 
         &.checked {
           background: $prim-light;
@@ -50,6 +58,10 @@
           margin-bottom: 10px;
           line-height: 1;
           font-size: 27px;
+
+          .arabic & {
+            float: right;
+          }
         }
 
         .result-header {
@@ -69,6 +81,10 @@
             color: #6cc70c;
             font-weight: bold;
 
+            .arabic & {
+              float: left;
+            }
+
             .e-service-dot {
               margin: 7px 0 7px 7px;
               //        margin-right: -30px;
@@ -79,6 +95,10 @@
               float: right;
               cursor: pointer;
               transition: .2s;
+
+              .arabic & {
+                float: left;
+              }
             }
 
             &.unavailable {
@@ -114,6 +134,10 @@
           color: #bbb;
           font-weight: bold;
           margin-left: 10px;
+
+          .arabic & {
+            float: left;
+          }
         }
 
         .result-link {
@@ -126,6 +150,10 @@
           color: #6cc70c;
           color: #6cc70c;
           font-size:26px;
+
+          .arabic & {
+            float: left;
+          }
         }
 
         &:hover {
@@ -185,6 +213,10 @@
       margin-bottom: 15px;
       transition: 0.3s;
 
+      .arabic & {
+        float: right;
+      }
+
       @media (max-width: 767px) {
         font-size: 12px;
       }
@@ -208,6 +240,10 @@
       width: 35px;
       z-index: 5;
       //pointer-events: none;
+
+      .arabic & {
+        float: right;
+      }
 
       &:hover {
         background: $prim-dark;

@@ -80,6 +80,7 @@ gulp.task("gen-html", function () {
         "e-catalogue": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'e-catalogue', 'footer'],
         "e-service": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'e-service', 'footer'],
         "search": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'search', 'footer'],
+        "arabic-search": ['arabic-head', 'small-login', 'contact', 'arabic-menu', 'login', 'popup', 'arabic-header', 'search', 'footer'],
         "gallery": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'gallery', 'footer'],
         "department": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'department', 'footer'],
         "content": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'content', 'footer'],
