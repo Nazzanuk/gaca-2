@@ -61,6 +61,8 @@
 
           .arabic & {
             float: right;
+            margin-right: 0;
+            margin-left: 10px;
           }
         }
 
@@ -97,6 +99,7 @@
               transition: .2s;
 
               .arabic & {
+                margin: 7px 7px 7px 0;
                 float: left;
               }
             }
@@ -137,6 +140,8 @@
 
           .arabic & {
             float: left;
+            margin-left: 0;
+            margin-right: 10px;
           }
         }
 
@@ -153,6 +158,8 @@
 
           .arabic & {
             float: left;
+            margin-left: 0;
+            margin-right: 10px;
           }
         }
 
@@ -215,6 +222,9 @@
 
       .arabic & {
         float: right;
+        padding-right: 0;
+        padding-left: 45px;
+        text-align: right;
       }
 
       @media (max-width: 767px) {
@@ -243,6 +253,8 @@
 
       .arabic & {
         float: right;
+        margin-left: 0;
+        margin-right: -35px;
       }
 
       &:hover {
