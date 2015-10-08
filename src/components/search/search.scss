@@ -117,11 +117,11 @@
           clear: both;
           line-height: 1.4;
           color: #999;
-          display:block;
+          display: block;
 
           strong {
             display: inline-block;
-            width: 80px;
+            width: 100px;
           }
         }
 
@@ -137,6 +137,7 @@
           color: #bbb;
           font-weight: bold;
           margin-left: 10px;
+          margin-bottom: 10px;
 
           .arabic & {
             float: left;
@@ -146,7 +147,7 @@
         }
 
         .result-link {
-          clear:right;
+          clear: right;
           float: right;
           font-weight: bold;
           margin-left: 10px;
@@ -154,9 +155,10 @@
           color: $prim-light;
           color: #6cc70c;
           color: #6cc70c;
-          font-size:26px;
+          font-size: 26px;
 
           .arabic & {
+            clear: left;
             float: left;
             margin-left: 0;
             margin-right: 10px;
