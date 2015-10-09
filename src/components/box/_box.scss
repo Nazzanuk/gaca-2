@@ -7,6 +7,9 @@
   position: relative;
   overflow: hidden;
   font-size: 13px;
+  font-size: 14px;
+  font-size: 14.5px;
+  line-height: 1.4;
 
   .arabic & {
     text-align: right;
@@ -19,6 +22,9 @@
 
   p {
     font-size: 13px;
+    font-size: 14px;
+    font-size: 14.5px;
+    line-height: 1.4;
   }
 
   .box-side {
@@ -34,7 +40,6 @@
 
   .box-header {
     color: white;
-
     .box-icon {
       height: 25px;
       line-height: 25px;
@@ -67,6 +72,7 @@
       cursor: pointer;
       z-index: 5;
       position: relative;
+      direction: ltr;
 
       .fa-plus, .fa-minus {
         visibility: hidden;

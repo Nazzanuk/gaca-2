@@ -22,12 +22,12 @@
         };
 
         var showPopup = function () {
-            $('html').addClass('no-scroll');
+            $('html, body').addClass('no-scroll');
             $('.generic-popup').velocity('stop').velocity('transition.fadeIn', 200);
         };
 
         var hidePopup = function () {
-            $('html').removeClass('no-scroll');
+            $('html, body').removeClass('no-scroll');
             $('.generic-popup').velocity('stop').velocity('transition.fadeOut', 200);
         };
 

@@ -232,7 +232,7 @@ ul {
     //    padding: 5px 15px;
   }
 
-  .col-sm-3 {
+  .col-sm-3, .col-sm-4 {
     font-weight: 600;
     color: $prim-dark;
   }
@@ -399,9 +399,9 @@ ul {
   display: none;
   overflow: auto;
   z-index: 200;
+  background: rgba(0, 0, 0, 0.2);
 
   .popup-overlay {
-    background: rgba(0, 0, 0, 0.2);
     top: 0;
     bottom: 0;
     left: 0;
@@ -468,7 +468,7 @@ img {
   background: white !important;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
   padding: 45px 10px 1px;
-  min-height: 80vh;
+  min-height: 30vh;
 
   @media (max-width: 991px) {
     padding-top: 15px;

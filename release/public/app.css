@@ -161,7 +161,7 @@ ul {
     border: none; }
   .psuedo-table .row {
     padding: 5px 15px; }
-  .psuedo-table .col-sm-3 {
+  .psuedo-table .col-sm-3, .psuedo-table .col-sm-4 {
     font-weight: 600;
     color: #456bb1; }
   .psuedo-table .row {
@@ -277,9 +277,9 @@ ul {
   position: fixed;
   display: none;
   overflow: auto;
-  z-index: 200; }
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.2); }
   .gaca-popup .popup-overlay {
-    background: rgba(0, 0, 0, 0.2);
     top: 0;
     bottom: 0;
     left: 0;
@@ -333,7 +333,7 @@ img {
   background: white !important;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
   padding: 45px 10px 1px;
-  min-height: 80vh; }
+  min-height: 30vh; }
   @media (max-width: 991px) {
     .standard-page, [data-template="content"] .content, [data-template="department"] .department, [data-template="dashboard"] .dashboard, [data-template="home-boxes"] .home-boxes, [data-template="e-service"] .e-service, [data-template="search"] .search, [data-template="gallery"] .gallery {
       padding-top: 15px; } }
@@ -768,6 +768,9 @@ img {
   position: relative;
   overflow: hidden;
   font-size: 13px;
+  font-size: 14px;
+  font-size: 14.5px;
+  line-height: 1.4;
   background: white;
   background: rgba(255, 255, 255, 0.6);
   color: #555;
@@ -779,7 +782,10 @@ img {
     color: inherit;
     font-weight: bold; }
   .box p {
-    font-size: 13px; }
+    font-size: 13px;
+    font-size: 14px;
+    font-size: 14.5px;
+    line-height: 1.4; }
   .box .box-side {
     position: absolute;
     top: 0;
@@ -817,7 +823,8 @@ img {
       margin-left: 10px;
       cursor: pointer;
       z-index: 5;
-      position: relative; }
+      position: relative;
+      direction: ltr; }
       .box .box-header .box-status .fa-plus, .box .box-header .box-status .fa-minus {
         visibility: hidden;
         opacity: 0;
@@ -1587,9 +1594,9 @@ img {
   position: fixed;
   display: none;
   overflow: auto;
-  z-index: 200; }
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.2); }
   [data-template="e-service"] .e-popup .popup-overlay {
-    background: rgba(0, 0, 0, 0.2);
     top: 0;
     bottom: 0;
     left: 0;

@@ -19,9 +19,9 @@
     display: none;
     overflow: auto;
     z-index: 200;
+    background: rgba(0,0,0,0.2);
 
     .popup-overlay {
-      background: rgba(0,0,0,0.2);
       top: 0;
       bottom: 0;
       left: 0;
