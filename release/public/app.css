@@ -863,7 +863,7 @@ ul {
       border: 1px solid #eee;
       margin-bottom: -1px;
       line-height: 32px;
-      line-height: 21px;
+      line-height: 22px;
       cursor: pointer;
       -webkit-transition: .3s background, .3s color;
               transition: .3s background, .3s color;
