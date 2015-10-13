@@ -1,13 +1,15 @@
 <div data-template="contact" ng-controller="ContactCtrl">
-    <div class="contact-icon" style="bottom:{{getContactBoxHeight()}}px">
-        <img src="public/img/svg/call.svg" alt=""/>
+    <div class="contact-icon" style="bottom:{{getContactBoxHeight()}}px;font-size:25px;">
+        <!--<img src="public/img/svg/call.svg" alt=""/>-->
+        <i class="fa fa-comments-o"></i>
     </div>
 
     <div class="contact-box">
         <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
             <div class="box-header">
                 <div class="box-icon">
-                    <img src="public/img/svg/call.svg" alt=""/>
+                    <!--<img src="public/img/svg/call.svg" alt=""/>-->
+                    <i class="fa fa-comments-o"></i>
                 </div>
                 <!--<div class="box-status" ng-click="changeActive();$root.$apply()">-->
                     <!--<i class="fa fa-plus"></i>-->

@@ -1,9 +1,9 @@
 [data-template="footer"] {
   #footer {
-    color:#f7f7f7;
+    color: #f7f7f7;
     text-align: center;
     .footer-top {
-      background:$prim-light;
+      background: $prim-light;
       padding: 15px 15px 10px;
       img {
         margin: 0 10px 5px;
@@ -12,9 +12,26 @@
     }
 
     .footer-bottom {
-      line-height:30px;
-      background:$prim-dark;
+      line-height: 30px;
+      background: $prim-dark;
       padding: 30px;
+      text-align: right;
+    }
+
+    .social-icons {
+      text-align: center;
+      font-size: 25px;
+      margin-bottom: 30px;
+
+      i.fa {
+        margin: 0 10px;
+        transition: .2s;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
     }
 
   }

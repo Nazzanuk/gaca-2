@@ -19,6 +19,8 @@
     opacity: 0;
     transition:  1.6s opacity, 1.6s transform;
     transform: translateX(50px);
+    font-size: 25px;
+    color: $grey;
 
     img {
       height: 40px;
