@@ -158,6 +158,32 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 }());
 
 (function () {
+    app.controller('EServiceCtrl', ['$scope', function ($scope) {
+        var showPopup = function () {
+            $('html, body').addClass('no-scroll');
+            $('.e-popup').velocity('stop').velocity('transition.fadeIn', 200);
+        };
+        var hidePopup = function () {
+            $('html, body').removeClass('no-scroll');
+            $('.e-popup').velocity('stop').velocity('transition.fadeOut', 200);
+        };
+
+        var events = function () {
+            $(document).on('click', '.show-e-popup', showPopup);
+            $(document).on('click', '.hide-e-popup', hidePopup);
+        };
+
+        var init = function () {
+            events();
+        };
+
+        init();
+
+        //$scope.showPopup = showPopup;
+    }]);
+}());
+
+(function () {
     app.controller('ESearchCtrl', ['$scope', function ($scope) {
 
         $scope.types = ["E-Services"];
@@ -321,32 +347,6 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 }());
 
 (function () {
-    app.controller('EServiceCtrl', ['$scope', function ($scope) {
-        var showPopup = function () {
-            $('html, body').addClass('no-scroll');
-            $('.e-popup').velocity('stop').velocity('transition.fadeIn', 200);
-        };
-        var hidePopup = function () {
-            $('html, body').removeClass('no-scroll');
-            $('.e-popup').velocity('stop').velocity('transition.fadeOut', 200);
-        };
-
-        var events = function () {
-            $(document).on('click', '.show-e-popup', showPopup);
-            $(document).on('click', '.hide-e-popup', hidePopup);
-        };
-
-        var init = function () {
-            events();
-        };
-
-        init();
-
-        //$scope.showPopup = showPopup;
-    }]);
-}());
-
-(function () {
     app.controller('GalleryCtrl', ['$scope', function ($scope) {
     }]);
 }());
@@ -395,43 +395,6 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 
         init();
 
-    }]);
-}());
-
-(function () {
-    app.controller('LoginCtrl', ['$scope', 'PopupService', function ($scope, PopupService) {
-        var showLoginPopup = function () {
-            $('.login-popup').velocity('stop').velocity('transition.fadeIn', 200);
-            $('html').addClass('no-scroll');
-        };
-        var hideLoginPopup = function () {
-            $('.login-popup').velocity('stop').velocity('transition.fadeOut', 200);
-            $('html').removeClass('no-scroll');
-        };
-
-        var showRegisterPopup = function () {
-            $('.register-popup').velocity('stop').velocity('transition.fadeIn', 200);
-            $('html').addClass('no-scroll');
-        };
-        var hideRegisterPopup = function () {
-            $('.register-popup').velocity('stop').velocity('transition.fadeOut', 200);
-            $('html').removeClass('no-scroll');
-        };
-
-        var events = function () {
-            $(document).on('click', '.show-login-popup', showLoginPopup);
-            $(document).on('click', '.hide-login-popup', hideLoginPopup);
-            $(document).on('click', '.show-register-popup', showRegisterPopup);
-            $(document).on('click', '.hide-register-popup', hideRegisterPopup);
-        };
-
-        var init = function () {
-            events();
-        };
-
-        init();
-
-        //$scope.showPopup = showPopup;
     }]);
 }());
 
@@ -578,6 +541,44 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 }());
 
 (function () {
+    app.controller('LoginCtrl', ['$scope', 'PopupService', function ($scope, PopupService) {
+        var showLoginPopup = function () {
+            $('.login-popup').velocity('stop').velocity('transition.fadeIn', 200);
+            $('html').addClass('no-scroll');
+        };
+        var hideLoginPopup = function () {
+            $('.login-popup').velocity('stop').velocity('transition.fadeOut', 200);
+            $('html').removeClass('no-scroll');
+        };
+
+        var showRegisterPopup = function () {
+            $('.register-popup').velocity('stop').velocity('transition.fadeIn', 200);
+            $('html').addClass('no-scroll');
+        };
+        var hideRegisterPopup = function () {
+            $('.register-popup').velocity('stop').velocity('transition.fadeOut', 200);
+            $('html').removeClass('no-scroll');
+        };
+
+        var events = function () {
+            $(document).on('click', '.show-login-popup', showLoginPopup);
+            $(document).on('click', '.hide-login-popup', hideLoginPopup);
+            $(document).on('click', '.show-register-popup', showRegisterPopup);
+            $(document).on('click', '.hide-register-popup', hideRegisterPopup);
+        };
+
+        var init = function () {
+            events();
+        };
+
+        init();
+
+        //$scope.showPopup = showPopup;
+    }]);
+}());
+
+
+(function () {
     app.controller('PopupCtrl', ['$scope', 'PopupService', '$sce', function ($scope, PopupService, $sce) {
 
         var getPopupContent =  function () {
@@ -652,7 +653,6 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
         that.getPopupHeader = getPopupHeader;
     }]);
 }());
-
 
 (function () {
     app.controller('SearchCtrl', ['$scope', '$timeout', '$http', function ($scope, $timeout, $http) {
@@ -748,6 +748,28 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 
     }]);
 }());
+
+app.controller('SmallLoginCtrl', function ($scope, $timeout, $http) {
+
+    var events = function () {
+        $(document).on('click', '.show-small-login', function () {
+            $('.small-login-box, .small-login-back').addClass('active');
+        });
+
+        $(document).on('click', '.small-login-back, .close-login-box', function () {
+            $('.small-login-box, .small-login-back').removeClass('active')
+        });
+    };
+
+    var init = function () {
+        events();
+    };
+
+    init();
+
+    //$scope.getResults = getResults;
+
+});
 
 (function () {
     app.controller('SliderCtrl', ['$scope', '$element', '$interval', function ($scope, $element, $timeout) {
@@ -875,25 +897,3 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 
     }]);
 }());
-
-app.controller('SmallLoginCtrl', function ($scope, $timeout, $http) {
-
-    var events = function () {
-        $(document).on('click', '.show-small-login', function () {
-            $('.small-login-box, .small-login-back').addClass('active');
-        });
-
-        $(document).on('click', '.small-login-back, .close-login-box', function () {
-            $('.small-login-box, .small-login-back').removeClass('active')
-        });
-    };
-
-    var init = function () {
-        events();
-    };
-
-    init();
-
-    //$scope.getResults = getResults;
-
-});

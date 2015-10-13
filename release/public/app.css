@@ -1876,12 +1876,14 @@ ul {
   [data-template="footer"] #footer .social-icons {
     text-align: center;
     font-size: 25px;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    color: white; }
     [data-template="footer"] #footer .social-icons i.fa {
       margin: 0 10px;
       -webkit-transition: .2s;
               transition: .2s;
-      cursor: pointer; }
+      cursor: pointer;
+      color: white; }
       [data-template="footer"] #footer .social-icons i.fa:hover {
         -webkit-transform: scale(1.2);
             -ms-transform: scale(1.2);

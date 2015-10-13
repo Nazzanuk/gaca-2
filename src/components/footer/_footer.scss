@@ -22,11 +22,13 @@
       text-align: center;
       font-size: 25px;
       margin-bottom: 30px;
+      color: white;
 
       i.fa {
         margin: 0 10px;
         transition: .2s;
         cursor: pointer;
+        color: white;
 
         &:hover {
           transform: scale(1.2);
