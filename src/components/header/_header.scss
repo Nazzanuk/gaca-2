@@ -49,9 +49,12 @@
 
       img {
         height: 100px;
+        height: 80px;
+        margin-top: 10px;
 
         @media(max-width: 991px) {
           height: 35px;
+          margin-top: 0;
         }
       }
     }

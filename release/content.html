@@ -62,15 +62,17 @@
 
 </div>
 <div data-template="contact" ng-controller="ContactCtrl">
-    <div class="contact-icon" style="bottom:{{getContactBoxHeight()}}px">
-        <img src="public/img/svg/call.svg" alt=""/>
+    <div class="contact-icon" style="bottom:{{getContactBoxHeight()}}px;font-size:25px;">
+        <!--<img src="public/img/svg/call.svg" alt=""/>-->
+        <i class="fa fa-comments-o"></i>
     </div>
 
     <div class="contact-box">
         <div class="box box-white clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
             <div class="box-header">
                 <div class="box-icon">
-                    <img src="public/img/svg/call.svg" alt=""/>
+                    <!--<img src="public/img/svg/call.svg" alt=""/>-->
+                    <i class="fa fa-comments-o"></i>
                 </div>
                 <!--<div class="box-status" ng-click="changeActive();$root.$apply()">-->
                     <!--<i class="fa fa-plus"></i>-->
@@ -410,8 +412,9 @@
         </div>
         <div class="container">
             <a href="/" class="header-logo">
-                <img src="public/img/gaca-logo.png" style=""/>
-                <span class="hidden-xs hidden-sm">General Authority of Civil Aviation</span>
+                <img src="public/img/gaca-logo-new.png" class="show-eng"/>
+                <img src="public/img/gaca-logo-new-arabic.png" class="show-arab"/>
+                <!--<span class="hidden-xs hidden-sm">General Authority of Civil Aviation</span>-->
                 <!--<span class="hidden-sm hidden-xs">-->
                 <!--الهيئة العامة للطيران المدني-->
                 <!--</span>-->
@@ -434,7 +437,7 @@
                             </div>
                         </div>
 
-                        <a href="#" class="hidden-xs"><strong>Arabic</strong></a>
+                        <a href="#" class=""><strong>Arabic</strong></a>
 
                         <div class="vd hidden-xs"></div>
 
@@ -821,6 +824,14 @@
 
             <div class="container">
                 <div class="row">
+                    <div class="col-sm-12">
+                        <div class="social-icons">
+                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-twitter"></i>
+                            <i class="fa fa-youtube"></i>
+                            <i class="fa fa-google-plus"></i>
+                        </div>
+                    </div>
                     <div class="col-sm-4">
                         <div>لان نهاية ألمانيا بـ. ٣٠ ابتدعها</div>
                         <div>جعل ثم شموليةً البشريةً</div>
