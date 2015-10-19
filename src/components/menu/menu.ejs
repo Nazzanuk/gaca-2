@@ -3,8 +3,22 @@
         <div class="header-close"><i class="fa fa-times"></i></div>
         
         <div class="menu-items">
-            <a href="#" class="menu-item">ABOUT GACA</a>
-            <a href="#" class="menu-item">DEPARTMENTS</a>
+            <div ng-controller="MenuItemCtrl">
+                <div class="menu-item expand" ng-click="toggleActive()">ABOUT GACA <i class="fa fa-angle-down temp-right"></i></div>
+                <div class="sub-items" ng-class="{active:active}">
+                    <a class="menu-sub-item" href="#">Sub item 1</a>
+                    <a class="menu-sub-item" href="#">Sub item 2</a>
+                </div>
+            </div>
+
+            <div ng-controller="MenuItemCtrl">
+                <div class="menu-item expand" ng-click="toggleActive()">DEPARTMENTS <i class="fa fa-angle-down temp-right"></i></div>
+                <div class="sub-items" ng-class="{active:active}">
+                    <a class="menu-sub-item" href="#">Sub item 1</a>
+                    <a class="menu-sub-item" href="#">Sub item 2</a>
+                </div>
+            </div>
+
             <a href="#" class="menu-item">E-SERVICES</a>
             <a href="#" class="menu-item">OCURRANCY REPORTING</a>
             <a href="#" class="menu-item">GUIDANCE</a>

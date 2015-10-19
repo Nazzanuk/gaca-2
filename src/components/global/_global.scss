@@ -21,8 +21,8 @@ body {
   background-repeat: no-repeat;
   background-position: top !important;
 
-  @media (max-width: 767px) {
-    padding-top: 40px;
+  @media (max-width: 991px) {
+    padding-top: 75px;
     font-size: 12px;
   }
 }
@@ -81,6 +81,10 @@ ul {
 [class^=col-]  {
   .arabic & {
     float: right;
+
+    @media (max-width: 767px) {
+      float: none;
+    }
   }
 }
 
@@ -454,7 +458,7 @@ ul {
 }
 
 img {
-//  max-width: 100%;
+  max-width: 100%;
 }
 
 .gaca-form form {
