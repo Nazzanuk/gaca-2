@@ -182,6 +182,13 @@
                 <div class="sub-items" ng-class="{active:active}">
                     <a class="menu-sub-item" href="#">Sub item 1</a>
                     <a class="menu-sub-item" href="#">Sub item 2</a>
+                    <div ng-controller="MenuItemCtrl">
+                        <div class="menu-sub-item expand" ng-click="toggleActive()">Sub Menu 3 <i class="fa fa-angle-down temp-right"></i></div>
+                        <div class="sub-items" ng-class="{active:active}" ng-init="active = false">
+                            <a class="menu-sub-sub-item" href="#">Sub sub item 1</a>
+                            <a class="menu-sub-sub-item" href="#">Sub sub item 2</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -190,6 +197,13 @@
                 <div class="sub-items" ng-class="{active:active}">
                     <a class="menu-sub-item" href="#">Sub item 1</a>
                     <a class="menu-sub-item" href="#">Sub item 2</a>
+                    <div ng-controller="MenuItemCtrl">
+                        <div class="menu-sub-item expand" ng-click="toggleActive()">Sub Menu 3 <i class="fa fa-angle-down temp-right"></i></div>
+                        <div class="sub-items" ng-class="{active:active}" ng-init="active = false">
+                            <a class="menu-sub-sub-item" href="#">Sub sub item 1</a>
+                            <a class="menu-sub-sub-item" href="#">Sub sub item 2</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 

@@ -72,10 +72,22 @@
           margin-left: 10px;
         }
 
+        .menu-sub-sub-item {
+          display: none;
+          @extend .menu-item;
+          margin-left: 20px;
+        }
+
 
         &.active {
           .menu-sub-item {
             display: block;
+          }
+
+          .sub-items.active {
+            .menu-sub-sub-item {
+              display: block;
+            }
           }
         }
       }
