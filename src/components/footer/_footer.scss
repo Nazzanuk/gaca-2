@@ -15,7 +15,12 @@
       line-height: 30px;
       background: $prim-dark;
       padding: 30px;
-      text-align: right;
+      text-align: left;
+
+      .arabic & {
+        text-align: right;
+        direction: rtl;
+      }
     }
 
     .social-icons {

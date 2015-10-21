@@ -399,7 +399,7 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 }());
 
 (function () {
-    app.controller('BoxCtrl', ['$scope', '$element', 'PopupService', function ($scope, $element, PopupService) {
+    app.controller('BoxCtrl', ['$scope', '$element', 'PopupService', '$timeout', function ($scope, $element, PopupService, $timeout) {
         $scope.data = {};
         $scope.data.active = true;
 
@@ -411,6 +411,11 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 
         var changeActive = function () {
             $scope.data.active = !$scope.data.active;
+
+            console.log('zzz');
+            $timeout(function () {
+                google.maps.event.trigger(map, 'resize');
+            }, 50);
         };
 
         $scope.changeActive = changeActive;
@@ -421,6 +426,8 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 
         var markers = [];
         var infoWindows = [];
+
+
 
         window.initMap = function () {
             var mapCenter = {lat: 24.410777, lng: 44.856970};

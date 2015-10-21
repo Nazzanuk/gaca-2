@@ -229,7 +229,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                        <div class="box box-blue clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box box-blue clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active = false">
                             <div class="box-header">
                                 <div class="box-icon">
                                     <i class="fa fa-plane"></i>
@@ -354,7 +354,7 @@
                             ];
                         </script>
 
-                        <div class="box box-yellow clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box box-yellow clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
                             <div class="box-header">
                                 <div class="box-icon">
                                     <i class="fa fa-map-marker"></i>

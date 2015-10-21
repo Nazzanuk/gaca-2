@@ -1897,7 +1897,10 @@ img {
     line-height: 30px;
     background: #456bb1;
     padding: 30px;
-    text-align: right; }
+    text-align: left; }
+    .arabic [data-template="footer"] #footer .footer-bottom {
+      text-align: right;
+      direction: rtl; }
   [data-template="footer"] #footer .social-icons {
     text-align: center;
     font-size: 25px;

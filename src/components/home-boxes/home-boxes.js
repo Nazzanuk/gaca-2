@@ -1,5 +1,5 @@
 (function () {
-    app.controller('BoxCtrl', ['$scope', '$element', 'PopupService', function ($scope, $element, PopupService) {
+    app.controller('BoxCtrl', ['$scope', '$element', 'PopupService', '$timeout', function ($scope, $element, PopupService, $timeout) {
         $scope.data = {};
         $scope.data.active = true;
 
@@ -11,6 +11,11 @@
 
         var changeActive = function () {
             $scope.data.active = !$scope.data.active;
+
+            console.log('zzz');
+            $timeout(function () {
+                google.maps.event.trigger(map, 'resize');
+            }, 50);
         };
 
         $scope.changeActive = changeActive;
@@ -21,6 +26,8 @@
 
         var markers = [];
         var infoWindows = [];
+
+
 
         window.initMap = function () {
             var mapCenter = {lat: 24.410777, lng: 44.856970};
