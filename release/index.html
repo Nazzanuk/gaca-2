@@ -160,17 +160,10 @@
                     7:30am to 2:30pm for GACA staff <br/>
                     8:00am to 1:00pm for Customers <br/>
                     Sun, Mon, Tues, Wed, Thurs
-
-
                 </div>
             </div>
         </div>
-
-
     </div>
-
-
-
 </div>
 <div data-template="menu" ng-controller="MenuCtrl">
     <div class="menu">
@@ -884,7 +877,7 @@
 
                                     <p>Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental.</p>
 
-                                    <a class="gaca-btn pull-right" style="border-color:white;" href="#">Read More...</a>
+                                    <a class="gaca-btn pull-right" style="" href="#">Read More...</a>
                                 </div>
                             </div>
                         </div>
@@ -907,7 +900,7 @@
 
                                     <p>Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.</p>
 
-                                    <div class="gaca-btn pull-right" style="border-color:white;">Read More...</div>
+                                    <div class="gaca-btn pull-right" style="">Read More...</div>
 
                                 </div>
                             </div>
@@ -1274,7 +1267,7 @@
                             ];
                         </script>
 
-                        <div class="box box-yellow clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
+                        <div class="box box-blue  clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}" ng-init="data.active=false">
                             <div class="box-header">
                                 <div class="box-icon">
                                     <i class="fa fa-map-marker"></i>
@@ -1291,7 +1284,7 @@
                         </div>
 
 
-                        <div class="box box-red clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box box-blue  clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
                             <div class="box-header">
                                 <div class="box-icon">
                                     <i class="fa fa-plane"></i>
@@ -1311,7 +1304,7 @@
                             </div>
                         </div>
 
-                        <div class="box box-red clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box box-blue  clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
                             <div class="box-header">
                                 <div class="box-icon">
                                     <i class="fa fa-copy"></i>
@@ -1452,24 +1445,20 @@
                             <!--</div>-->
                         <!--</div>-->
 
-                        <div class="box box-blue clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                        <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
                             <div class="box-header">
                                 <div class="box-icon">
                                     <i class="fa fa-copy"></i>
+
                                 </div>
                                 <div class="box-status" ng-click="changeActive()">
                                     <i class="fa fa-plus"></i>
                                     <i class="fa fa-minus"></i>
                                 </div>
-                                <div class="box-tabs clearfix" ng-init="currentTab = 0">
-                                    <div class="box-tab" ng-class="{active:currentTab == 0}" ng-click="currentTab = 0">Tenders</div>
-                                    <div class="box-tab" ng-class="{active:currentTab == 1}" ng-click="currentTab = 1">Circulars</div>
-                                </div>
 
+                                <div class="box-title">Tenders</div>
                                 <div class="box-content">
-                                    <div class="content-tab"
-                                         ng-class="{active:currentTab == 0}"
-                                         ng-controller="ECatalogueCtrl"
+                                    <div ng-controller="ECatalogueCtrl"
                                          ng-init="trainingCentresSort = 'sector'">
 
                                         <a class="box-highlight grey hl" href="#" ng-repeat="eService in getEServices({audience:'Training Centres'}, trainingCentresSort) track by $index">
@@ -1480,10 +1469,22 @@
                                         <hr/>
                                         <div class="gaca-btn temp-right">More...</div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box clearfix" ng-controller="BoxCtrl" ng-class="{inactive:!data.active}">
+                            <div class="box-header">
+                                <div class="box-icon">
+                                    <i class="fa fa-copy"></i>
+                                </div>
+                                <div class="box-status" ng-click="changeActive()">
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-minus"></i>
+                                </div>
+                                <div class="box-title">Circulars</div>
 
-                                    <div class="content-tab"
-                                         ng-class="{active:currentTab == 1}"
-                                         ng-controller="ECatalogueCtrl"
+                                <div class="box-content">
+                                    <div ng-controller="ECatalogueCtrl"
                                          ng-init="trainingCentresSort = 'id'">
 
                                         <a class="box-highlight grey hl" href="#" ng-repeat="eService in getEServices({audience:'Training Centres'}, trainingCentresSort) track by $index">

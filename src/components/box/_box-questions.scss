@@ -6,11 +6,12 @@
     margin-bottom: 5px;
     transition: .2s;
     background: $light-grey;
-    color: $prim-dark;
+    color: $prim-light;
 
     .gaca-btn {
       color: white;
       background: $prim-light;
+      //color: $prim-dark;
       border-color: #ffffff;
       font-weight: normal;
       text-decoration: none;
@@ -19,7 +20,8 @@
         font-weight: normal;
         color: $prim-light;
         background: white;
-        border-color: $prim-light;
+        border-color: $prim-dark;
+        //color: $prim-dark;
       }
     }
 
@@ -77,6 +79,7 @@
 
     &.inactive {
       background: $prim-light;
+      background: $prim-dark;
       color: white;
 
       .question-status {

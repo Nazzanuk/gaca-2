@@ -128,7 +128,7 @@
       transition: .3s background, .3s color;
       color: #bbb;
 //      color: #fff;
-      border-top: 3px solid #eee;
+//      border-top: 3px solid #eee;
 
       .arabic & {
         text-align: right;
@@ -140,7 +140,7 @@
         background: #fff;
         color: $prim-light;
         padding-bottom: 1px;
-        border-top: 3px solid $prim-light;
+        //border-top: 3px solid $prim-light;
         font-weight: 600;
 
       }
@@ -218,7 +218,7 @@
   background: white;
   background: rgba(255, 255, 255, 0.6);
   color: #555;
-  border-top: $prim-light 3px solid;
+  //border-top: $prim-light 3px solid;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
 
   .box-header {
@@ -234,35 +234,44 @@
   }
 
   &.box-grey {
-    border-top: #555 3px solid;
+    //border-top: #555 3px solid;
   }
 
   &.box-yellow {
     //    background: white;
     color: #555;
-    border-top: $secon-light 3px solid;
+    //border-top: $secon-light 3px solid;
 
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &.box-blue {
+    background: $prim-light;
+    color: #fff;
+    //border-top: rgb(206, 16, 41) 3px solid;
   }
 
   &.box-red {
     color: #555;
-    border-top: rgb(206, 16, 41) 3px solid;
+    //border-top: rgb(206, 16, 41) 3px solid;
   }
 
   &.box-white {
     //    background: white;
-    border-top: $prim-light 3px solid;
+    //border-top: $prim-light 3px solid;
     color: #555;
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
   }
 
-  &.box-old {
+  &.box-old, &.box-blue {
     background: $prim-dark;
     color: #ffffff;
-    border-top: $prim-light 3px solid;
 
-    .box-header {
+    background: $prim-light;
+    color: #fff;
+    //border-top: $prim-light 3px solid;
+
+    .box-header, .box-title {
       color: #fff;
 
       .box-icon {
