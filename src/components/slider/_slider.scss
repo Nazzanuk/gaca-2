@@ -118,11 +118,11 @@
           text-align: left !important;
         }
 
-        .temp-align-right &.arabic {
+        .temp-align-right .arabic & {
           text-align: right !important;
         }
 
-        .temp-align-left &.arabic {
+        .temp-align-left .arabic & {
           text-align: left !important;
         }
 
@@ -134,13 +134,13 @@
 
           .fa {
             padding: 0 5px;
-            transform: rotate(180deg);
+            //transform: rotate(180deg);
           }
 
           .arabic & {
             direction: rtl;
             .fa {
-              //transform: rotate(180deg);
+              transform: rotate(180deg);
               float: right;
               margin: 0 5px;
             }
