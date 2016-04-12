@@ -3,10 +3,10 @@ app.service('Flights', ($http) => {
     var query = {
         airport: "",
         flight: ""
-    };
+    }, flights = [];
 
     var loadFlights = (airport) => $http.get('public/json/airports.json?').then((response) => {
-        //airports = response.data;
+        flights = response.data;
         console.log('airports', response.data);
     });
 

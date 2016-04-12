@@ -1,14 +1,25 @@
 [
   {
     "name": "London Heathrow",
-    "code": "LHW"
+    "arabicName": "مطار لندن - هيثرو",
+    "code": "LHW",
+    "coords": {
+      "lat":51.47,
+      "lon": -0.45
+    }
   },
   {
     "name": "London Gatwick",
-    "code": "LGW"
+    "arabicName": "جاتويك",
+    "code": "LGW",
+    "coords": {
+      "lat":51.17,
+      "lon": -0.18
+    }
   },
   {
     "name": "Jeddah",
+    "arabicName": "جدة",
     "code": "JED"
   }
 ]

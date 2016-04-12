@@ -8,14 +8,17 @@ app.service('Airports', ($http) => {
     });
 
     var geocode = (index) => {
-        if (airports[index].coords != undefined) return;
-        console.log('index', index);
-        $http.get(`http://maps.google.com/maps/api/geocode/json?address=${airports[index].name}%20airport&sensor=false`).then((response) => {
+        //if (airports[index].coords != undefined) return;
+        //console.log('index', index);
+        //$http.get(`http://maps.google.com/maps/api/geocode/json?address=${airports[index].name}%20airport&sensor=false`).then((response) => {
+        //
+        //    airports[index].coords = response.data.results[0].geometry.location;
+        //    getWeather(index);
+        //    console.log('coords', airports[index]);
+        //});
 
-            airports[index].coords = response.data.results[0].geometry.location;
-            getWeather(index);
-            console.log('coords', airports[index]);
-        });
+        if (airports[index].coords) getWeather(index);
+        else console.log('no coords', airports);
     };
 
     var loadAirports = (airport) => $http.get('public/json/airports.json').then((response) => {
