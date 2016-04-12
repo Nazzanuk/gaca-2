@@ -21,15 +21,15 @@
                     audience:_.sample(['Pilot', 'Airman', 'Aircraft', 'Airlines', 'Airports', 'Training Centres']),
                     sector:_.sample(["Air Navigation Services", 'Information Technology', 'Finance & Admin', 'International Organisation'])
                 });
-            };
+            }
 
         };
 
         var getEServices = function (filter, sort) {
-            console.log(filter, sort);
+            //console.log(filter, sort);
             var filteredList = _.where(eServices, filter, sort);
             var sortedList = _.sortBy(filteredList, sort);
-            return _.first(sortedList, 5);
+            return _.first(sortedList, 3);
         };
 
         var init = function () {

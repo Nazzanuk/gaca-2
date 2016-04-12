@@ -1,0 +1,98 @@
+flights-item {
+  .flights {
+    padding-top: 50px;
+
+    hr {
+      margin: 10px 0;
+    }
+
+    .flight-tabs {
+      .tab-headers {
+        height: 40px;
+      }
+
+      .tab-header {
+        height: 40px;
+        float: left;
+        line-height: 40px;
+        padding: 0 20px;
+        min-width: 200px;
+
+        background: $primary;
+        color: white;
+
+        &.active {
+          background: #f7f7f7;
+          color: inherit;
+        }
+      }
+
+      .flight-bar {
+        padding: 20px 20px 0;
+        //line-height: 40px;
+      }
+      .in {
+        input {
+          background: white;
+          border: 1px solid #ddd;
+          line-height: 40px;
+          border-radius: 0;
+        }
+      }
+
+      .flight-content {
+        background: #f7f7f7;
+      }
+
+      .flight-cards {
+        padding: 20px;
+      }
+      .flight-card {
+        padding: 10px;
+        height: 300px;
+        background: white;
+        border: 1px solid #ddd;
+
+        .card-header {
+          line-height: 50px;
+          height: 50px;
+          font-size: 30px;
+          //padding: 10px;
+          border-bottom: 1px solid #ddd;
+          margin-bottom: 10px;
+          //padding-bottom: 10px;
+          text-align: center;
+          //font-weight: 100;
+          margin: -10px -10px 10px;
+          background: #f7f7f7;
+
+          span {
+            //float: right;
+            //color: $primary;
+            //font-weight: bold;
+          }
+        }
+
+        .card-tofrom {
+          text-align: center;
+        }
+
+        .card-place {
+          text-align: center;
+          font-size: 24px;
+          color: $primary;
+          font-weight: bold;
+
+        }
+
+        .card-terminal {
+          text-align: center;
+          //font-size: 24px;
+          //color: $primary;
+          font-weight: bold;
+
+        }
+      }
+    }
+  }
+}

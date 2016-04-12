@@ -1,0 +1,59 @@
+<script type="text/ng-template" id="search-flight-box-item.html">
+    <div class="box-content">
+        <div class="search-flight-box clearfix">
+
+            <div class="in block">
+                <select ng-options="airport.name for airport in search.getAirports()"
+                        ng-model="airport"
+                        ng-change="search.geocode(search.getAirports().indexOf(airport))"
+                >
+                    <option value="" selected="selected">Choose an Airport</option>
+                </select>
+
+
+                <!--<select name="" >-->
+                <!--<option value="{{airport.code}}" ng-repeat="airport in search.getAirports() track by $index" ng-change="search.geocode()">{{airport.name}}</option>-->
+                <!--</select>-->
+                <!--<input type="search">-->
+
+                <span class="in-btn">
+                    <i class="fa fa-caret-down"></i>
+                </span>
+            </div>
+
+            <div class="in block">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <input type="search" placeholder="Flight Number">
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="gaca-btn" style="width: 100%">Search</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row" ng-show="airport.weather">
+                <hr style="margin-bottom: 10px;">
+                <!--<div class="col-xs-12" style="text-transform: capitalize">-->
+                    <!--<div class="weather-title">-->
+                        <!--Weather at {{airport.name}}-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="col-xs-4">
+                    <div class="weather-desc">{{airport.weather.weather[0].description}}</div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="weather-temp">
+                        {{search.calcTemp(airport.weather.main.temp)}}<span>°C</span>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="weather-icon">
+                        <img ng-src="http://openweathermap.org/img/w/{{airport.weather.weather[0].icon}}.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

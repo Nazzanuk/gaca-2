@@ -48,15 +48,15 @@ app.controller('CheckDestinationCtrl', function ($scope, $timeout, $http, $sce) 
         return $sce.trustAsResourceUrl("http://www.flightstats.co.uk/FlightStatus/flightStatusByFlight.do?flightNumber=" + $scope.flightNumber + "&x=26&y=10");
     };
 
-    var loadWeather = function () {
-        weather = {};
-        //api.openweathermap.org/data/2.5/weather?lat=35&lon=139
-        var dest = getCurrentDestination();
-        return $http.get('http://api.openweathermap.org/data/2.5/weather?lat=' + dest.coords[0] + "&lon=" + dest.coords[1]).then(function (response) {
-            console.log(dest, response.data);
-            weather = response.data;
-        });
-    };
+var loadWeather = function () {
+    weather = {};
+    //api.openweathermap.org/data/2.5/weather?lat=35&lon=139
+    var dest = getCurrentDestination();
+    return $http.get('http://api.openweathermap.org/data/2.5/weather?lat=' + dest.coords[0] + "&lon=" + dest.coords[1]).then(function (response) {
+        console.log(dest, response.data);
+        weather = response.data;
+    });
+};
 
     var events = function () {
 
@@ -298,15 +298,15 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
                     audience:_.sample(['Pilot', 'Airman', 'Aircraft', 'Airlines', 'Airports', 'Training Centres']),
                     sector:_.sample(["Air Navigation Services", 'Information Technology', 'Finance & Admin', 'International Organisation'])
                 });
-            };
+            }
 
         };
 
         var getEServices = function (filter, sort) {
-            console.log(filter, sort);
+            //console.log(filter, sort);
             var filteredList = _.where(eServices, filter, sort);
             var sortedList = _.sortBy(filteredList, sort);
-            return _.first(sortedList, 5);
+            return _.first(sortedList, 3);
         };
 
         var init = function () {
@@ -547,6 +547,51 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
     }]);
 }());
 
+app.controller('MenuCtrl', ['$scope', function ($scope) {
+
+    var showing = false;
+
+    var toggleSidebar = function () {
+        if (showing) hideSidebar();
+        else showSidebar();
+    };
+
+    var showSidebar = function () {
+        $('.content-area, .menu').addClass('active');
+        $('.menu-overlay').addClass('active');
+        showing = true;
+    };
+
+    var hideSidebar = function () {
+        $('.content-area, .menu').removeClass('active');
+        $('.menu-overlay').removeClass('active');
+        showing = false;
+    };
+
+    var events = function () {
+        $(document).on('click', '.header-menu', toggleSidebar);
+        $(document).on('click', '.menu-overlay, .header-close', hideSidebar);
+    };
+
+    var init = function () {
+        events();
+    };
+
+    init();
+
+}]);
+
+app.controller('MenuItemCtrl', ['$scope', function ($scope) {
+
+    $scope.active;
+
+    $scope.toggleActive = function () {
+        $scope.active = !$scope.active;
+    };
+
+}]);
+
+
 (function () {
     app.controller('PopupCtrl', ['$scope', 'PopupService', '$sce', function ($scope, PopupService, $sce) {
 
@@ -622,51 +667,6 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
         that.getPopupHeader = getPopupHeader;
     }]);
 }());
-
-app.controller('MenuCtrl', ['$scope', function ($scope) {
-
-    var showing = false;
-
-    var toggleSidebar = function () {
-        if (showing) hideSidebar();
-        else showSidebar();
-    };
-
-    var showSidebar = function () {
-        $('.content-area, .menu').addClass('active');
-        $('.menu-overlay').addClass('active');
-        showing = true;
-    };
-
-    var hideSidebar = function () {
-        $('.content-area, .menu').removeClass('active');
-        $('.menu-overlay').removeClass('active');
-        showing = false;
-    };
-
-    var events = function () {
-        $(document).on('click', '.header-menu', toggleSidebar);
-        $(document).on('click', '.menu-overlay, .header-close', hideSidebar);
-    };
-
-    var init = function () {
-        events();
-    };
-
-    init();
-
-}]);
-
-app.controller('MenuItemCtrl', ['$scope', function ($scope) {
-
-    $scope.active;
-
-    $scope.toggleActive = function () {
-        $scope.active = !$scope.active;
-    };
-
-}]);
-
 
 (function () {
     app.controller('SearchCtrl', ['$scope', '$timeout', '$http', function ($scope, $timeout, $http) {

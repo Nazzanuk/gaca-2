@@ -1,0 +1,78 @@
+search-flight-box-item {
+  .search-flight-box {
+
+    .in {
+      margin-top: 15px;
+
+      .in-btn {
+        background: $secondary;
+        border-color: $secondary;
+      }
+
+      .gaca-btn {
+        background: $secondary;
+      }
+    }
+
+    hr {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .in-btn {
+      pointer-events: none;
+    }
+
+    .weather-title {
+      text-transform: capitalize;
+      font-weight: bold;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #f7f7f7;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .weather-desc {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+      height: 66px;
+
+      text-transform: capitalize;
+      text-align: center;
+      //color: $primary;
+      //font-weight: bold;
+      font-size: 15px;
+      line-height: 20px;
+
+    }
+
+    .weather-temp {
+      line-height: 56px;
+      font-size: 46px;
+      font-weight: 100;
+      color: $primary;
+      color: white;
+      text-align: center;
+
+      span {
+        font-size: 14px;
+        display: inline-block;
+        vertical-align: super;
+        font-weight: 300;
+      }
+    }
+
+    .weather-icon {
+      line-height: 36px;
+      vertical-align: middle;
+
+      img {
+        height: 66px;
+        text-align: center;
+      }
+    }
+
+  }
+}

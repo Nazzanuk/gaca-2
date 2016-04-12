@@ -1,0 +1,16 @@
+<script type="text/ng-template" id="box-item.html">
+
+    <div class="box new-box clearfix {{box.styleClass}}" ng-class="{inactive:!box.active, visible:box.isVisible()}">
+        <div class="box-header">
+            <div class="box-icon">
+                <i class="fa fa-{{box.icon}}"></i>
+            </div>
+            <div class="box-status" ng-click="box.changeActive()">
+                <i class="fa fa-plus"></i>
+                <i class="fa fa-minus"></i>
+            </div>
+            <div class="box-title">{{box.header}}</div>
+            <div ng-transclude></div>
+        </div>
+    </div>
+</script>

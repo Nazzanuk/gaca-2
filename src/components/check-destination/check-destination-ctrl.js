@@ -47,15 +47,15 @@ app.controller('CheckDestinationCtrl', function ($scope, $timeout, $http, $sce) 
         return $sce.trustAsResourceUrl("http://www.flightstats.co.uk/FlightStatus/flightStatusByFlight.do?flightNumber=" + $scope.flightNumber + "&x=26&y=10");
     };
 
-    var loadWeather = function () {
-        weather = {};
-        //api.openweathermap.org/data/2.5/weather?lat=35&lon=139
-        var dest = getCurrentDestination();
-        return $http.get('http://api.openweathermap.org/data/2.5/weather?lat=' + dest.coords[0] + "&lon=" + dest.coords[1]).then(function (response) {
-            console.log(dest, response.data);
-            weather = response.data;
-        });
-    };
+var loadWeather = function () {
+    weather = {};
+    //api.openweathermap.org/data/2.5/weather?lat=35&lon=139
+    var dest = getCurrentDestination();
+    return $http.get('http://api.openweathermap.org/data/2.5/weather?lat=' + dest.coords[0] + "&lon=" + dest.coords[1]).then(function (response) {
+        console.log(dest, response.data);
+        weather = response.data;
+    });
+};
 
     var events = function () {
 

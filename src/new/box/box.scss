@@ -1,0 +1,18 @@
+box-item {
+  .new-box {
+    opacity: 0;
+    transition: .3s;
+
+    .box-content {
+      height: 0;
+    }
+
+    &.visible {
+      opacity: 1;
+
+      .box-content {
+        height: auto;
+      }
+    }
+  }
+}

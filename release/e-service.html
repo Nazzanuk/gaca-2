@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="public/lib.css"/>
     <link rel="stylesheet" href="public/app.css"/>
+    <link rel="stylesheet" href="public/new-app.css"/>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700,200italic,300italic,400italic,600italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
@@ -433,8 +434,8 @@
         </div>
         <div class="container">
             <a href="/" class="header-logo">
-                <img src="public/img/gaca-logo-new.png" class="show-eng"/>
-                <img src="public/img/gaca-logo-new-arabic.png" class="show-arab"/>
+                <img src="https://gaca.gov.sa/scs/Satellite?blobcol=urldata&blobkey=id&blobtable=MungoBlobs&blobwhere=1442842590047&ssbinary=true" class="show-eng"/>
+                <img src="https://gaca.gov.sa/scs/Satellite?blobcol=urldata&blobkey=id&blobtable=MungoBlobs&blobwhere=1442842590047&ssbinary=true" class="show-arab"/>
                 <!--<span class="hidden-xs hidden-sm">General Authority of Civil Aviation</span>-->
                 <!--<span class="hidden-sm hidden-xs">-->
                 <!--الهيئة العامة للطيران المدني-->
@@ -1117,6 +1118,134 @@
         </div>
     </div>
 </div>
+<script type="text/ng-template" id="box-item.html">
+
+    <div class="box new-box clearfix {{box.styleClass}}" ng-class="{inactive:!box.active, visible:box.isVisible()}">
+        <div class="box-header">
+            <div class="box-icon">
+                <i class="fa fa-{{box.icon}}"></i>
+            </div>
+            <div class="box-status" ng-click="box.changeActive()">
+                <i class="fa fa-plus"></i>
+                <i class="fa fa-minus"></i>
+            </div>
+            <div class="box-title">{{box.header}}</div>
+            <div ng-transclude></div>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="flights-item.html">
+
+    <div class="container">
+        <div class="box">
+
+            <div class="flights">
+                <h1>Flight Information</h1>
+                <hr>
+                <h2>London Heathrow &nbsp; <i class="fa fa-caret-down"></i></h2>
+
+
+                <div class="flight-tabs">
+                    <div class="tab-headers">
+                        <div class="tab-header active">Arrivals</div>
+                        <div class="tab-header">Departures</div>
+                    </div>
+
+                    <div class="flight-content">
+                        <div class="flight-bar">
+                            <div class="in">
+                                <input type="text" placeholder="Flight Number">
+                            </div>
+                        </div>
+
+                        <div class="flight-cards">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="flight-card">
+                                        <div class="card-header"><span>523</span></div>
+                                        <div class="card-tofrom">From</div>
+                                        <div class="card-place">FLYNAS</div>
+                                        <hr>
+                                        <div class="card-terminal">TERMINAL 1</div>
+                                        <div class="card-terminal">GATE 23</div>
+                                        <hr>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="flight-card"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+</script>
+<script type="text/ng-template" id="search-flight-box-item.html">
+    <div class="box-content">
+        <div class="search-flight-box clearfix">
+
+            <div class="in block">
+                <select ng-options="airport.name for airport in search.getAirports()"
+                        ng-model="airport"
+                        ng-change="search.geocode(search.getAirports().indexOf(airport))"
+                >
+                    <option value="" selected="selected">Choose an Airport</option>
+                </select>
+
+
+                <!--<select name="" >-->
+                <!--<option value="{{airport.code}}" ng-repeat="airport in search.getAirports() track by $index" ng-change="search.geocode()">{{airport.name}}</option>-->
+                <!--</select>-->
+                <!--<input type="search">-->
+
+                <span class="in-btn">
+                    <i class="fa fa-caret-down"></i>
+                </span>
+            </div>
+
+            <div class="in block">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <input type="search" placeholder="Flight Number">
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="gaca-btn" style="width: 100%">Search</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row" ng-show="airport.weather">
+                <hr style="margin-bottom: 10px;">
+                <!--<div class="col-xs-12" style="text-transform: capitalize">-->
+                    <!--<div class="weather-title">-->
+                        <!--Weather at {{airport.name}}-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="col-xs-4">
+                    <div class="weather-desc">{{airport.weather.weather[0].description}}</div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="weather-temp">
+                        {{search.calcTemp(airport.weather.main.temp)}}<span>°C</span>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="weather-icon">
+                        <img ng-src="http://openweathermap.org/img/w/{{airport.weather.weather[0].icon}}.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
 <!--footer.ejs-->
 
 <div data-template="footer">
@@ -1166,5 +1295,6 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"></script>
 <script src="public/lib.js"></script>
 <script src="public/app.js"></script>
+<script src="public/new-app.js"></script>
 </body>
 </html>

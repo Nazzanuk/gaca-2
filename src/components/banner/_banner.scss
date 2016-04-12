@@ -1,8 +1,10 @@
 [data-template="banner"] {
   .banner {
+
     .arabic & {
       text-align: right;
     }
+
     .banner-holder {
       height: 450px;
       position: relative;
@@ -43,6 +45,7 @@
             width: 100%;
             font-weight: 600;
             font-size: 16px;
+            min-width: 250px;
           }
 
           .overlay-subtitle {
@@ -59,6 +62,11 @@
                 right: initial;
                 right: auto;
                 left: 15px;
+                direction: rtl;
+
+                .fa {
+                  transform: rotate(180deg);
+                }
               }
             }
 

@@ -1,0 +1,18 @@
+$primary: #2c80c0;
+$secondary: rgb(36, 61, 127);
+
+body {
+  opacity: 0;
+  transition: .3s;
+  transition-delay: .3s;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.in {
+  &.dark {
+
+  }
+}
