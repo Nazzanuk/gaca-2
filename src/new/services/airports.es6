@@ -8,33 +8,54 @@ app.service('Airports', ($http) => {
     });
 
     var geocode = (index) => {
-        //if (airports[index].coords != undefined) return;
-        //console.log('index', index);
-        //$http.get(`http://maps.google.com/maps/api/geocode/json?address=${airports[index].name}%20airport&sensor=false`).then((response) => {
-        //
-        //    airports[index].coords = response.data.results[0].geometry.location;
-        //    getWeather(index);
-        //    console.log('coords', airports[index]);
-        //});
-
         if (airports[index].coords) getWeather(index);
         else console.log('no coords', airports);
     };
 
-    var loadAirports = (airport) => $http.get('public/json/airports.json').then((response) => {
+    var loadAirports = (url = 'public/json/airports.json') => $http.get(url).then((response) => {
         airports = response.data;
         geocode(0);
-        console.log('airports', response.data);
+        console.log('airports', airports);
+    }, (response) => {
+        console.error('error! Airports JSON missing, using defaults', response);
+        airports = AIRPORTS_DEFAULT_JSON;
     });
 
     var init = () => {
-        loadAirports();
+        //loadAirports();
     };
 
     init();
 
     return {
         getAirports: () => airports,
+        loadAirports,
         geocode
     };
 });
+
+var AIRPORTS_DEFAULT_JSON = [
+    {
+        "name": "London Heathrow",
+        "arabicName": "مطار لندن - هيثرو",
+        "code": "LHW",
+        "coords": {
+            "lat":51.47,
+            "lon": -0.45
+        }
+    },
+    {
+        "name": "London Gatwick",
+        "arabicName": "جاتويك",
+        "code": "LGW",
+        "coords": {
+            "lat":51.17,
+            "lon": -0.18
+        }
+    },
+    {
+        "name": "Jeddah",
+        "arabicName": "جدة",
+        "code": "JED"
+    }
+];

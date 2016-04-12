@@ -3,17 +3,14 @@ app.directive('searchFlightBoxItem', () => ({
     templateUrl: 'search-flight-box-item.html',
     bindToController: true,
     scope: {
-        url: '@',
+        airportsUrl: '@',
+        searchUrl: '@',
         lang: '@',
         stringChoose: '@',
         stringFlightNo: '@',
         stringSearch: '@'
     },
     controller: function (Airports, Flights) {
-
-        var init = () => {
-
-        };
 
         var calcTemp = (temp) => Math.round(temp - 273.15);
 
@@ -23,11 +20,15 @@ app.directive('searchFlightBoxItem', () => ({
             Flights.getQuery().airport = airport.code;
         };
 
+        var init = () => {
+            Airports.loadAirports(this.airportsUrl)
+        };
+
         init();
 
         _.extend(this, {
             getQuery: Flights.getQuery,
-            externalSearch: () => Flights.externalSearch(this.url),
+            externalSearch: () => Flights.externalSearch(this.searchUrl),
             getAirports: Airports.getAirports,
             geocode: Airports.geocode,
             changeSelect,

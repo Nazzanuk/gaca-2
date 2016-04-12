@@ -1,24 +1,5 @@
 'use strict';
 
-app.directive('flightsItem', function () {
-    return {
-        controllerAs: 'flights',
-        templateUrl: 'flights-item.html',
-        bindToController: true,
-        transclude: true,
-        scope: {},
-        controller: function controller($scope, $element, $timeout, Flights, Airports) {
-
-            var init = function init() {
-                Flights.getQuery();
-            };
-
-            init();
-
-            _.extend(this, {});
-        }
-    };
-});
 app.directive('boxItem', function () {
     return {
         controllerAs: 'box',
@@ -71,6 +52,25 @@ app.directive('boxItem', function () {
         }
     };
 });
+app.directive('flightsItem', function () {
+    return {
+        controllerAs: 'flights',
+        templateUrl: 'flights-item.html',
+        bindToController: true,
+        transclude: true,
+        scope: {},
+        controller: function controller($scope, $element, $timeout, Flights, Airports) {
+
+            var init = function init() {
+                Flights.getQuery();
+            };
+
+            init();
+
+            _.extend(this, {});
+        }
+    };
+});
 app.run(function () {
     $('body').addClass('active');
 });
@@ -80,7 +80,8 @@ app.directive('searchFlightBoxItem', function () {
         templateUrl: 'search-flight-box-item.html',
         bindToController: true,
         scope: {
-            url: '@',
+            airportsUrl: '@',
+            searchUrl: '@',
             lang: '@',
             stringChoose: '@',
             stringFlightNo: '@',
@@ -88,8 +89,6 @@ app.directive('searchFlightBoxItem', function () {
         },
         controller: function controller(Airports, Flights) {
             var _this2 = this;
-
-            var init = function init() {};
 
             var calcTemp = function calcTemp(temp) {
                 return Math.round(temp - 273.15);
@@ -101,12 +100,16 @@ app.directive('searchFlightBoxItem', function () {
                 Flights.getQuery().airport = airport.code;
             };
 
+            var init = function init() {
+                Airports.loadAirports(_this2.airportsUrl);
+            };
+
             init();
 
             _.extend(this, {
                 getQuery: Flights.getQuery,
                 externalSearch: function externalSearch() {
-                    return Flights.externalSearch(_this2.url);
+                    return Flights.externalSearch(_this2.searchUrl);
                 },
                 getAirports: Airports.getAirports,
                 geocode: Airports.geocode,
@@ -129,28 +132,23 @@ app.service('Airports', function ($http) {
     };
 
     var geocode = function geocode(index) {
-        //if (airports[index].coords != undefined) return;
-        //console.log('index', index);
-        //$http.get(`http://maps.google.com/maps/api/geocode/json?address=${airports[index].name}%20airport&sensor=false`).then((response) => {
-        //
-        //    airports[index].coords = response.data.results[0].geometry.location;
-        //    getWeather(index);
-        //    console.log('coords', airports[index]);
-        //});
-
         if (airports[index].coords) getWeather(index);else console.log('no coords', airports);
     };
 
-    var loadAirports = function loadAirports(airport) {
-        return $http.get('public/json/airports.json').then(function (response) {
+    var loadAirports = function loadAirports() {
+        var url = arguments.length <= 0 || arguments[0] === undefined ? 'public/json/airports.json' : arguments[0];
+        return $http.get(url).then(function (response) {
             airports = response.data;
             geocode(0);
-            console.log('airports', response.data);
+            console.log('airports', airports);
+        }, function (response) {
+            console.error('error! Airports JSON missing, using defaults', response);
+            airports = AIRPORTS_DEFAULT_JSON;
         });
     };
 
     var init = function init() {
-        loadAirports();
+        //loadAirports();
     };
 
     init();
@@ -159,9 +157,32 @@ app.service('Airports', function ($http) {
         getAirports: function getAirports() {
             return airports;
         },
+        loadAirports: loadAirports,
         geocode: geocode
     };
 });
+
+var AIRPORTS_DEFAULT_JSON = [{
+    "name": "London Heathrow",
+    "arabicName": "مطار لندن - هيثرو",
+    "code": "LHW",
+    "coords": {
+        "lat": 51.47,
+        "lon": -0.45
+    }
+}, {
+    "name": "London Gatwick",
+    "arabicName": "جاتويك",
+    "code": "LGW",
+    "coords": {
+        "lat": 51.17,
+        "lon": -0.18
+    }
+}, {
+    "name": "Jeddah",
+    "arabicName": "جدة",
+    "code": "JED"
+}];
 app.service('Flights', function ($http) {
 
     var query = {
