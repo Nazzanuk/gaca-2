@@ -1,7 +1,7 @@
 app.service('Airports', ($http) => {
     var airports = [], OPEN_WEATHER_KEY = '44756d87096e5a658578891c2abcca4e';
 
-    var getWeather = (index) => $http.get(`http://api.openweathermap.org/data/2.5/weather?lat=${airports[index].coords.lat}&lon=${airports[index].coords.lng}&APPID=${OPEN_WEATHER_KEY}`).then((response) => {
+    var getWeather = (index) => $http.get(`http://api.openweathermap.org/data/2.5/weather?lat=${airports[index].coords.lat}&lon=${airports[index].coords.lon}&APPID=${OPEN_WEATHER_KEY}`).then((response) => {
         airports[index].weather = response.data;
         console.log('weather', response.data);
         console.log('airports', airports);

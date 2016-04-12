@@ -10,8 +10,7 @@ app.service('Flights', ($http) => {
         console.log('airports', response.data);
     });
 
-    var externalSearch = (input) => {
-        var url = typeof(input) == 'String' ? input : $(input.target).attr('search-url');
+    var externalSearch = (url) => {
         console.log('externalSearch', url);
         if (!query.airport) return;
         window.location.href = `${url}?airport=${query.airport}&flight=${query.flight}`;

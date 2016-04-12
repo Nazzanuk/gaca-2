@@ -7,17 +7,6 @@ body {
   body.active {
     opacity: 1; }
 
-box-item .new-box {
-  opacity: 0;
-  -webkit-transition: .3s;
-          transition: .3s; }
-  box-item .new-box .box-content {
-    height: 0; }
-  box-item .new-box.visible {
-    opacity: 1; }
-    box-item .new-box.visible .box-content {
-      height: auto; }
-
 flights-item .flights {
   padding-top: 50px; }
   flights-item .flights hr {
@@ -70,6 +59,17 @@ flights-item .flights {
     flights-item .flights .flight-tabs .flight-card .card-terminal {
       text-align: center;
       font-weight: bold; }
+
+box-item .new-box {
+  opacity: 0;
+  -webkit-transition: .3s;
+          transition: .3s; }
+  box-item .new-box .box-content {
+    height: 0; }
+  box-item .new-box.visible {
+    opacity: 1; }
+    box-item .new-box.visible .box-content {
+      height: auto; }
 
 search-flight-box-item .search-flight-box .in {
   margin-top: 15px; }

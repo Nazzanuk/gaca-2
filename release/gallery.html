@@ -979,22 +979,6 @@
         </div>
     </div>
 </div>
-<script type="text/ng-template" id="box-item.html">
-
-    <div class="box new-box clearfix {{box.styleClass}}" ng-class="{inactive:!box.active, visible:box.isVisible()}">
-        <div class="box-header">
-            <div class="box-icon">
-                <i class="fa fa-{{box.icon}}"></i>
-            </div>
-            <div class="box-status" ng-click="box.changeActive()">
-                <i class="fa fa-plus"></i>
-                <i class="fa fa-minus"></i>
-            </div>
-            <div class="box-title">{{box.header}}</div>
-            <div ng-transclude></div>
-        </div>
-    </div>
-</script>
 <script type="text/ng-template" id="flights-item.html">
 
     <div class="container">
@@ -1048,6 +1032,22 @@
 
     </div>
 </script>
+<script type="text/ng-template" id="box-item.html">
+
+    <div class="box new-box clearfix {{box.styleClass}}" ng-class="{inactive:!box.active, visible:box.isVisible()}">
+        <div class="box-header">
+            <div class="box-icon">
+                <i class="fa fa-{{box.icon}}"></i>
+            </div>
+            <div class="box-status" ng-click="box.changeActive()">
+                <i class="fa fa-plus"></i>
+                <i class="fa fa-minus"></i>
+            </div>
+            <div class="box-title">{{box.header}}</div>
+            <div ng-transclude></div>
+        </div>
+    </div>
+</script>
 <script type="text/ng-template" id="search-flight-box-item.html">
     <div class="box-content">
         <div class="search-flight-box clearfix">
@@ -1056,8 +1056,17 @@
                 <select ng-options="airport.name for airport in search.getAirports()"
                         ng-model="airport"
                         ng-change="search.changeSelect(airport)"
+                        ng-hide="search.lang == 'ar'"
                 >
-                    <option value="" selected="selected">Choose an Airport</option>
+                    <option value="" selected="selected">{{search.stringChoose}}</option>
+                </select>
+
+                <select ng-options="airport.arabicName for airport in search.getAirports()"
+                        ng-model="airport"
+                        ng-change="search.changeSelect(airport)"
+                        ng-show="search.lang == 'ar'"
+                >
+                    <option value="" selected="selected">{{search.stringChoose}}</option>
                 </select>
 
                 <span class="in-btn">
@@ -1068,10 +1077,10 @@
             <div class="in block">
                 <div class="row">
                     <div class="col-xs-8">
-                        <input type="search" placeholder="Flight Number" ng-model="search.getQuery().flight">
+                        <input type="search" placeholder="{{search.stringFlightNo}}" ng-model="search.getQuery().flight">
                     </div>
                     <div class="col-xs-4">
-                        <div class="gaca-btn" search-url="flights.html" style="width: 100%" ng-click="search.externalSearch($event)">Search</div>
+                        <div class="gaca-btn" style="width: 100%" ng-click="search.externalSearch($event)">{{search.stringSearch}}</div>
                     </div>
                 </div>
             </div>

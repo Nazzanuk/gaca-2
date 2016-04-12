@@ -1,5 +1,24 @@
 'use strict';
 
+app.directive('flightsItem', function () {
+    return {
+        controllerAs: 'flights',
+        templateUrl: 'flights-item.html',
+        bindToController: true,
+        transclude: true,
+        scope: {},
+        controller: function controller($scope, $element, $timeout, Flights, Airports) {
+
+            var init = function init() {
+                Flights.getQuery();
+            };
+
+            init();
+
+            _.extend(this, {});
+        }
+    };
+});
 app.directive('boxItem', function () {
     return {
         controllerAs: 'box',
@@ -55,32 +74,20 @@ app.directive('boxItem', function () {
 app.run(function () {
     $('body').addClass('active');
 });
-app.directive('flightsItem', function () {
-    return {
-        controllerAs: 'flights',
-        templateUrl: 'flights-item.html',
-        bindToController: true,
-        transclude: true,
-        scope: {},
-        controller: function controller($scope, $element, $timeout, Flights, Airports) {
-
-            var init = function init() {
-                Flights.getQuery();
-            };
-
-            init();
-
-            _.extend(this, {});
-        }
-    };
-});
 app.directive('searchFlightBoxItem', function () {
     return {
         controllerAs: 'search',
         templateUrl: 'search-flight-box-item.html',
         bindToController: true,
-        scope: {},
+        scope: {
+            url: '@',
+            lang: '@',
+            stringChoose: '@',
+            stringFlightNo: '@',
+            stringSearch: '@'
+        },
         controller: function controller(Airports, Flights) {
+            var _this2 = this;
 
             var init = function init() {};
 
@@ -98,7 +105,9 @@ app.directive('searchFlightBoxItem', function () {
 
             _.extend(this, {
                 getQuery: Flights.getQuery,
-                externalSearch: Flights.externalSearch,
+                externalSearch: function externalSearch() {
+                    return Flights.externalSearch(_this2.url);
+                },
                 getAirports: Airports.getAirports,
                 geocode: Airports.geocode,
                 changeSelect: changeSelect,
@@ -112,7 +121,7 @@ app.service('Airports', function ($http) {
         OPEN_WEATHER_KEY = '44756d87096e5a658578891c2abcca4e';
 
     var getWeather = function getWeather(index) {
-        return $http.get('http://api.openweathermap.org/data/2.5/weather?lat=' + airports[index].coords.lat + '&lon=' + airports[index].coords.lng + '&APPID=' + OPEN_WEATHER_KEY).then(function (response) {
+        return $http.get('http://api.openweathermap.org/data/2.5/weather?lat=' + airports[index].coords.lat + '&lon=' + airports[index].coords.lon + '&APPID=' + OPEN_WEATHER_KEY).then(function (response) {
             airports[index].weather = response.data;
             console.log('weather', response.data);
             console.log('airports', airports);
@@ -168,8 +177,7 @@ app.service('Flights', function ($http) {
         });
     };
 
-    var externalSearch = function externalSearch(input) {
-        var url = typeof input == 'String' ? input : $(input.target).attr('search-url');
+    var externalSearch = function externalSearch(url) {
         console.log('externalSearch', url);
         if (!query.airport) return;
         window.location.href = url + '?airport=' + query.airport + '&flight=' + query.flight;
