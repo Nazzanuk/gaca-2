@@ -71,13 +71,16 @@ app.directive('flightsItem', function () {
         }
     };
 });
+app.run(function () {
+    $('body').addClass('active');
+});
 app.directive('searchFlightBoxItem', function () {
     return {
         controllerAs: 'search',
         templateUrl: 'search-flight-box-item.html',
         bindToController: true,
         scope: {},
-        controller: function controller(Airports) {
+        controller: function controller(Airports, Flights) {
 
             var init = function init() {};
 
@@ -88,6 +91,7 @@ app.directive('searchFlightBoxItem', function () {
             init();
 
             _.extend(this, {
+                getQuery: Flights.getQuery,
                 getAirports: Airports.getAirports,
                 geocode: Airports.geocode,
                 calcTemp: calcTemp
@@ -173,6 +177,3 @@ var getUrlParam = function getUrlParam(name) {
         results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(url);
     return !results ? undefined : results[1] || undefined;
 };
-app.run(function () {
-    $('body').addClass('active');
-});

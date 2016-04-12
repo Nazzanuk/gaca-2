@@ -126,12 +126,12 @@ gulp.task("gen-html", function () {
 
         gulp.src(sources)
             .pipe(concat(i + ".html"))
-            .pipe(gulp.dest(paths.public));
+            .pipe(gulp.dest(paths.release));
     }
 
     gulp.src("src/new/**/*.html")
         .pipe(concat("new-directives.html"))
-        .pipe(gulp.dest(paths.release));
+        .pipe(gulp.dest(paths.public));
 });
 
 gulp.task('watch', ['default'], function () {
