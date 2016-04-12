@@ -1,4 +1,4 @@
-app.service('Flights', ($http, $location) => {
+app.service('Flights', ($http) => {
 
     var query = {
         airport: "",
@@ -6,20 +6,26 @@ app.service('Flights', ($http, $location) => {
     };
 
     var loadFlights = (airport) => $http.get('public/json/airports.json?').then((response) => {
-        airports = response.data;
-        geocode(0);
+        //airports = response.data;
         console.log('airports', response.data);
     });
 
+    var externalSearch = (input) => {
+        var url = typeof(input) == 'String' ? input : $(input.target).attr('search-url');
+        console.log('externalSearch', url);
+        if (!query.airport) return;
+        window.location.href = `${url}?airport=${query.airport}&flight=${query.flight}`;
+    };
+
     var init = () => {
-        console.log('flight', getUrlParam('airport'));
-        console.log('flight', getUrlParam('flight'));
+
     };
 
     init();
 
     return {
-        getQuery: () => query
+        getQuery: () => query,
+        externalSearch
     };
 });
 

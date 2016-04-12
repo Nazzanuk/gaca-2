@@ -915,9 +915,9 @@
         <div class="search-flight-box clearfix">
 
             <div class="in block">
-                <select ng-options="airport.name as airport.code for airport in search.getAirports()"
-                        ng-model="search.getQuery().airport"
-                        ng-change="search.geocode(search.getAirports().indexOf(airport))"
+                <select ng-options="airport.name for airport in search.getAirports()"
+                        ng-model="airport"
+                        ng-change="search.changeSelect(airport)"
                 >
                     <option value="" selected="selected">Choose an Airport</option>
                 </select>
@@ -933,7 +933,7 @@
                         <input type="search" placeholder="Flight Number" ng-model="search.getQuery().flight">
                     </div>
                     <div class="col-xs-4">
-                        <div class="gaca-btn" style="width: 100%" ng-click="console.log(search.getQuery())">Search</div>
+                        <div class="gaca-btn" search-url="flights.html" style="width: 100%" ng-click="search.externalSearch($event)">Search</div>
                     </div>
                 </div>
             </div>
@@ -941,7 +941,7 @@
 
             <div class="row" ng-show="airport.weather">
                 <hr style="margin-bottom: 10px;">
-                {{search.getQuery()}}
+                <!--{{search.getQuery()}}-->
                 <!--<div class="col-xs-12" style="text-transform: capitalize">-->
                     <!--<div class="weather-title">-->
                         <!--Weather at {{airport.name}}-->

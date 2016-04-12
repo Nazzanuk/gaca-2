@@ -88,12 +88,20 @@ app.directive('searchFlightBoxItem', function () {
                 return Math.round(temp - 273.15);
             };
 
+            var changeSelect = function changeSelect(airport) {
+                console.log('changeSelect', airport);
+                Airports.geocode(Airports.getAirports().indexOf(airport));
+                Flights.getQuery().airport = airport.code;
+            };
+
             init();
 
             _.extend(this, {
                 getQuery: Flights.getQuery,
+                externalSearch: Flights.externalSearch,
                 getAirports: Airports.getAirports,
                 geocode: Airports.geocode,
+                changeSelect: changeSelect,
                 calcTemp: calcTemp
             });
         }
@@ -143,7 +151,7 @@ app.service('Airports', function ($http) {
         geocode: geocode
     };
 });
-app.service('Flights', function ($http, $location) {
+app.service('Flights', function ($http) {
 
     var query = {
         airport: "",
@@ -152,23 +160,27 @@ app.service('Flights', function ($http, $location) {
 
     var loadFlights = function loadFlights(airport) {
         return $http.get('public/json/airports.json?').then(function (response) {
-            airports = response.data;
-            geocode(0);
+            //airports = response.data;
             console.log('airports', response.data);
         });
     };
 
-    var init = function init() {
-        console.log('flight', getUrlParam('airport'));
-        console.log('flight', getUrlParam('flight'));
+    var externalSearch = function externalSearch(input) {
+        var url = typeof input == 'String' ? input : $(input.target).attr('search-url');
+        console.log('externalSearch', url);
+        if (!query.airport) return;
+        window.location.href = url + '?airport=' + query.airport + '&flight=' + query.flight;
     };
+
+    var init = function init() {};
 
     init();
 
     return {
         getQuery: function getQuery() {
             return query;
-        }
+        },
+        externalSearch: externalSearch
     };
 });
 
