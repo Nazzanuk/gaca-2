@@ -71,9 +71,6 @@ app.directive('flightsItem', function () {
         }
     };
 });
-app.run(function () {
-    $('body').addClass('active');
-});
 app.directive('searchFlightBoxItem', function () {
     return {
         controllerAs: 'search',
@@ -176,3 +173,6 @@ var getUrlParam = function getUrlParam(name) {
         results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(url);
     return !results ? undefined : results[1] || undefined;
 };
+app.run(function () {
+    $('body').addClass('active');
+});
