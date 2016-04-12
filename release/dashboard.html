@@ -1114,38 +1114,60 @@
             <div class="flights">
                 <h1>Flight Information</h1>
                 <hr>
-                <h2>London Heathrow &nbsp; <i class="fa fa-caret-down"></i></h2>
+
+                <select class="choose-airport" ng-model="flights.getQuery().airport" ng-change="flights.search()">
+                    <option value="{{airport.code}}"
+                            ng-repeat="airport in flights.getAirports()"
+                    >
+                        {{airport.name}}
+                    </option>
+                </select>
+                <h2 style="display: inline-block">&nbsp; <i class="fa fa-caret-down"></i></h2>
 
 
                 <div class="flight-tabs">
                     <div class="tab-headers">
-                        <div class="tab-header active">Arrivals</div>
-                        <div class="tab-header">Departures</div>
+                        <div class="tab-header" ng-class="{'active':flights.showArrivals()}" ng-click="flights.changeShowing()">Arrivals</div>
+                        <div class="tab-header" ng-class="{'active':!flights.showArrivals()}" ng-click="flights.changeShowing()">Departures</div>
                     </div>
 
                     <div class="flight-content">
                         <div class="flight-bar">
                             <div class="in">
-                                <input type="text" placeholder="Flight Number">
+                                <input type="text" placeholder="Flight Number" ng-model="flights.getQuery().flight">
                             </div>
                         </div>
 
                         <div class="flight-cards">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <div class="flight-card">
-                                        <div class="card-header"><span>523</span></div>
-                                        <div class="card-tofrom">From</div>
-                                        <div class="card-place">FLYNAS</div>
-                                        <hr>
-                                        <div class="card-terminal">TERMINAL 1</div>
-                                        <div class="card-terminal">GATE 23</div>
-                                        <hr>
+                            <div>
+                                <div class="flight-card"
+                                     ng-repeat="flight in flights.getFlights() | filter:flights.getQuery().flight"
+                                     ng-show="flights.showArrivals() && flight.ARR_DEP == 'A' || !flights.showArrivals() && flight.ARR_DEP == 'D'"
+                                >
+                                    <div class="card-header"><span>{{flight.AIRLINE}}{{flight.FL_NUMBER}}</span></div>
+                                    <div class="card-airline">{{flight.AIRLINE_DESCR}}</div>
+                                    <div class="card-tofrom" ng-show="flight.ARR_DEP == 'A'">From</div>
+                                    <div class="card-tofrom" ng-hide="flight.ARR_DEP == 'A'">To</div>
+                                    <div class="card-place">{{flight.ROUTING_ENG}}</div>
+
+                                    <hr>
+                                    <div class="card-terminal">TERMINAL {{flight.TERMINAL}}</div>
+                                    <div class="card-terminal"><span ng-show="flight.BAGGAGE_1 != 'NA'">BAGGAGE {{flight.BAGGAGE_1}}</span></div>
+                                    <hr>
+
+                                    <div class="card-time" ng-show="flight.ARR_DEP == 'A'" ng-class="{'delayed':flight.FL_STATUS_1 == 'DELAYED'}">EXPECTED</div>
+                                    <div class="card-time" ng-hide="flight.ARR_DEP == 'A'" ng-class="{'delayed':flight.FL_STATUS_1 == 'DELAYED'}">DEPARTING</div>
+                                    <div class="card-time" ng-class="{'delayed':flight.FL_STATUS_1 == 'DELAYED'}"><strong>{{flights.getTime(flight.EST_TIME)}}</strong></div>
+
+
+                                    <hr>
+
+                                    <div class="card-status" ng-show="flight.FL_STATUS_1 != 'NA' || flight.GATE_1 != 'NA'">
+                                        <div class="card-gate" ng-show="flight.GATE_1 != 'NA'">GATE {{flight.GATE_1}}</div>
+                                        <div class="card-text" ng-show="flight.FL_STATUS_1 != 'NA'">{{flight.FL_STATUS_1}}</div>
                                     </div>
                                 </div>
-                                <div class="col-sm-3">
-                                    <div class="flight-card"></div>
-                                </div>
+
                             </div>
                         </div>
 

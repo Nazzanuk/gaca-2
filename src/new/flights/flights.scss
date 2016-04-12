@@ -2,28 +2,52 @@ flights-item {
   .flights {
     padding-top: 50px;
 
+    .choose-airport {
+      appearance:none;
+      border: none;
+      background: none;
+
+      color: #243d7f;
+      font-size: 20px;
+      font-weight: 200;
+      margin: 0 0 10px;
+      cursor: pointer;
+    }
+
     hr {
       margin: 10px 0;
     }
 
     .flight-tabs {
+      margin-top: 20px;
       .tab-headers {
         height: 40px;
       }
 
       .tab-header {
-        height: 40px;
+        height: 41px;
         float: left;
         line-height: 40px;
         padding: 0 20px;
         min-width: 200px;
+        margin-bottom: -1px;
+        border: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        margin-right: 10px;
+        position: relative;
+        transition: .3s;
 
-        background: $primary;
-        color: white;
+        //background: $primary;
+        //color: white;
+        cursor: pointer;
 
         &.active {
           background: #f7f7f7;
-          color: inherit;
+          //color: inherit;
+          border: 1px solid #ddd;
+          border-bottom: 1px solid #f7f7f7;
+          font-weight: bold;
+          color: $primary;
         }
       }
 
@@ -42,16 +66,57 @@ flights-item {
 
       .flight-content {
         background: #f7f7f7;
+        border: 1px solid #ddd;
       }
 
       .flight-cards {
+        margin: 20px;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        white-space: nowrap;
+        border: 1px solid #ddd;
+        background: #fff;
         padding: 20px;
+        padding-bottom: 20px;
+
+        &::-webkit-scrollbar {
+          -webkit-appearance: none;
+        }
+
+        &::-webkit-scrollbar:vertical {
+          width: 11px;
+        }
+
+        &::-webkit-scrollbar:horizontal {
+          height: 10px;
+          padding: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          border-radius: 8px;
+          border: 2px solid rgba(0, 0, 0, .1); /* should match background, can't be transparent */
+          background-color: $primary;
+        }
+
+        &::-webkit-scrollbar-track {
+          background-color: #eee;
+          border-radius: 8px;
+          margin: 20px;
+        }
       }
       .flight-card {
         padding: 10px;
-        height: 300px;
+        height: 400px;
+        width: 250px;
         background: white;
         border: 1px solid #ddd;
+        //float: left;
+        margin-right: 20px;
+        display: inline-block;
+        white-space: normal;
+        position: relative;
+        text-align: center;
+        vertical-align: top;
 
         .card-header {
           line-height: 50px;
@@ -73,13 +138,22 @@ flights-item {
           }
         }
 
+        .card-airline {
+          line-height: 30px;
+          font-weight: bold;
+          background: $primary;
+          color: white;
+          text-align: center;
+          margin: -11px -11px 10px;
+        }
+
         .card-tofrom {
           text-align: center;
         }
 
         .card-place {
           text-align: center;
-          font-size: 24px;
+          font-size: 30px;
           color: $primary;
           font-weight: bold;
 
@@ -92,7 +166,53 @@ flights-item {
           font-weight: bold;
 
         }
+
+        .card-time {
+          //font-size: 18px;
+          //line-height: 1;
+          color: #00a886;
+          font-weight: bold;
+
+          &.delayed {
+            color: #cf2e31;
+            animation: blinker 1s linear infinite;
+          }
+
+          strong {
+            letter-spacing: 1px;
+            font-size: 30px;
+          }
+        }
+
+        .card-status {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          line-height: 40px;
+          background: #333;
+          color: white;
+          font-weight: 900;
+          letter-spacing: 1px;
+          text-decoration: blink;
+
+          .card-text, .card-gate {
+            color: white;
+            animation: blinker 1s linear infinite;
+            font-size: 18px;
+          }
+
+          .card-gate {
+            background: $secondary;
+          }
+        }
       }
     }
+  }
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.3;
   }
 }

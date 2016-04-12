@@ -21,7 +21,7 @@ app.directive('searchFlightBoxItem', () => ({
         };
 
         var init = () => {
-            Airports.loadAirports(this.airportsUrl)
+            Airports.loadAirports(this.airportsUrl);
         };
 
         init();
