@@ -111,6 +111,7 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 });
 
 
+
 (function () {
     app.controller('ECatalogueCtrl', ['$scope', '$element', '$interval', function ($scope, $element, $interval) {
         var eServices = [];
@@ -318,7 +319,6 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 
     }]);
 }());
-
 
 (function () {
     app.controller('EServiceCtrl', ['$scope', function ($scope) {
@@ -762,7 +762,6 @@ app.controller('MenuItemCtrl', ['$scope', function ($scope) {
     }]);
 }());
 
-
 (function () {
     app.controller('SliderCtrl', ['$scope', '$element', '$interval', function ($scope, $element, $timeout) {
 
@@ -889,6 +888,7 @@ app.controller('MenuItemCtrl', ['$scope', function ($scope) {
 
     }]);
 }());
+
 
 app.controller('SmallLoginCtrl', function ($scope, $timeout, $http) {
 
