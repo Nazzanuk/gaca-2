@@ -667,6 +667,7 @@ app.controller('MenuItemCtrl', ['$scope', function ($scope) {
     }]);
 }());
 
+
 (function () {
     app.controller('SearchCtrl', ['$scope', '$timeout', '$http', function ($scope, $timeout, $http) {
 
@@ -888,7 +889,6 @@ app.controller('MenuItemCtrl', ['$scope', function ($scope) {
 
     }]);
 }());
-
 
 app.controller('SmallLoginCtrl', function ($scope, $timeout, $http) {
 

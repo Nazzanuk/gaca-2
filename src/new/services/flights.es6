@@ -14,13 +14,15 @@ app.service('Flights', ($http, Airports, Translation) => {
         return $http.get(`${url}airportCode=${query.airport}`).then((response) => {
             flights = response.data.FLIGHT;
             for (var i in flights) {
-                flights[i].flightNumber = flights[i].AIRLINE + flights[i].FL_NUMBER
+                flights[i].AIRLINE = flights[i].AIRLINE.trim();
+                flights[i].flightNumber = flights[i].AIRLINE + flights[i].FL_NUMBER;
             }
             console.log('flights', flights);
         }, (response) => {
             console.error('error! Flights JSON missing, using defaults', response);
             flights = FLIGHTS_DEFAULT_JSON.FLIGHT;
             for (var i in flights) {
+                flights[i].AIRLINE = flights[i].AIRLINE.trim();
                 flights[i].flightNumber = flights[i].AIRLINE + flights[i].FL_NUMBER
             }
             console.log('flights', flights);

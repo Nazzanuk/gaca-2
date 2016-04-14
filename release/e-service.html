@@ -1118,6 +1118,22 @@
         </div>
     </div>
 </div>
+<script type="text/ng-template" id="box-item.html">
+
+    <div class="box new-box clearfix {{box.styleClass}}" ng-class="{inactive:!box.active, visible:box.isVisible()}">
+        <div class="box-header">
+            <div class="box-icon">
+                <i class="fa fa-{{box.icon}}"></i>
+            </div>
+            <div class="box-status" ng-click="box.changeActive()">
+                <i class="fa fa-plus"></i>
+                <i class="fa fa-minus"></i>
+            </div>
+            <div class="box-title">{{box.header}}</div>
+            <div ng-transclude></div>
+        </div>
+    </div>
+</script>
 <script type="text/ng-template" id="flights-item.html">
 
     <div class="container">
@@ -1200,7 +1216,7 @@
                                     </div>
                                     <div class="card-airline">{{flight.AIRLINE_DESCR}}</div>
                                     <div class="header-logo-holder"
-                                         style="background-image: url('{{'/Airlines/' + flight.AIRLINE + '.png'}}')"
+                                         style="background-image: url('{{'/Airlines/' + flight.AIRLINE.trim() + '.png'}}')"
                                     ></div>
 
                                     <div class="card-tofrom" ng-show="flight.ARR_DEP == 'A'">{{flights.stringFrom}}</div>
@@ -1236,22 +1252,6 @@
         </div>
 
 
-    </div>
-</script>
-<script type="text/ng-template" id="box-item.html">
-
-    <div class="box new-box clearfix {{box.styleClass}}" ng-class="{inactive:!box.active, visible:box.isVisible()}">
-        <div class="box-header">
-            <div class="box-icon">
-                <i class="fa fa-{{box.icon}}"></i>
-            </div>
-            <div class="box-status" ng-click="box.changeActive()">
-                <i class="fa fa-plus"></i>
-                <i class="fa fa-minus"></i>
-            </div>
-            <div class="box-title">{{box.header}}</div>
-            <div ng-transclude></div>
-        </div>
     </div>
 </script>
 <script type="text/ng-template" id="search-flight-box-item.html">
