@@ -6,7 +6,10 @@ app.directive('flightsItem', () => ({
     scope: {
         lang: '@',
         flightsUrl: '@',
-        airportsUrl: '@'
+        airportsUrl: '@',
+
+        stringFlightInfo: '@'
+
     },
     controller: function ($scope, $element, $timeout, Flights, Airports) {
         var showArrivals = true;

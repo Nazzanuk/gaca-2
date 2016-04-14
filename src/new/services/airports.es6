@@ -1,11 +1,20 @@
 app.service('Airports', ($http) => {
-    var airports = [], OPEN_WEATHER_KEY = '44756d87096e5a658578891c2abcca4e';
+    var airports = [],
+        weatherUrl = "",
+        OPEN_WEATHER_KEY = '44756d87096e5a658578891c2abcca4e';
 
-    var getWeather = (index) => $http.get(`http://api.openweathermap.org/data/2.5/weather?lat=${airports[index].coords.lat}&lon=${airports[index].coords.lon}&APPID=${OPEN_WEATHER_KEY}`).then((response) => {
+    var setWeatherUrl = (string) => weatherUrl = string;
+
+    var getWeather = (index) => $http.get(`${weatherUrl}&lat=${airports[index].coords.lat}&lon=${airports[index].coords.lon}`).then((response) => {
         airports[index].weather = response.data;
         console.log('weather', response.data);
         console.log('airports', airports);
     });
+
+    //return $http.get(WEATHER_SERVICE_URL + "&lat=" + dest.coords[0] + "&lon=" + dest.coords[1] + "&locale=" + CURRENT_LOCALE).then(function (response) {
+    //    console.log(dest, response.data);
+    //    weather = response.data;
+    //});
 
     var geocode = (index) => {
         if (airports[index].coords) getWeather(index);
@@ -29,6 +38,7 @@ app.service('Airports', ($http) => {
 
     return {
         getAirports: () => airports,
+        setWeatherUrl,
         loadAirports,
         geocode
     };

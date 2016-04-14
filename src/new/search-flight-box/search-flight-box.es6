@@ -5,6 +5,7 @@ app.directive('searchFlightBoxItem', () => ({
     scope: {
         airportsUrl: '@',
         searchUrl: '@',
+        weatherUrl: '@',
         lang: '@',
         stringChoose: '@',
         stringFlightNo: '@',
@@ -21,6 +22,7 @@ app.directive('searchFlightBoxItem', () => ({
         };
 
         var init = () => {
+            Airports.setWeatherUrl(this.weatherUrl);
             Airports.loadAirports(this.airportsUrl);
         };
 

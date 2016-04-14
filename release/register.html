@@ -909,6 +909,16 @@
                         ng-model="flights.getQuery().airport"
                         ng-change="flights.search()"
                         style="padding-right: 20px;"
+                        ng-hide="flights.lang == 'ar_SA'"
+                >
+                </select>
+
+                <select ng-options="airport.code as airport.arabicName for airport in flights.getAirports()"
+                        class="choose-airport"
+                        ng-model="flights.getQuery().airport"
+                        ng-change="flights.search()"
+                        style="padding-right: 20px;"
+                        ng-show="flights.lang == 'ar_SA'"
                 >
                 </select>
 
@@ -918,8 +928,8 @@
 
                 <div class="flight-tabs">
                     <div class="tab-headers">
-                        <div class="tab-header" ng-class="{'active':flights.showArrivals()}" ng-click="flights.changeShowing()"><i class="fa fa-plane" style="transform: rotate(90deg)"></i> &nbsp; Arrivals</div>
-                        <div class="tab-header" ng-class="{'active':!flights.showArrivals()}" ng-click="flights.changeShowing()"><i class="fa fa-plane"></i> &nbsp; Departures</div>
+                        <div class="tab-header" ng-class="{'active':flights.showArrivals()}" ng-click="flights.changeShowing()"><i class="fa fa-plane" style="transform: rotate(90deg)"></i> &nbsp; {{flights.stringArrivals}}</div>
+                        <div class="tab-header" ng-class="{'active':!flights.showArrivals()}" ng-click="flights.changeShowing()"><i class="fa fa-plane"></i> &nbsp; {{flights.stringDepartures}}</div>
                     </div>
 
                     <div class="flight-content">
@@ -927,19 +937,19 @@
 
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <p style="text-transform:uppercase;">Flight Number / Destination</p>
+                                    <p style="text-transform:uppercase;">{{flights.stringSearchText}}</p>
 
                                     <div class="in block">
-                                        <input type="text" placeholder="Search" ng-model="flights.getQuery().flight" style="text-transform:uppercase;">
+                                        <input type="text" placeholder="{{flights.stringSearchText}}" ng-model="flights.getQuery().flight" style="text-transform:uppercase;">
                                     </div>
                                 </div>
                                 <div class="col-sm-3">
-                                    <p style="text-transform:uppercase;">Sort By</p>
+                                    <p style="text-transform:uppercase;">{{flights.sort}}</p>
 
                                     <div class="in block">
                                         <p style="display: inline-block;position: absolute;right:20px;line-height:40px;pointer-events: none;">&nbsp; <i class="fa fa-caret-down"></i></p>
                                         <select style="text-transform:uppercase;" ng-model="orderOption" ng-init="orderOption = 'EST_TIME'">
-                                            <option value="EST_TIME">Date / Time</option>
+                                            <option value="EST_TIME">Time</option>
                                             <option value="FL_NUMBER">Flight Number</option>
                                             <option value="GATE_1" ng-if="!flights.showArrivals()">Gate</option>
                                             <option value="AIRLINE_DESCR">Airline</option>

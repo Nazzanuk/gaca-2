@@ -111,51 +111,6 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 });
 
 
-(function () {
-    app.controller('ECatalogueCtrl', ['$scope', '$element', '$interval', function ($scope, $element, $interval) {
-        var eServices = [];
-
-        var genEServices = function () {
-            for (var i = 1;i <=100; i++) {
-                eServices.push({
-                    id:  _.random(1000, 9999),
-                    title:_.sample(['Export of', 'Statement of', 'Regarding', 'Information Required']) + " of " + " "
-                        + _.sample([
-                            'Wheel Maintenance of TSR',
-                            'Inspection Program',
-                            'ELT Update',
-                            'Incident Help',
-                            'Charter Flights',
-                            'General Maintenance',
-                            'Scheduled Flights'
-                        ]),
-                    popularity: _.random(0, 10),
-                    date:_.random(2000, 2015) * 10000 + _.random(1, 1) * 100 +  _.random(1, 28),
-                    audience:_.sample(['Pilot', 'Airman', 'Aircraft', 'Airlines', 'Airports', 'Training Centres']),
-                    sector:_.sample(["Air Navigation Services", 'Information Technology', 'Finance & Admin', 'International Organisation'])
-                });
-            }
-
-        };
-
-        var getEServices = function (filter, sort) {
-            //console.log(filter, sort);
-            var filteredList = _.where(eServices, filter, sort);
-            var sortedList = _.sortBy(filteredList, sort);
-            return _.first(sortedList, 3);
-        };
-
-        var init = function () {
-            genEServices();
-        };
-
-        init();
-
-        $scope.getEServices = getEServices;
-
-    }]);
-}());
-
 
 (function () {
     app.controller('ESearchCtrl', ['$scope', function ($scope) {
@@ -321,6 +276,51 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 }());
 
 (function () {
+    app.controller('ECatalogueCtrl', ['$scope', '$element', '$interval', function ($scope, $element, $interval) {
+        var eServices = [];
+
+        var genEServices = function () {
+            for (var i = 1;i <=100; i++) {
+                eServices.push({
+                    id:  _.random(1000, 9999),
+                    title:_.sample(['Export of', 'Statement of', 'Regarding', 'Information Required']) + " of " + " "
+                        + _.sample([
+                            'Wheel Maintenance of TSR',
+                            'Inspection Program',
+                            'ELT Update',
+                            'Incident Help',
+                            'Charter Flights',
+                            'General Maintenance',
+                            'Scheduled Flights'
+                        ]),
+                    popularity: _.random(0, 10),
+                    date:_.random(2000, 2015) * 10000 + _.random(1, 1) * 100 +  _.random(1, 28),
+                    audience:_.sample(['Pilot', 'Airman', 'Aircraft', 'Airlines', 'Airports', 'Training Centres']),
+                    sector:_.sample(["Air Navigation Services", 'Information Technology', 'Finance & Admin', 'International Organisation'])
+                });
+            }
+
+        };
+
+        var getEServices = function (filter, sort) {
+            //console.log(filter, sort);
+            var filteredList = _.where(eServices, filter, sort);
+            var sortedList = _.sortBy(filteredList, sort);
+            return _.first(sortedList, 3);
+        };
+
+        var init = function () {
+            genEServices();
+        };
+
+        init();
+
+        $scope.getEServices = getEServices;
+
+    }]);
+}());
+
+(function () {
     app.controller('EServiceCtrl', ['$scope', function ($scope) {
         var showPopup = function () {
             $('html, body').addClass('no-scroll');
@@ -350,54 +350,6 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
     app.controller('GalleryCtrl', ['$scope', function ($scope) {
     }]);
 }());
-(function () {
-    app.controller('HeaderCtrl', ['$scope', function ($scope) {
-
-        var events = function () {
-            $(document).on('focus mouseover', '.search-box input', function () {
-                $('.search-box').css({'width': '230px'});
-            });
-
-            $(document).on('blur mouseleave', '.search-box input', function () {
-                $('.search-box').css({'width': ''});
-            });
-
-            $(document).on('mouseover', '.sub-item', function () {
-                if (!$(this).hasClass('active')) {
-                    $('.sub-item').removeClass('active');
-                    $('.sub-menu').velocity('stop');
-                    $('.sub-menu').hide();
-                    $(this).addClass('active');
-                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideDownIn', 300);
-                    $(this).find('[class^="col-"]').velocity('stop').velocity('transition.slideLeftIn', {
-                        stagger: 100,
-                        duration: 600
-                    });
-                }
-            });
-
-            $(document).on('mouseleave', '.sub-item', function () {
-                var that = this;
-                if ($(this).hasClass('active')) {
-                    $(that).removeClass('active');
-                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideUpOut', {delay:500,duration:300});
-                }
-            });
-
-            $(document).on('click', '.hide-alert', function () {
-                $('.hide-alert').velocity('stop').hide();
-            });
-        };
-
-        var init = function () {
-            events();
-        };
-
-        init();
-
-    }]);
-}());
-
 (function () {
     app.controller('BoxCtrl', ['$scope', '$element', 'PopupService', '$timeout', function ($scope, $element, PopupService, $timeout) {
         $scope.data = {};
@@ -506,6 +458,54 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
     }]);
 
     app.controller('DestinationCtrl', ['$scope', '$element', '$timeout', function ($scope, $element, $timeout) {
+
+    }]);
+}());
+
+(function () {
+    app.controller('HeaderCtrl', ['$scope', function ($scope) {
+
+        var events = function () {
+            $(document).on('focus mouseover', '.search-box input', function () {
+                $('.search-box').css({'width': '230px'});
+            });
+
+            $(document).on('blur mouseleave', '.search-box input', function () {
+                $('.search-box').css({'width': ''});
+            });
+
+            $(document).on('mouseover', '.sub-item', function () {
+                if (!$(this).hasClass('active')) {
+                    $('.sub-item').removeClass('active');
+                    $('.sub-menu').velocity('stop');
+                    $('.sub-menu').hide();
+                    $(this).addClass('active');
+                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideDownIn', 300);
+                    $(this).find('[class^="col-"]').velocity('stop').velocity('transition.slideLeftIn', {
+                        stagger: 100,
+                        duration: 600
+                    });
+                }
+            });
+
+            $(document).on('mouseleave', '.sub-item', function () {
+                var that = this;
+                if ($(this).hasClass('active')) {
+                    $(that).removeClass('active');
+                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideUpOut', {delay:500,duration:300});
+                }
+            });
+
+            $(document).on('click', '.hide-alert', function () {
+                $('.hide-alert').velocity('stop').hide();
+            });
+        };
+
+        var init = function () {
+            events();
+        };
+
+        init();
 
     }]);
 }());
@@ -667,6 +667,7 @@ app.controller('MenuItemCtrl', ['$scope', function ($scope) {
     }]);
 }());
 
+
 (function () {
     app.controller('SearchCtrl', ['$scope', '$timeout', '$http', function ($scope, $timeout, $http) {
 
@@ -761,7 +762,6 @@ app.controller('MenuItemCtrl', ['$scope', function ($scope) {
 
     }]);
 }());
-
 
 (function () {
     app.controller('SliderCtrl', ['$scope', '$element', '$interval', function ($scope, $element, $timeout) {
