@@ -1219,7 +1219,7 @@
                 <select ng-options="airport.name for airport in search.getAirports()"
                         ng-model="airport"
                         ng-change="search.changeSelect(airport)"
-                        ng-hide="search.lang == 'ar'"
+                        ng-hide="search.lang == 'ar_SA'"
                 >
                     <option value="" selected="selected">{{search.stringChoose}}</option>
                 </select>
@@ -1227,7 +1227,7 @@
                 <select ng-options="airport.arabicName for airport in search.getAirports()"
                         ng-model="airport"
                         ng-change="search.changeSelect(airport)"
-                        ng-show="search.lang == 'ar'"
+                        ng-show="search.lang == 'ar_SA'"
                 >
                     <option value="" selected="selected">{{search.stringChoose}}</option>
                 </select>
