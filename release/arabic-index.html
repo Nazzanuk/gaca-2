@@ -1521,7 +1521,7 @@
                                     </div>
                                     <div class="card-airline">{{flight.AIRLINE_DESCR}}</div>
                                     <div class="header-logo-holder"
-                                         style="background-image: url('{{'/Airlines/' + flight.AIRLINE.trim() + '.png'}}')"
+                                         style="background-image: url('{{'/Airlines/' + flight.AIRLINE + '.png'}}')"
                                     ></div>
 
                                     <div class="card-tofrom" ng-show="flight.ARR_DEP == 'A'">{{flights.stringFrom}}</div>
@@ -1535,7 +1535,7 @@
 
                                     <div class="card-time" ng-show="flight.ARR_DEP == 'A'" ng-class="{'delayed':flight.FL_STATUS_1 == 'DELAYED'}" style="text-transform: uppercase">{{flights.stringExpected}}</div>
                                     <div class="card-time" ng-hide="flight.ARR_DEP == 'A'" ng-class="{'delayed':flight.FL_STATUS_1 == 'DELAYED'}" style="text-transform: uppercase">{{flights.stringDeparting}}</div>
-                                    <div class="card-time" ng-class="{'delayed':flight.FL_STATUS_1 == 'DELAYED'}"><strong>{{flights.getTime(flight.EST_TIME)}}</strong></div>
+                                    <div class="card-time" ng-class="{'delayed':flight.FL_STATUS_1 == 'DELAYED' || flight.FL_STATUS_1 == 'DLY'}"><strong>{{flights.getTime(flight.EST_TIME)}}</strong></div>
 
 
                                     <!--<hr>-->

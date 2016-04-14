@@ -94,7 +94,7 @@
 
                                     <div class="card-time" ng-show="flight.ARR_DEP == 'A'" ng-class="{'delayed':flight.FL_STATUS_1 == 'DELAYED'}" style="text-transform: uppercase">{{flights.stringExpected}}</div>
                                     <div class="card-time" ng-hide="flight.ARR_DEP == 'A'" ng-class="{'delayed':flight.FL_STATUS_1 == 'DELAYED'}" style="text-transform: uppercase">{{flights.stringDeparting}}</div>
-                                    <div class="card-time" ng-class="{'delayed':flight.FL_STATUS_1 == 'DELAYED'}"><strong>{{flights.getTime(flight.EST_TIME)}}</strong></div>
+                                    <div class="card-time" ng-class="{'delayed':flight.FL_STATUS_1 == 'DELAYED' || flight.FL_STATUS_1 == 'DLY'}"><strong>{{flights.getTime(flight.EST_TIME)}}</strong></div>
 
 
                                     <!--<hr>-->
