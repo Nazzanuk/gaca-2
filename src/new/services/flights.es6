@@ -1,4 +1,4 @@
-app.service('Flights', ($http, Airports) => {
+app.service('Flights', ($http, Airports, Translation) => {
 
     var query = {
         airport: "",

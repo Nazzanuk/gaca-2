@@ -1,4 +1,4 @@
-app.service('Airports', ($http) => {
+app.service('Airports', ($http, Translation) => {
     var airports = [],
         weatherUrl = "",
         OPEN_WEATHER_KEY = '44756d87096e5a658578891c2abcca4e';

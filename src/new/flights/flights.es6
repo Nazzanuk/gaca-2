@@ -8,10 +8,24 @@ app.directive('flightsItem', () => ({
         flightsUrl: '@',
         airportsUrl: '@',
 
-        stringFlightInfo: '@'
-
+        stringFlightInfo: '@',
+        stringSearchText: '@',
+        stringArrivals: '@',
+        stringDepartures: '@',
+        stringTime: '@',
+        stringFlightNumber: '@',
+        stringGate: '@',
+        stringAirline: '@',
+        stringNoResults: '@',
+        stringFrom: '@',
+        stringTo: '@',
+        stringTerminal: '@',
+        stringBaggage: '@',
+        stringExpected: '@',
+        stringDeparting: '@',
+        stringSort: '@'
     },
-    controller: function ($scope, $element, $timeout, Flights, Airports) {
+    controller: function ($scope, $element, $timeout, Flights, Airports, Translation) {
         var showArrivals = true;
 
         var getTime = (time) => moment(time, "DDMMYYYY HHmmss").format('HH:mm');

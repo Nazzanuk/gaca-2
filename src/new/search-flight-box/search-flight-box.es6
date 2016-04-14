@@ -9,9 +9,10 @@ app.directive('searchFlightBoxItem', () => ({
         lang: '@',
         stringChoose: '@',
         stringFlightNo: '@',
-        stringSearch: '@'
+        stringSearch: '@',
+        stringArrivals: '@'
     },
-    controller: function (Airports, Flights) {
+    controller: function (Airports, Flights, Translation) {
 
         var calcTemp = (temp) => Math.round(temp - 273.15);
 

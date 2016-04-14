@@ -132,19 +132,19 @@ flights-item {
           margin: -10px -10px 10px;
           background: #f7f7f7;
 
-          .header-logo {
-            height:40px;
-            position:absolute;
-            left:5px;
-            top:5px;
-            font-size: 10px;
-          }
-
           span {
             //float: right;
             //color: $primary;
             //font-weight: bold;
           }
+        }
+
+        .header-logo {
+          width:100%;
+          //position:absolute;
+          //left:5px;
+          //top:5px;
+          font-size: 10px;
         }
 
         .card-airline {

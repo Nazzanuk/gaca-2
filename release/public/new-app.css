@@ -114,12 +114,9 @@ flights-item .flights {
         text-align: center;
         margin: -10px -10px 10px;
         background: #f7f7f7; }
-        flights-item .flights .flight-tabs .flight-card .card-header .header-logo {
-          height: 40px;
-          position: absolute;
-          left: 5px;
-          top: 5px;
-          font-size: 10px; }
+      flights-item .flights .flight-tabs .flight-card .header-logo {
+        width: 100%;
+        font-size: 10px; }
       flights-item .flights .flight-tabs .flight-card .card-airline {
         line-height: 30px;
         font-weight: bold;

@@ -6,7 +6,7 @@
                 <select ng-options="airport.name for airport in search.getAirports()"
                         ng-model="airport"
                         ng-change="search.changeSelect(airport)"
-                        ng-hide="search.lang == 'ar_SA'"
+                        ng-hide="$root.getLang() == 'ar'"
                 >
                     <option value="" selected="selected">{{search.stringChoose}}</option>
                 </select>
@@ -14,7 +14,7 @@
                 <select ng-options="airport.arabicName for airport in search.getAirports()"
                         ng-model="airport"
                         ng-change="search.changeSelect(airport)"
-                        ng-show="search.lang == 'ar_SA'"
+                        ng-show="$root.getLang() == 'ar'"
                 >
                     <option value="" selected="selected">{{search.stringChoose}}</option>
                 </select>

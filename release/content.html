@@ -894,7 +894,7 @@
                         ng-model="flights.getQuery().airport"
                         ng-change="flights.search()"
                         style="padding-right: 20px;"
-                        ng-hide="flights.lang == 'ar_SA'"
+                        ng-hide="$root.getLang() == 'ar'"
                 >
                 </select>
 
@@ -903,7 +903,7 @@
                         ng-model="flights.getQuery().airport"
                         ng-change="flights.search()"
                         style="padding-right: 20px;"
-                        ng-show="flights.lang == 'ar_SA'"
+                        ng-show="$root.getLang() == 'ar'"
                 >
                 </select>
 
@@ -934,10 +934,10 @@
                                     <div class="in block">
                                         <p style="display: inline-block;position: absolute;right:20px;line-height:40px;pointer-events: none;">&nbsp; <i class="fa fa-caret-down"></i></p>
                                         <select style="text-transform:uppercase;" ng-model="orderOption" ng-init="orderOption = 'EST_TIME'">
-                                            <option value="EST_TIME">Time</option>
-                                            <option value="FL_NUMBER">Flight Number</option>
-                                            <option value="GATE_1" ng-if="!flights.showArrivals()">Gate</option>
-                                            <option value="AIRLINE_DESCR">Airline</option>
+                                            <option value="EST_TIME">{{flights.stringTime}}</option>
+                                            <option value="FL_NUMBER">{{flights.stringFlightNumber}}</option>
+                                            <option value="GATE_1" ng-if="!flights.showArrivals()">{{flights.stringGate}}</option>
+                                            <option value="AIRLINE_DESCR">{{flights.stringAirline}}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -947,39 +947,40 @@
 
                         <div class="flight-cards">
                             <div>
-                                <div ng-hide="flights.getFlights().length">
+                                <div ng-hide="flights.getFlights().length || flights.getFlights() == undefined">
                                     <i class="fa fa-spin fa-cog fa-3x"></i>
                                 </div>
-                                <div ng-hide="filteredItems.length || !(flights.getFlights().length)">
-                                    No Flight Results Available
+                                <div ng-hide="filteredItems.length || !(flights.getFlights().length) || flights.getFlights() == undefined">
+                                    {{flights.stringNoResults}}
                                 </div>
                                 <div class="flight-card"
                                      ng-repeat="flight in filteredItems = (flights.getFlights() | filter:flights.getQuery().flight | orderBy:orderOption)"
                                      ng-show="flights.showArrivals() && flight.ARR_DEP == 'A' || !flights.showArrivals() && flight.ARR_DEP == 'D'"
                                 >
                                     <div class="card-header">
-                                        <img ng-show="flight.LOGOSPATH" ng-src="{{flight.LOGOSPATH}}" alt="{{flight.AIRLINE_DESCR}}" class="header-logo">
                                         <span>{{flight.AIRLINE}}{{flight.FL_NUMBER}}</span>
                                     </div>
+                                    <!--<img ng-show="flight.AIRLINE" ng-src="{{'/Airlines/' + flight.AIRLINE + '.png'}}" class="header-logo">-->
+
                                     <div class="card-airline">{{flight.AIRLINE_DESCR}}</div>
-                                    <div class="card-tofrom" ng-show="flight.ARR_DEP == 'A'">From</div>
-                                    <div class="card-tofrom" ng-hide="flight.ARR_DEP == 'A'">To</div>
+                                    <div class="card-tofrom" ng-show="flight.ARR_DEP == 'A'">{{flights.stringFrom}}</div>
+                                    <div class="card-tofrom" ng-hide="flight.ARR_DEP == 'A'">{{flights.stringTo}}</div>
                                     <div class="card-place">{{flight.ROUTING_ENG}}</div>
 
                                     <hr>
                                     <div class="card-terminal">TERMINAL {{flight.TERMINAL}}</div>
-                                    <div class="card-terminal"><span ng-show="flight.BAGGAGE_1 != 'NA'">BAGGAGE {{flight.BAGGAGE_1}}</span></div>
+                                    <div class="card-terminal"><span ng-show="flight.BAGGAGE_1 != 'NA'" style="text-transform: uppercase">{{flights.stringBaggage}} {{flight.BAGGAGE_1}}</span></div>
                                     <hr>
 
-                                    <div class="card-time" ng-show="flight.ARR_DEP == 'A'" ng-class="{'delayed':flight.FL_STATUS_1 == 'DELAYED'}">EXPECTED</div>
-                                    <div class="card-time" ng-hide="flight.ARR_DEP == 'A'" ng-class="{'delayed':flight.FL_STATUS_1 == 'DELAYED'}">DEPARTING</div>
+                                    <div class="card-time" ng-show="flight.ARR_DEP == 'A'" ng-class="{'delayed':flight.FL_STATUS_1 == 'DELAYED'}" style="text-transform: uppercase">{{flights.stringExpected}}</div>
+                                    <div class="card-time" ng-hide="flight.ARR_DEP == 'A'" ng-class="{'delayed':flight.FL_STATUS_1 == 'DELAYED'}" style="text-transform: uppercase">{{flights.stringDeparting}}</div>
                                     <div class="card-time" ng-class="{'delayed':flight.FL_STATUS_1 == 'DELAYED'}"><strong>{{flights.getTime(flight.EST_TIME)}}</strong></div>
 
 
                                     <hr>
 
                                     <div class="card-status" ng-show="flight.FL_STATUS_1 != 'NA' || flight.GATE_1 != 'NA'">
-                                        <div class="card-gate" ng-show="flight.GATE_1 != 'NA'">GATE {{flight.GATE_1}}</div>
+                                        <div class="card-gate" ng-show="flight.GATE_1 != 'NA'">{{flights.stringGate}} {{flight.GATE_1}}</div>
                                         <div class="card-text" ng-show="flight.FL_STATUS_1 != 'NA'">{{flight.FL_STATUS_1}}</div>
                                     </div>
                                 </div>
@@ -1005,7 +1006,7 @@
                 <select ng-options="airport.name for airport in search.getAirports()"
                         ng-model="airport"
                         ng-change="search.changeSelect(airport)"
-                        ng-hide="search.lang == 'ar_SA'"
+                        ng-hide="$root.getLang() == 'ar'"
                 >
                     <option value="" selected="selected">{{search.stringChoose}}</option>
                 </select>
@@ -1013,7 +1014,7 @@
                 <select ng-options="airport.arabicName for airport in search.getAirports()"
                         ng-model="airport"
                         ng-change="search.changeSelect(airport)"
-                        ng-show="search.lang == 'ar_SA'"
+                        ng-show="$root.getLang() == 'ar'"
                 >
                     <option value="" selected="selected">{{search.stringChoose}}</option>
                 </select>
