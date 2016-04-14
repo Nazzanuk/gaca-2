@@ -1410,36 +1410,66 @@
                 <h1>Flight Information</h1>
                 <hr>
 
-                <select class="choose-airport" ng-model="flights.getQuery().airport" ng-change="flights.search()">
+                <select class="choose-airport" ng-model="flights.getQuery().airport" ng-change="flights.search()" style="padding-right: 20px;">
                     <option value="{{airport.code}}"
                             ng-repeat="airport in flights.getAirports()"
                     >
                         {{airport.name}}
                     </option>
                 </select>
-                <h2 style="display: inline-block">&nbsp; <i class="fa fa-caret-down"></i></h2>
+                <h2 style="display: inline-block;position: relative;left:-20px;pointer-events: none;">&nbsp; <i class="fa fa-caret-down"></i></h2>
 
 
                 <div class="flight-tabs">
                     <div class="tab-headers">
-                        <div class="tab-header" ng-class="{'active':flights.showArrivals()}" ng-click="flights.changeShowing()">Arrivals</div>
-                        <div class="tab-header" ng-class="{'active':!flights.showArrivals()}" ng-click="flights.changeShowing()">Departures</div>
+                        <div class="tab-header" ng-class="{'active':flights.showArrivals()}" ng-click="flights.changeShowing()"><i class="fa fa-plane" style="transform: rotate(90deg)"></i> &nbsp; Arrivals</div>
+                        <div class="tab-header" ng-class="{'active':!flights.showArrivals()}" ng-click="flights.changeShowing()"><i class="fa fa-plane"></i> &nbsp; Departures</div>
                     </div>
 
                     <div class="flight-content">
                         <div class="flight-bar">
-                            <div class="in">
-                                <input type="text" placeholder="Flight Number" ng-model="flights.getQuery().flight">
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p style="text-transform:uppercase;">Flight Number / Destination</p>
+
+                                    <div class="in block">
+                                        <input type="text" placeholder="Search" ng-model="flights.getQuery().flight" style="text-transform:uppercase;">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <p style="text-transform:uppercase;">Sort By</p>
+
+                                    <div class="in block">
+                                        <p style="display: inline-block;position: absolute;right:20px;line-height:40px;pointer-events: none;">&nbsp; <i class="fa fa-caret-down"></i></p>
+                                        <select style="text-transform:uppercase;" ng-model="orderOption" ng-init="orderOption = 'EST_TIME'">
+                                            <option value="EST_TIME">Date / Time</option>
+                                            <option value="FL_NUMBER">Flight Number</option>
+                                            <option value="GATE_1" ng-if="!flights.showArrivals()">Gate</option>
+                                            <option value="AIRLINE_DESCR">Airline</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
 
                         <div class="flight-cards">
                             <div>
+                                <div ng-hide="flights.getFlights().length">
+                                    <i class="fa fa-spin fa-cog fa-3x"></i>
+                                </div>
+                                <div ng-hide="filteredItems.length || !(flights.getFlights().length)">
+                                    No Flight Results Available
+                                </div>
                                 <div class="flight-card"
-                                     ng-repeat="flight in flights.getFlights() | filter:flights.getQuery().flight"
+                                     ng-repeat="flight in filteredItems = (flights.getFlights() | filter:flights.getQuery().flight | orderBy:orderOption)"
                                      ng-show="flights.showArrivals() && flight.ARR_DEP == 'A' || !flights.showArrivals() && flight.ARR_DEP == 'D'"
                                 >
-                                    <div class="card-header"><span>{{flight.AIRLINE}}{{flight.FL_NUMBER}}</span></div>
+                                    <div class="card-header">
+                                        <img ng-show="flight.LOGOSPATH" ng-src="{{flight.LOGOSPATH}}" alt="{{flight.AIRLINE_DESCR}}" class="header-logo">
+                                        <span>{{flight.AIRLINE}}{{flight.FL_NUMBER}}</span>
+                                    </div>
                                     <div class="card-airline">{{flight.AIRLINE_DESCR}}</div>
                                     <div class="card-tofrom" ng-show="flight.ARR_DEP == 'A'">From</div>
                                     <div class="card-tofrom" ng-hide="flight.ARR_DEP == 'A'">To</div>

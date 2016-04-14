@@ -7,7 +7,7 @@ app.service('Flights', ($http) => {
 
     var loadFlights = (url = 'public/json/airport-flights.json') => {
         flights = [];
-        return $http.get(`${url}?airportCode=${query.airport}&flightNumber=${query.flight}`).then((response) => {
+        return $http.get(`${url}?airportCode=${query.airport}`).then((response) => {
             flights = response.data.FLIGHT;
             for (var i in flights) {
                 flights[i].flightNumber = flights[i].AIRLINE + flights[i].FL_NUMBER
@@ -23,10 +23,11 @@ app.service('Flights', ($http) => {
         })
     };
 
-    var externalSearch = (url) => {
+    var externalSearch = (url, sign = '?') => {
         console.log('externalSearch', url);
         if (!query.airport) return;
-        window.location.href = `${url}?airportCode=${query.airport}&flightNumber=${query.flight}`;
+        if (window.location.href.indexOf('?') > -1) sign = '&';
+        window.location.href = `${url}${sign}airportCode=${query.airport}&flightNumber=${query.flight}`;
     };
 
     var init = () => {

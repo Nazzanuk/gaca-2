@@ -29,7 +29,7 @@ flights-item {
         float: left;
         line-height: 40px;
         padding: 0 20px;
-        min-width: 200px;
+        min-width: 150px;
         margin-bottom: -1px;
         border: 1px solid #ddd;
         border-bottom: 1px solid #ddd;
@@ -56,7 +56,7 @@ flights-item {
         //line-height: 40px;
       }
       .in {
-        input {
+        input, select {
           background: white;
           border: 1px solid #ddd;
           line-height: 40px;
@@ -78,6 +78,7 @@ flights-item {
         background: #fff;
         padding: 20px;
         padding-bottom: 20px;
+        height: 440px;
 
         &::-webkit-scrollbar {
           -webkit-appearance: none;
@@ -130,6 +131,14 @@ flights-item {
           //font-weight: 100;
           margin: -10px -10px 10px;
           background: #f7f7f7;
+
+          .header-logo {
+            height:40px;
+            position:absolute;
+            left:5px;
+            top:5px;
+            font-size: 10px;
+          }
 
           span {
             //float: right;

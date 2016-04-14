@@ -42,7 +42,7 @@ flights-item .flights {
       float: left;
       line-height: 40px;
       padding: 0 20px;
-      min-width: 200px;
+      min-width: 150px;
       margin-bottom: -1px;
       border: 1px solid #ddd;
       border-bottom: 1px solid #ddd;
@@ -59,7 +59,7 @@ flights-item .flights {
         color: #2c80c0; }
     flights-item .flights .flight-tabs .flight-bar {
       padding: 20px 20px 0; }
-    flights-item .flights .flight-tabs .in input {
+    flights-item .flights .flight-tabs .in input, flights-item .flights .flight-tabs .in select {
       background: white;
       border: 1px solid #ddd;
       line-height: 40px;
@@ -75,7 +75,8 @@ flights-item .flights {
       border: 1px solid #ddd;
       background: #fff;
       padding: 20px;
-      padding-bottom: 20px; }
+      padding-bottom: 20px;
+      height: 440px; }
       flights-item .flights .flight-tabs .flight-cards::-webkit-scrollbar {
         -webkit-appearance: none; }
       flights-item .flights .flight-tabs .flight-cards::-webkit-scrollbar:vertical {
@@ -113,6 +114,12 @@ flights-item .flights {
         text-align: center;
         margin: -10px -10px 10px;
         background: #f7f7f7; }
+        flights-item .flights .flight-tabs .flight-card .card-header .header-logo {
+          height: 40px;
+          position: absolute;
+          left: 5px;
+          top: 5px;
+          font-size: 10px; }
       flights-item .flights .flight-tabs .flight-card .card-airline {
         line-height: 30px;
         font-weight: bold;
