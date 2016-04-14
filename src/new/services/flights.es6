@@ -1,4 +1,4 @@
-app.service('Flights', ($http) => {
+app.service('Flights', ($http, Airports) => {
 
     var query = {
         airport: "",
@@ -6,6 +6,10 @@ app.service('Flights', ($http) => {
     }, flights = [];
 
     var loadFlights = (url = 'public/json/airport-flights.json') => {
+        console.log(' query', query);
+        console.log(' Airports.getAirports()', Airports.getAirports());
+        //if (!query.airport) query.airport = Airports.loadAirports().then(() => {query.airport = Airports.getAirports()[0].code, loadFlights()});
+
         flights = [];
         return $http.get(`${url}airportCode=${query.airport}`).then((response) => {
             flights = response.data.FLIGHT;

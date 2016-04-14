@@ -111,7 +111,6 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 });
 
 
-
 (function () {
     app.controller('ECatalogueCtrl', ['$scope', '$element', '$interval', function ($scope, $element, $interval) {
         var eServices = [];
@@ -156,6 +155,7 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 
     }]);
 }());
+
 
 (function () {
     app.controller('ESearchCtrl', ['$scope', function ($scope) {
@@ -351,6 +351,54 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
     }]);
 }());
 (function () {
+    app.controller('HeaderCtrl', ['$scope', function ($scope) {
+
+        var events = function () {
+            $(document).on('focus mouseover', '.search-box input', function () {
+                $('.search-box').css({'width': '230px'});
+            });
+
+            $(document).on('blur mouseleave', '.search-box input', function () {
+                $('.search-box').css({'width': ''});
+            });
+
+            $(document).on('mouseover', '.sub-item', function () {
+                if (!$(this).hasClass('active')) {
+                    $('.sub-item').removeClass('active');
+                    $('.sub-menu').velocity('stop');
+                    $('.sub-menu').hide();
+                    $(this).addClass('active');
+                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideDownIn', 300);
+                    $(this).find('[class^="col-"]').velocity('stop').velocity('transition.slideLeftIn', {
+                        stagger: 100,
+                        duration: 600
+                    });
+                }
+            });
+
+            $(document).on('mouseleave', '.sub-item', function () {
+                var that = this;
+                if ($(this).hasClass('active')) {
+                    $(that).removeClass('active');
+                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideUpOut', {delay:500,duration:300});
+                }
+            });
+
+            $(document).on('click', '.hide-alert', function () {
+                $('.hide-alert').velocity('stop').hide();
+            });
+        };
+
+        var init = function () {
+            events();
+        };
+
+        init();
+
+    }]);
+}());
+
+(function () {
     app.controller('BoxCtrl', ['$scope', '$element', 'PopupService', '$timeout', function ($scope, $element, PopupService, $timeout) {
         $scope.data = {};
         $scope.data.active = true;
@@ -462,6 +510,43 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
     }]);
 }());
 
+(function () {
+    app.controller('LoginCtrl', ['$scope', 'PopupService', function ($scope, PopupService) {
+        var showLoginPopup = function () {
+            $('.login-popup').velocity('stop').velocity('transition.fadeIn', 200);
+            $('html').addClass('no-scroll');
+        };
+        var hideLoginPopup = function () {
+            $('.login-popup').velocity('stop').velocity('transition.fadeOut', 200);
+            $('html').removeClass('no-scroll');
+        };
+
+        var showRegisterPopup = function () {
+            $('.register-popup').velocity('stop').velocity('transition.fadeIn', 200);
+            $('html').addClass('no-scroll');
+        };
+        var hideRegisterPopup = function () {
+            $('.register-popup').velocity('stop').velocity('transition.fadeOut', 200);
+            $('html').removeClass('no-scroll');
+        };
+
+        var events = function () {
+            $(document).on('click', '.show-login-popup', showLoginPopup);
+            $(document).on('click', '.hide-login-popup', hideLoginPopup);
+            $(document).on('click', '.show-register-popup', showRegisterPopup);
+            $(document).on('click', '.hide-register-popup', hideRegisterPopup);
+        };
+
+        var init = function () {
+            events();
+        };
+
+        init();
+
+        //$scope.showPopup = showPopup;
+    }]);
+}());
+
 app.controller('MenuCtrl', ['$scope', function ($scope) {
 
     var showing = false;
@@ -507,30 +592,13 @@ app.controller('MenuItemCtrl', ['$scope', function ($scope) {
 }]);
 
 (function () {
-    app.controller('LoginCtrl', ['$scope', 'PopupService', function ($scope, PopupService) {
-        var showLoginPopup = function () {
-            $('.login-popup').velocity('stop').velocity('transition.fadeIn', 200);
-            $('html').addClass('no-scroll');
-        };
-        var hideLoginPopup = function () {
-            $('.login-popup').velocity('stop').velocity('transition.fadeOut', 200);
-            $('html').removeClass('no-scroll');
-        };
+    app.controller('PopupCtrl', ['$scope', 'PopupService', '$sce', function ($scope, PopupService, $sce) {
 
-        var showRegisterPopup = function () {
-            $('.register-popup').velocity('stop').velocity('transition.fadeIn', 200);
-            $('html').addClass('no-scroll');
-        };
-        var hideRegisterPopup = function () {
-            $('.register-popup').velocity('stop').velocity('transition.fadeOut', 200);
-            $('html').removeClass('no-scroll');
+        var getPopupContent =  function () {
+            return $sce.trustAsHtml(PopupService.getPopupContent());
         };
 
         var events = function () {
-            $(document).on('click', '.show-login-popup', showLoginPopup);
-            $(document).on('click', '.hide-login-popup', hideLoginPopup);
-            $(document).on('click', '.show-register-popup', showRegisterPopup);
-            $(document).on('click', '.hide-register-popup', hideRegisterPopup);
         };
 
         var init = function () {
@@ -539,47 +607,49 @@ app.controller('MenuItemCtrl', ['$scope', function ($scope) {
 
         init();
 
-        //$scope.showPopup = showPopup;
+        $scope.showPopup = PopupService.showPopup;
+        $scope.hidePopup = PopupService.hidePopup;
+        $scope.getPopupContent = getPopupContent;
+        $scope.getPopupHeader = PopupService.getPopupHeader;
     }]);
 }());
 
 (function () {
-    app.controller('HeaderCtrl', ['$scope', function ($scope) {
+    app.service('PopupService', ['$sce', function ($sce) {
+        var that = this;
+
+        var popupContent = "hello";
+        var popupHeader = "hello";
+
+        var setPopupHeader =  function (content) {
+            popupHeader = content;
+        };
+
+        var getPopupHeader =  function () {
+            return popupHeader;
+        };
+
+        var setPopupContent =  function (content) {
+            popupContent = content;
+        };
+
+        var getPopupContent =  function () {
+            return popupContent;
+        };
+
+        var showPopup = function () {
+            $('html, body').addClass('no-scroll');
+            $('.generic-popup').velocity('stop').velocity('transition.fadeIn', 200);
+        };
+
+        var hidePopup = function () {
+            $('html, body').removeClass('no-scroll');
+            $('.generic-popup').velocity('stop').velocity('transition.fadeOut', 200);
+        };
 
         var events = function () {
-            $(document).on('focus mouseover', '.search-box input', function () {
-                $('.search-box').css({'width': '230px'});
-            });
-
-            $(document).on('blur mouseleave', '.search-box input', function () {
-                $('.search-box').css({'width': ''});
-            });
-
-            $(document).on('mouseover', '.sub-item', function () {
-                if (!$(this).hasClass('active')) {
-                    $('.sub-item').removeClass('active');
-                    $('.sub-menu').velocity('stop');
-                    $('.sub-menu').hide();
-                    $(this).addClass('active');
-                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideDownIn', 300);
-                    $(this).find('[class^="col-"]').velocity('stop').velocity('transition.slideLeftIn', {
-                        stagger: 100,
-                        duration: 600
-                    });
-                }
-            });
-
-            $(document).on('mouseleave', '.sub-item', function () {
-                var that = this;
-                if ($(this).hasClass('active')) {
-                    $(that).removeClass('active');
-                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideUpOut', {delay:500,duration:300});
-                }
-            });
-
-            $(document).on('click', '.hide-alert', function () {
-                $('.hide-alert').velocity('stop').hide();
-            });
+            $(document).on('click', '.show-generic-popup', showPopup);
+            $(document).on('click', '.hide-generic-popup', hidePopup);
         };
 
         var init = function () {
@@ -588,9 +658,14 @@ app.controller('MenuItemCtrl', ['$scope', function ($scope) {
 
         init();
 
+        that.showPopup = showPopup;
+        that.hidePopup = hidePopup;
+        that.getPopupContent = getPopupContent;
+        that.setPopupContent = setPopupContent;
+        that.setPopupHeader = setPopupHeader;
+        that.getPopupHeader = getPopupHeader;
     }]);
 }());
-
 
 (function () {
     app.controller('SearchCtrl', ['$scope', '$timeout', '$http', function ($scope, $timeout, $http) {
@@ -687,81 +762,6 @@ app.controller('MenuItemCtrl', ['$scope', function ($scope) {
     }]);
 }());
 
-(function () {
-    app.controller('PopupCtrl', ['$scope', 'PopupService', '$sce', function ($scope, PopupService, $sce) {
-
-        var getPopupContent =  function () {
-            return $sce.trustAsHtml(PopupService.getPopupContent());
-        };
-
-        var events = function () {
-        };
-
-        var init = function () {
-            events();
-        };
-
-        init();
-
-        $scope.showPopup = PopupService.showPopup;
-        $scope.hidePopup = PopupService.hidePopup;
-        $scope.getPopupContent = getPopupContent;
-        $scope.getPopupHeader = PopupService.getPopupHeader;
-    }]);
-}());
-
-(function () {
-    app.service('PopupService', ['$sce', function ($sce) {
-        var that = this;
-
-        var popupContent = "hello";
-        var popupHeader = "hello";
-
-        var setPopupHeader =  function (content) {
-            popupHeader = content;
-        };
-
-        var getPopupHeader =  function () {
-            return popupHeader;
-        };
-
-        var setPopupContent =  function (content) {
-            popupContent = content;
-        };
-
-        var getPopupContent =  function () {
-            return popupContent;
-        };
-
-        var showPopup = function () {
-            $('html, body').addClass('no-scroll');
-            $('.generic-popup').velocity('stop').velocity('transition.fadeIn', 200);
-        };
-
-        var hidePopup = function () {
-            $('html, body').removeClass('no-scroll');
-            $('.generic-popup').velocity('stop').velocity('transition.fadeOut', 200);
-        };
-
-        var events = function () {
-            $(document).on('click', '.show-generic-popup', showPopup);
-            $(document).on('click', '.hide-generic-popup', hidePopup);
-        };
-
-        var init = function () {
-            events();
-        };
-
-        init();
-
-        that.showPopup = showPopup;
-        that.hidePopup = hidePopup;
-        that.getPopupContent = getPopupContent;
-        that.setPopupContent = setPopupContent;
-        that.setPopupHeader = setPopupHeader;
-        that.getPopupHeader = getPopupHeader;
-    }]);
-}());
 
 (function () {
     app.controller('SliderCtrl', ['$scope', '$element', '$interval', function ($scope, $element, $timeout) {

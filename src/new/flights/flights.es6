@@ -33,6 +33,7 @@ app.directive('flightsItem', () => ({
             Airports.loadAirports(this.airportsUrl);
 
             if (Flights.getQuery().airport) Flights.loadFlights(this.flightsUrl);
+            else Flights.loadFlights(this.flightsUrl);
         };
 
         init();

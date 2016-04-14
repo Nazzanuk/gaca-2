@@ -889,13 +889,15 @@
                 <h1>Flight Information</h1>
                 <hr>
 
-                <select class="choose-airport" ng-model="flights.getQuery().airport" ng-change="flights.search()" style="padding-right: 20px;">
-                    <option value="{{airport.code}}"
-                            ng-repeat="airport in flights.getAirports()"
-                    >
-                        {{airport.name}}
-                    </option>
+                <select ng-options="airport.code as airport.name for airport in flights.getAirports()"
+                        class="choose-airport"
+                        ng-model="flights.getQuery().airport"
+                        ng-change="flights.search()"
+                        style="padding-right: 20px;"
+                >
                 </select>
+
+
                 <h2 style="display: inline-block;position: relative;left:-20px;pointer-events: none;">&nbsp; <i class="fa fa-caret-down"></i></h2>
 
 
