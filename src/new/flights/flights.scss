@@ -78,7 +78,7 @@ flights-item {
         background: #fff;
         padding: 20px;
         padding-bottom: 20px;
-        height: 440px;
+        height: 475px;
 
         &::-webkit-scrollbar {
           -webkit-appearance: none;
@@ -107,7 +107,7 @@ flights-item {
       }
       .flight-card {
         padding: 10px;
-        height: 400px;
+        height: 435px;
         width: 250px;
         background: white;
         border: 1px solid #ddd;
@@ -139,6 +139,18 @@ flights-item {
           }
         }
 
+        .header-logo-holder {
+          margin: 0px 0px 10px;
+          height: 60px;
+          position: relative;
+          background-size:contain;
+          background-position:top;
+          background-repeat: no-repeat;
+          //border-top: 1px solid #ddd;
+          //border-bottom: 1px solid #ddd;
+
+        }
+
         .header-logo {
           width:100%;
           //position:absolute;
@@ -153,7 +165,11 @@ flights-item {
           background: $primary;
           color: white;
           text-align: center;
+          //margin: -10px -10px 10px;
+          //border-bottom: 1px solid #ddd;
+
           margin: -11px -11px 10px;
+          /* border-bottom: 1px solid #ddd; */
         }
 
         .card-tofrom {

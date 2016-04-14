@@ -94,9 +94,11 @@
                                     <div class="card-header">
                                         <span>{{flight.AIRLINE}}{{flight.FL_NUMBER}}</span>
                                     </div>
-                                    <!--<img ng-show="flight.AIRLINE" ng-src="{{'/Airlines/' + flight.AIRLINE + '.png'}}" class="header-logo">-->
-
                                     <div class="card-airline">{{flight.AIRLINE_DESCR}}</div>
+                                    <div class="header-logo-holder"
+                                         style="background-image: url('{{'/Airlines/' + flight.AIRLINE + '.png'}}')"
+                                    ></div>
+
                                     <div class="card-tofrom" ng-show="flight.ARR_DEP == 'A'">{{flights.stringFrom}}</div>
                                     <div class="card-tofrom" ng-hide="flight.ARR_DEP == 'A'">{{flights.stringTo}}</div>
                                     <div class="card-place">{{flight.ROUTING_ENG}}</div>
@@ -111,7 +113,7 @@
                                     <div class="card-time" ng-class="{'delayed':flight.FL_STATUS_1 == 'DELAYED'}"><strong>{{flights.getTime(flight.EST_TIME)}}</strong></div>
 
 
-                                    <hr>
+                                    <!--<hr>-->
 
                                     <div class="card-status" ng-show="flight.FL_STATUS_1 != 'NA' || flight.GATE_1 != 'NA'">
                                         <div class="card-gate" ng-show="flight.GATE_1 != 'NA'">{{flights.stringGate}} {{flight.GATE_1}}</div>

@@ -76,7 +76,7 @@ flights-item .flights {
       background: #fff;
       padding: 20px;
       padding-bottom: 20px;
-      height: 440px; }
+      height: 475px; }
       flights-item .flights .flight-tabs .flight-cards::-webkit-scrollbar {
         -webkit-appearance: none; }
       flights-item .flights .flight-tabs .flight-cards::-webkit-scrollbar:vertical {
@@ -95,7 +95,7 @@ flights-item .flights {
         margin: 20px; }
     flights-item .flights .flight-tabs .flight-card {
       padding: 10px;
-      height: 400px;
+      height: 435px;
       width: 250px;
       background: white;
       border: 1px solid #ddd;
@@ -114,6 +114,13 @@ flights-item .flights {
         text-align: center;
         margin: -10px -10px 10px;
         background: #f7f7f7; }
+      flights-item .flights .flight-tabs .flight-card .header-logo-holder {
+        margin: 0px 0px 10px;
+        height: 60px;
+        position: relative;
+        background-size: contain;
+        background-position: top;
+        background-repeat: no-repeat; }
       flights-item .flights .flight-tabs .flight-card .header-logo {
         width: 100%;
         font-size: 10px; }
@@ -123,7 +130,8 @@ flights-item .flights {
         background: #2c80c0;
         color: white;
         text-align: center;
-        margin: -11px -11px 10px; }
+        margin: -11px -11px 10px;
+        /* border-bottom: 1px solid #ddd; */ }
       flights-item .flights .flight-tabs .flight-card .card-tofrom {
         text-align: center; }
       flights-item .flights .flight-tabs .flight-card .card-place {
