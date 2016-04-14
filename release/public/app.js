@@ -158,6 +158,32 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 }());
 
 (function () {
+    app.controller('EServiceCtrl', ['$scope', function ($scope) {
+        var showPopup = function () {
+            $('html, body').addClass('no-scroll');
+            $('.e-popup').velocity('stop').velocity('transition.fadeIn', 200);
+        };
+        var hidePopup = function () {
+            $('html, body').removeClass('no-scroll');
+            $('.e-popup').velocity('stop').velocity('transition.fadeOut', 200);
+        };
+
+        var events = function () {
+            $(document).on('click', '.show-e-popup', showPopup);
+            $(document).on('click', '.hide-e-popup', hidePopup);
+        };
+
+        var init = function () {
+            events();
+        };
+
+        init();
+
+        //$scope.showPopup = showPopup;
+    }]);
+}());
+
+(function () {
     app.controller('ESearchCtrl', ['$scope', function ($scope) {
 
         $scope.types = ["E-Services"];
@@ -321,83 +347,9 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 }());
 
 (function () {
-    app.controller('EServiceCtrl', ['$scope', function ($scope) {
-        var showPopup = function () {
-            $('html, body').addClass('no-scroll');
-            $('.e-popup').velocity('stop').velocity('transition.fadeIn', 200);
-        };
-        var hidePopup = function () {
-            $('html, body').removeClass('no-scroll');
-            $('.e-popup').velocity('stop').velocity('transition.fadeOut', 200);
-        };
-
-        var events = function () {
-            $(document).on('click', '.show-e-popup', showPopup);
-            $(document).on('click', '.hide-e-popup', hidePopup);
-        };
-
-        var init = function () {
-            events();
-        };
-
-        init();
-
-        //$scope.showPopup = showPopup;
-    }]);
-}());
-
-(function () {
     app.controller('GalleryCtrl', ['$scope', function ($scope) {
     }]);
 }());
-(function () {
-    app.controller('HeaderCtrl', ['$scope', function ($scope) {
-
-        var events = function () {
-            $(document).on('focus mouseover', '.search-box input', function () {
-                $('.search-box').css({'width': '230px'});
-            });
-
-            $(document).on('blur mouseleave', '.search-box input', function () {
-                $('.search-box').css({'width': ''});
-            });
-
-            $(document).on('mouseover', '.sub-item', function () {
-                if (!$(this).hasClass('active')) {
-                    $('.sub-item').removeClass('active');
-                    $('.sub-menu').velocity('stop');
-                    $('.sub-menu').hide();
-                    $(this).addClass('active');
-                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideDownIn', 300);
-                    $(this).find('[class^="col-"]').velocity('stop').velocity('transition.slideLeftIn', {
-                        stagger: 100,
-                        duration: 600
-                    });
-                }
-            });
-
-            $(document).on('mouseleave', '.sub-item', function () {
-                var that = this;
-                if ($(this).hasClass('active')) {
-                    $(that).removeClass('active');
-                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideUpOut', {delay:500,duration:300});
-                }
-            });
-
-            $(document).on('click', '.hide-alert', function () {
-                $('.hide-alert').velocity('stop').hide();
-            });
-        };
-
-        var init = function () {
-            events();
-        };
-
-        init();
-
-    }]);
-}());
-
 (function () {
     app.controller('BoxCtrl', ['$scope', '$element', 'PopupService', '$timeout', function ($scope, $element, PopupService, $timeout) {
         $scope.data = {};
@@ -506,6 +458,54 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
     }]);
 
     app.controller('DestinationCtrl', ['$scope', '$element', '$timeout', function ($scope, $element, $timeout) {
+
+    }]);
+}());
+
+(function () {
+    app.controller('HeaderCtrl', ['$scope', function ($scope) {
+
+        var events = function () {
+            $(document).on('focus mouseover', '.search-box input', function () {
+                $('.search-box').css({'width': '230px'});
+            });
+
+            $(document).on('blur mouseleave', '.search-box input', function () {
+                $('.search-box').css({'width': ''});
+            });
+
+            $(document).on('mouseover', '.sub-item', function () {
+                if (!$(this).hasClass('active')) {
+                    $('.sub-item').removeClass('active');
+                    $('.sub-menu').velocity('stop');
+                    $('.sub-menu').hide();
+                    $(this).addClass('active');
+                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideDownIn', 300);
+                    $(this).find('[class^="col-"]').velocity('stop').velocity('transition.slideLeftIn', {
+                        stagger: 100,
+                        duration: 600
+                    });
+                }
+            });
+
+            $(document).on('mouseleave', '.sub-item', function () {
+                var that = this;
+                if ($(this).hasClass('active')) {
+                    $(that).removeClass('active');
+                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideUpOut', {delay:500,duration:300});
+                }
+            });
+
+            $(document).on('click', '.hide-alert', function () {
+                $('.hide-alert').velocity('stop').hide();
+            });
+        };
+
+        var init = function () {
+            events();
+        };
+
+        init();
 
     }]);
 }());

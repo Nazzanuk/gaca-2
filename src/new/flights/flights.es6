@@ -24,7 +24,7 @@ app.directive('flightsItem', () => ({
         };
 
         var search = () => {
-            console.log('searching again...x')
+            console.log('searching again...x');
             Flights.loadFlights(this.flightsUrl);
         };
 
