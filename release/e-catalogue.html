@@ -1073,17 +1073,17 @@
                                      ng-repeat="flight in filteredItems = (flights.getFlights() | filter:flights.getQuery().flight | orderBy:orderOption)"
                                      ng-show="flights.showArrivals() && flight.ARR_DEP == 'A' || !flights.showArrivals() && flight.ARR_DEP == 'D'"
                                 >
-                                    <div class="card-header">
+                                    <div class="card-header" style="text-transform: uppercase">
                                         <span>{{flight.AIRLINE}}{{flight.FL_NUMBER}}</span>
                                     </div>
-                                    <div class="card-airline">{{flight.AIRLINE_DESCR}}</div>
+                                    <div class="card-airline" style="text-transform: uppercase">{{flight.AIRLINE_DESCR}}</div>
                                     <div class="header-logo-holder"
                                          style="background-image: url('{{'/Airlines/' + flight.AIRLINE + '.png'}}')"
                                     ></div>
 
                                     <div class="card-tofrom" ng-show="flight.ARR_DEP == 'A'">{{flights.stringFrom}}</div>
                                     <div class="card-tofrom" ng-hide="flight.ARR_DEP == 'A'">{{flights.stringTo}}</div>
-                                    <div class="card-place">{{flight.ROUTING_ENG}}</div>
+                                    <div class="card-place" style="text-transform: uppercase">{{flight.ROUTING_ENG}}</div>
 
                                     <hr>
                                     <div class="card-terminal">TERMINAL {{flight.TERMINAL}}</div>
@@ -1097,7 +1097,7 @@
 
                                     <!--<hr>-->
 
-                                    <div class="card-status" ng-show="flight.FL_STATUS_1 != 'NA' || flight.GATE_1 != 'NA'">
+                                    <div class="card-status" ng-show="flight.FL_STATUS_1 != 'NA' || flight.GATE_1 != 'NA'" style="text-transform: uppercase">
                                         <div class="card-gate" ng-show="flight.GATE_1 != 'NA'">{{flights.stringGate}} {{flight.GATE_1}}</div>
                                         <div class="card-text" ng-show="flight.FL_STATUS_1 != 'NA'">{{flight.FL_STATUS_1}}</div>
                                     </div>
