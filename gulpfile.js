@@ -8,9 +8,6 @@ var gulp = require('gulp'),
     istanbul = require('istanbul'),
     babel = require("gulp-babel"),
     ejs = require("gulp-ejs"),
-    jf = require('jsonfile'),
-    gutil = require('gulp-util'),
-    plumber = require('gulp-plumber'),
     webserver = require('gulp-webserver');
 
 var paths = {
@@ -47,7 +44,7 @@ gulp.task("gen-new-css", function () {
 });
 
 gulp.task("gen-new-js", function () {
-    return gulp.src(['src/new/**/*.es6', 'src/new/**/*.js'])
+    return gulp.src(['src/new/global/global.es6', 'src/new/**/*.es6', 'src/new/**/*.js'])
         .pipe(concat('new-app.js'))
         .pipe(babel())
         .on('error', catchError)

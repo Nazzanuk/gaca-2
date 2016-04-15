@@ -1,3 +1,5 @@
+"use strict";
+
 app.run(function () {
     $('body').addClass('active');
 

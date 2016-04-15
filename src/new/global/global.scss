@@ -15,4 +15,10 @@ body {
   &.dark {
 
   }
+
+  height: 25px;
+
+  input, select, textarea {
+    height: 25px;
+  }
 }

@@ -7,6 +7,7 @@ app.directive('flightsItem', () => ({
         lang: '@',
         flightsUrl: '@',
         airportsUrl: '@',
+        weatherUrl: '@',
 
         stringFlightInfo: '@',
         stringSearchText: '@',
@@ -47,6 +48,7 @@ app.directive('flightsItem', () => ({
 
         var init = () => {
             events();
+            Airports.setWeatherUrl(this.weatherUrl);
             Airports.loadAirports(this.airportsUrl);
 
             if (Flights.getQuery().airport) Flights.loadFlights(this.flightsUrl);

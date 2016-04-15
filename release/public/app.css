@@ -65,6 +65,7 @@ ul {
 
 .in {
   line-height: 25px;
+  height: 25px;
   display: inline-block;
   position: relative;
   border-radius: 4px;
@@ -75,6 +76,7 @@ ul {
     display: block;
     width: auto; }
   .in input, .in select, .in textarea {
+    height: 25px;
     line-height: 25px;
     padding: 0 10px;
     width: 100%;

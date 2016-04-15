@@ -16,7 +16,6 @@ body {
 
   letter-spacing: -0.3px;
 
-
   background-image: url('img/back-6.jpg') !important;
   background-repeat: no-repeat;
   background-position: top !important;
@@ -78,7 +77,7 @@ ul {
   padding-left: 20px;
 }
 
-[class^=col-]  {
+[class^=col-] {
   .arabic & {
     float: right;
 
@@ -92,6 +91,7 @@ ul {
   //  background: $light-grey;
   //  height: 25px;
   line-height: 25px;
+  height: 25px;
   display: inline-block;
   position: relative;
   border-radius: 4px;
@@ -107,7 +107,7 @@ ul {
   }
 
   input, select, textarea {
-    //    height: 25px;
+    height: 25px;
     line-height: 25px;
     padding: 0 10px;
     width: 100%;
@@ -472,13 +472,11 @@ img {
   background: white !important;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
   padding: 45px 10px 1px;
-//  min-height: 30vh;
+  //  min-height: 30vh;
 
   @media (max-width: 991px) {
     padding-top: 15px;
   }
-
-
 
   .box-highlight {
     border-left: 3px solid $prim-light;
@@ -486,9 +484,9 @@ img {
     margin-bottom: 5px;
     color: $prim-dark;
     transition: .2s;
-//    white-space: nowrap;
-//    text-overflow: ellipsis;
-//    overflow: hidden;
+    //    white-space: nowrap;
+    //    text-overflow: ellipsis;
+    //    overflow: hidden;
     color: white;
 
     &.grey {
@@ -538,14 +536,14 @@ img {
 .gaca-alert {
   //      background: rgba(0, 0, 0, 0.4);
   background: #ce1029;
-  font-weight:bold;
-  font-size:14px;
+  font-weight: bold;
+  font-size: 14px;
   //      height: 35px;
   padding: 10px 0px;
   line-height: 1.2;
   color: white;
-//  position:relative;
-//  z-index:-2;
+  //  position:relative;
+  //  z-index:-2;
   margin-top: 35px;
 
   &.green {
