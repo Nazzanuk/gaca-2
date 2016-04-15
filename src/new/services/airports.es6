@@ -5,16 +5,13 @@ app.service('Airports', ($http, Translation) => {
 
     var setWeatherUrl = (string) => weatherUrl = string;
 
-    var getWeather = (index) => $http.get(`${weatherUrl}&lat=${airports[index].coords.lat}&lon=${airports[index].coords.lon}`).then((response) => {
-        airports[index].weather = response.data;
-        console.log('weather', response.data);
-        console.log('airports', airports);
-    });
-
-    //return $http.get(WEATHER_SERVICE_URL + "&lat=" + dest.coords[0] + "&lon=" + dest.coords[1] + "&locale=" + CURRENT_LOCALE).then(function (response) {
-    //    console.log(dest, response.data);
-    //    weather = response.data;
-    //});
+    var getWeather = (index) => {
+        if (weatherUrl) $http.get(`${weatherUrl}&lat=${airports[index].coords.lat}&lon=${airports[index].coords.lon}`).then((response) => {
+            airports[index].weather = response.data;
+            console.log('weather', response.data);
+            console.log('airports', airports);
+        });
+    };
 
     var geocode = (index) => {
         if (airports[index].coords) getWeather(index);
