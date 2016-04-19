@@ -9,58 +9,6 @@ app.run(function () {
         // or $(this).css({visibility:"hidden"});
     });
 });
-app.directive('boxItem', function () {
-    return {
-        controllerAs: 'box',
-        templateUrl: 'box-item.html',
-        bindToController: true,
-        transclude: true,
-        scope: {
-            header: '@',
-            styleClass: '@',
-            icon: '@',
-            active: '='
-        },
-        controller: function controller($scope, $element, $timeout) {
-            var _this = this;
-
-            var visible = false;
-
-            this.active = this.active == undefined ? false : this.active;
-
-            //var showPopup = function () {
-            //    PopupService.setPopupHeader($element.find('.popup-title').text());
-            //    PopupService.setPopupContent($element.find('.popup-content').html());
-            //    PopupService.showPopup();
-            //};
-
-            var changeActive = function changeActive() {
-                _this.active = !_this.active;
-
-                console.log('zzz');
-                $timeout(function () {
-                    return google.maps.event.trigger(map, 'resize');
-                }, 50);
-            };
-
-            var init = function init() {
-                $timeout(function () {
-                    return visible = true;
-                });
-            };
-
-            init();
-
-            _.extend(this, {
-                changeActive: changeActive,
-                isVisible: function isVisible() {
-                    return visible;
-                }
-                //showPopup
-            });
-        }
-    };
-});
 app.directive('flightsItem', function () {
     return {
         controllerAs: 'flights',
@@ -91,7 +39,7 @@ app.directive('flightsItem', function () {
             stringSort: '@'
         },
         controller: function controller($scope, $element, $timeout, Flights, Airports, Translation) {
-            var _this2 = this;
+            var _this = this;
 
             var _showArrivals = true;
 
@@ -115,15 +63,15 @@ app.directive('flightsItem', function () {
 
             var search = function search() {
                 console.log('searching again...x');
-                Flights.loadFlights(_this2.flightsUrl);
+                Flights.loadFlights(_this.flightsUrl);
             };
 
             var init = function init() {
                 events();
-                Airports.setWeatherUrl(_this2.weatherUrl);
-                Airports.loadAirports(_this2.airportsUrl);
+                Airports.setWeatherUrl(_this.weatherUrl);
+                Airports.loadAirports(_this.airportsUrl);
 
-                if (Flights.getQuery().airport) Flights.loadFlights(_this2.flightsUrl);else Flights.loadFlights(_this2.flightsUrl);
+                if (Flights.getQuery().airport) Flights.loadFlights(_this.flightsUrl);else Flights.loadFlights(_this.flightsUrl);
             };
 
             var getFilteredFlights = function getFilteredFlights() {
@@ -166,7 +114,7 @@ app.directive('searchFlightBoxItem', function () {
             stringArrivals: '@'
         },
         controller: function controller(Airports, Flights, Translation) {
-            var _this3 = this;
+            var _this2 = this;
 
             var calcTemp = function calcTemp(temp) {
                 return Math.round(temp - 273.15);
@@ -179,8 +127,8 @@ app.directive('searchFlightBoxItem', function () {
             };
 
             var init = function init() {
-                Airports.setWeatherUrl(_this3.weatherUrl);
-                Airports.loadAirports(_this3.airportsUrl);
+                Airports.setWeatherUrl(_this2.weatherUrl);
+                Airports.loadAirports(_this2.airportsUrl);
             };
 
             init();
@@ -188,12 +136,64 @@ app.directive('searchFlightBoxItem', function () {
             _.extend(this, {
                 getQuery: Flights.getQuery,
                 externalSearch: function externalSearch() {
-                    return Flights.externalSearch(_this3.searchUrl);
+                    return Flights.externalSearch(_this2.searchUrl);
                 },
                 getAirports: Airports.getAirports,
                 geocode: Airports.geocode,
                 changeSelect: changeSelect,
                 calcTemp: calcTemp
+            });
+        }
+    };
+});
+app.directive('boxItem', function () {
+    return {
+        controllerAs: 'box',
+        templateUrl: 'box-item.html',
+        bindToController: true,
+        transclude: true,
+        scope: {
+            header: '@',
+            styleClass: '@',
+            icon: '@',
+            active: '='
+        },
+        controller: function controller($scope, $element, $timeout) {
+            var _this3 = this;
+
+            var visible = false;
+
+            this.active = this.active == undefined ? false : this.active;
+
+            //var showPopup = function () {
+            //    PopupService.setPopupHeader($element.find('.popup-title').text());
+            //    PopupService.setPopupContent($element.find('.popup-content').html());
+            //    PopupService.showPopup();
+            //};
+
+            var changeActive = function changeActive() {
+                _this3.active = !_this3.active;
+
+                console.log('zzz');
+                $timeout(function () {
+                    return google.maps.event.trigger(map, 'resize');
+                }, 50);
+            };
+
+            var init = function init() {
+                $timeout(function () {
+                    return visible = true;
+                });
+            };
+
+            init();
+
+            _.extend(this, {
+                changeActive: changeActive,
+                isVisible: function isVisible() {
+                    return visible;
+                }
+                //showPopup
             });
         }
     };

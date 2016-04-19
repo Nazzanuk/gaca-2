@@ -46,7 +46,7 @@
                                     <p style="text-transform:uppercase;">{{flights.stringSort}}</p>
 
                                     <div class="in block">
-                                        <p style="display: inline-block;position: absolute;right:20px;line-height:40px;pointer-events: none;">&nbsp; <i class="fa fa-caret-down"></i></p>
+                                        <p class="sort-caret {{$root.getLang()}}">&nbsp; <i class="fa fa-caret-down"></i></p>
                                         <select style="text-transform:uppercase;" ng-model="orderOption" ng-init="orderOption = 'EST_TIME'">
                                             <option value="EST_TIME">{{flights.stringTime}}</option>
                                             <option value="FL_NUMBER">{{flights.stringFlightNumber}}</option>

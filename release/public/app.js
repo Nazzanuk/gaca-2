@@ -351,6 +351,91 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
     }]);
 }());
 (function () {
+    app.controller('HeaderCtrl', ['$scope', function ($scope) {
+
+        var events = function () {
+            $(document).on('focus mouseover', '.search-box input', function () {
+                $('.search-box').css({'width': '230px'});
+            });
+
+            $(document).on('blur mouseleave', '.search-box input', function () {
+                $('.search-box').css({'width': ''});
+            });
+
+            $(document).on('mouseover', '.sub-item', function () {
+                if (!$(this).hasClass('active')) {
+                    $('.sub-item').removeClass('active');
+                    $('.sub-menu').velocity('stop');
+                    $('.sub-menu').hide();
+                    $(this).addClass('active');
+                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideDownIn', 300);
+                    $(this).find('[class^="col-"]').velocity('stop').velocity('transition.slideLeftIn', {
+                        stagger: 100,
+                        duration: 600
+                    });
+                }
+            });
+
+            $(document).on('mouseleave', '.sub-item', function () {
+                var that = this;
+                if ($(this).hasClass('active')) {
+                    $(that).removeClass('active');
+                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideUpOut', {delay:500,duration:300});
+                }
+            });
+
+            $(document).on('click', '.hide-alert', function () {
+                $('.hide-alert').velocity('stop').hide();
+            });
+        };
+
+        var init = function () {
+            events();
+        };
+
+        init();
+
+    }]);
+}());
+
+(function () {
+    app.controller('LoginCtrl', ['$scope', 'PopupService', function ($scope, PopupService) {
+        var showLoginPopup = function () {
+            $('.login-popup').velocity('stop').velocity('transition.fadeIn', 200);
+            $('html').addClass('no-scroll');
+        };
+        var hideLoginPopup = function () {
+            $('.login-popup').velocity('stop').velocity('transition.fadeOut', 200);
+            $('html').removeClass('no-scroll');
+        };
+
+        var showRegisterPopup = function () {
+            $('.register-popup').velocity('stop').velocity('transition.fadeIn', 200);
+            $('html').addClass('no-scroll');
+        };
+        var hideRegisterPopup = function () {
+            $('.register-popup').velocity('stop').velocity('transition.fadeOut', 200);
+            $('html').removeClass('no-scroll');
+        };
+
+        var events = function () {
+            $(document).on('click', '.show-login-popup', showLoginPopup);
+            $(document).on('click', '.hide-login-popup', hideLoginPopup);
+            $(document).on('click', '.show-register-popup', showRegisterPopup);
+            $(document).on('click', '.hide-register-popup', hideRegisterPopup);
+        };
+
+        var init = function () {
+            events();
+        };
+
+        init();
+
+        //$scope.showPopup = showPopup;
+    }]);
+}());
+
+(function () {
     app.controller('BoxCtrl', ['$scope', '$element', 'PopupService', '$timeout', function ($scope, $element, PopupService, $timeout) {
         $scope.data = {};
         $scope.data.active = true;
@@ -463,135 +548,6 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 }());
 
 (function () {
-    app.controller('LoginCtrl', ['$scope', 'PopupService', function ($scope, PopupService) {
-        var showLoginPopup = function () {
-            $('.login-popup').velocity('stop').velocity('transition.fadeIn', 200);
-            $('html').addClass('no-scroll');
-        };
-        var hideLoginPopup = function () {
-            $('.login-popup').velocity('stop').velocity('transition.fadeOut', 200);
-            $('html').removeClass('no-scroll');
-        };
-
-        var showRegisterPopup = function () {
-            $('.register-popup').velocity('stop').velocity('transition.fadeIn', 200);
-            $('html').addClass('no-scroll');
-        };
-        var hideRegisterPopup = function () {
-            $('.register-popup').velocity('stop').velocity('transition.fadeOut', 200);
-            $('html').removeClass('no-scroll');
-        };
-
-        var events = function () {
-            $(document).on('click', '.show-login-popup', showLoginPopup);
-            $(document).on('click', '.hide-login-popup', hideLoginPopup);
-            $(document).on('click', '.show-register-popup', showRegisterPopup);
-            $(document).on('click', '.hide-register-popup', hideRegisterPopup);
-        };
-
-        var init = function () {
-            events();
-        };
-
-        init();
-
-        //$scope.showPopup = showPopup;
-    }]);
-}());
-
-(function () {
-    app.controller('HeaderCtrl', ['$scope', function ($scope) {
-
-        var events = function () {
-            $(document).on('focus mouseover', '.search-box input', function () {
-                $('.search-box').css({'width': '230px'});
-            });
-
-            $(document).on('blur mouseleave', '.search-box input', function () {
-                $('.search-box').css({'width': ''});
-            });
-
-            $(document).on('mouseover', '.sub-item', function () {
-                if (!$(this).hasClass('active')) {
-                    $('.sub-item').removeClass('active');
-                    $('.sub-menu').velocity('stop');
-                    $('.sub-menu').hide();
-                    $(this).addClass('active');
-                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideDownIn', 300);
-                    $(this).find('[class^="col-"]').velocity('stop').velocity('transition.slideLeftIn', {
-                        stagger: 100,
-                        duration: 600
-                    });
-                }
-            });
-
-            $(document).on('mouseleave', '.sub-item', function () {
-                var that = this;
-                if ($(this).hasClass('active')) {
-                    $(that).removeClass('active');
-                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideUpOut', {delay:500,duration:300});
-                }
-            });
-
-            $(document).on('click', '.hide-alert', function () {
-                $('.hide-alert').velocity('stop').hide();
-            });
-        };
-
-        var init = function () {
-            events();
-        };
-
-        init();
-
-    }]);
-}());
-
-app.controller('MenuCtrl', ['$scope', function ($scope) {
-
-    var showing = false;
-
-    var toggleSidebar = function () {
-        if (showing) hideSidebar();
-        else showSidebar();
-    };
-
-    var showSidebar = function () {
-        $('.content-area, .menu').addClass('active');
-        $('.menu-overlay').addClass('active');
-        showing = true;
-    };
-
-    var hideSidebar = function () {
-        $('.content-area, .menu').removeClass('active');
-        $('.menu-overlay').removeClass('active');
-        showing = false;
-    };
-
-    var events = function () {
-        $(document).on('click', '.header-menu', toggleSidebar);
-        $(document).on('click', '.menu-overlay, .header-close', hideSidebar);
-    };
-
-    var init = function () {
-        events();
-    };
-
-    init();
-
-}]);
-
-app.controller('MenuItemCtrl', ['$scope', function ($scope) {
-
-    $scope.active;
-
-    $scope.toggleActive = function () {
-        $scope.active = !$scope.active;
-    };
-
-}]);
-
-(function () {
     app.controller('PopupCtrl', ['$scope', 'PopupService', '$sce', function ($scope, PopupService, $sce) {
 
         var getPopupContent =  function () {
@@ -667,101 +623,49 @@ app.controller('MenuItemCtrl', ['$scope', function ($scope) {
     }]);
 }());
 
+app.controller('MenuCtrl', ['$scope', function ($scope) {
 
-(function () {
-    app.controller('SearchCtrl', ['$scope', '$timeout', '$http', function ($scope, $timeout, $http) {
+    var showing = false;
 
-        //var ServiceUrl = "CHANGE_ME!";
+    var toggleSidebar = function () {
+        if (showing) hideSidebar();
+        else showSidebar();
+    };
 
-        var results;
-        var loading = false;
-        $scope.types = types;
-        $scope.audiences = audiences;
-        $scope.sectors = sectors;
+    var showSidebar = function () {
+        $('.content-area, .menu').addClass('active');
+        $('.menu-overlay').addClass('active');
+        showing = true;
+    };
 
-        $scope.set = function (key, value) {
-            console.log(key, value);
-            $scope.filters[key] = value;
-        };
+    var hideSidebar = function () {
+        $('.content-area, .menu').removeClass('active');
+        $('.menu-overlay').removeClass('active');
+        showing = false;
+    };
 
-        $scope.search = "";
+    var events = function () {
+        $(document).on('click', '.header-menu', toggleSidebar);
+        $(document).on('click', '.menu-overlay, .header-close', hideSidebar);
+    };
 
-        $scope.filters = {
-            type: 0,
-            audience: 0,
-            sector: 0
-        };
+    var init = function () {
+        events();
+    };
 
-        $scope.$watch('filters', function () {
-            filterResults();
-        }, true);
+    init();
 
-        $(document).on("click", ".search-after", function () {
-            console.log('.search-after');
-            console.log($(this).prev());
-            $(this).prev().click();
-        });
+}]);
 
-        $(document).on("click", "#searchBtn", function () {
-            getResults($('#searchInput').val());
-        });
+app.controller('MenuItemCtrl', ['$scope', function ($scope) {
 
-        var isLoading = function () {
-            return loading;
-        };
+    $scope.active;
 
-        var getResults = function (searchTerm) {
-            $scope.currentResults = [];
-            loading = true;
-            if (searchTerm != undefined) {
-                searchTerm = '&search=' + searchTerm
-            } else {
-                searchTerm = '';
-            }
-            //$timeout(function () {
-            $http.get(SEARCH_SERVICE_URL + searchTerm).then(function (response) {
-                loading = false;
-                results = response.data.results;
-                filterResults();
-                console.log(results)
-            });
-            //}, 2000);
+    $scope.toggleActive = function () {
+        $scope.active = !$scope.active;
+    };
 
-        };
-
-        var filterResults = function () {
-            var filters = $scope.filters;
-            $scope.currentResults = _.filter(results, function (result) {
-                var flag = true;
-
-                //flag = flag * (filters.search == "" || result.title.toLowerCase().indexOf(filters.search.toLowerCase()) > -1);
-                flag = flag * ($scope.types[filters.type] == "All Types" || $scope.types[filters.type] == result.type);
-                flag = flag * ($scope.audiences[filters.audience] == "All Audiences" || $scope.audiences[filters.audience] == result.audience);
-                flag = flag * ($scope.sectors[filters.sector] == "All Sectors" || $scope.sectors[filters.sector] == result.sector);
-
-                return flag;
-            });
-            console.log($scope.currentResults);
-
-            setTimeout(function () {
-                $('.result').velocity('stop').velocity('transition.flipYIn', {stagger: 50});
-            }, 50)
-        };
-
-        var init = function () {
-            if (window.SEARCH_SERVICE_URL == undefined) {
-                window.SEARCH_SERVICE_URL = "http://localhost:3000/gaca";
-            }
-            getResults($('#searchInput').val());
-        };
-
-        init();
-
-        $scope.getResults = getResults;
-        $scope.isLoading = isLoading;
-
-    }]);
-}());
+}]);
 
 (function () {
     app.controller('SliderCtrl', ['$scope', '$element', '$interval', function ($scope, $element, $timeout) {
@@ -890,6 +794,7 @@ app.controller('MenuItemCtrl', ['$scope', function ($scope) {
     }]);
 }());
 
+
 app.controller('SmallLoginCtrl', function ($scope, $timeout, $http) {
 
     var events = function () {
@@ -911,3 +816,98 @@ app.controller('SmallLoginCtrl', function ($scope, $timeout, $http) {
     //$scope.getResults = getResults;
 
 });
+
+(function () {
+    app.controller('SearchCtrl', ['$scope', '$timeout', '$http', function ($scope, $timeout, $http) {
+
+        //var ServiceUrl = "CHANGE_ME!";
+
+        var results;
+        var loading = false;
+        $scope.types = types;
+        $scope.audiences = audiences;
+        $scope.sectors = sectors;
+
+        $scope.set = function (key, value) {
+            console.log(key, value);
+            $scope.filters[key] = value;
+        };
+
+        $scope.search = "";
+
+        $scope.filters = {
+            type: 0,
+            audience: 0,
+            sector: 0
+        };
+
+        $scope.$watch('filters', function () {
+            filterResults();
+        }, true);
+
+        $(document).on("click", ".search-after", function () {
+            console.log('.search-after');
+            console.log($(this).prev());
+            $(this).prev().click();
+        });
+
+        $(document).on("click", "#searchBtn", function () {
+            getResults($('#searchInput').val());
+        });
+
+        var isLoading = function () {
+            return loading;
+        };
+
+        var getResults = function (searchTerm) {
+            $scope.currentResults = [];
+            loading = true;
+            if (searchTerm != undefined) {
+                searchTerm = '&search=' + searchTerm
+            } else {
+                searchTerm = '';
+            }
+            //$timeout(function () {
+            $http.get(SEARCH_SERVICE_URL + searchTerm).then(function (response) {
+                loading = false;
+                results = response.data.results;
+                filterResults();
+                console.log(results)
+            });
+            //}, 2000);
+
+        };
+
+        var filterResults = function () {
+            var filters = $scope.filters;
+            $scope.currentResults = _.filter(results, function (result) {
+                var flag = true;
+
+                //flag = flag * (filters.search == "" || result.title.toLowerCase().indexOf(filters.search.toLowerCase()) > -1);
+                flag = flag * ($scope.types[filters.type] == "All Types" || $scope.types[filters.type] == result.type);
+                flag = flag * ($scope.audiences[filters.audience] == "All Audiences" || $scope.audiences[filters.audience] == result.audience);
+                flag = flag * ($scope.sectors[filters.sector] == "All Sectors" || $scope.sectors[filters.sector] == result.sector);
+
+                return flag;
+            });
+            console.log($scope.currentResults);
+
+            setTimeout(function () {
+                $('.result').velocity('stop').velocity('transition.flipYIn', {stagger: 50});
+            }, 50)
+        };
+
+        var init = function () {
+            if (window.SEARCH_SERVICE_URL == undefined) {
+                window.SEARCH_SERVICE_URL = "http://localhost:3000/gaca";
+            }
+            getResults($('#searchInput').val());
+        };
+
+        init();
+
+        $scope.getResults = getResults;
+        $scope.isLoading = isLoading;
+
+    }]);
+}());

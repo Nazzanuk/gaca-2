@@ -12,17 +12,6 @@ body {
   .in input, .in select, .in textarea {
     height: 25px; }
 
-box-item .new-box {
-  opacity: 0;
-  -webkit-transition: .3s;
-          transition: .3s; }
-  box-item .new-box .box-content {
-    height: 0; }
-  box-item .new-box.visible {
-    opacity: 1; }
-    box-item .new-box.visible .box-content {
-      height: auto; }
-
 flights-item .flights {
   padding-top: 50px; }
   flights-item .flights .choose-airport {
@@ -38,6 +27,16 @@ flights-item .flights {
     cursor: pointer; }
   flights-item .flights hr {
     margin: 10px 0; }
+  flights-item .flights .sort-caret {
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    line-height: 40px;
+    pointer-events: none; }
+    flights-item .flights .sort-caret.ar {
+      left: 20px;
+      right: initial;
+      right: auto; }
   flights-item .flights .flight-tabs {
     margin-top: 20px; }
     flights-item .flights .flight-tabs .tab-headers {
@@ -249,3 +248,14 @@ search-flight-box-item .search-flight-box .weather-icon {
   search-flight-box-item .search-flight-box .weather-icon img {
     height: 66px;
     text-align: center; }
+
+box-item .new-box {
+  opacity: 0;
+  -webkit-transition: .3s;
+          transition: .3s; }
+  box-item .new-box .box-content {
+    height: 0; }
+  box-item .new-box.visible {
+    opacity: 1; }
+    box-item .new-box.visible .box-content {
+      height: auto; }

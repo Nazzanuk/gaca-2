@@ -3,7 +3,7 @@ flights-item {
     padding-top: 50px;
 
     .choose-airport {
-      appearance:none;
+      appearance: none;
       border: none;
       background: none;
 
@@ -16,6 +16,19 @@ flights-item {
 
     hr {
       margin: 10px 0;
+    }
+
+    .sort-caret {
+      display: inline-block;
+      position: absolute;
+      right: 20px;
+      line-height: 40px;
+      pointer-events: none;
+      &.ar {
+        left:20px;
+        right: initial;
+        right: auto;
+      }
     }
 
     .flight-tabs {
@@ -144,8 +157,8 @@ flights-item {
           margin: 0px 0px 10px;
           height: 60px;
           position: relative;
-          background-size:contain;
-          background-position:top;
+          background-size: contain;
+          background-position: top;
           background-repeat: no-repeat;
           //border-top: 1px solid #ddd;
           //border-bottom: 1px solid #ddd;
@@ -153,7 +166,7 @@ flights-item {
         }
 
         .header-logo {
-          width:100%;
+          width: 100%;
           //position:absolute;
           //left:5px;
           //top:5px;
