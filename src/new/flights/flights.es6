@@ -55,12 +55,18 @@ app.directive('flightsItem', () => ({
             else Flights.loadFlights(this.flightsUrl);
         };
 
+        var getFilteredFlights = () => {
+            if (showArrivals) return _.filter(Flights.getFlights(), {ARR_DEP:"A"});
+            else return _.filter(Flights.getFlights(), {ARR_DEP:"D"});
+        };
+
         init();
 
         _.extend(this, {
             search,
             getTime,
             getAirport,
+            getFilteredFlights,
             getAirports: Airports.getAirports,
             getQuery: Flights.getQuery,
             getFlights: Flights.getFlights,

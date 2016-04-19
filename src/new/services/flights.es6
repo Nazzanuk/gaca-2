@@ -12,7 +12,7 @@ app.service('Flights', ($http, Airports, Translation) => {
         console.log(' Airports.getAirports()', Airports.getAirports());
         //if (!query.airport) query.airport = Airports.loadAirports().then(() => {query.airport = Airports.getAirports()[0].code, loadFlights()});
 
-        flights = [];
+        flights = 'loading';
         return $http.get(`${url}airportCode=${query.airport}`).then((response) => {
             flights = response.data.FLIGHT;
             for (var i in flights) {

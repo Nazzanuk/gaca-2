@@ -126,12 +126,17 @@ app.directive('flightsItem', function () {
                 if (Flights.getQuery().airport) Flights.loadFlights(_this2.flightsUrl);else Flights.loadFlights(_this2.flightsUrl);
             };
 
+            var getFilteredFlights = function getFilteredFlights() {
+                if (_showArrivals) return _.filter(Flights.getFlights(), { ARR_DEP: "A" });else return _.filter(Flights.getFlights(), { ARR_DEP: "D" });
+            };
+
             init();
 
             _.extend(this, {
                 search: search,
                 getTime: getTime,
                 getAirport: getAirport,
+                getFilteredFlights: getFilteredFlights,
                 getAirports: Airports.getAirports,
                 getQuery: Flights.getQuery,
                 getFlights: Flights.getFlights,
@@ -141,54 +146,6 @@ app.directive('flightsItem', function () {
                 changeShowing: function changeShowing() {
                     return _showArrivals = !_showArrivals;
                 }
-            });
-        }
-    };
-});
-app.directive('searchFlightBoxItem', function () {
-    return {
-        controllerAs: 'search',
-        templateUrl: 'search-flight-box-item.html',
-        bindToController: true,
-        scope: {
-            airportsUrl: '@',
-            searchUrl: '@',
-            weatherUrl: '@',
-            lang: '@',
-            stringChoose: '@',
-            stringFlightNo: '@',
-            stringSearch: '@',
-            stringArrivals: '@'
-        },
-        controller: function controller(Airports, Flights, Translation) {
-            var _this3 = this;
-
-            var calcTemp = function calcTemp(temp) {
-                return Math.round(temp - 273.15);
-            };
-
-            var changeSelect = function changeSelect(airport) {
-                console.log('changeSelect', airport);
-                Airports.geocode(Airports.getAirports().indexOf(airport));
-                Flights.getQuery().airport = airport.code;
-            };
-
-            var init = function init() {
-                Airports.setWeatherUrl(_this3.weatherUrl);
-                Airports.loadAirports(_this3.airportsUrl);
-            };
-
-            init();
-
-            _.extend(this, {
-                getQuery: Flights.getQuery,
-                externalSearch: function externalSearch() {
-                    return Flights.externalSearch(_this3.searchUrl);
-                },
-                getAirports: Airports.getAirports,
-                geocode: Airports.geocode,
-                changeSelect: changeSelect,
-                calcTemp: calcTemp
             });
         }
     };
@@ -280,7 +237,7 @@ app.service('Flights', function ($http, Airports, Translation) {
         console.log(' Airports.getAirports()', Airports.getAirports());
         //if (!query.airport) query.airport = Airports.loadAirports().then(() => {query.airport = Airports.getAirports()[0].code, loadFlights()});
 
-        flights = [];
+        flights = 'loading';
         return $http.get(url + 'airportCode=' + query.airport).then(function (response) {
             flights = response.data.FLIGHT;
             for (var i in flights) {
@@ -369,5 +326,53 @@ app.service('Translation', function ($rootScope) {
         addTranslation: addTranslation,
         getTranslation: getTranslation,
         setLang: setLang
+    };
+});
+app.directive('searchFlightBoxItem', function () {
+    return {
+        controllerAs: 'search',
+        templateUrl: 'search-flight-box-item.html',
+        bindToController: true,
+        scope: {
+            airportsUrl: '@',
+            searchUrl: '@',
+            weatherUrl: '@',
+            lang: '@',
+            stringChoose: '@',
+            stringFlightNo: '@',
+            stringSearch: '@',
+            stringArrivals: '@'
+        },
+        controller: function controller(Airports, Flights, Translation) {
+            var _this3 = this;
+
+            var calcTemp = function calcTemp(temp) {
+                return Math.round(temp - 273.15);
+            };
+
+            var changeSelect = function changeSelect(airport) {
+                console.log('changeSelect', airport);
+                Airports.geocode(Airports.getAirports().indexOf(airport));
+                Flights.getQuery().airport = airport.code;
+            };
+
+            var init = function init() {
+                Airports.setWeatherUrl(_this3.weatherUrl);
+                Airports.loadAirports(_this3.airportsUrl);
+            };
+
+            init();
+
+            _.extend(this, {
+                getQuery: Flights.getQuery,
+                externalSearch: function externalSearch() {
+                    return Flights.externalSearch(_this3.searchUrl);
+                },
+                getAirports: Airports.getAirports,
+                geocode: Airports.geocode,
+                changeSelect: changeSelect,
+                calcTemp: calcTemp
+            });
+        }
     };
 });

@@ -1001,7 +1001,7 @@
         <div class="box">
 
             <div class="flights">
-                <h1>Flight Information</h1>
+                <h1>{{flights.stringFlightInfo}}</h1>
                 <hr>
 
                 <select ng-options="airport.code as airport.name for airport in flights.getAirports()"
@@ -1010,8 +1010,7 @@
                         ng-change="flights.search()"
                         style="padding-right: 20px;"
                         ng-hide="$root.getLang() == 'ar'"
-                >
-                </select>
+                ></select>
 
                 <select ng-options="airport.code as airport.arabicName for airport in flights.getAirports()"
                         class="choose-airport"
@@ -1019,12 +1018,9 @@
                         ng-change="flights.search()"
                         style="padding-right: 20px;"
                         ng-show="$root.getLang() == 'ar'"
-                >
-                </select>
-
+                ></select>
 
                 <h2 style="display: inline-block;position: relative;left:-20px;pointer-events: none;">&nbsp; <i class="fa fa-caret-down"></i></h2>
-
 
                 <div class="flight-tabs">
                     <div class="tab-headers">
@@ -1062,15 +1058,18 @@
 
                         <div class="flight-cards">
                             <div>
-                                <div ng-hide="flights.getFlights().length || flights.getFlights() == undefined">
+                                <div ng-show="flights.getFlights() == 'loading'">
                                     <i class="fa fa-spin fa-cog fa-3x"></i>
                                 </div>
-                                <div ng-hide="filteredItems.length || !(flights.getFlights().length) || flights.getFlights() == undefined">
+                                <!--filteredItems: {{filteredItems}} <br><br>-->
+                                <!--filteredItems.length: {{filteredItems.length}} <br><br>-->
+                                <!--flights.getFlights().length: {{flights.getFlights().length}} <br><br>-->
+                                <!--flights.getFlights(): {{flights.getFlights()}} <br><br>-->
+                                <div ng-show="filteredItems.length == 0 || filteredItems.length == undefined">
                                     {{flights.stringNoResults}}
                                 </div>
                                 <div class="flight-card"
-                                     ng-repeat="flight in filteredItems = (flights.getFlights() | filter:flights.getQuery().flight | orderBy:orderOption)"
-                                     ng-show="flights.showArrivals() && flight.ARR_DEP == 'A' || !flights.showArrivals() && flight.ARR_DEP == 'D'"
+                                     ng-repeat="flight in filteredItems = (flights.getFilteredFlights() | filter:flights.getQuery().flight | orderBy:orderOption)"
                                 >
                                     <div class="card-header" style="text-transform: uppercase">
                                         <span>{{flight.AIRLINE}}{{flight.FL_NUMBER}}</span>
@@ -1085,7 +1084,7 @@
                                     <div class="card-place" style="text-transform: uppercase">{{flight.ROUTING_ENG}}</div>
 
                                     <hr>
-                                    <div class="card-terminal">TERMINAL {{flight.TERMINAL}}</div>
+                                    <div class="card-terminal">{{flights.stringTerminal}} {{flight.TERMINAL}}</div>
                                     <div class="card-terminal"><span ng-show="flight.BAGGAGE_1 != 'NA'" style="text-transform: uppercase">{{flights.stringBaggage}} {{flight.BAGGAGE_1}}</span></div>
                                     <hr>
 
