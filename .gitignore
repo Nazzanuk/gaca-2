@@ -1,7 +1,7 @@
 /node_modules/*
 /.idea
 /src/bower-components
-/dist
+/release
 *.mp4
 #/build
 
