@@ -22,3 +22,16 @@ body {
     height: 25px;
   }
 }
+
+.btn-no-border {
+  line-height: 25px;
+  border: none; }
+
+.gaca-select::-ms-expand {
+  display: none; }
+
+input, textarea, select {
+  vertical-align: top; }
+
+.gaca-btn {
+  height: 25px; }

@@ -3,7 +3,8 @@
         <div class="search-flight-box clearfix">
 
             <div class="in block">
-                <select ng-options="airport.name for airport in search.getAirports()"
+                <select class="gaca-select"
+                        ng-options="airport.name for airport in search.getAirports()"
                         ng-model="airport"
                         ng-change="search.changeSelect(airport)"
                         ng-hide="$root.getLang() == 'ar'"
@@ -30,7 +31,7 @@
                         <input type="search" placeholder="{{search.stringFlightNo}}" ng-model="search.getQuery().flight">
                     </div>
                     <div class="col-xs-4">
-                        <div class="gaca-btn" style="width: 100%" ng-click="search.externalSearch($event)">{{search.stringSearch}}</div>
+                        <div class="gaca-btn btn-no-border" style="width: 100%" ng-click="search.externalSearch($event)">{{search.stringSearch}}</div>
                     </div>
                 </div>
             </div>
