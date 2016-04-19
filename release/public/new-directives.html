@@ -85,7 +85,7 @@
                                 <!--flights.getFlights().length: {{flights.getFlights().length}} <br><br>-->
                                 <!--flights.getFlights(): {{flights.getFlights()}} <br><br>-->
                                 <div ng-show="filteredItems.length == 0 || filteredItems.length == undefined">
-                                    {{flights.stringNoResults}}
+                                    <strong>{{flights.stringNoResults}}</strong>
                                 </div>
                                 <div class="flight-card"
                                      ng-repeat="flight in filteredItems = (flights.getFilteredFlights() | filter:flights.getQuery().flight | orderBy:orderOption)"

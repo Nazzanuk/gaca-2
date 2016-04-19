@@ -111,6 +111,7 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 });
 
 
+
 (function () {
     app.controller('ECatalogueCtrl', ['$scope', '$element', '$interval', function ($scope, $element, $interval) {
         var eServices = [];
@@ -155,7 +156,6 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
 
     }]);
 }());
-
 
 (function () {
     app.controller('ESearchCtrl', ['$scope', function ($scope) {
@@ -351,54 +351,6 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
     }]);
 }());
 (function () {
-    app.controller('HeaderCtrl', ['$scope', function ($scope) {
-
-        var events = function () {
-            $(document).on('focus mouseover', '.search-box input', function () {
-                $('.search-box').css({'width': '230px'});
-            });
-
-            $(document).on('blur mouseleave', '.search-box input', function () {
-                $('.search-box').css({'width': ''});
-            });
-
-            $(document).on('mouseover', '.sub-item', function () {
-                if (!$(this).hasClass('active')) {
-                    $('.sub-item').removeClass('active');
-                    $('.sub-menu').velocity('stop');
-                    $('.sub-menu').hide();
-                    $(this).addClass('active');
-                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideDownIn', 300);
-                    $(this).find('[class^="col-"]').velocity('stop').velocity('transition.slideLeftIn', {
-                        stagger: 100,
-                        duration: 600
-                    });
-                }
-            });
-
-            $(document).on('mouseleave', '.sub-item', function () {
-                var that = this;
-                if ($(this).hasClass('active')) {
-                    $(that).removeClass('active');
-                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideUpOut', {delay:500,duration:300});
-                }
-            });
-
-            $(document).on('click', '.hide-alert', function () {
-                $('.hide-alert').velocity('stop').hide();
-            });
-        };
-
-        var init = function () {
-            events();
-        };
-
-        init();
-
-    }]);
-}());
-
-(function () {
     app.controller('BoxCtrl', ['$scope', '$element', 'PopupService', '$timeout', function ($scope, $element, PopupService, $timeout) {
         $scope.data = {};
         $scope.data.active = true;
@@ -547,6 +499,54 @@ app.controller('ContactCtrl', function ($scope, $timeout, $http) {
     }]);
 }());
 
+(function () {
+    app.controller('HeaderCtrl', ['$scope', function ($scope) {
+
+        var events = function () {
+            $(document).on('focus mouseover', '.search-box input', function () {
+                $('.search-box').css({'width': '230px'});
+            });
+
+            $(document).on('blur mouseleave', '.search-box input', function () {
+                $('.search-box').css({'width': ''});
+            });
+
+            $(document).on('mouseover', '.sub-item', function () {
+                if (!$(this).hasClass('active')) {
+                    $('.sub-item').removeClass('active');
+                    $('.sub-menu').velocity('stop');
+                    $('.sub-menu').hide();
+                    $(this).addClass('active');
+                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideDownIn', 300);
+                    $(this).find('[class^="col-"]').velocity('stop').velocity('transition.slideLeftIn', {
+                        stagger: 100,
+                        duration: 600
+                    });
+                }
+            });
+
+            $(document).on('mouseleave', '.sub-item', function () {
+                var that = this;
+                if ($(this).hasClass('active')) {
+                    $(that).removeClass('active');
+                    $(this).find('.sub-menu').velocity('stop').velocity('transition.slideUpOut', {delay:500,duration:300});
+                }
+            });
+
+            $(document).on('click', '.hide-alert', function () {
+                $('.hide-alert').velocity('stop').hide();
+            });
+        };
+
+        var init = function () {
+            events();
+        };
+
+        init();
+
+    }]);
+}());
+
 app.controller('MenuCtrl', ['$scope', function ($scope) {
 
     var showing = false;
@@ -664,6 +664,102 @@ app.controller('MenuItemCtrl', ['$scope', function ($scope) {
         that.setPopupContent = setPopupContent;
         that.setPopupHeader = setPopupHeader;
         that.getPopupHeader = getPopupHeader;
+    }]);
+}());
+
+
+(function () {
+    app.controller('SearchCtrl', ['$scope', '$timeout', '$http', function ($scope, $timeout, $http) {
+
+        //var ServiceUrl = "CHANGE_ME!";
+
+        var results;
+        var loading = false;
+        $scope.types = types;
+        $scope.audiences = audiences;
+        $scope.sectors = sectors;
+
+        $scope.set = function (key, value) {
+            console.log(key, value);
+            $scope.filters[key] = value;
+        };
+
+        $scope.search = "";
+
+        $scope.filters = {
+            type: 0,
+            audience: 0,
+            sector: 0
+        };
+
+        $scope.$watch('filters', function () {
+            filterResults();
+        }, true);
+
+        $(document).on("click", ".search-after", function () {
+            console.log('.search-after');
+            console.log($(this).prev());
+            $(this).prev().click();
+        });
+
+        $(document).on("click", "#searchBtn", function () {
+            getResults($('#searchInput').val());
+        });
+
+        var isLoading = function () {
+            return loading;
+        };
+
+        var getResults = function (searchTerm) {
+            $scope.currentResults = [];
+            loading = true;
+            if (searchTerm != undefined) {
+                searchTerm = '&search=' + searchTerm
+            } else {
+                searchTerm = '';
+            }
+            //$timeout(function () {
+            $http.get(SEARCH_SERVICE_URL + searchTerm).then(function (response) {
+                loading = false;
+                results = response.data.results;
+                filterResults();
+                console.log(results)
+            });
+            //}, 2000);
+
+        };
+
+        var filterResults = function () {
+            var filters = $scope.filters;
+            $scope.currentResults = _.filter(results, function (result) {
+                var flag = true;
+
+                //flag = flag * (filters.search == "" || result.title.toLowerCase().indexOf(filters.search.toLowerCase()) > -1);
+                flag = flag * ($scope.types[filters.type] == "All Types" || $scope.types[filters.type] == result.type);
+                flag = flag * ($scope.audiences[filters.audience] == "All Audiences" || $scope.audiences[filters.audience] == result.audience);
+                flag = flag * ($scope.sectors[filters.sector] == "All Sectors" || $scope.sectors[filters.sector] == result.sector);
+
+                return flag;
+            });
+            console.log($scope.currentResults);
+
+            setTimeout(function () {
+                $('.result').velocity('stop').velocity('transition.flipYIn', {stagger: 50});
+            }, 50)
+        };
+
+        var init = function () {
+            if (window.SEARCH_SERVICE_URL == undefined) {
+                window.SEARCH_SERVICE_URL = "http://localhost:3000/gaca";
+            }
+            getResults($('#searchInput').val());
+        };
+
+        init();
+
+        $scope.getResults = getResults;
+        $scope.isLoading = isLoading;
+
     }]);
 }());
 
@@ -793,102 +889,6 @@ app.controller('MenuItemCtrl', ['$scope', function ($scope) {
 
     }]);
 }());
-
-(function () {
-    app.controller('SearchCtrl', ['$scope', '$timeout', '$http', function ($scope, $timeout, $http) {
-
-        //var ServiceUrl = "CHANGE_ME!";
-
-        var results;
-        var loading = false;
-        $scope.types = types;
-        $scope.audiences = audiences;
-        $scope.sectors = sectors;
-
-        $scope.set = function (key, value) {
-            console.log(key, value);
-            $scope.filters[key] = value;
-        };
-
-        $scope.search = "";
-
-        $scope.filters = {
-            type: 0,
-            audience: 0,
-            sector: 0
-        };
-
-        $scope.$watch('filters', function () {
-            filterResults();
-        }, true);
-
-        $(document).on("click", ".search-after", function () {
-            console.log('.search-after');
-            console.log($(this).prev());
-            $(this).prev().click();
-        });
-
-        $(document).on("click", "#searchBtn", function () {
-            getResults($('#searchInput').val());
-        });
-
-        var isLoading = function () {
-            return loading;
-        };
-
-        var getResults = function (searchTerm) {
-            $scope.currentResults = [];
-            loading = true;
-            if (searchTerm != undefined) {
-                searchTerm = '&search=' + searchTerm
-            } else {
-                searchTerm = '';
-            }
-            //$timeout(function () {
-            $http.get(SEARCH_SERVICE_URL + searchTerm).then(function (response) {
-                loading = false;
-                results = response.data.results;
-                filterResults();
-                console.log(results)
-            });
-            //}, 2000);
-
-        };
-
-        var filterResults = function () {
-            var filters = $scope.filters;
-            $scope.currentResults = _.filter(results, function (result) {
-                var flag = true;
-
-                //flag = flag * (filters.search == "" || result.title.toLowerCase().indexOf(filters.search.toLowerCase()) > -1);
-                flag = flag * ($scope.types[filters.type] == "All Types" || $scope.types[filters.type] == result.type);
-                flag = flag * ($scope.audiences[filters.audience] == "All Audiences" || $scope.audiences[filters.audience] == result.audience);
-                flag = flag * ($scope.sectors[filters.sector] == "All Sectors" || $scope.sectors[filters.sector] == result.sector);
-
-                return flag;
-            });
-            console.log($scope.currentResults);
-
-            setTimeout(function () {
-                $('.result').velocity('stop').velocity('transition.flipYIn', {stagger: 50});
-            }, 50)
-        };
-
-        var init = function () {
-            if (window.SEARCH_SERVICE_URL == undefined) {
-                window.SEARCH_SERVICE_URL = "http://localhost:3000/gaca";
-            }
-            getResults($('#searchInput').val());
-        };
-
-        init();
-
-        $scope.getResults = getResults;
-        $scope.isLoading = isLoading;
-
-    }]);
-}());
-
 
 app.controller('SmallLoginCtrl', function ($scope, $timeout, $http) {
 
