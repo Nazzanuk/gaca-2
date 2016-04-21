@@ -109,7 +109,8 @@ gulp.task("gen-html", function () {
         "dashboard": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'dashboard'],
         "register": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'register'],
         "flights": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'flights'],
-        "2-col": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'template-2-col']
+        "2-col": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'template-2-col'],
+        "airport": ['head', 'small-login', 'contact', 'menu', 'login', 'popup', 'header', 'airport']
     };
 
     for (var i in pages) {

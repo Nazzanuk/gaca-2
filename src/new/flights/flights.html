@@ -7,11 +7,13 @@
                 <h1>{{flights.stringFlightInfo}}</h1>
                 <hr>
 
+                <div style="height: 50px">
+
                 <select ng-options="airport.code as airport.name for airport in flights.getAirports()"
                         class="choose-airport"
                         ng-model="flights.getQuery().airport"
                         ng-change="flights.search()"
-                        style="padding-right: 20px;"
+                        style="padding-right: 40px; float: left"
                         ng-hide="$root.getLang() == 'ar'"
                 ></select>
 
@@ -19,11 +21,14 @@
                         class="choose-airport"
                         ng-model="flights.getQuery().airport"
                         ng-change="flights.search()"
-                        style="padding-right: 20px;"
+                        style="padding-left: 40px;text-align: right;float:right;direction:rtl"
                         ng-show="$root.getLang() == 'ar'"
                 ></select>
 
-                <h2 style="display: inline-block;position: relative;left:-20px;pointer-events: none;">&nbsp; <i class="fa fa-caret-down"></i></h2>
+                <h2 ng-hide="$root.getLang() == 'ar'" style="line-height:40px;float: left;display: inline-block;position: relative;left:-40px;pointer-events: none;">&nbsp; <i class="fa fa-caret-down"></i></h2>
+                <h2 ng-show="$root.getLang() == 'ar'" style="line-height:40px;float: right;display: inline-block;position: relative;right:-30px;pointer-events: none;">&nbsp; <i class="fa fa-caret-down"></i></h2>
+
+                </div>
 
                 <div class="flight-tabs">
                     <div class="tab-headers">
@@ -84,7 +89,8 @@
 
                                     <div class="card-tofrom" ng-show="flight.ARR_DEP == 'A'">{{flights.stringFrom}}</div>
                                     <div class="card-tofrom" ng-hide="flight.ARR_DEP == 'A'">{{flights.stringTo}}</div>
-                                    <div class="card-place" style="text-transform: uppercase">{{flight.ROUTING_ENG}}</div>
+                                    <div class="card-place" ng-show="$root.getLang() == 'ar'" style="text-transform: uppercase">{{flight.ROUTING_KA}}</div>
+                                    <div class="card-place" ng-hide="$root.getLang() == 'ar'" style="text-transform: uppercase">{{flight.ROUTING_ENG}}</div>
 
                                     <hr>
                                     <div class="card-terminal">{{flights.stringTerminal}} {{flight.TERMINAL}}</div>
@@ -100,7 +106,11 @@
 
                                     <div class="card-status" ng-show="flight.FL_STATUS_1 != 'NA' || flight.GATE_1 != 'NA'" style="text-transform: uppercase">
                                         <div class="card-gate" ng-show="flight.GATE_1 != 'NA'">{{flights.stringGate}} {{flight.GATE_1}}</div>
-                                        <div class="card-text" ng-show="flight.FL_STATUS_1 != 'NA'">{{flight.FL_STATUS_1}}</div>
+                                        <div class="card-text" ng-show="flight.FL_STATUS_1 != 'NA'">
+                                            <span ng-show="$root.getLang() != 'ar'">{{flight.FL_STATUS_1}}</span>
+                                            <span ng-show="$root.getLang() == 'ar'">{{flight.PUB_RMK_KA}}</span>
+
+                                        </div>
                                     </div>
                                 </div>
 
