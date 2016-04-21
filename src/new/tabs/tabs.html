@@ -1,0 +1,20 @@
+<script type="text/ng-template" id="tabs-item.html">
+
+    <div class="tabs">
+
+        <div class="gaca-tabs">
+
+            <div class="tab-headers clearfix">
+                <div class="tab-header"
+                     ng-repeat="tab in tabs.getTabs() track by $index"
+                     ng-class="{active:$index == tabs.getTab()}"
+                     ng-click="tabs.setTab($index)"
+                >{{tab}}</div>
+            </div>
+
+            <div ng-transclude></div>
+        </div>
+
+
+    </div>
+</script>

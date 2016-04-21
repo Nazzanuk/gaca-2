@@ -1,54 +1,21 @@
 <script type="text/ng-template" id="facilities-item.html">
 
     <div class="facilities">
+        <div class="content-image" style="background-image:url('{{facilities.image}}')"></div>
+        <div class="content-area" ng-bind-html="facilities.getDescription()"></div>
 
-        <div class="gaca-tabs">
+        <div class="hide"ng-transclude></div>
 
-            <div class="tab-headers clearfix">
-                <div class="tab-header active">Shopping</div>
-                <div class="tab-header">Refreshments</div>
-                <div class="tab-header">Car Rental</div>
-                <div class="tab-header">Local Transport</div>
-            </div>
-
-            <div class="gaca-tabs-content">
-                <div class="content-image" style="background-image:url('https://unsplash.it/800/500/?random&123')"></div>
-                <div class="content-area">
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-
-                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+        <div class="content-list">
+            <div class="list-item clearfix" ng-repeat="facility in facilities.getFacilities()">
+                <div class="item-image" style="background-image:url('{{facility.image}}')"></div>
+                <div class="item-link"><i class="fa fa-phone"></i></div>
+                <div class="item-text">
+                    <div class="text-header">{{facility.header}}</div>
+                    <div class="text-description">{{facility.description}}</div>
                 </div>
-
-                <div class="content-list">
-                    <div class="list-item clearfix">
-                        <div class="item-image" style="background-image:url('https://unsplash.it/100/100/?random&1243')"></div>
-                        <div class="item-link"><i class="fa fa-phone"></i></div>
-                        <div class="item-text">
-                            <div class="text-header">Extra</div>
-                            <div class="text-description">Airside only <br> Terminal N & S</div>
-                        </div>
-                    </div>
-                    <div class="list-item clearfix">
-                        <div class="item-image" style="background-image:url('https://unsplash.it/100/100/?random&122243')"></div>
-                        <div class="item-link"><i class="fa fa-phone"></i></div>
-                        <div class="item-text">
-                            <div class="text-header">Extra</div>
-                            <div class="text-description">Airside only <br> Terminal N & S</div>
-                        </div>
-                    </div>
-                    <div class="list-item clearfix">
-                        <div class="item-image" style="background-image:url('https://unsplash.it/100/100/?random&123343')"></div>
-                        <div class="item-link"><i class="fa fa-phone"></i></div>
-                        <div class="item-text">
-                            <div class="text-header">Extra</div>
-                            <div class="text-description">Airside only <br> Terminal N & S</div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
-
 
     </div>
 </script>

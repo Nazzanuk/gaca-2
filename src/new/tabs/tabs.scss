@@ -1,0 +1,146 @@
+tabs-item {
+  .tabs {
+
+    .gaca-tabs {
+      margin-top: 20px;
+      .tab-headers {
+        //height: 40px;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: -1px;
+      }
+
+      .tab-header {
+        height: 41px;
+        float: left;
+        line-height: 40px;
+        padding: 0 20px;
+        //min-width: 150px;
+        margin-bottom: -1px;
+        border: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        margin-right: 10px;
+        position: relative;
+        transition: .3s;
+        background: #f7f7f7;
+
+        //background: $primary;
+        //color: white;
+        cursor: pointer;
+
+        &.active {
+          background: #fff;
+          //color: inherit;
+          border: 1px solid #ddd;
+          //border-bottom: 1px solid #ddd;
+          //font-weight: bold;
+          color: $primary;
+        }
+
+        @media (max-width: 768px) {
+          width: 100%;
+          float: none;
+        }
+      }
+
+      .gaca-tabs-bar {
+        padding: 20px 20px 0;
+        //line-height: 40px;
+      }
+      .in {
+        input, select {
+          background: white;
+          border: 1px solid #ddd;
+          line-height: 40px;
+          height: 40px;
+          border-radius: 0;
+        }
+      }
+
+      .gaca-tabs-content {
+        background: #f7f7f7;
+        border: 1px solid #ddd;
+        //padding: 20px;
+        display: none;
+
+        &.active {
+          display: block;
+        }
+
+
+
+        .content-image {
+          background-size: cover;
+          background-position: center;
+          height: 300px;
+
+
+          @media (max-width: 768px) {
+            height: 150px;
+          }
+        }
+
+        .content-area {
+          background: white;
+          padding: 20px;
+        }
+
+        .content-list {
+          background: white;
+
+          .list-item {
+
+            border-top: #ddd 1px solid;
+            transition: .3s;
+
+            &:hover {
+              background: #f7f7f7;
+            }
+          }
+
+          .item-image {
+            float: left;
+            margin: 10px;
+            height: 70px;
+            width: 70px;
+            background-size: cover;
+            background-position: center;
+          }
+
+          .item-text {
+            height: 70px;
+            line-height: 20px;
+            margin: 10px;
+            padding-left: 10px;
+            border-left: #ddd 1px solid;
+            margin-left: 90px;
+
+            .text-header {
+              color: $primary;
+              font-weight: bold;
+            }
+
+            .text-description {
+              margin-top: 5px;
+            }
+          }
+
+          .item-link {
+            line-height: 70px;
+            width: 70px;
+            margin: 10px;
+            text-align: center;
+            color: $primary;
+            float: right;
+            font-size: 30px;
+            //padding-left: 20px;
+            border-left: #ddd 1px solid;
+            margin-left: 10px;
+            cursor: pointer;
+          }
+        }
+      }
+
+    }
+
+  }
+}
