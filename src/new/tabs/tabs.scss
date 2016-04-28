@@ -125,6 +125,15 @@ tabs-item {
               margin-right: 90px;
               border-right: #ddd 1px solid;
 
+              &.no-number {
+                margin-right: 0;
+                border-right: none;
+              }
+            }
+
+            &.no-number {
+              margin-right: 0;
+              border-right: none;
             }
 
             .text-header {
