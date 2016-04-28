@@ -1,7 +1,7 @@
 <script type="text/ng-template" id="facilities-item.html">
 
     <div class="facilities">
-        <div class="content-image" style="background-image:url('{{facilities.image}}')"></div>
+        <div class="content-image" ng-show="facilities.image" style="background-image:url('{{facilities.image}}')"></div>
         <div class="content-area" ng-bind-html="facilities.getDescription()"></div>
 
         <div class="hide"ng-transclude></div>
@@ -9,9 +9,12 @@
         <div class="content-list">
             <div class="list-item clearfix" ng-repeat="facility in facilities.getFacilities()">
                 <div class="item-image" style="background-image:url('{{facility.image}}')"></div>
-                <div class="item-link"><i class="fa fa-phone"></i></div>
+                <a class="item-link" href="tel:{{facility.number}}"><i class="fa fa-phone"></i></a>
                 <div class="item-text">
-                    <div class="text-header">{{facility.header}}</div>
+                    <div class="text-header">
+                        {{facility.header}}
+                        <div class="other-item">{{facility.number}}</div>
+                    </div>
                     <div class="text-description">{{facility.description}}</div>
                 </div>
             </div>
