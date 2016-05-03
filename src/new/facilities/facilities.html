@@ -9,8 +9,8 @@
         <div class="content-list">
             <div class="list-item clearfix" ng-repeat="facility in facilities.getFacilities()">
                 <div class="item-image" style="background-image:url('{{facility.image}}')"></div>
-                <a class="item-link" href="tel:{{facility.number}}"><i class="fa fa-phone"></i></a>
-                <div class="item-text">
+                <a class="item-link" ng-hide="!facility.number" href="tel:{{facility.number}}"><i class="fa fa-phone"></i></a>
+                <div class="item-text" ng-class="{'no-number':!facility.number}">
                     <div class="text-header">
                         {{facility.header}}
                         <div class="other-item">{{facility.number}}</div>
