@@ -4,7 +4,7 @@
 
             <div class="in block">
                 <select class="gaca-select"
-                        ng-options="airport.name for airport in search.getAirports() | orderBy: ['priority', 'name']"
+                        ng-options="airport.name group by airport.type for airport in search.getAirports() | orderBy: ['priority', 'name']"
                         ng-model="airport"
                         ng-change="search.changeSelect(airport)"
                         ng-hide="$root.getLang() == 'ar'"
@@ -12,7 +12,7 @@
                     <option value="" selected="selected">{{search.stringChoose}}</option>
                 </select>
 
-                <select ng-options="airport.arabicName for airport in search.getAirports() | orderBy: ['priority', 'arabicName']"
+                <select ng-options="airport.arabicName group by airport.arabicType for airport in search.getAirports() | orderBy: ['priority', 'arabicName']"
                         ng-model="airport"
                         ng-change="search.changeSelect(airport)"
                         ng-show="$root.getLang() == 'ar'"

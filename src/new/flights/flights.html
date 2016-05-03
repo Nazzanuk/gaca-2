@@ -9,7 +9,7 @@
 
                 <div style="height: 50px">
 
-                <select ng-options="airport.code as airport.name for airport in flights.getAirports() | orderBy: ['priority', 'name']"
+                <select ng-options="airport.code as airport.name group by airport.type for airport in flights.getAirports() | orderBy: ['priority', 'name']"
                         class="choose-airport"
                         ng-model="flights.getQuery().airport"
                         ng-change="flights.search()"
@@ -17,7 +17,7 @@
                         ng-hide="$root.getLang() == 'ar'"
                 ></select>
 
-                <select ng-options="airport.code as airport.arabicName for airport in flights.getAirports() | orderBy: ['priority', 'arabicName']"
+                <select ng-options="airport.code as airport.arabicName group by airport.arabicType for airport in flights.getAirports() | orderBy: ['priority', 'arabicName']"
                         class="choose-airport"
                         ng-model="flights.getQuery().airport"
                         ng-change="flights.search()"
