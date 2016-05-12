@@ -5,7 +5,8 @@ app.directive('facilitiesItem', () => ({
     transclude: true,
     scope: {
         image: '@',
-        description: '@'
+        description: '@',
+        link: '@'
     },
     controller: function ($scope, $element, $timeout, Translation, $sce) {
 
